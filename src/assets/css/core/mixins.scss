@@ -1,0 +1,60 @@
+//font titles
+@mixin title-font-property($font-family:'sf-speakeasy') {
+    font-family:'#{$font-family}',
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+//font body
+@mixin body-font-property($font-family:'procionoregular') {
+    font-family:'#{$font-family}',
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+//links font
+@mixin links-font-property($font-family:'passion_oneregular') {
+    font-family:'#{$font-family}',
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+//secondary header font
+@mixin secondary-header-font-property($font-family:'bangersregular') {
+    font-family:'#{$font-family}',
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+@mixin transition($duration, $direction) {
+    -webkit-transition: all $duration $direction;
+    -moz-transition: all $duration $direction;
+    transition: all $duration $direction;
+}
+
+@mixin rotate ($degrees) {
+    -webkit-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+@mixin writing-mode($writing-mode) {
+    -webkit-writing-mode: $writing-mode;
+    -ms-webkit-writing-mode: $writing-mode;
+    writing-mode: $writing-mode;
+}
+
+@mixin display-flex($flex, $direction) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: $flex;
+    -webkit-box-direction: $direction;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
