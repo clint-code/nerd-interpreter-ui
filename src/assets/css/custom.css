@@ -13,16 +13,16 @@ body {
 /*typography*/
 h1,
 h3 {
-  font-family: "sf-speakeasy", Arial, Helvetica, sans-serif;
+  font-family: "sf-speakeasy";
 }
 
 h4 {
-  font-family: "bangersregular", Arial, Helvetica, sans-serif;
+  font-family: "bangersregular";
   font-size: 1.85rem;
 }
 
 p {
-  font-family: "procionoregular", Arial, Helvetica, sans-serif;
+  font-family: "procionoregular";
   font-size: 20px;
   line-height: 1.5;
   padding-bottom: 1rem;
@@ -30,15 +30,15 @@ p {
 }
 
 h2 {
-  font-family: "bangersregular", Arial, Helvetica, sans-serif;
+  font-family: "bangersregular";
 }
 
 h3 {
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
 }
 
 a {
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
 }
 a:focus {
   color: transparent;
@@ -49,7 +49,7 @@ a:hover {
 }
 
 input[type=text] {
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
   letter-spacing: 0.5px;
   text-transform: uppercase;
   font-size: 2em;
@@ -116,7 +116,7 @@ body {
 .btn-black {
   border: 6px solid #000 !important;
   border-radius: 0px !important;
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
   text-transform: uppercase;
   font-size: 1.5em !important;
   background-color: black !important;
@@ -312,7 +312,7 @@ body {
 .text-intro-section p {
   font-size: 2.5em;
   line-height: 1.3em;
-  font-family: "bangersregular", Arial, Helvetica, sans-serif;
+  font-family: "bangersregular";
   padding-bottom: 0rem !important;
 }
 
@@ -330,7 +330,7 @@ body {
 }
 .grid .grid-sizer h3,
 .grid .character-item h3 {
-  font-family: "sf-speakeasy", Arial, Helvetica, sans-serif;
+  font-family: "sf-speakeasy";
 }
 .grid .character-image > img {
   max-width: 100%;
@@ -340,7 +340,7 @@ body {
 .filter-button-group button {
   background-color: #fff;
   border: 6px solid #000;
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
   text-transform: uppercase;
   font-size: 2em;
 }
@@ -374,7 +374,7 @@ body {
   right: 0%;
 }
 .caption-text-section h3 {
-  font-family: "sf-speakeasy", Arial, Helvetica, sans-serif;
+  font-family: "sf-speakeasy";
   text-transform: uppercase;
 }
 .caption-text-section p {
@@ -472,12 +472,12 @@ body {
   padding-right: 25px;
 }
 .character-stats-list .stat-top {
-  font-family: "bangersregular", Arial, Helvetica, sans-serif;
+  font-family: "bangersregular";
   font-size: 3em;
   color: #EE5A24;
 }
 .character-stats-list .stat-bottom {
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
   font-size: 2.5em;
 }
 
@@ -491,7 +491,7 @@ body {
   color: #5F30E3;
 }
 .nav-list .bottom-cnt {
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
   font-size: 2.5em;
   text-transform: capitalize;
 }
@@ -563,10 +563,10 @@ body {
   border: none;
 }
 .character .card-body h4 {
-  font-family: "sf-speakeasy", Arial, Helvetica, sans-serif;
+  font-family: "sf-speakeasy";
 }
 .character .card-body p {
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
 }
 
 .scrollup {
@@ -634,14 +634,14 @@ body {
   width: 50%;
   margin: 15px;
   height: 100px;
-  font-family: "procionoregular", Arial, Helvetica, sans-serif;
+  font-family: "procionoregular";
   border-width: 1px;
   text-transform: none;
 }
 .form-container button {
   cursor: pointer;
   text-transform: uppercase;
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
   font-size: 25px;
   letter-spacing: 1.5px;
   width: 20%;
@@ -723,7 +723,7 @@ body {
   top: -35px;
 }
 .single-stage .stage-number h3 {
-  font-family: "bangersregular", Arial, Helvetica, sans-serif;
+  font-family: "bangersregular";
   font-size: 5em;
 }
 .single-stage .dropcap {
@@ -731,7 +731,7 @@ body {
 }
 .single-stage .stage-name h4 {
   color: #fff;
-  font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+  font-family: "passion_oneregular";
   text-transform: uppercase;
 }
 .single-stage .stage-description p {
@@ -936,7 +936,7 @@ body {
   }
   .src-cnt-section .list-group-item {
     font-size: 1.6em;
-    font-family: "passion_oneregular", Arial, Helvetica, sans-serif;
+    font-family: "passion_oneregular";
   }
 
   .cnt-section h3 {

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'procionoregular';
-    src: url('.fonts/Prociono/prociono-regular-webfont.eot');
+    src: url('prociono-regular-webfont.eot');
     src: url('prociono-regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('prociono-regular-webfont.woff2') format('woff2'),
          url('prociono-regular-webfont.woff') format('woff'),

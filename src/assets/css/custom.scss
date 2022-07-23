@@ -1,37 +1,5 @@
 /*mixins*/
 
-//font titles
-@mixin title-font-property($font-family:'sf-speakeasy') {
-    font-family:'#{$font-family}',
-    Arial,
-    Helvetica,
-    sans-serif;
-}
-
-//font body
-@mixin body-font-property($font-family:'procionoregular') {
-    font-family:'#{$font-family}',
-    Arial,
-    Helvetica,
-    sans-serif;
-}
-
-//links font
-@mixin links-font-property($font-family:'passion_oneregular') {
-    font-family:'#{$font-family}',
-    Arial,
-    Helvetica,
-    sans-serif;
-}
-
-//secondary header font
-@mixin secondary-header-font-property($font-family:'bangersregular') {
-    font-family:'#{$font-family}',
-    Arial,
-    Helvetica,
-    sans-serif;
-}
-
 @mixin transition($duration, $direction) {
     -webkit-transition: all $duration $direction;
     -moz-transition: all $duration $direction;
@@ -97,16 +65,16 @@ body {
 /*typography*/
 h1,
 h3 {
-    @include title-font-property;
+    font-family:'sf-speakeasy';
 }
 
 h4 {
-    @include secondary-header-font-property;
+    font-family:'bangersregular';
     font-size: 1.85rem;
 }
 
 p {
-    @include body-font-property;
+    font-family:'procionoregular';
     font-size: 20px;
     line-height: 1.5;
     padding-bottom: 1rem;
@@ -114,15 +82,15 @@ p {
 }
 
 h2 {
-    @include secondary-header-font-property;
+    font-family:'bangersregular';
 }
 
 h3 {
-    @include links-font-property;
+    font-family:'passion_oneregular';
 }
 
 a {
-    @include links-font-property;
+    font-family:'passion_oneregular';
 
     &:focus {
         color: transparent;
@@ -139,7 +107,7 @@ a {
 
 
 input[type="text"] {
-    @include links-font-property;
+    font-family:'passion_oneregular';
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-size: 2em;
@@ -219,7 +187,7 @@ body {
 .btn-black {
     border: 6px solid #000 !important;
     border-radius: 0px !important;
-    @include links-font-property;
+    font-family:'passion_oneregular';
     text-transform: uppercase;
     font-size: 1.5em !important;
     background-color: black !important;
@@ -445,7 +413,7 @@ body {
     p {
         font-size: 2.5em;
         line-height: 1.3em;
-        @include secondary-header-font-property;
+        font-family:'bangersregular';
         padding-bottom: 0rem !important;
     }
 }
@@ -463,7 +431,7 @@ body {
         float: left;
 
         h3 {
-            @include title-font-property;
+            font-family:'sf-speakeasy';
         }
     }
 
@@ -478,7 +446,7 @@ body {
     button {
         background-color: #fff;
         border: 6px solid #000;
-        @include links-font-property;
+        font-family:'passion_oneregular';
         text-transform: uppercase;
         font-size: 2em;
     }
@@ -511,7 +479,7 @@ body {
     right: 0%;
 
     h3 {
-        @include title-font-property;
+       font-family:'sf-speakeasy';
         text-transform: uppercase;
     }
 
@@ -624,13 +592,13 @@ body {
     }
 
     .stat-top {
-        @include secondary-header-font-property;
+        font-family:'bangersregular';
         font-size: 3em;
         color: $color-8;
     }
 
     .stat-bottom {
-        @include links-font-property;
+        font-family:'passion_oneregular';
         font-size: 2.5em;
     }
 }
@@ -649,7 +617,7 @@ body {
     }
 
     .bottom-cnt {
-        @include links-font-property;
+        font-family:'passion_oneregular';
         font-size: 2.5em;
         text-transform: capitalize;
     }
@@ -731,11 +699,11 @@ body {
 
     .card-body {
         h4 {
-            @include title-font-property;
+           font-family:'sf-speakeasy';
         }
 
         p {
-            @include links-font-property;
+            font-family:'passion_oneregular';
         }
     }
 }
@@ -817,7 +785,7 @@ body {
         width: 50%;
         margin: 15px;
         height: 100px;
-        @include body-font-property;
+        font-family:'procionoregular';
         border-width: 1px;
         text-transform: none;
     }
@@ -825,7 +793,7 @@ body {
     button {
         cursor: pointer;
         text-transform: uppercase;
-        @include links-font-property;
+        font-family:'passion_oneregular';
         font-size: 25px;
         letter-spacing: 1.5px;
         width: 20%;
@@ -920,7 +888,7 @@ body {
         top: -35px;
 
         h3 {
-            @include secondary-header-font-property;
+            font-family:'bangersregular';
             font-size: 5em;
         }
     }
@@ -933,7 +901,7 @@ body {
 
         h4 {
             color: #fff;
-            @include links-font-property;
+            font-family:'passion_oneregular';
             text-transform: uppercase;
         }
     }
@@ -1237,7 +1205,7 @@ body {
 
         .list-group-item {
             font-size: 1.6em;
-            @include links-font-property;
+            font-family:'passion_oneregular';
         }
 
     }

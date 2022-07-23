@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -11,5 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
 }
