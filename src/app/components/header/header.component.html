@@ -1,5 +1,10 @@
         <!--Header section--->
 
+        <span 
+            class="menuOpener"
+            (click)="toggleMenu();">
+        </span>
+
         <header>
 
             <!--Main Menu section-->
@@ -30,14 +35,20 @@
 
                 </div>
 
-                <span class="menuCloser"></span>
+                <span 
+                    class="menuCloser"
+                    (click)="toggleMenu();">
+                </span>
 
                 <ul class="d-flex nav-links flex-column">
 
                     <li>
                         <a
                             routerLink="/dc-characters"
-                            data-background="dc-characters">
+                            data-background="dc-characters"
+                            (mouseenter)="handleLinkHover($event)"
+                            (mouseleave)="resetStyles($event)"
+                            >
                             DC Characters
                         </a>
                     </li>
@@ -45,7 +56,9 @@
                     <li>
                         <a 
                             routerLink="/marvel-characters"
-                            data-background="marvel-characters">
+                            data-background="marvel-characters"
+                            (mouseenter)="handleLinkHover($event)"
+                            (mouseleave)="resetStyles($event)">
                             Marvel Characters
                         </a>
                     </li>
@@ -53,7 +66,9 @@
                     <li>
                         <a 
                             routerLink="/about"
-                            data-background="about">
+                            data-background="about"
+                            (mouseenter)="handleLinkHover($event)"
+                            (mouseleave)="resetStyles($event)">
                             About
                         </a>
                     </li>
@@ -62,7 +77,9 @@
                     <li>
                         <a 
                             routerLink="/contact"
-                            data-background="contact">
+                            data-background="contact"
+                            (mouseenter)="handleLinkHover($event)"
+                            (mouseleave)="resetStyles($event)">
                             Contact
                         </a>
                     </li>

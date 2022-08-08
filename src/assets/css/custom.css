@@ -157,7 +157,6 @@ body {
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
   transition: all 0.5s linear;
-  border: 5px solid black;
 }
 
 .nav-logo-section {
@@ -186,6 +185,7 @@ body {
   font-size: 52px;
   text-transform: uppercase;
   color: #000000;
+  text-decoration: none;
 }
 .mainMenu ul li a:hover {
   text-decoration: none;

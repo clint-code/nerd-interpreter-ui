@@ -11,6 +11,25 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    this.backgroundAnimate();
+  }
+
+  backgroundAnimate(){
+
+    let counter = 0;
+    let counter2 = 0;
+
+    setInterval(() => {
+      counter -= 1;
+      $('.hero-section').css('background-position', counter + 'px 0');
+    }, 30);
+
+    setInterval(() => {
+      counter2 += 1;
+      $('.villain-section').css('background-position', counter2 + 'px 0');
+    }, 30)
+
   }
 
   
