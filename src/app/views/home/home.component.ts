@@ -8,9 +8,13 @@ import $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
+  loadingView:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.loadingView = true;
 
     this.backgroundAnimate();
   }
