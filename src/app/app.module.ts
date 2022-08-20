@@ -18,6 +18,7 @@ import { DcCharactersComponent } from './views/dc-characters/dc-characters.compo
 import { HeroesJourneyComponent } from './views/heroes-journey/heroes-journey.component';
 import { SingleCharacterComponent } from './views/single-character/single-character.component';
 import { SingleHeroJourneyComponent } from './views/single-hero-journey/single-hero-journey.component';
+import { PreloaderComponent } from './components/preloader/preloader.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SingleHeroJourneyComponent } from './views/single-hero-journey/single-h
     DcCharactersComponent,
     HeroesJourneyComponent,
     SingleCharacterComponent,
-    SingleHeroJourneyComponent
+    SingleHeroJourneyComponent,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-single-character-card',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-character-card.component.css']
 })
 export class SingleCharacterCardComponent implements OnInit {
+
+  @Input() characterImage: string;
+  @Input() characterName: string;
 
   constructor() { }
 
