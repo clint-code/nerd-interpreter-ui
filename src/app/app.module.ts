@@ -19,6 +19,7 @@ import { HeroesJourneyComponent } from './views/heroes-journey/heroes-journey.co
 import { SingleCharacterComponent } from './views/single-character/single-character.component';
 import { SingleHeroJourneyComponent } from './views/single-hero-journey/single-hero-journey.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
+import { EmailsubscriptionComponent } from './components/emailsubscription/emailsubscription.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PreloaderComponent } from './components/preloader/preloader.component';
     HeroesJourneyComponent,
     SingleCharacterComponent,
     SingleHeroJourneyComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    EmailsubscriptionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,6 @@
-<app-banner
-    bannerTitle="DC Characters"
-    bannerImage="../../../assets/img/dc-characters/dc-characters-banner.jpg"
->
-
+<app-banner 
+    bannerTitle="DC Characters" 
+    bannerImage="../../../assets/img/dc-characters/dc-characters-banner.jpg">
 </app-banner>
 
 <div class="row">
@@ -36,7 +34,35 @@
         </div>
 
     </div>
-    
+
+    <div class="grid">
+
+        <div class="grid-sizer"></div>
+
+        <app-single-character-card 
+            characterImage="./assets/img/dc-characters/superman.png" 
+            characterName="Superman">
+        </app-single-character-card>
+
+        <app-single-character-card 
+            characterImage="./assets/img/dc-characters/batman.png" 
+            characterName="Batman">
+        </app-single-character-card>
+
+        <app-single-character-card 
+            characterImage="./assets/img/marvel-characters/black-widow.png" 
+            characterName="Black Widow">
+        </app-single-character-card>
+
+        <app-single-character-card 
+            characterImage="./assets/img/marvel-characters/black-panther.png" 
+            characterName="Black Panther">
+        </app-single-character-card>
+
+    </div>
+
 </div>
+
+<app-emailsubscription></app-emailsubscription>
 
 <app-footer-alt></app-footer-alt>

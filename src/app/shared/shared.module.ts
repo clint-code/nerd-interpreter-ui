@@ -13,6 +13,8 @@ import { MiniNavigationComponent } from '../components/mini-navigation/mini-navi
 import { ComicSliderComponent } from '../components/comic-slider/comic-slider.component';
 import { SingleCharacterCardComponent } from '../components/single-character-card/single-character-card.component';
 
+//libraries
+import { IsotopeModule } from "ngx-isotope";
 
 @NgModule({
 
@@ -30,7 +32,8 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
       imports: [
         RouterModule,
         CommonModule,
-        FormsModule
+        FormsModule,
+        IsotopeModule
       ],
 
       exports: [

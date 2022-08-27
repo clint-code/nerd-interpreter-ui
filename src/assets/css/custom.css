@@ -328,9 +328,10 @@ body {
   margin-right: 2.5%;
   float: left;
 }
-.grid .grid-sizer h3,
-.grid .character-item h3 {
+.grid .grid-sizer a,
+.grid .character-item a {
   font-family: "sf-speakeasy";
+  font-size: 3.5em;
 }
 .grid .character-image > img {
   max-width: 100%;
