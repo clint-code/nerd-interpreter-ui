@@ -121,7 +121,14 @@ body {
     overflow-x: hidden;
 }
 
-/*JPRELOADER*/
+.preloader{
+    position: absolute;
+    background-color: $color-10;
+    top: 50% !important;
+    margin-top: -40px;
+    display: none;
+}
+
 #jpreLoader {
     top: 50% !important;
     margin-top: -40px;

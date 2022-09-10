@@ -20,6 +20,7 @@ import { SingleCharacterComponent } from './views/single-character/single-charac
 import { SingleHeroJourneyComponent } from './views/single-hero-journey/single-hero-journey.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { EmailsubscriptionComponent } from './components/emailsubscription/emailsubscription.component';
+import { ProgressOnscrollbarComponent } from './components/progress-onscrollbar/progress-onscrollbar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EmailsubscriptionComponent } from './components/emailsubscription/email
     SingleCharacterComponent,
     SingleHeroJourneyComponent,
     PreloaderComponent,
-    EmailsubscriptionComponent
+    EmailsubscriptionComponent,
+    ProgressOnscrollbarComponent
   ],
   imports: [
     BrowserModule,

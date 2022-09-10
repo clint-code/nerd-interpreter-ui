@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+import Utils from '../../utils/preloader';
+
 import $ from 'jquery';
+import Preloader from '../../utils/preloader';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +13,8 @@ import $ from 'jquery';
 export class HomeComponent implements OnInit {
 
   loadingView:boolean = false;
+  imagesLoaded:boolean = false;
+  siteImages:any = [];
 
   constructor() { }
 
@@ -17,6 +23,19 @@ export class HomeComponent implements OnInit {
     this.loadingView = true;
 
     this.backgroundAnimate();
+
+  }
+
+  ngAfterViewInit():void{
+
+    this.siteImages = Preloader.getImages();
+    
+    // setTimeout(() => {
+
+      
+
+    // }, 1000);
+
   }
 
   backgroundAnimate(){
@@ -34,6 +53,11 @@ export class HomeComponent implements OnInit {
       $('.villain-section').css('background-position', counter2 + 'px 0');
     }, 30)
 
+  }
+
+  handleSiteLoaded(){
+
+    this.imagesLoaded = true;
   }
 
   
