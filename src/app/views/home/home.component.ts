@@ -27,14 +27,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit():void{
-
-    this.siteImages = Preloader.getImages();
     
-    // setTimeout(() => {
+    setTimeout(() => {
 
-      
+      this.siteImages = Preloader.getImages();
 
-    // }, 1000);
+    }, 1000);
 
   }
 
