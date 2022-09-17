@@ -69,6 +69,7 @@ body {
   top: 50% !important;
   margin-top: -40px;
   display: none;
+  z-index: 100;
 }
 
 #jpreLoader {
@@ -421,6 +422,10 @@ body {
 .quick-links-section a {
   color: #fff;
   font-size: 30px;
+}
+.quick-links-section a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /*character inner page*/

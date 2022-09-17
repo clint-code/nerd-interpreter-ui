@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 
-
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { FooterAltComponent } from '../components/footer-alt/footer-alt.component';

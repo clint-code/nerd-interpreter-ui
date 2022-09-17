@@ -18,9 +18,12 @@ export class DcCharactersComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadingView = true;
+  }
+
+  ngAfterViewInit():void{
 
     this.siteImages = Preloader.getImages();
-
+    
   }
 
 }

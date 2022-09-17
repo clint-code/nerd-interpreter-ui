@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import Utils from '../../utils/preloader';
-
 import $ from 'jquery';
 import Preloader from '../../utils/preloader';
 

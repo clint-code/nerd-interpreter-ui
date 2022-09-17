@@ -127,6 +127,7 @@ body {
     top: 50% !important;
     margin-top: -40px;
     display: none;
+    z-index: 100;
 }
 
 #jpreLoader {
@@ -534,6 +535,11 @@ body {
     a {
         color: #fff;
         font-size: 30px;
+
+        &:hover{
+            color: #fff;
+            text-decoration: underline;
+        }
     }
 }
 

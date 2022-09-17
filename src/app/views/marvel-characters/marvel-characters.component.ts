@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Preloader from '../../utils/preloader';
 
 @Component({
   selector: 'app-marvel-characters',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarvelCharactersComponent implements OnInit {
 
+  loadingView:boolean = false;
+  imagesLoaded:boolean = false;
+  siteImages:any = [];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit():void{
+    
+    setTimeout(() => {
+
+      this.siteImages = Preloader.getImages();
+
+    }, 1000);
+
   }
 
 }

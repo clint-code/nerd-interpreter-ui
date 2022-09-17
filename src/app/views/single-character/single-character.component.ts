@@ -32,12 +32,6 @@ export class SingleCharacterComponent implements OnInit {
 
     let scrollPercent = scrollTop / (docHeight - winHeight) *100;
 
-    console.log("Scroll top: ",scrollTop);
-    console.log("Document height: ",docHeight);
-    console.log("Window height: ",winHeight);
-    console.log("Scroll percent: ",scrollPercent);
-
-
     $("#scrollbar").css("width", scrollPercent + "%");
 
 

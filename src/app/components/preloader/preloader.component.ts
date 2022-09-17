@@ -13,10 +13,10 @@ export class PreloaderComponent implements OnInit {
   @Input() images:any = [];
   @Output() siteLoaded = new EventEmitter<boolean>();
 
-  siteImages:any;
+  siteImages:any = [];
   imagesLoaded:number;
   totalImages:number;
-  percentageLoaded:number;
+  percentageLoaded:number = 0;
   
   constructor() { }
 
@@ -25,6 +25,10 @@ export class PreloaderComponent implements OnInit {
     this.imagesLoaded = 0;
     this.siteImages = this.images;
     this.totalImages = this.siteImages.length;
+
+    console.log(this.siteImages);
+
+    console.log(this.totalImages);
 
     this.loadImages(this.siteImages);
 
@@ -39,7 +43,7 @@ export class PreloaderComponent implements OnInit {
 
       image.addEventListener("load", (event) => {
         
-        this.imageLoaded(event);
+        this. imageLoaded(event);
 
       }, false);
 
@@ -65,9 +69,13 @@ export class PreloaderComponent implements OnInit {
       
     }
 
+    console.log(this.percentageLoaded);
+
   }
 
   loadComplete(){
+
+    this.siteLoaded.emit(true);
 
     $(".preloader").fadeOut();
 
