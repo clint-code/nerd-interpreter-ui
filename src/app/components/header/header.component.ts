@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 import $ from 'jquery';
 
@@ -9,9 +10,21 @@ import $ from 'jquery';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
+
+      this.router.events.subscribe(val => {
+
+        if(val instanceof NavigationEnd && $(".menuCloser").hasClass("open")){
+
+            this.toggleMenu();
+
+        }
+
+    });
 
   }
 

@@ -43,8 +43,10 @@
                 <ul class="d-flex nav-links flex-column">
 
                     <li>
-                        <a
+                        <a 
                             routerLink="/dc-characters"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact:true}"
                             data-background="dc-characters"
                             (mouseenter)="handleLinkHover($event)"
                             (mouseleave)="resetStyles($event)"
@@ -56,6 +58,7 @@
                     <li>
                         <a 
                             routerLink="/marvel-characters"
+                            routerLinkActive="active"
                             data-background="marvel-characters"
                             (mouseenter)="handleLinkHover($event)"
                             (mouseleave)="resetStyles($event)">
@@ -66,6 +69,7 @@
                     <li>
                         <a 
                             routerLink="/about"
+                            routerLinkActive="active"
                             data-background="about"
                             (mouseenter)="handleLinkHover($event)"
                             (mouseleave)="resetStyles($event)">
@@ -77,6 +81,7 @@
                     <li>
                         <a 
                             routerLink="/contact"
+                            routerLinkActive="active"
                             data-background="contact"
                             (mouseenter)="handleLinkHover($event)"
                             (mouseleave)="resetStyles($event)">

@@ -65,9 +65,9 @@ export class PreloaderComponent implements OnInit {
 
     if(this.imagesLoaded == this.totalImages){
 
-      setTimeout(()=>{
+      // setTimeout(()=>{      }, 2000);
         this.loadComplete();
-      }, 200000);
+
 
       
     }
