@@ -46,10 +46,30 @@
 
     <div class="col p-3">
 
-        <div id="filters" class="filter-button-group text-center">
-            <button class="button is-checked p-3 m-3" data-filter="*">all characters</button>
-            <button class="button p-3 m-3" data-filter=".dc-heroes">Heroes</button>
-            <button class="button p-3 m-3" data-filter=".dc-villains">Villains</button>
+        <div 
+            id="filters" 
+            class="filter-button-group text-center">
+            <button 
+                class="button is-checked p-3 m-3" 
+                data-filter="*"
+                (click)="filterCharacters()">
+                all characters
+            </button>
+
+            <button 
+                class="button p-3 m-3" 
+                data-filter=".dc-heroes"
+                (click)="filterCharacters()">
+                Heroes
+            </button>
+
+            <button 
+                class="button p-3 m-3" 
+                data-filter=".dc-villains"
+                (click)="filterCharacters()">
+                Villains
+            </button>
+
         </div>
 
     </div>
@@ -58,26 +78,124 @@
 
         <div class="grid-sizer"></div>
 
-        <app-single-character-card 
-            characterImage="./assets/img/dc-characters/superman.png" 
-            characterName="Superman">
-        </app-single-character-card>
+        <div class="character-item dc-heroes" data-category="hero">
 
-        <app-single-character-card 
-            characterImage="./assets/img/dc-characters/batman.png" 
-            characterName="Batman">
-        </app-single-character-card>
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/superman.png" alt="superman" class="img-fluid">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Superman</h3>
+            </a>
 
-        <app-single-character-card 
-            characterImage="./assets/img/marvel-characters/black-widow.png" 
-            characterName="Black Widow">
-        </app-single-character-card>
+        </div>
 
-        <app-single-character-card 
-            characterImage="./assets/img/marvel-characters/black-panther.png" 
-            characterName="Black Panther">
-        </app-single-character-card>
+        <div class="character-item dc-heroes" data-category="hero">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/batman.png" alt="batman">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Batman</h3>
+            </a>
+        </div>
 
+        <div class="character-item dc-villains" data-category="villain">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/joker.png" alt="joker">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Joker</h3>
+            </a>
+        </div>
+
+        <div class="character-item dc-villains" data-category="villain">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/lex-luthor.png" alt="lex-luthor">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Lex Luthor</h3>
+            </a>
+
+        </div>
+
+        <div class="character-item dc-heroes" data-category="hero">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/aquaman.png" alt="aquaman">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Aquaman</h3>
+            </a>
+
+        </div>
+
+        <div class="character-item dc-villains" data-category="villain">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/black-manta.png" alt="black-manta">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Black Manta</h3>
+            </a>
+
+        </div>
+
+        <div class="character-item dc-villains" data-category="villain">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/two-face.png" alt="two-face">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Two Face</h3>
+            </a>
+
+        </div>
+
+        <div class="character-item dc-villains" data-category="villain">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/bane.png" alt="bane">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Bane</h3>
+            </a>
+
+        </div>
+
+        <div class="character-item dc-villains" data-category="villain">
+            <div class="character-image">
+                <img src="./assets/img/dc-characters/zod.png" alt="zod">
+            </div>
+            <a class="btn btn-light name" routerLink="/single-character">
+                <h3 class="name display-4">Zod</h3>
+            </a>
+
+        </div>
+
+            <!-- <app-single-character-card 
+                characterImage="./assets/img/dc-characters/superman.png" 
+                characterName="Superman">
+            </app-single-character-card>
+        
+            <app-single-character-card 
+                characterImage="./assets/img/dc-characters/batman.png" 
+                characterName="Batman">
+            </app-single-character-card>
+
+            <app-single-character-card 
+                characterImage="./assets/img/marvel-characters/black-widow.png" 
+                characterName="Black Widow">
+            </app-single-character-card>
+
+            <app-single-character-card 
+                characterImage="./assets/img/marvel-characters/black-panther.png" 
+                characterName="Black Panther">
+            </app-single-character-card>
+
+            <app-single-character-card 
+                characterImage="./assets/img/dc-characters/joker.png" 
+                characterName="Joker">
+            </app-single-character-card>
+
+            <app-single-character-card 
+                characterImage="./assets/img/marvel-characters/loki.png" 
+                characterName="Loki">
+            </app-single-character-card> -->
     </div>
 
 </div>

@@ -30,7 +30,11 @@ export class PreloaderComponent implements OnInit {
 
     console.log(this.totalImages);
 
-    this.loadImages(this.siteImages);
+		if(this.totalImages > 0){
+
+			this.loadImages(this.siteImages);
+
+		}
 
   }
 
@@ -43,7 +47,7 @@ export class PreloaderComponent implements OnInit {
 
       image.addEventListener("load", (event) => {
         
-        this. imageLoaded(event);
+        this.imageLoaded(event);
 
       }, false);
 
@@ -51,10 +55,6 @@ export class PreloaderComponent implements OnInit {
 
     }
 
-  }
-
-  preloaderLoaded(event){
-    
   }
 
   imageLoaded(event){
@@ -65,7 +65,10 @@ export class PreloaderComponent implements OnInit {
 
     if(this.imagesLoaded == this.totalImages){
 
-      this.loadComplete();
+      setTimeout(()=>{
+        this.loadComplete();
+      }, 200000);
+
       
     }
 

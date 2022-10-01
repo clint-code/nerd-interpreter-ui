@@ -65,16 +65,16 @@ body {
 /*typography*/
 h1,
 h3 {
-    font-family:'sf-speakeasy';
+    font-family: 'sf-speakeasy';
 }
 
 h4 {
-    font-family:'bangersregular';
+    font-family: 'bangersregular';
     font-size: 1.85rem;
 }
 
 p {
-    font-family:'procionoregular';
+    font-family: 'procionoregular';
     font-size: 20px;
     line-height: 1.5;
     padding-bottom: 1rem;
@@ -82,15 +82,11 @@ p {
 }
 
 h2 {
-    font-family:'bangersregular';
-}
-
-h3 {
-    font-family:'passion_oneregular';
+    font-family: 'bangersregular';
 }
 
 a {
-    font-family:'passion_oneregular';
+    font-family: 'passion_oneregular';
 
     &:focus {
         color: transparent;
@@ -101,13 +97,11 @@ a {
         text-decoration: none;
     }
 
-    //cursor: url("../img/icons/cursor.png"), auto;
-
 }
 
 
 input[type="text"] {
-    font-family:'passion_oneregular';
+    font-family: 'passion_oneregular';
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-size: 2em;
@@ -121,81 +115,33 @@ body {
     overflow-x: hidden;
 }
 
-.preloader{
-    position: absolute;
+.preloader {
+    position: fixed;
     background-color: $color-10;
-    top: 50% !important;
-    margin-top: -40px;
-    display: none;
-    z-index: 100;
-}
-
-#jpreLoader {
-    top: 50% !important;
-    margin-top: -40px;
-    display: none;
-}
-
-
-#jpreOverlay {
-    background-color: $color-10;
-}
-
-#jpreSlide {
-    position: absolute;
-    top: 0px !important;
-    right: 0px !important;
-    bottom: 0px !important;
-    left: 0px !important;
-    width: 100%;
-    height: 100%;
-}
-
-#jpreSlide .preloader1 {
-
-    position: absolute;
+    left: 0px;
+    right: 0px;
     top: 0px;
-    left: 15px;
+    bottom: 0px;
+    z-index: 10;
 
-}
+    .loaderContent {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        margin-top: -200px;
 
-#jpreSlide .progress-section,
-#jpreSlide .intro {
-
-    position: absolute;
-    top: 10%;
-    text-align: center;
-    width: 100%;
-    color: #211f44;
-
-}
-
-#jpreSlide .intro {
-
-    top: 20%;
-    display: none;
-
-    p {
-
-        font-size: 20px;
-
+        h3 {
+            font-family: 'passion_oneregular';
+        }
     }
-
-}
-
-#jpreSlide .preloader2 {
-
-    position: absolute;
-    top: 0px;
-    right: 15px;
-
 }
 
 
 .btn-black {
     border: 6px solid #000 !important;
     border-radius: 0px !important;
-    font-family:'passion_oneregular';
+    font-family: 'passion_oneregular';
     text-transform: uppercase;
     font-size: 1.5em !important;
     background-color: black !important;
@@ -421,7 +367,7 @@ body {
     p {
         font-size: 2.5em;
         line-height: 1.3em;
-        font-family:'bangersregular';
+        font-family: 'bangersregular';
         padding-bottom: 0rem !important;
     }
 }
@@ -439,7 +385,7 @@ body {
         float: left;
 
         a {
-            font-family:'sf-speakeasy';
+            font-family: 'sf-speakeasy';
             font-size: 3.5em;
         }
     }
@@ -455,7 +401,7 @@ body {
     button {
         background-color: #fff;
         border: 6px solid #000;
-        font-family:'passion_oneregular';
+        font-family: 'passion_oneregular';
         text-transform: uppercase;
         font-size: 2em;
     }
@@ -488,7 +434,7 @@ body {
     right: 0%;
 
     h3 {
-       font-family:'sf-speakeasy';
+        font-family: 'sf-speakeasy';
         text-transform: uppercase;
     }
 
@@ -536,7 +482,7 @@ body {
         color: #fff;
         font-size: 30px;
 
-        &:hover{
+        &:hover {
             color: #fff;
             text-decoration: underline;
         }
@@ -606,13 +552,13 @@ body {
     }
 
     .stat-top {
-        font-family:'bangersregular';
+        font-family: 'bangersregular';
         font-size: 3em;
         color: $color-8;
     }
 
     .stat-bottom {
-        font-family:'passion_oneregular';
+        font-family: 'passion_oneregular';
         font-size: 2.5em;
     }
 }
@@ -631,7 +577,7 @@ body {
     }
 
     .bottom-cnt {
-        font-family:'passion_oneregular';
+        font-family: 'passion_oneregular';
         font-size: 2.5em;
         text-transform: capitalize;
     }
@@ -713,11 +659,11 @@ body {
 
     .card-body {
         h4 {
-           font-family:'sf-speakeasy';
+            font-family: 'sf-speakeasy';
         }
 
         p {
-            font-family:'passion_oneregular';
+            font-family: 'passion_oneregular';
         }
     }
 }
@@ -799,7 +745,7 @@ body {
         width: 50%;
         margin: 15px;
         height: 100px;
-        font-family:'procionoregular';
+        font-family: 'procionoregular';
         border-width: 1px;
         text-transform: none;
     }
@@ -807,7 +753,7 @@ body {
     button {
         cursor: pointer;
         text-transform: uppercase;
-        font-family:'passion_oneregular';
+        font-family: 'passion_oneregular';
         font-size: 25px;
         letter-spacing: 1.5px;
         width: 20%;
@@ -902,7 +848,7 @@ body {
         top: -35px;
 
         h3 {
-            font-family:'bangersregular';
+            font-family: 'bangersregular';
             font-size: 5em;
         }
     }
@@ -915,7 +861,7 @@ body {
 
         h4 {
             color: #fff;
-            font-family:'passion_oneregular';
+            font-family: 'passion_oneregular';
             text-transform: uppercase;
         }
     }
@@ -935,9 +881,9 @@ body {
     }
 }
 
-.more-heroes-journey{
-    .card{
-        img{
+.more-heroes-journey {
+    .card {
+        img {
             width: 100%;
         }
     }
@@ -1219,7 +1165,7 @@ body {
 
         .list-group-item {
             font-size: 1.6em;
-            font-family:'passion_oneregular';
+            font-family: 'passion_oneregular';
         }
 
     }
