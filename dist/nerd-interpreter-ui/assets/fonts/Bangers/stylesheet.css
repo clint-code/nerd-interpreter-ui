@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'bangersregular';
+    src: url('bangers-regular-webfont.eot');
+    src: url('bangers-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('bangers-regular-webfont.woff2') format('woff2'),
+         url('bangers-regular-webfont.woff') format('woff'),
+         url('bangers-regular-webfont.ttf') format('truetype'),
+         url('bangers-regular-webfont.svg#bangersregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
