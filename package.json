@@ -24,7 +24,6 @@
     "gsap": "^3.9.1",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.5.0",
-    "ngx-isotope": "^0.1.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
