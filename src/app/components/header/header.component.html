@@ -29,7 +29,9 @@
 
                 <div class="nav-logo-section">
 
-                    <a routerLink="/">
+                    <a 
+                        routerLink="/"
+                        (click)="toggleMenu()">
                         <img src="../../../assets/img/nav-menu/logo-black.png" alt="the-nerd-interpreter" class="img-fluid">
                     </a>
 
@@ -50,6 +52,7 @@
                             data-background="dc-characters"
                             (mouseenter)="handleLinkHover($event)"
                             (mouseleave)="resetStyles($event)"
+                            (click)="toggleMenu()"
                             >
                             DC Characters
                         </a>
@@ -61,7 +64,8 @@
                             routerLinkActive="active"
                             data-background="marvel-characters"
                             (mouseenter)="handleLinkHover($event)"
-                            (mouseleave)="resetStyles($event)">
+                            (mouseleave)="resetStyles($event)"
+                            (click)="toggleMenu()">
                             Marvel Characters
                         </a>
                     </li>
@@ -72,7 +76,8 @@
                             routerLinkActive="active"
                             data-background="about"
                             (mouseenter)="handleLinkHover($event)"
-                            (mouseleave)="resetStyles($event)">
+                            (mouseleave)="resetStyles($event)"
+                            (click)="toggleMenu()">
                             About
                         </a>
                     </li>
@@ -84,7 +89,8 @@
                             routerLinkActive="active"
                             data-background="contact"
                             (mouseenter)="handleLinkHover($event)"
-                            (mouseleave)="resetStyles($event)">
+                            (mouseleave)="resetStyles($event)"
+                            (click)="toggleMenu()">
                             Contact
                         </a>
                     </li>
