@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 
+import { NgxMasonryModule } from 'ngx-masonry';
+
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { FooterAltComponent } from '../components/footer-alt/footer-alt.component';
@@ -29,7 +31,8 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
       imports: [
         RouterModule,
         CommonModule,
-        FormsModule
+        FormsModule,
+        NgxMasonryModule
       ],
 
       exports: [
@@ -40,7 +43,8 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
         CharacterStatsComponent,
         MiniNavigationComponent,
         ComicSliderComponent,
-        SingleCharacterCardComponent
+        SingleCharacterCardComponent,
+        NgxMasonryModule
       ]
 
 })

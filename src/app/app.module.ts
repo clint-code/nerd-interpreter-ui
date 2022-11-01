@@ -35,7 +35,8 @@ import { ProgressOnscrollbarComponent } from './components/progress-onscrollbar/
     SingleHeroJourneyComponent,
     PreloaderComponent,
     EmailsubscriptionComponent,
-    ProgressOnscrollbarComponent
+    ProgressOnscrollbarComponent,
+    
   ],
   imports: [
     BrowserModule,

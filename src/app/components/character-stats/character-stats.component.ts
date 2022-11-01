@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-character-stats',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character-stats.component.css']
 })
 export class CharacterStatsComponent implements OnInit {
+
+  @Input() comicUniverse: string;
+  @Input() characterAlignment: string;
+  @Input() baseOfOperation: string;
 
   constructor() { }
 

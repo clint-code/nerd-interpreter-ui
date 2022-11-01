@@ -75,14 +75,4 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  // closeMenu(){
-
-  //   $("header .mainMenu").stop().animate({
-
-  //     left: '-100%'
-
-  //   }, 1000);
-
-  // }
-
 }

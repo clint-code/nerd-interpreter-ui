@@ -15,6 +15,12 @@ export class SingleCharacterComponent implements OnInit {
 
     $(window).scroll(this.progressScrollBar);
 
+    $('html, body').animate({
+      scrollTop: $(".banner-image-section").offset({
+        top: 0
+      })
+    }, 500);
+
   }
 
   progressScrollBar(){
@@ -34,6 +40,10 @@ export class SingleCharacterComponent implements OnInit {
 
     $("#scrollbar").css("width", scrollPercent + "%");
 
+
+  }
+
+  scrollDownPage(event){
 
   }
 

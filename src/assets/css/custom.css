@@ -284,12 +284,12 @@ body {
 
 /*isotope js*/
 .grid {
-  margin: 0 auto;
+  margin-left: 5%;
+  width: 90%;
+  margin-right: 5%;
 }
 .grid .grid-sizer,
 .grid .character-item {
-  width: 27%;
-  margin-left: 2.5%;
   padding: 20px;
   margin-right: 2.5%;
   float: left;
@@ -902,10 +902,7 @@ body {
     font-size: 3rem;
   }
 
-  .src-cnt-section h2 {
-    font-size: 4rem;
-  }
-  .src-cnt-section .list-group-item {
+  .sources-section .text-section .list-group-item a {
     font-size: 1.6em;
     font-family: "passion_oneregular";
   }

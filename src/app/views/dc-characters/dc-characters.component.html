@@ -23,6 +23,7 @@
 </app-banner>
 
 <div class="row">
+
     <div class="p-3 mt-3 text-intro-section">
         <p class="text-center">
             Here's an in-depth analysis of what makes these DC comic book
@@ -30,6 +31,7 @@
             behind their intentions as heroes or villains
         </p>
     </div>
+
 </div>
 
 <div class="row">
@@ -42,7 +44,7 @@
 
 </div>
 
-<div class="row">
+<div class="">
 
     <div class="col p-3">
 
@@ -50,23 +52,20 @@
             id="filters" 
             class="filter-button-group text-center">
             <button 
-                class="button is-checked p-3 m-3" 
-                data-filter="*"
-                (click)="filterCharacters()">
+                class="button filterButton is-checked p-3 m-3" 
+                (click)="filterCharacters('all')">
                 all characters
             </button>
 
             <button 
-                class="button p-3 m-3" 
-                data-filter=".dc-heroes"
-                (click)="filterCharacters()">
+                class="button filterButton p-3 m-3" 
+                (click)="filterCharacters('heroes')">
                 Heroes
             </button>
 
             <button 
-                class="button p-3 m-3" 
-                data-filter=".dc-villains"
-                (click)="filterCharacters()">
+                class="button filterButton p-3 m-3" 
+                (click)="filterCharacters('villains')">
                 Villains
             </button>
 
@@ -76,9 +75,30 @@
 
     <div class="grid">
 
-        <div class="grid-sizer"></div>
+    <div class="grid-sizer"></div>
 
-        <div class="character-item dc-heroes" data-category="hero">
+       <ngx-masonry [options]="options" [updateLayout]="charactersData">
+
+        <div ngxMasonryItem *ngFor="let item of charactersData">
+
+            <!-- Character Item -->
+            <div class="character-item" [ngClass]="styles(item)" (click)="expand(item)">
+
+                <div class="character-image">
+                    <img src="{{ item.characterImage }}" alt="{{ item.alt }}" class="img-fluid">
+                </div>
+
+                <a class="btn btn-light name" routerLink="/single-character">
+                    <h3 class="name display-4">{{item.title}}</h3>
+                </a>
+                
+            </div>
+
+        </div>
+
+       </ngx-masonry>
+
+        <!-- <div class="character-item dc-heroes" data-category="hero">
 
             <div class="character-image">
                 <img src="./assets/img/dc-characters/superman.png" alt="superman" class="img-fluid">
@@ -165,37 +185,9 @@
                 <h3 class="name display-4">Zod</h3>
             </a>
 
-        </div>
+        </div> -->
 
-            <!-- <app-single-character-card 
-                characterImage="./assets/img/dc-characters/superman.png" 
-                characterName="Superman">
-            </app-single-character-card>
-        
-            <app-single-character-card 
-                characterImage="./assets/img/dc-characters/batman.png" 
-                characterName="Batman">
-            </app-single-character-card>
 
-            <app-single-character-card 
-                characterImage="./assets/img/marvel-characters/black-widow.png" 
-                characterName="Black Widow">
-            </app-single-character-card>
-
-            <app-single-character-card 
-                characterImage="./assets/img/marvel-characters/black-panther.png" 
-                characterName="Black Panther">
-            </app-single-character-card>
-
-            <app-single-character-card 
-                characterImage="./assets/img/dc-characters/joker.png" 
-                characterName="Joker">
-            </app-single-character-card>
-
-            <app-single-character-card 
-                characterImage="./assets/img/marvel-characters/loki.png" 
-                characterName="Loki">
-            </app-single-character-card> -->
     </div>
 
 </div>

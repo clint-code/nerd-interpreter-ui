@@ -374,12 +374,14 @@ body {
 
 /*isotope js*/
 .grid {
-    margin: 0 auto;
+    margin-left: 5%;
+    width: 90%;
+    margin-right: 5%;
 
     .grid-sizer,
     .character-item {
-        width: 27%;
-        margin-left: 2.5%;
+        // width: 27%;
+        // margin-left: 2.5%;
         padding: 20px;
         margin-right: 2.5%;
         float: left;
@@ -1157,15 +1159,17 @@ body {
         }
     }
 
-    .src-cnt-section {
+    .sources-section {
 
-        h2 {
-            font-size: 4.0rem;
-        }
+        .text-section{
+            
+            .list-group-item {
 
-        .list-group-item {
-            font-size: 1.6em;
-            font-family: 'passion_oneregular';
+                a {
+                    font-size: 1.6em;
+                    font-family: 'passion_oneregular';
+                }
+            }
         }
 
     }

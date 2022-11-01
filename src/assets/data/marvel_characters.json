@@ -1,0 +1,40 @@
+[
+    {
+      "title": "Black Widow",
+      "category": "heroes",
+      "characterImage": "./assets/img/marvel-characters/black-widow.png",
+      "alt": "blackwidow"
+    },
+    {
+      "title": "Black Panther",
+      "category": "heroes",
+      "characterImage": "./assets/img/marvel-characters/black-panther.png",
+      "alt": "blackpanther"
+    },
+    {
+      "title": "Iron Man",
+      "category": "heroes",
+      "characterImage": "./assets/img/marvel-characters/iron-man.png",
+      "alt": "iron-man"
+    },
+    {
+      "title": "Magneto",
+      "category": "villains",
+      "characterImage": "./assets/img/marvel-characters/magneto.png",
+      "alt": "magneto"
+    }, 
+    {
+      "title": "Thanos",
+      "category": "villains",
+      "characterImage": "./assets/img/marvel-characters/thanos.png",
+      "alt": "thanos"
+    },
+
+    {
+      "title": "Erik Killmonger",
+      "category": "villains",
+      "characterImage": "./assets/img/marvel-characters/erik-killmonger.png",
+      "alt": "erik-killmonger"
+    }
+
+]

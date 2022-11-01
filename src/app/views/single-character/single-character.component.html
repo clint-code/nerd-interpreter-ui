@@ -1,6 +1,6 @@
-    <div id="scrollbar">
-        <div id="scrollbar-bg"></div>
-    </div>
+<div id="scrollbar">
+    <div id="scrollbar-bg"></div>
+</div>
 
 <!--Logo section-->
     <div class="mini-logo-section">
@@ -17,10 +17,87 @@
 >
 </app-banner>
 
+<app-character-stats
+    comicUniverse="DC"
+    characterAlignment="Villain"
+    baseOfOperation="Gotham City"
+>
+</app-character-stats>
+
+    <!--mini navigation section-->
+    <section class="mini-navigation">
+
+        <h2 class="text-center display-4 p-5">Where would you like to start?</h2>
+
+        <div class="row nav-section justify-content-center p-5" id="mini-menu">
+
+            <ul class="d-flex nav-list">
+
+                <li class="p-3 list" data-aos="zoom-in-right">
+
+                    <div 
+                        class="clickArea" 
+                        data-target=""
+                        (click)="scrollDownPage($event)">
+                        
+                        <div class="top-cnt text-center">
+                            <img src="./assets/img/icons/facts.png" alt="facts">
+                        </div>
+                        <div class="text-center bottom-cnt-section">
+                            <span class="bottom-cnt">Facts about the Character</span>
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <li class="p-3 list">
+
+                    <div class="clickArea" 
+                         data-target=""
+                         (click)="scrollDownPage($event)">
+
+                        <div class="top-cnt text-center">
+                            <img src="./assets/img/icons/open-magnifying-glass.png" alt="magnifying-glass">
+                        </div>
+
+                        <div class="text-center bottom-cnt-section">
+                            <span class="bottom-cnt">Character Deep Dive</span>
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li class="p-3 list">
+
+                    <div class="clickArea" 
+                         data-target=""
+                         (click)="scrollDownPage($event)">
+
+                        <div class="top-cnt text-center">
+                            <img src="./assets/img/icons/movie-comics.png" alt="movies-comics">
+                        </div>
+
+                        <div class="text-center bottom-cnt-section">
+                            <span class="bottom-cnt">Comics</span>
+                        </div>
+
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+
+    </section>
+    <!--end of mini-navigation section-->
+
 <div class="content-container">
 
     <!--character-facts-->
-    <section id="character-facts" class="main-cnt mt-5" data-aos="fade-up" data-aos-duration="1300">
+    <section class="main-cnt mt-5 character-facts">
 
         <div class="container">
 
@@ -93,7 +170,7 @@
     <!--end of character-facts-->
 
     <!--character-deep dive-->
-    <section id="character-deep-dive" class="main-cnt mt-5" data-aos="fade-up" data-aos-duration="1300">
+    <section class="main-cnt mt-5 character-deep-dive">
 
         <div class="container">
 
@@ -201,37 +278,127 @@
     </section>
     <!--end of character-facts-->
 
-        <!--source section-->
-        <section id="source-section" class="mt-5" data-aos="fade-up" data-aos-duration="1000">
+    <!--comics section-->
+    <section id="character-comics" class="comic-recommendations-section p-5">
+
+        <div class="container">
+            
+            <div class="row">
+
+                <div class="intro-section text-center mb-5">
+
+                    <h2 class="display-2 p-2 heading-txt">
+                        Comics
+                    </h2>
+
+                </div>
+
+                <div class="col-md-8 text-section">
+
+                    <div class="text-section">
+
+                        <div class="cnt-section text-left p-2">
+                            <p>
+                                Here's a showcase of some comics stories of the Joker.
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 slider-section">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            
+            </div>
+        
+        </div>
+
+    </section>
+    <!--end of comics section-->
+
+    <!--source section-->
+    <section class="mt-5 source-section">
 
             <div class="container">
     
                 <div class="row">
     
-                    <div class="col src-cnt-section">
-                        <h2 class="display-3 text-center">
-                            Sources
-                        </h2>
-    
-                        <ol class="list-group">
-                            <li class="list-group-item">The Philosophy Of The Joker</li>
-                            <li class="list-group-item">The Dark Knight- Creating The Ultimate Antagonist</li>
-                            <li class="list-group-item">DC Wikia</li>
-                            <li class="list-group-item">The Dark Knight- Creating The Ultimate Antagonist</li>
-                            <li class="list-group-item">DC Wikia</li>
-                        </ol>
-    
-                    </div>
+                        <div class="intro-section text-center mb-5">
+
+                            <h2 class="display-2 p-2 heading-txt">
+                                Sources
+                            </h2>
+
+                        </div>
+
+                        <div class="col-md-12 text-section">
+
+                            <ol class="list-group">
+                                <li class="list-group-item">
+                                    <a href="#">
+                                        The Philosophy Of The Joker
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#">
+                                        The Dark Knight- Creating The Ultimate Antagonist
+                                    </a>
+                                </li>
+                            </ol>
+
+                        </div>                    
     
                 </div>
     
     
             </div>
     
-        </section>
-        <!--end of source-section -->
+    </section>
+    <!--end of source-section -->
 
 </div>
+
+    <!--more characters-->
+
+    <!-- <section class="mt-5">
+        
+        <div class="container">
+
+            <div class="row">
+
+                <div class="intro-section text-center ">
+
+                    <h2 class="display-2 p-2">
+                        More Characters
+                    </h2>
+
+                </div>
+
+                <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+
+                    <div class="card character">
+
+                        <img src="" class="card-img-top img-fluid"/>
+
+                        <div class="card-body">
+
+                            <a class="card-text text-center">
+                                <h4 class="display-4"></h4>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+    </section> -->
+
+    <!--end of more characters-->
 
 <app-emailsubscription></app-emailsubscription>
 

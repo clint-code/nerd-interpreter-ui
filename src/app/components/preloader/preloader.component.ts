@@ -26,10 +26,6 @@ export class PreloaderComponent implements OnInit {
     this.siteImages = this.images;
     this.totalImages = this.siteImages.length;
 
-    console.log(this.siteImages);
-
-    console.log(this.totalImages);
-
 		if(this.totalImages > 0){
 
 			this.loadImages(this.siteImages);
@@ -72,7 +68,6 @@ export class PreloaderComponent implements OnInit {
       
     }
 
-    console.log(this.percentageLoaded);
 
   }
 
