@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-comic-slider',
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComicSliderComponent implements OnInit {
 
+  @Input() sliderImages: string;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    //this.createCarousel();
+
   }
+
+  createCarousel() {
+
+    $(".owl-carousel").owlCarousel({
+      items: 6,
+      itemsDesktop: [1199, 6],
+      itemsDesktopSmall: [980, 4],
+      itemsTablet: [768, 2],
+      itemsTabletSmall: false,
+      itemsMobile: [479, 1],
+      navigation: false,
+      autoPlay: true,
+      pagination: false,
+      navigationText: ["", ""],
+    });
+
+  }
+
 
 }

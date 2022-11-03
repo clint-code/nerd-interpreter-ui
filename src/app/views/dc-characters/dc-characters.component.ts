@@ -55,7 +55,6 @@ export class DcCharactersComponent implements OnInit {
     private characterData: CharacterdataService
   ) { 
 
-
   }
 
   ngOnInit(): void {
@@ -99,26 +98,27 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category:string){
+  filterCharacters(category:any){
 
-    if( $(this).hasClass("is-checked")) {
+    if($(this).hasClass("is-checked") ) {
 
       $(".filterButton").removeClass("is-checked");
-      $(this).removeClass("is-checked").next(".filterButton");
-
+      $(this).removeClass("is-checked");
     
     } else {
 
       $(".filterButton").removeClass("is-checked");
-      $(this).addClass("is-checked").next(".filterButton");
+      $(this).addClass("is-checked");
+
+      console.log("Added class");
 
     }
 
-    this.charactersData.refined = this.charactersData.cached
+    // this.charactersData.refined = this.charactersData.cached
 
-        .filter(p => p.category == category || category == 'all');
+    //     .filter(p => p.category == category || category == 'all');
 
-      this.masonry.reloadItems();
+    //   this.masonry.reloadItems();
 
   }
 

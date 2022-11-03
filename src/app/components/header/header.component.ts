@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
         left: 0
 
-      }, 1000);
+      }, 500);
 
     } else {
 
@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit {
 
         left: '-100%'
 
-      }, 1000);
+      }, 500);
 
     }
       

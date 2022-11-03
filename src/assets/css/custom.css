@@ -311,6 +311,10 @@ body {
   text-transform: uppercase;
   font-size: 2em;
 }
+.filter-button-group button:hover {
+  background-color: #000;
+  color: #fff;
+}
 .filter-button-group .is-checked {
   background-color: #000;
   color: #fff;
@@ -661,7 +665,6 @@ body {
   content: "";
   width: 100%;
   height: 100%;
-  border: 10px solid #000;
   position: absolute;
   z-index: 2;
   left: 0%;

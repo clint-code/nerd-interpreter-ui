@@ -406,6 +406,11 @@ body {
         font-family: 'passion_oneregular';
         text-transform: uppercase;
         font-size: 2em;
+
+        &:hover{
+            background-color: #000;
+            color: #fff;
+        }
     }
 
     .is-checked {
@@ -816,7 +821,6 @@ body {
         content: "";
         width: 100%;
         height: 100%;
-        border: 10px solid #000;
         position: absolute;
         z-index: 2;
         left: 0%;

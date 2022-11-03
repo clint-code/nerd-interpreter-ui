@@ -24,6 +24,7 @@
     "gsap": "^3.9.1",
     "jquery": "^3.5.0",
     "ngx-masonry": "^1.1.4",
+    "ngx-owl-carousel-o": "^7.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
