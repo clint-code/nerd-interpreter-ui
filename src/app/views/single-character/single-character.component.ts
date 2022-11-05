@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import Preloader from '../../utils/preloader';
 import  $  from 'jquery';
 
 @Component({
@@ -9,9 +9,15 @@ import  $  from 'jquery';
 })
 export class SingleCharacterComponent implements OnInit {
 
+  loadingView:boolean = false;
+  imagesLoaded:boolean = false;
+  siteImages:any = [];
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.loadingView = true;
 
     $(window).scroll(this.progressScrollBar);
 
@@ -21,6 +27,12 @@ export class SingleCharacterComponent implements OnInit {
       })
     }, 500);
 
+  }
+
+  ngAfterViewInit():void{
+
+    this.siteImages = Preloader.getImages();
+    
   }
 
   progressScrollBar(){
