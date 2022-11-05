@@ -78,7 +78,7 @@
 
        <ngx-masonry [options]="options" [updateLayout]="charactersData">
 
-        <div ngxMasonryItem *ngFor="let item of charactersData">
+        <div ngxMasonryItem *ngFor="let item of charactersData.refined">
 
             <!-- Character Item -->
             <div class="character-item">
@@ -97,99 +97,68 @@
 
        </ngx-masonry>
 
-        <!-- <div class="character-item dc-heroes" data-category="hero">
-
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/superman.png" alt="superman" class="img-fluid">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Superman</h3>
-            </a>
-
-        </div>
-
-        <div class="character-item dc-heroes" data-category="hero">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/batman.png" alt="batman">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Batman</h3>
-            </a>
-        </div>
-
-        <div class="character-item dc-villains" data-category="villain">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/joker.png" alt="joker">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Joker</h3>
-            </a>
-        </div>
-
-        <div class="character-item dc-villains" data-category="villain">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/lex-luthor.png" alt="lex-luthor">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Lex Luthor</h3>
-            </a>
-
-        </div>
-
-        <div class="character-item dc-heroes" data-category="hero">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/aquaman.png" alt="aquaman">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Aquaman</h3>
-            </a>
-
-        </div>
-
-        <div class="character-item dc-villains" data-category="villain">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/black-manta.png" alt="black-manta">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Black Manta</h3>
-            </a>
-
-        </div>
-
-        <div class="character-item dc-villains" data-category="villain">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/two-face.png" alt="two-face">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Two Face</h3>
-            </a>
-
-        </div>
-
-        <div class="character-item dc-villains" data-category="villain">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/bane.png" alt="bane">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Bane</h3>
-            </a>
-
-        </div>
-
-        <div class="character-item dc-villains" data-category="villain">
-            <div class="character-image">
-                <img src="./assets/img/dc-characters/zod.png" alt="zod">
-            </div>
-            <a class="btn btn-light name" routerLink="/single-character">
-                <h3 class="name display-4">Zod</h3>
-            </a>
-
-        </div> -->
-
-
     </div>
 
 </div>
+
+<section class="more-characters-section p-4 mt-5">
+
+    <div class="row">
+        <div class="col-md-1 vertical-text-section">
+            <h2 class="display-3 text-center vertical-text">
+                More on the Nerd interpreter......
+            </h2>
+        </div>
+
+
+        <div class="col-md-11 more-cnt-section">
+
+            <div class="mini-background-section mb-5">
+
+                <div class="caption-text-section mb-5">
+                    <h3 class="text-white display-3 text-right">Marvel Characters</h3>
+                    <p class="text-white text-right">
+                        Check out character studies from the characters in the Marvel Universe, both heroes and villains
+                    </p>
+                    <a routerLink="/marvel-characters" 
+                        class="btn btn-light text-black m-3">
+                        Discover More
+                    </a>
+                </div>
+
+                <img 
+                    src="./assets/img/marvel-mini-background.jpg"
+                    alt="marvel-mini-background" 
+                    class="img-fluid">
+
+            </div>
+
+            <div class="mini-background-section mt-5">
+
+                <div class="caption-text-section mb-5">
+
+                    <h3 class="text-white display-3 text-right">Hero's Journey</h3>
+                    <p class="text-white text-right">
+                        The Hero’s Journey, illustrates the growth process of a character to greatness.
+                    </p>
+                    <h3 class="text-white display-4 text-right">
+                        Coming Soon!
+                    </h3>
+
+                </div>
+
+                <img 
+                    src="./assets/img/heroes-journey-background.jpg"
+                    alt="heroes-journey-background" 
+                    class="img-fluid">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <app-emailsubscription></app-emailsubscription>
 

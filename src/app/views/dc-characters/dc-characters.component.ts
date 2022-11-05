@@ -7,18 +7,17 @@ import { HttpClient } from '@angular/common/http';
 import { CharacterdataService } from '../../services/characterdata.service';
 import  $  from 'jquery';
 
-// export interface RecordData { 
-//   id: number, 
-//   title: string, 
-//   category: string, 
-//   opened?: boolean, 
-// };
+export interface RecordData { 
+  id: number, 
+  title: string, 
+  category: string, 
+  characterImage: string,
+};
 
-// interface RecordStore {
-//   cached?: RecordData[];
-//   refined?: RecordData[];
-//   stamp?: Date;
-// }
+interface RecordcharactersData {
+  cached?: RecordData[];
+  refined?: RecordData[];
+}
 
 @Component({
   selector: 'app-dc-characters',
@@ -37,8 +36,8 @@ export class DcCharactersComponent implements OnInit {
 
   selection: string;
   reset: string;
-  charactersData:any;
- // charactersData: RecordcharactersData = {};
+ // charactersData:any;
+  charactersData: RecordcharactersData = {};
 
   options: NgxMasonryOptions = {
 
@@ -61,25 +60,86 @@ export class DcCharactersComponent implements OnInit {
 
     this.loadingView = true;
 
-    this.getDcCharactersData();
+    $('html, body').animate({
+      scrollTop: $(".banner-image-section").offset({
+        top: 0
+      })
+    }, 500);
+
+    let data = [
+
+      {
+        id: 1,
+        title: "Superman",
+        category: "hero",
+        characterImage: "./assets/img/dc-characters/superman.png",
+        alt: "superman"
+      },
+
+      {
+        id: 4,
+        title: "Joker",
+        category: "villain",
+        characterImage: "./assets/img/dc-characters/joker.png",
+        alt: "joker"
+      }, 
+      {
+        id: 3,
+        title: "Batman",
+        category: "hero",
+        characterImage: "./assets/img/dc-characters/batman.png",
+        alt: "batman"
+      },
+      {
+        id: 5,
+        title: "Lex Luthor",
+        category: "villain",
+        characterImage: "./assets/img/dc-characters/lex-luthor.png",
+        alt: "lex-luthor"
+      },
+
+      {
+        id: 2,
+        title: "Aquaman",
+        category: "hero",
+        characterImage: "./assets/img/dc-characters/aquaman.png",
+        alt: "aquaman"
+      },
+  
+      {
+        id: 6,
+        title: "Zod",
+        category: "villain",
+        characterImage: "./assets/img/dc-characters/zod.png",
+        alt: "zod"
+      }
+
+    ]
+
+    //this.getDcCharactersData();
 
     this.selection = 'all';
-    //this.charactersData.cached = this.charactersData;
-    //this.charactersData.refined = this.charactersData.sort((a,b) => a.id - b.id);
+    this.charactersData.cached = data;
+
+    setTimeout( ()=> {
+
+      this.charactersData.refined = data.sort((a,b) => a.id - b.id);
+
+    }, 1000);
 
   }
 
-  expand(item){
-    item.opened = !item.opened;
-    this.masonry.layout();
-  }
+  // expand(item){
+  //   item.opened = !item.opened;
+  //   this.masonry.layout();
+  // }
 
-  styles(item){
-    return {
-      'opened' : item.opened
-    }
+  // styles(item){
+  //   return {
+  //     'opened' : item.opened
+  //   }
 
-  }
+  // }
 
   ngAfterViewInit():void{
 
@@ -87,16 +147,16 @@ export class DcCharactersComponent implements OnInit {
     
   }
 
-  getDcCharactersData(){
+  // getDcCharactersData(){
 
-    this.characterData.getAllDcCharactersListingJSON().subscribe( response => {
+  //   this.characterData.getAllDcCharactersListingJSON().subscribe( response => {
 
-      this.charactersData = response;
+  //     this.charactersData = response;
 
-      console.log(this.charactersData);
-    })
+  //     console.log(this.charactersData);
+  //   })
 
-  }
+  // }
 
   filterCharacters(category:any){
 
@@ -114,11 +174,11 @@ export class DcCharactersComponent implements OnInit {
 
     }
 
-    // this.charactersData.refined = this.charactersData.cached
+    this.charactersData.refined = this.charactersData.cached
 
-    //     .filter(p => p.category == category || category == 'all');
+        .filter(p => p.category == category || category == 'all');
 
-    //   this.masonry.reloadItems();
+      this.masonry.reloadItems();
 
   }
 
