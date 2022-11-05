@@ -29,66 +29,50 @@
 
         <h2 class="text-center display-4 p-5">Where would you like to start?</h2>
 
-        <div class="row nav-section justify-content-center p-5" id="mini-menu">
+        <div class="row nav-section p-4">
 
-            <ul class="d-flex nav-list">
+            <div class="singleItem">
 
-                <li class="p-3 list" data-aos="zoom-in-right">
-
-                    <div 
-                        class="clickArea" 
-                        data-target=""
-                        (click)="scrollDownPage($event)">
+                <div class="clickArea" data-target="character-facts"(click)="scrollDownPage($event)"></div>
                         
-                        <div class="top-cnt text-center">
-                            <img src="./assets/img/icons/facts.png" alt="facts">
-                        </div>
-                        <div class="text-center bottom-cnt-section">
-                            <span class="bottom-cnt">Facts about the Character</span>
-                        </div>
-
+                    <div class="top-cnt text-center">
+                        <img src="./assets/img/icons/facts.png" alt="facts">
+                    </div>
+                        
+                    <div class="text-center bottom-cnt-section">
+                        <p class="bottom-cnt">Facts about the Character</p>
                     </div>
 
-                </li>
+            </div>
 
+            <div class="singleItem">
 
-                <li class="p-3 list">
+                <div class="clickArea" data-target="character-deep-dive"(click)="scrollDownPage($event);"></div>
 
-                    <div class="clickArea" 
-                         data-target=""
-                         (click)="scrollDownPage($event)">
-
-                        <div class="top-cnt text-center">
-                            <img src="./assets/img/icons/open-magnifying-glass.png" alt="magnifying-glass">
-                        </div>
-
-                        <div class="text-center bottom-cnt-section">
-                            <span class="bottom-cnt">Character Deep Dive</span>
-                        </div>
-
+                    <div class="top-cnt text-center">
+                        <img src="./assets/img/icons/open-magnifying-glass.png" alt="magnifying-glass">
                     </div>
 
-                </li>
-
-                <li class="p-3 list">
-
-                    <div class="clickArea" 
-                         data-target=""
-                         (click)="scrollDownPage($event)">
-
-                        <div class="top-cnt text-center">
-                            <img src="./assets/img/icons/movie-comics.png" alt="movies-comics">
-                        </div>
-
-                        <div class="text-center bottom-cnt-section">
-                            <span class="bottom-cnt">Comics</span>
-                        </div>
-
+                    <div class="text-center bottom-cnt-section">
+                        <p class="bottom-cnt">Character Deep Dive</p>
                     </div>
 
-                </li>
+            </div>
 
-            </ul>
+            <div class="singleItem">
+
+                <div class="clickArea" data-target="comic-recommendations" (click)="scrollDownPage($event);"></div>
+
+                    <div class="top-cnt text-center">
+                        <img src="./assets/img/icons/movie-comics.png" alt="movies-comics">
+                    </div>
+
+                    <div class="text-center bottom-cnt-section">
+                        <p class="bottom-cnt">Comics</p>
+                    </div>
+
+            </div>
+
         </div>
 
     </section>
@@ -279,7 +263,7 @@
     <!--end of character-facts-->
 
     <!--comics section-->
-    <section id="character-comics" class="comic-recommendations-section p-5">
+    <section id="character-comics" class="comic-recommendations p-5">
 
         <div class="container">
             

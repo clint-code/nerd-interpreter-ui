@@ -45,6 +45,17 @@ export class SingleCharacterComponent implements OnInit {
 
   scrollDownPage(event){
 
+    console.log(event);
+
+    let targetDiv = event.target.dataset.target;
+    let contentDiv = $('.' + targetDiv);
+
+    console.log(targetDiv + " " + contentDiv);
+
+    $('html, body').stop().animate({
+      scrollTop: contentDiv.offset().top
+    }, 1000);
+
   }
 
 }
