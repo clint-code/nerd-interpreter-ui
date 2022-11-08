@@ -55,7 +55,7 @@ export class SingleCharacterComponent implements OnInit {
 
   }
 
-  scrollDownPage(event){
+  scrollPage(event){
 
     console.log(event);
 
@@ -67,6 +67,14 @@ export class SingleCharacterComponent implements OnInit {
     $('html, body').stop().animate({
       scrollTop: contentDiv.offset().top
     }, 1000);
+
+  }
+
+  showUpScroll(){
+
+    let scrollUp= $(".scrollup");
+
+    scrollUp.toggleClass('scrollup-visible', $(this).scrollTop() > scrollUp.height());
 
   }
 

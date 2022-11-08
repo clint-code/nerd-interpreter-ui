@@ -687,11 +687,13 @@ body {
 }
 
 .scrollup {
-    display: none;
+    //display: none;
+    display: block;
     position: fixed;
     bottom: 10px;
     right: 10px;
     z-index: 2;
+    cursor: pointer;
 
     img {
         width: 50px;

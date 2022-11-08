@@ -40,7 +40,7 @@
 
             <div class="singleItem">
 
-                <div class="clickArea" data-target="character-facts"(click)="scrollDownPage($event)"></div>
+                <div class="clickArea" data-target="character-facts"(click)="scrollPage($event)"></div>
                         
                     <div class="top-cnt text-center">
                         <img src="./assets/img/icons/facts.png" alt="facts">
@@ -54,7 +54,7 @@
 
             <div class="singleItem">
 
-                <div class="clickArea" data-target="character-deep-dive"(click)="scrollDownPage($event);"></div>
+                <div class="clickArea" data-target="character-deep-dive"(click)="scrollPage($event);"></div>
 
                     <div class="top-cnt text-center">
                         <img src="./assets/img/icons/open-magnifying-glass.png" alt="magnifying-glass">
@@ -68,7 +68,7 @@
 
             <div class="singleItem">
 
-                <div class="clickArea" data-target="comic-recommendations" (click)="scrollDownPage($event);"></div>
+                <div class="clickArea" data-target="comic-recommendations" (click)="scrollPage($event);"></div>
 
                     <div class="top-cnt text-center">
                         <img src="./assets/img/icons/movie-comics.png" alt="movies-comics">
@@ -268,6 +268,10 @@
 
     </section>
     <!--end of character-facts-->
+
+    <div class="scrollup" data-target="mini-navigation" (click)="scrollPage($event)">
+        <img src="./assets/img/icons/scroll-up-icon.png" alt="" class="img-fluid" />
+    </div>
 
     <!--comics section-->
     <section id="character-comics" class="comic-recommendations p-5">
