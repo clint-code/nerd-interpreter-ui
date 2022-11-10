@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import  $  from 'jquery';
 
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 @Component({
   selector: 'app-single-character',
   templateUrl: './single-character.component.html',
@@ -32,6 +35,16 @@ export class SingleCharacterComponent implements OnInit {
   ngAfterViewInit():void{
 
     this.siteImages = Preloader.getImages();
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    setTimeout(() => {
+
+      this.fadeInLeft();
+
+      this.animateContentCategory();
+
+    }, 1000);
     
   }
 
@@ -75,6 +88,46 @@ export class SingleCharacterComponent implements OnInit {
     let scrollUp= $(".scrollup");
 
     scrollUp.toggleClass('scrollup-visible', $(this).scrollTop() > scrollUp.height());
+
+  }
+
+  fadeInLeft(){
+
+    const scrollBox = gsap.timeline({
+
+      scrollTrigger: {
+        trigger: '.mini-navigation',
+        toggleActions: 'restart none none none'
+      }
+    });
+
+      scrollBox.from('.mini-navigation',{
+         opacity: 0, 
+         x: -100,
+         duration: 2
+      });
+
+  }
+
+  animateContentCategory(){
+
+    document.querySelectorAll('.main-cnt').forEach((box) => {
+
+      const scrollBox = gsap.timeline({
+        scrollTrigger: {
+          trigger: box,
+          toggleActions: 'restart none none restart',
+        },
+      });
+
+      scrollBox.from(box, { 
+        y: 150, 
+        opacity: 0,
+        duration: 2.5,
+        stagger: 1, 
+      });
+
+    });
 
   }
 
