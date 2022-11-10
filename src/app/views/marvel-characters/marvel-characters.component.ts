@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { CharacterdataService } from '../../services/characterdata.service';
 import  $  from 'jquery';
 
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 export interface RecordData { 
   id: number, 
   title: string, 
@@ -138,10 +141,16 @@ export class MarvelCharactersComponent implements OnInit {
   }
 
   ngAfterViewInit():void{
+
+    gsap.registerPlugin(ScrollTrigger);
     
     setTimeout(() => {
 
       this.siteImages = Preloader.getImages();
+
+      this.fadeInUp();
+
+      this.fadeInLeft();
 
     }, 1000);
 
@@ -157,6 +166,24 @@ export class MarvelCharactersComponent implements OnInit {
   //   })
 
   // }
+
+  fadeInUp(){
+
+    const scrollBox = gsap.timeline({
+
+      scrollTrigger: {
+        trigger: '.text-intro-section',
+        toggleActions: 'restart none none none'
+      }
+    });
+
+      scrollBox.from('.text-intro-section',{
+         opacity: 0, 
+         y: 100,
+         duration: 2
+      });
+
+  }
 
   filterCharacters(category:any){
 
@@ -179,6 +206,25 @@ export class MarvelCharactersComponent implements OnInit {
         .filter(p => p.category == category || category == 'all');
 
       this.masonry.reloadItems();
+
+  }
+
+  fadeInLeft(){
+
+    const scrollBox = gsap.timeline({
+
+      scrollTrigger: {
+        trigger: '.more-cnt-section',
+        start: 'top center',
+        toggleActions: 'restart none none none'
+      }
+    });
+
+      scrollBox.from('.more-cnt-section',{
+         opacity: 0, 
+         x: -100,
+         duration: 2
+      });
 
   }
 

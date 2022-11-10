@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { CharacterdataService } from '../../services/characterdata.service';
 import  $  from 'jquery';
 
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 export interface RecordData { 
   id: number, 
   title: string, 
@@ -144,6 +147,18 @@ export class DcCharactersComponent implements OnInit {
   ngAfterViewInit():void{
 
     this.siteImages = Preloader.getImages();
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    setTimeout(()=>{
+
+      this.animateCharacters();
+
+      this.fadeInUp();
+
+      this.fadeInLeft();
+
+    }, 1000)
     
   }
 
@@ -157,6 +172,46 @@ export class DcCharactersComponent implements OnInit {
   //   })
 
   // }
+
+  fadeInUp(){
+
+    const scrollBox = gsap.timeline({
+
+      scrollTrigger: {
+        trigger: '.text-intro-section',
+        toggleActions: 'restart none none none'
+      }
+    });
+
+      scrollBox.from('.text-intro-section',{
+         opacity: 0, 
+         y: 100,
+         duration: 2
+      });
+
+  }
+
+  animateCharacters(){
+
+    document.querySelectorAll('.character-item').forEach((box) => {
+
+      const scrollBox = gsap.timeline({
+        scrollTrigger: {
+          trigger: box,
+          toggleActions: 'restart none none restart',
+        },
+      });
+
+      scrollBox.from(box, { 
+        y: 150, 
+        opacity: 0,
+        duration: 2.5,
+        stagger: 1, 
+      });
+
+    });
+
+  }
 
   filterCharacters(category:any){
 
@@ -179,6 +234,25 @@ export class DcCharactersComponent implements OnInit {
         .filter(p => p.category == category || category == 'all');
 
       this.masonry.reloadItems();
+
+  }
+
+  fadeInLeft(){
+
+    const scrollBox = gsap.timeline({
+
+      scrollTrigger: {
+        trigger: '.more-cnt-section',
+        start: 'top center',
+        toggleActions: 'restart none none none'
+      }
+    });
+
+      scrollBox.from('.more-cnt-section',{
+         opacity: 0, 
+         x: -100,
+         duration: 2
+      });
 
   }
 
