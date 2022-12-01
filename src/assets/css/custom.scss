@@ -291,7 +291,7 @@ body {
 
 .overlayBanner {
     background-color: #646464;
-    position: fixed;
+    position: absolute;
     top: 0%;
     bottom: 0%;
     left: 0%;
@@ -346,14 +346,25 @@ body {
     left: 5%;
 }
 
+.parallaxEffect {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.hideImage {
+    visibility: hidden;
+}
+
 .banner-image-section {
     position: relative;
 
     .banner-text {
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
+        right: 10%;
+        width: 100%;
     }
 
 }
@@ -587,19 +598,19 @@ body {
             padding-top: 15px;
         }
 
-            .clickArea {
-                position: absolute;
-                left: 0px;
-                right: 0px;
-                top: 0px;
-                bottom: 0px;
-                z-index: 50;
-                cursor: pointer;
-            }
-
+        .clickArea {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            z-index: 50;
+            cursor: pointer;
         }
 
     }
+
+}
 
 .intro-section,
 .cnt-description-section {
