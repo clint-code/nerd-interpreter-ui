@@ -24,6 +24,8 @@ export class SingleCharacterComponent implements OnInit {
 
     $(window).scroll(this.progressScrollBar);
 
+    $(window).scroll(this.showUpScroll);
+
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({
         top: 0
