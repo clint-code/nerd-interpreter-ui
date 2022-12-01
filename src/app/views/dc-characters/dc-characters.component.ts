@@ -128,7 +128,7 @@ export class DcCharactersComponent implements OnInit {
 
       this.charactersData.refined = data.sort((a,b) => a.id - b.id);
 
-    }, 1000);
+    }, 1500);
 
   }
 
@@ -152,7 +152,7 @@ export class DcCharactersComponent implements OnInit {
 
     setTimeout(()=>{
 
-      this.animateCharacters();
+      //this.animateCharacters();
 
       this.fadeInUp();
 
