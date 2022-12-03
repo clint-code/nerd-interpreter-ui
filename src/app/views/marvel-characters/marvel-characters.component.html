@@ -75,24 +75,24 @@
 
         <div class="grid-sizer"></div>
 
-<ngx-masonry [options]="options" [updateLayout]="charactersData">
+        <ngx-masonry [options]="options" [updateLayout]="charactersData">
 
-        <div ngxMasonryItem *ngFor="let item of charactersData.refined">
+            <div ngxMasonryItem *ngFor="let item of charactersData.refined">
 
-            <!-- Character Item -->
-            <div class="character-item" [ngClass]="styles(item)" (click)="expand(item)">
+                <!-- Character Item -->
+                <div class="character-item" [ngClass]="styles(item)" (click)="expand(item)">
 
-                <div class="character-image">
-                    <img src="{{ item.characterImage }}" alt="{{ item.alt }}" class="img-fluid">
+                    <div class="character-image">
+                        <img src="{{ item.characterImage }}" alt="{{ item.alt }}" class="img-fluid">
+                    </div>
+
+                    <a class="btn btn-light name" routerLink="/single-character">
+                        <h3 class="name display-4">{{item.title}}</h3>
+                    </a>
+                    
                 </div>
 
-                <a class="btn btn-light name" routerLink="/single-character">
-                    <h3 class="name display-4">{{item.title}}</h3>
-                </a>
-                
             </div>
-
-        </div>
 
        </ngx-masonry>
 

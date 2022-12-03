@@ -130,6 +130,8 @@ export class DcCharactersComponent implements OnInit {
 
     }, 1500);
 
+    $(".filterButton").click(this.toggleFilter);
+
   }
 
   // expand(item){
@@ -213,7 +215,7 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category:any){
+  toggleFilter(){
 
     if($(this).hasClass("is-checked") ) {
 
@@ -225,9 +227,11 @@ export class DcCharactersComponent implements OnInit {
       $(".filterButton").removeClass("is-checked");
       $(this).addClass("is-checked");
 
-      console.log("Added class");
-
     }
+
+  }
+
+  filterCharacters(category:any){
 
     this.charactersData.refined = this.charactersData.cached
 

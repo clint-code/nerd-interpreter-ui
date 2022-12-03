@@ -125,6 +125,8 @@ export class MarvelCharactersComponent implements OnInit {
 
     }, 1000);
 
+    $(".filterButton").click(this.toggleFilter);
+
   }
 
   expand(item){
@@ -185,7 +187,7 @@ export class MarvelCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category:any){
+  toggleFilter(){
 
     if($(this).hasClass("is-checked") ) {
 
@@ -197,9 +199,11 @@ export class MarvelCharactersComponent implements OnInit {
       $(".filterButton").removeClass("is-checked");
       $(this).addClass("is-checked");
 
-      console.log("Added class");
-
     }
+
+  }
+
+  filterCharacters(category:any){
 
     this.charactersData.refined = this.charactersData.cached
 
