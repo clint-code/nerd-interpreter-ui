@@ -1,19 +1,19 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { CharacterdataService } from '../../services/characterdata.service';
-import  $  from 'jquery';
+import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-export interface RecordData { 
-  id: number, 
-  title: string, 
-  category: string, 
+export interface RecordData {
+  id: number,
+  title: string,
+  category: string,
   characterImage: string,
 };
 
@@ -26,36 +26,40 @@ interface RecordcharactersData {
   selector: 'app-dc-characters',
   templateUrl: './dc-characters.component.html',
   styleUrls: ['./dc-characters.component.css'],
-  providers:[
+  providers: [
     CharacterdataService
   ]
 })
 
 export class DcCharactersComponent implements OnInit {
 
-  loadingView:boolean = false;
-  imagesLoaded:boolean = false;
-  siteImages:any = [];
-
+  loadingView: boolean = false;
+  imagesLoaded: boolean = false;
+  siteImages: any = [];
   selection: string;
   reset: string;
- // charactersData:any;
+  // charactersData:any;
   charactersData: RecordcharactersData = {};
 
   options: NgxMasonryOptions = {
 
     itemSelector: '.character-item',
-    gutter: 10
+    gutter: 10,
+    transitionDuration: '1.2s',
+    horizontalOrder: true,
+    fitWidth: true,
+    percentPosition: true,
+    //columnWidth: 190
 
   };
 
-  @ViewChild(NgxMasonryComponent, {static: false}) 
+  @ViewChild(NgxMasonryComponent, { static: false })
 
   masonry: NgxMasonryComponent;
 
   constructor(
     private characterData: CharacterdataService
-  ) { 
+  ) {
 
   }
 
@@ -85,7 +89,7 @@ export class DcCharactersComponent implements OnInit {
         category: "villain",
         characterImage: "./assets/img/dc-characters/joker.png",
         alt: "joker"
-      }, 
+      },
       {
         id: 3,
         title: "Batman",
@@ -108,7 +112,7 @@ export class DcCharactersComponent implements OnInit {
         characterImage: "./assets/img/dc-characters/aquaman.png",
         alt: "aquaman"
       },
-  
+
       {
         id: 6,
         title: "Zod",
@@ -124,11 +128,7 @@ export class DcCharactersComponent implements OnInit {
     this.selection = 'all';
     this.charactersData.cached = data;
 
-    setTimeout( ()=> {
-
-      this.charactersData.refined = data.sort((a,b) => a.id - b.id);
-
-    }, 1500);
+      this.charactersData.refined = data.sort((a, b) => a.id - b.id);
 
     $(".filterButton").click(this.toggleFilter);
 
@@ -146,13 +146,13 @@ export class DcCharactersComponent implements OnInit {
 
   // }
 
-  ngAfterViewInit():void{
+  ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
 
     gsap.registerPlugin(ScrollTrigger);
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
       //this.animateCharacters();
 
@@ -161,7 +161,7 @@ export class DcCharactersComponent implements OnInit {
       this.fadeInLeft();
 
     }, 1000)
-    
+
   }
 
   // getDcCharactersData(){
@@ -175,7 +175,7 @@ export class DcCharactersComponent implements OnInit {
 
   // }
 
-  fadeInUp(){
+  fadeInUp() {
 
     const scrollBox = gsap.timeline({
 
@@ -185,43 +185,21 @@ export class DcCharactersComponent implements OnInit {
       }
     });
 
-      scrollBox.from('.text-intro-section',{
-         opacity: 0, 
-         y: 100,
-         duration: 2
-      });
-
-  }
-
-  animateCharacters(){
-
-    document.querySelectorAll('.character-item').forEach((box) => {
-
-      const scrollBox = gsap.timeline({
-        scrollTrigger: {
-          trigger: box,
-          toggleActions: 'restart none none restart',
-        },
-      });
-
-      scrollBox.from(box, { 
-        y: 150, 
-        opacity: 0,
-        duration: 2.5,
-        stagger: 1, 
-      });
-
+    scrollBox.from('.text-intro-section', {
+      opacity: 0,
+      y: 100,
+      duration: 2
     });
 
   }
 
-  toggleFilter(){
+  toggleFilter() {
 
-    if($(this).hasClass("is-checked") ) {
+    if ($(this).hasClass("is-checked")) {
 
       $(".filterButton").removeClass("is-checked");
       $(this).removeClass("is-checked");
-    
+
     } else {
 
       $(".filterButton").removeClass("is-checked");
@@ -231,17 +209,17 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category:any){
+  filterCharacters(category: any) {
 
     this.charactersData.refined = this.charactersData.cached
 
-        .filter(p => p.category == category || category == 'all');
+      .filter(p => p.category == category || category == 'all');
 
-      this.masonry.reloadItems();
+    this.masonry.reloadItems();
 
   }
 
-  fadeInLeft(){
+  fadeInLeft() {
 
     const scrollBox = gsap.timeline({
 
@@ -252,11 +230,11 @@ export class DcCharactersComponent implements OnInit {
       }
     });
 
-      scrollBox.from('.more-cnt-section',{
-         opacity: 0, 
-         x: -100,
-         duration: 2
-      });
+    scrollBox.from('.more-cnt-section', {
+      opacity: 0,
+      x: -100,
+      duration: 2
+    });
 
   }
 

@@ -76,7 +76,10 @@
 
     <div class="grid-sizer"></div>
 
-       <ngx-masonry [options]="options" [updateLayout]="charactersData">
+       <ngx-masonry 
+            [options]="options" 
+            [updateLayout]="charactersData"
+            [useImagesLoaded]="true" >
 
         <div ngxMasonryItem *ngFor="let item of charactersData.refined">
 
