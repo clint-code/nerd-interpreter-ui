@@ -38,8 +38,8 @@ export class DcCharactersComponent implements OnInit {
   siteImages: any = [];
   selection: string;
   reset: string;
-  // charactersData:any;
-  charactersData: RecordcharactersData = {};
+  charactersData:any;
+  //charactersData: RecordcharactersData = {};
 
   options: NgxMasonryOptions = {
 
@@ -58,7 +58,8 @@ export class DcCharactersComponent implements OnInit {
   masonry: NgxMasonryComponent;
 
   constructor(
-    private characterData: CharacterdataService
+    private characterData: CharacterdataService,
+    private httpClient: HttpClient,
   ) {
 
   }
@@ -73,62 +74,62 @@ export class DcCharactersComponent implements OnInit {
       })
     }, 500);
 
-    let data = [
+    // let data = [
 
-      {
-        id: 1,
-        title: "Superman",
-        category: "hero",
-        characterImage: "./assets/img/dc-characters/superman.png",
-        alt: "superman"
-      },
+    //   {
+    //     id: 1,
+    //     title: "Superman",
+    //     category: "hero",
+    //     characterImage: "./assets/img/dc-characters/superman.png",
+    //     alt: "superman"
+    //   },
 
-      {
-        id: 4,
-        title: "Joker",
-        category: "villain",
-        characterImage: "./assets/img/dc-characters/joker.png",
-        alt: "joker"
-      },
-      {
-        id: 3,
-        title: "Batman",
-        category: "hero",
-        characterImage: "./assets/img/dc-characters/batman.png",
-        alt: "batman"
-      },
-      {
-        id: 5,
-        title: "Lex Luthor",
-        category: "villain",
-        characterImage: "./assets/img/dc-characters/lex-luthor.png",
-        alt: "lex-luthor"
-      },
+    //   {
+    //     id: 4,
+    //     title: "Joker",
+    //     category: "villain",
+    //     characterImage: "./assets/img/dc-characters/joker.png",
+    //     alt: "joker"
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "Batman",
+    //     category: "hero",
+    //     characterImage: "./assets/img/dc-characters/batman.png",
+    //     alt: "batman"
+    //   },
+    //   {
+    //     id: 5,
+    //     title: "Lex Luthor",
+    //     category: "villain",
+    //     characterImage: "./assets/img/dc-characters/lex-luthor.png",
+    //     alt: "lex-luthor"
+    //   },
 
-      {
-        id: 2,
-        title: "Aquaman",
-        category: "hero",
-        characterImage: "./assets/img/dc-characters/aquaman.png",
-        alt: "aquaman"
-      },
+    //   {
+    //     id: 2,
+    //     title: "Aquaman",
+    //     category: "hero",
+    //     characterImage: "./assets/img/dc-characters/aquaman.png",
+    //     alt: "aquaman"
+    //   },
 
-      {
-        id: 6,
-        title: "Zod",
-        category: "villain",
-        characterImage: "./assets/img/dc-characters/zod.png",
-        alt: "zod"
-      }
+    //   {
+    //     id: 6,
+    //     title: "Zod",
+    //     category: "villain",
+    //     characterImage: "./assets/img/dc-characters/zod.png",
+    //     alt: "zod"
+    //   }
 
-    ]
+    // ]
 
-    //this.getDcCharactersData();
+    this.getDcCharactersData();
 
     this.selection = 'all';
-    this.charactersData.cached = data;
+    //this.charactersData.cached = data;
 
-      this.charactersData.refined = data.sort((a, b) => a.id - b.id);
+      //this.charactersData.refined = data.sort((a, b) => a.id - b.id);
 
     $(".filterButton").click(this.toggleFilter);
 
@@ -164,16 +165,17 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  // getDcCharactersData(){
+  getDcCharactersData(){
 
-  //   this.characterData.getAllDcCharactersListingJSON().subscribe( response => {
+    this.characterData.getAllDcCharactersListingJSON().subscribe( response => {
 
-  //     this.charactersData = response;
+      this.charactersData = response;
 
-  //     console.log(this.charactersData);
-  //   })
+      console.log(this.charactersData);
+    
+    })
 
-  // }
+  }
 
   fadeInUp() {
 

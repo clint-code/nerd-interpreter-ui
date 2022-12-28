@@ -38,8 +38,8 @@ export class MarvelCharactersComponent implements OnInit {
 
   selection: string;
   reset: string;
-  //charactersData:any;
-  charactersData: RecordcharactersData = {};
+  charactersData:any;
+  //charactersData: RecordcharactersData = {};
 
   options: NgxMasonryOptions = {
 
@@ -69,79 +69,79 @@ export class MarvelCharactersComponent implements OnInit {
       })
     }, 500);
 
-    let data = [
+    // let data = [
 
-      {
-        id: 1,
-        title: "Black Widow",
-        category: "hero",
-        characterImage: "./assets/img/marvel-characters/black-widow.png",
-        alt: "blackwidow"
-      },
+    //   {
+    //     id: 1,
+    //     title: "Black Widow",
+    //     category: "hero",
+    //     characterImage: "./assets/img/marvel-characters/black-widow.png",
+    //     alt: "blackwidow"
+    //   },
 
-      {
-        id: 4,
-        title: "Black Panther",
-        category: "hero",
-        characterImage: "./assets/img/marvel-characters/black-panther.png",
-        alt: "blackpanther"
-      }, 
-      {
-        id: 3,
-        title: "Erik Killmonger",
-        category: "villain",
-        characterImage: "./assets/img/marvel-characters/erik-killmonger.png",
-        alt: "erik-killmonger"
-      },
-      {
-        id: 5,
-        title: "Iron Man",
-        category: "hero",
-        characterImage: "./assets/img/marvel-characters/iron-man.png",
-        alt: "iron-man"
-      },
+    //   {
+    //     id: 4,
+    //     title: "Black Panther",
+    //     category: "hero",
+    //     characterImage: "./assets/img/marvel-characters/black-panther.png",
+    //     alt: "blackpanther"
+    //   }, 
+    //   {
+    //     id: 3,
+    //     title: "Erik Killmonger",
+    //     category: "villain",
+    //     characterImage: "./assets/img/marvel-characters/erik-killmonger.png",
+    //     alt: "erik-killmonger"
+    //   },
+    //   {
+    //     id: 5,
+    //     title: "Iron Man",
+    //     category: "hero",
+    //     characterImage: "./assets/img/marvel-characters/iron-man.png",
+    //     alt: "iron-man"
+    //   },
 
-      {
-        id: 2,
-        title: "Magneto",
-        category: "villain",
-        characterImage: "./assets/img/marvel-characters/magneto.png",
-        alt: "magneto"
-      },
+    //   {
+    //     id: 2,
+    //     title: "Magneto",
+    //     category: "villain",
+    //     characterImage: "./assets/img/marvel-characters/magneto.png",
+    //     alt: "magneto"
+    //   },
   
-      {
-        id: 6,
-        title: "Thanos",
-        category: "villain",
-        characterImage: "./assets/img/marvel-characters/thanos.png",
-        alt: "thanos"
-      }
+    //   {
+    //     id: 6,
+    //     title: "Thanos",
+    //     category: "villain",
+    //     characterImage: "./assets/img/marvel-characters/thanos.png",
+    //     alt: "thanos"
+    //   }
 
-    ]
+    // ]
 
-    //this.getMarvelCharactersData();
+    this.getMarvelCharactersData();
 
-    this.selection = 'all';
-    this.charactersData.cached = data;
+    // this.selection = 'all';
+    // this.charactersData.cached = data;
 
-    this.charactersData.refined = data.sort((a,b) => a.id - b.id);
+    // this.charactersData.refined = data.sort((a,b) => a.id - b.id);
 
     $(".filterButton").click(this.toggleFilter);
 
   }
 
-  expand(item){
-    item.opened = !item.opened;
-    this.masonry.layout();
-  }
+  // expand(item){
+  //   item.opened = !item.opened;
+  //   this.masonry.layout();
+  // }
 
-  styles(item){
+  // styles(item){
 
-    return {
-      'opened' : item.opened
-    }
+  //   return {
+  //     'opened' : item.opened
+  //   }
 
-  }
+  // }
 
   ngAfterViewInit():void{
 
@@ -155,20 +155,21 @@ export class MarvelCharactersComponent implements OnInit {
 
       this.fadeInLeft();
 
-    }, 1000);
+    }, 500);
 
   }
 
-  // getMarvelCharactersData(){
+  getMarvelCharactersData(){
 
-  //   this.characterData.getAllMarvelCharactersListingJSON().subscribe( response => {
+    this.characterData.getAllMarvelCharactersListingJSON().subscribe( response => {
 
-  //     this.charactersData = response;
+      this.charactersData = response;
 
-  //     console.log(this.charactersData);
-  //   })
+      console.log(this.charactersData);
 
-  // }
+    })
+
+  }
 
   fadeInUp(){
 
