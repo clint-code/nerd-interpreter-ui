@@ -1,29 +1,34 @@
 [
     {
+      "id": 1,
       "title": "Superman",
       "category": "hero",
       "characterImage": "./assets/img/dc-characters/superman.png",
       "alt": "superman"
     },
     {
+      "id": 2,
       "title": "Aquaman",
       "category": "hero",
       "characterImage": "./assets/img/dc-characters/aquaman.png",
       "alt": "aquaman"
     },
     {
+      "id": 3,
       "title": "Batman",
       "category": "hero",
       "characterImage": "./assets/img/dc-characters/batman.png",
       "alt": "batman"
     },
     {
+      "id": 4,
       "title": "Joker",
       "category": "villain",
       "characterImage": "./assets/img/dc-characters/joker.png",
       "alt": "joker"
     }, 
     {
+      "id": 5,
       "title": "Lex Luthor",
       "category": "villain",
       "characterImage": "./assets/img/dc-characters/lex-luthor.png",
@@ -31,6 +36,7 @@
     },
 
     {
+      "id": 6,
       "title": "Zod",
       "category": "villain",
       "characterImage": "./assets/img/dc-characters/zod.png",

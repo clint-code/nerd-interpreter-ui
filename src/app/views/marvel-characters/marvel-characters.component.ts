@@ -1,9 +1,10 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+import { BaseCharacter } from '../../interfaces/base-character';
 import { CharacterdataService } from '../../services/characterdata.service';
 import  $  from 'jquery';
 
@@ -17,10 +18,10 @@ export interface RecordData {
   characterImage: string,
 };
 
-interface RecordcharactersData {
-  cached?: RecordData[];
-  refined?: RecordData[];
-}
+// interface RecordcharactersData {
+//   cached?: RecordData[];
+//   refined?: RecordData[];
+// }
 
 @Component({
   selector: 'app-marvel-characters',
@@ -39,6 +40,8 @@ export class MarvelCharactersComponent implements OnInit {
   selection: string;
   reset: string;
   charactersData:any;
+  response: any = [];
+
   //charactersData: RecordcharactersData = {};
 
   options: NgxMasonryOptions = {
@@ -58,7 +61,7 @@ export class MarvelCharactersComponent implements OnInit {
   masonry: NgxMasonryComponent;
 
   constructor(
-    private characterData: CharacterdataService
+    private characterDataService: CharacterdataService
   ) { }
 
   ngOnInit(): void {
@@ -122,9 +125,9 @@ export class MarvelCharactersComponent implements OnInit {
     this.getMarvelCharactersData();
 
     // this.selection = 'all';
-    // this.charactersData.cached = data;
+    // this.charactersData.cached = this.response;
 
-    // this.charactersData.refined = data.sort((a,b) => a.id - b.id);
+    // this.charactersData.refined = this.response.sort((a,b) => a.id - b.id);
 
     $(".filterButton").click(this.toggleFilter);
 
@@ -161,13 +164,21 @@ export class MarvelCharactersComponent implements OnInit {
 
   getMarvelCharactersData(){
 
-    this.characterData.getAllMarvelCharactersListingJSON().subscribe( response => {
+    this.characterDataService.getAllMarvelCharactersListingJSON().subscribe( (response: any[]) => {
 
       this.charactersData = response;
 
+      this.charactersData.cached = response;
+
+      this.charactersData.refined = response.sort((a, b) => a.id - b.id);
+
+      let result = response.filter(obj=> obj.category == "Hero");
+
       console.log(this.charactersData);
 
-    })
+      console.log("Heroes:", result);
+    });
+    
 
   }
 
@@ -206,6 +217,10 @@ export class MarvelCharactersComponent implements OnInit {
   }
 
   filterCharacters(category:any){
+
+    //let result = response.filter(obj=> obj.category == category || category == 'all' );
+
+    console.log(category);
 
     this.charactersData.refined = this.charactersData.cached
 
