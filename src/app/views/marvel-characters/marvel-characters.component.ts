@@ -172,11 +172,18 @@ export class MarvelCharactersComponent implements OnInit {
 
       this.charactersData.refined = response.sort((a, b) => a.id - b.id);
 
-      let result = response.filter(obj=> obj.category == "Hero");
+      let heroes = response.filter(obj=> obj.category == "hero");
+
+      let villains = response.filter(obj=> obj.category == "villain");
 
       console.log(this.charactersData);
 
-      console.log("Heroes:", result);
+      console.log("Heroes:", heroes);
+
+      console.log("Villains", villains);
+
+      //this.filterCharacters(obj.category);
+
     });
     
 
