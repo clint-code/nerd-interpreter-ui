@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "url": "./assets/img/character-page/death-in-the-family.jpg",
+      "alt": "death-in-the-family"
+    },
+    {
+        "id": 2,
+        "url": "./assets/img/character-page/jokers-five-way-revenge.jpg",
+        "alt": "jokers-five-way-revenge"
+    },
+    {
+        "id": 1,
+        "url": "./assets/img/character-page/killing-joke.jpg",
+        "alt": "killing-joke"
+    }
+
+]

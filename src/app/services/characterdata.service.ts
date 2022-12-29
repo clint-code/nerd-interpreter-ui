@@ -24,4 +24,10 @@ export class CharacterdataService {
     
   }
 
+  getComicCoversListing(){
+
+    return this.http.get("/assets/data/comics_covers.json");
+    
+  }
+
 }

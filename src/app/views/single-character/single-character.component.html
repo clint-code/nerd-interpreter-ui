@@ -301,13 +301,23 @@
                             </p>
                         </div>
 
-                        <div class="col-md-4 slider-section">
-
-                        </div>
-
                     </div>
 
                 </div>
+
+                    <div class="col-md-4 slider-section">
+
+                        <owl-carousel-o [options]="customOptions">
+
+                            <ng-container *ngFor="let slide of comicCovers">
+                              <ng-template class="slide" carouselSlide [id]="slide.id">
+                                <img [src]="slide.url" [alt]="slide.alt" [title]="slide.id">
+                              </ng-template>
+                            </ng-container>
+                        
+                          </owl-carousel-o> 
+
+                    </div>
             
             </div>
         

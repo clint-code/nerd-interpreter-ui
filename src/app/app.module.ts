@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
 //View Imports
 import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
@@ -44,7 +45,8 @@ import { ProgressOnscrollbarComponent } from './components/progress-onscrollbar/
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    CarouselModule
   ],
   providers: [
     Title,

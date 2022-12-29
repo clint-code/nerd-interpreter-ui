@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import  $  from 'jquery';
 
+import { CharacterdataService } from '../../services/characterdata.service';
+
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-single-character',
@@ -16,7 +19,31 @@ export class SingleCharacterComponent implements OnInit {
   imagesLoaded:boolean = false;
   siteImages:any = [];
 
-  constructor() { }
+  comicCovers: any;
+
+  customOptions: OwlOptions = {
+    loop: true,
+    autoplay: true,
+    center: true,
+    dots: false,
+    autoHeight: true,
+    autoWidth: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 1,
+      },
+      1000: {
+        items: 1,
+      }
+    }
+  }
+
+  constructor(
+    private comicCharacterDataService: CharacterdataService
+  ) { }
 
   ngOnInit(): void {
 
@@ -31,6 +58,8 @@ export class SingleCharacterComponent implements OnInit {
         top: 0
       })
     }, 500);
+
+    this.getComicCovers();
 
   }
 
@@ -67,6 +96,18 @@ export class SingleCharacterComponent implements OnInit {
 
     $("#scrollbar").css("width", scrollPercent + "%");
 
+
+  }
+
+  getComicCovers(){
+
+    this.comicCharacterDataService.getComicCoversListing().subscribe(response => {
+
+      this.comicCovers = response;
+
+      console.log(this.comicCovers);
+
+    });
 
   }
 
