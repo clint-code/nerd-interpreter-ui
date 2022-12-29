@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "url": "./assets/img/about/aquaman.jpg",
+      "alt": "aquaman"
+    },
+    {
+        "id": 2,
+        "url": "./assets/img/about/batman.jpg",
+      "alt": "batman"
+    },
+    {
+        "id": 3,
+        "url": "./assets/img/about/black-widow.jpg",
+      "alt": "black-widow"
+    },
+    {
+        "id": 4,
+        "url": "./assets/img/about/joker.jpg",
+      "alt": "joker"
+    },
+    {
+        "id": 5,
+        "url": "./assets/img/about/thanos.jpg",
+      "alt": "thanos"
+    }
+
+
+]

@@ -79,12 +79,17 @@
 
             </div>
 
-
             <div class="col-md-4 slider-section">
 
-                <app-comic-slider
-                    sliderImages="../../../assets/img/about/batman.jpg"
-                ></app-comic-slider>
+                <owl-carousel-o [options]="customOptions">
+
+                    <ng-container *ngFor="let slide of characterPotraits">
+                      <ng-template class="slide" carouselSlide [id]="slide.id">
+                        <img [src]="slide.url" [alt]="slide.alt" [title]="slide.id">
+                      </ng-template>
+                    </ng-container>
+                
+                  </owl-carousel-o> 
 
             </div>
 
