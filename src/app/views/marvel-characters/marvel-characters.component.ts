@@ -4,8 +4,11 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+import { map } from 'rxjs/operators';
+
 import { BaseCharacter } from '../../interfaces/base-character';
 import { CharacterdataService } from '../../services/characterdata.service';
+
 import  $  from 'jquery';
 
 import { gsap } from 'gsap';
@@ -41,6 +44,8 @@ export class MarvelCharactersComponent implements OnInit {
   reset: string;
   charactersData:any;
   response: any = [];
+
+  filterVal;
 
   //charactersData: RecordcharactersData = {};
 
@@ -168,24 +173,23 @@ export class MarvelCharactersComponent implements OnInit {
 
       this.charactersData = response;
 
-      this.charactersData.cached = response;
+      // this.charactersData.cached = response;
 
-      this.charactersData.refined = response.sort((a, b) => a.id - b.id);
+      // this.charactersData.refined = response.sort((a, b) => a.id - b.id);
 
-      let heroes = response.filter(obj=> obj.category == "hero");
+      // let heroes = response.filter(obj=> obj.category == "hero");
 
-      let villains = response.filter(obj=> obj.category == "villain");
+      // let villains = response.filter(obj=> obj.category == "villain");
 
-      console.log(this.charactersData);
+      // console.log(this.charactersData);
 
-      console.log("Heroes:", heroes);
+      // console.log("Heroes:", heroes);
 
-      console.log("Villains", villains);
+      // console.log("Villains", villains);
 
       //this.filterCharacters(obj.category);
 
     });
-    
 
   }
 
@@ -225,15 +229,27 @@ export class MarvelCharactersComponent implements OnInit {
 
   filterCharacters(category:any){
 
-    //let result = response.filter(obj=> obj.category == category || category == 'all' );
+    this.characterDataService.getAllMarvelCharactersListingJSON().subscribe( (response: any[]) => {
 
-    console.log(category);
+      this.charactersData = response;
 
-    this.charactersData.refined = this.charactersData.cached
+      let result = response.filter(obj=> obj.category == category || category == 'all' );
 
-        .filter(p => p.category == category || category == 'all');
+      console.log("Filtered result: ",result);
 
       this.masonry.reloadItems();
+
+    });
+
+    //let result = response.filter(obj=> obj.category == category || category == 'all' );
+
+    //console.log(category);
+
+    // this.charactersData.refined = this.charactersData.cached
+
+    //     .filter(p => p.category == category || category == 'all');
+
+    //   this.masonry.reloadItems();
 
   }
 

@@ -10,17 +10,17 @@ import $ from 'jquery';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-export interface RecordData {
-  id: number,
-  title: string,
-  category: string,
-  characterImage: string,
-};
+// export interface RecordData {
+//   id: number,
+//   title: string,
+//   category: string,
+//   characterImage: string,
+// };
 
-interface RecordcharactersData {
-  cached?: RecordData[];
-  refined?: RecordData[];
-}
+// interface RecordcharactersData {
+//   cached?: RecordData[];
+//   refined?: RecordData[];
+// }
 
 @Component({
   selector: 'app-dc-characters',
@@ -58,7 +58,7 @@ export class DcCharactersComponent implements OnInit {
   masonry: NgxMasonryComponent;
 
   constructor(
-    private characterData: CharacterdataService,
+    private characterDataService: CharacterdataService,
     private httpClient: HttpClient,
   ) {
 
@@ -167,11 +167,9 @@ export class DcCharactersComponent implements OnInit {
 
   getDcCharactersData(){
 
-    this.characterData.getAllDcCharactersListingJSON().subscribe( response => {
+    this.characterDataService.getAllDcCharactersListingJSON().subscribe( response => {
 
       this.charactersData = response;
-
-      console.log(this.charactersData);
     
     })
 
@@ -211,13 +209,19 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category: any) {
+  filterCharacters(category:any){
 
-    this.charactersData.refined = this.charactersData.cached
+    this.characterDataService.getAllDcCharactersListingJSON().subscribe( (response: any[]) => {
 
-      .filter(p => p.category == category || category == 'all');
+      this.charactersData = response;
 
-    this.masonry.reloadItems();
+      let result = response.filter(obj=> obj.category == category || category == 'all' );
+
+      console.log("Filtered result: ",result);
+
+      this.masonry.reloadItems();
+
+    });
 
   }
 
