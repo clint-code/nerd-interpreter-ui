@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
 
-import { BaseCharacter } from '../../interfaces/base-character';
 import { CharacterdataService } from '../../services/characterdata.service';
 
 import  $  from 'jquery';
@@ -14,12 +13,12 @@ import  $  from 'jquery';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-export interface RecordData { 
-  id: number, 
-  title: string, 
-  category: string, 
-  characterImage: string,
-};
+// export interface RecordData { 
+//   id: number, 
+//   title: string, 
+//   category: string, 
+//   characterImage: string,
+// };
 
 // interface RecordcharactersData {
 //   cached?: RecordData[];
@@ -44,8 +43,6 @@ export class MarvelCharactersComponent implements OnInit {
   reset: string;
   charactersData:any;
   response: any = [];
-
-  filterVal;
 
   //charactersData: RecordcharactersData = {};
 
@@ -229,17 +226,24 @@ export class MarvelCharactersComponent implements OnInit {
 
   filterCharacters(category:any){
 
-    this.characterDataService.getAllMarvelCharactersListingJSON().subscribe( (response: any[]) => {
+    let filterCharacters = this.charactersData.filter(obj=> obj.category == category || category == 'all' );
 
-      this.charactersData = response;
-
-      let result = response.filter(obj=> obj.category == category || category == 'all' );
-
-      console.log("Filtered result: ",result);
+      console.log("Filtered result of: " + category, filterCharacters);
 
       this.masonry.reloadItems();
 
-    });
+    // this.characterDataService.getAllMarvelCharactersListingJSON().subscribe( (response: any[]) => {
+
+    //   this.charactersData = response;
+
+    //   let result = response.filter(obj=> obj.category == category || category == 'all' );
+
+    //   console.log("Filtered result: ",result);
+
+    //   this.masonry.reloadItems();
+
+    // });
+
 
     //let result = response.filter(obj=> obj.category == category || category == 'all' );
 

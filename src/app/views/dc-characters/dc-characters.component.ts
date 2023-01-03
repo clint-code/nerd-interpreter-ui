@@ -1,7 +1,8 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 import { CharacterdataService } from '../../services/characterdata.service';
@@ -9,18 +10,6 @@ import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-
-// export interface RecordData {
-//   id: number,
-//   title: string,
-//   category: string,
-//   characterImage: string,
-// };
-
-// interface RecordcharactersData {
-//   cached?: RecordData[];
-//   refined?: RecordData[];
-// }
 
 @Component({
   selector: 'app-dc-characters',
@@ -38,8 +27,8 @@ export class DcCharactersComponent implements OnInit {
   siteImages: any = [];
   selection: string;
   reset: string;
-  charactersData:any;
-  //charactersData: RecordcharactersData = {};
+  charactersData: any;
+  srcCharactersArray: any = [];
 
   options: NgxMasonryOptions = {
 
@@ -52,6 +41,8 @@ export class DcCharactersComponent implements OnInit {
     //columnWidth: 190
 
   };
+
+  @ViewChild('btn', { static: true }) button: ElementRef;
 
   @ViewChild(NgxMasonryComponent, { static: false })
 
@@ -74,78 +65,11 @@ export class DcCharactersComponent implements OnInit {
       })
     }, 500);
 
-    // let data = [
-
-    //   {
-    //     id: 1,
-    //     title: "Superman",
-    //     category: "hero",
-    //     characterImage: "./assets/img/dc-characters/superman.png",
-    //     alt: "superman"
-    //   },
-
-    //   {
-    //     id: 4,
-    //     title: "Joker",
-    //     category: "villain",
-    //     characterImage: "./assets/img/dc-characters/joker.png",
-    //     alt: "joker"
-    //   },
-    //   {
-    //     id: 3,
-    //     title: "Batman",
-    //     category: "hero",
-    //     characterImage: "./assets/img/dc-characters/batman.png",
-    //     alt: "batman"
-    //   },
-    //   {
-    //     id: 5,
-    //     title: "Lex Luthor",
-    //     category: "villain",
-    //     characterImage: "./assets/img/dc-characters/lex-luthor.png",
-    //     alt: "lex-luthor"
-    //   },
-
-    //   {
-    //     id: 2,
-    //     title: "Aquaman",
-    //     category: "hero",
-    //     characterImage: "./assets/img/dc-characters/aquaman.png",
-    //     alt: "aquaman"
-    //   },
-
-    //   {
-    //     id: 6,
-    //     title: "Zod",
-    //     category: "villain",
-    //     characterImage: "./assets/img/dc-characters/zod.png",
-    //     alt: "zod"
-    //   }
-
-    // ]
 
     this.getDcCharactersData();
-
-    this.selection = 'all';
-    //this.charactersData.cached = data;
-
-      //this.charactersData.refined = data.sort((a, b) => a.id - b.id);
-
     $(".filterButton").click(this.toggleFilter);
 
   }
-
-  // expand(item){
-  //   item.opened = !item.opened;
-  //   this.masonry.layout();
-  // }
-
-  // styles(item){
-  //   return {
-  //     'opened' : item.opened
-  //   }
-
-  // }
 
   ngAfterViewInit(): void {
 
@@ -171,7 +95,7 @@ export class DcCharactersComponent implements OnInit {
 
       this.charactersData = response;
     
-    })
+    });
 
   }
 
@@ -211,17 +135,21 @@ export class DcCharactersComponent implements OnInit {
 
   filterCharacters(category:any){
 
-    this.characterDataService.getAllDcCharactersListingJSON().subscribe( (response: any[]) => {
+    // const filteredCharacters = fromEvent(this.button.nativeElement, 'click').pipe(
+    //   map((characters) => this.charactersData.filter((obj) => 
+    //       obj.category == category || category == 'all' ))
+    //   );
 
-      this.charactersData = response;
+      // this.charactersData.pipe(
+      //   map((characters) => characters.charactersData.filter((obj) => 
+      //     obj.category == category || category == 'all' ))
+      // );
 
-      let result = response.filter(obj=> obj.category == category || category == 'all' );
+      let filterCharacters = this.charactersData.filter(obj=> obj.category == category || category == 'all' );
 
-      console.log("Filtered result: ",result);
+      console.log("Filtered result of: " + category, filterCharacters);
 
       this.masonry.reloadItems();
-
-    });
 
   }
 
