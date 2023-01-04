@@ -49,7 +49,7 @@ export class MarvelCharactersComponent implements OnInit {
     horizontalOrder: true,
     fitWidth: true,
     percentPosition: true,
-    //columnWidth: 350
+    columnWidth: 190
 
   };
 
@@ -87,7 +87,13 @@ export class MarvelCharactersComponent implements OnInit {
 
       this.fadeInLeft();
 
-    }, 500);
+    }, 1000);
+
+    setTimeout(() => {
+
+      this.getMarvelCharactersData();
+
+    }, 2000);
 
   }
 

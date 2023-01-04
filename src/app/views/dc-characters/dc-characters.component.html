@@ -78,8 +78,7 @@
 
        <ngx-masonry 
             [options]="options" 
-            [updateLayout]="charactersData"
-            [useImagesLoaded]="true" >
+            [updateLayout]="characterStore.refined">
 
         <div ngxMasonryItem *ngFor="let character of characterStore.refined">
 

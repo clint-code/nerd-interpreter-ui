@@ -49,7 +49,7 @@ export class DcCharactersComponent implements OnInit {
     horizontalOrder: true,
     fitWidth: true,
     percentPosition: true,
-    //columnWidth: 190
+    columnWidth: 190
 
   };
 
@@ -72,9 +72,6 @@ export class DcCharactersComponent implements OnInit {
         top: 0
       })
     }, 500);
-
-
-    this.getDcCharactersData();
     
     $(".filterButton").click(this.toggleFilter);
 
@@ -88,13 +85,19 @@ export class DcCharactersComponent implements OnInit {
 
     setTimeout(() => {
 
-      //this.animateCharacters();
+      this.siteImages = Preloader.getImages();
 
       this.fadeInUp();
 
       this.fadeInLeft();
 
-    }, 1000)
+    }, 1000);
+
+    setTimeout(() => {
+
+      this.getDcCharactersData();
+
+    }, 2000);
 
   }
 
