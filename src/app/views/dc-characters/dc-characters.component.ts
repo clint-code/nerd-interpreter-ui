@@ -97,7 +97,7 @@ export class DcCharactersComponent implements OnInit {
 
       this.getDcCharactersData();
 
-    }, 2000);
+    }, 3000);
 
   }
 
