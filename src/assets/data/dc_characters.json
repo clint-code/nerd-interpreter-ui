@@ -41,6 +41,29 @@
       "category": "villain",
       "characterImage": "./assets/img/dc-characters/zod.png",
       "alt": "zod"
-    }
+    },
 
+    {
+      "id": 7,
+      "title": "Two Face",
+      "category": "villain",
+      "characterImage": "./assets/img/dc-characters/two-face.png",
+      "alt": "two-face"
+    },
+
+    {
+      "id": 8,
+      "title": "Black Manta",
+      "category": "villain",
+      "characterImage": "./assets/img/dc-characters/black-manta.png",
+      "alt": "black-manta"
+    },
+
+    {
+      "id": 9,
+      "title": "Bane",
+      "category": "villain",
+      "characterImage": "./assets/img/dc-characters/bane.png",
+      "alt": "bane"
+    }
 ]

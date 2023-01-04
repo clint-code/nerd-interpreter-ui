@@ -93,7 +93,7 @@ export class MarvelCharactersComponent implements OnInit {
 
       this.getMarvelCharactersData();
 
-    }, 2000);
+    }, 3000);
 
   }
 

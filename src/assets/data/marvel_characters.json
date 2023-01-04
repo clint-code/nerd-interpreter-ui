@@ -41,6 +41,31 @@
       "category": "villain",
       "characterImage": "./assets/img/marvel-characters/erik-killmonger.png",
       "alt": "erik-killmonger"
+    },
+
+    {
+      "id": 7,
+      "title": "Captain America",
+      "category": "hero",
+      "characterImage": "./assets/img/marvel-characters/captain-america.png",
+      "alt": "captain-america"
+    },
+
+    {
+      "id": 8,
+      "title": "Doctor Strange",
+      "category": "hero",
+      "characterImage": "./assets/img/marvel-characters/doctor-strange.png",
+      "alt": "doctor-strange"
+    },
+
+    {
+      "id": 9,
+      "title": "Thor",
+      "category": "hero",
+      "characterImage": "./assets/img/marvel-characters/thor.png",
+      "alt": "thor"
     }
+
 
 ]
