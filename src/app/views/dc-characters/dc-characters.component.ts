@@ -1,8 +1,6 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import { fromEvent, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 import { CharacterdataService } from '../../services/characterdata.service';
@@ -10,6 +8,19 @@ import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+
+export interface characterInfo {
+  id: number;
+  title: string;
+  category: string;
+  characterImage: string;
+  alt: string;
+}
+
+interface characterStore {
+  cached?: characterInfo[];
+  refined?: characterInfo[];
+}
 
 @Component({
   selector: 'app-dc-characters',
@@ -28,7 +39,7 @@ export class DcCharactersComponent implements OnInit {
   selection: string;
   reset: string;
   charactersData: any;
-  srcCharactersArray: any = [];
+  characterStore : characterStore = {};
 
   options: NgxMasonryOptions = {
 
@@ -42,15 +53,12 @@ export class DcCharactersComponent implements OnInit {
 
   };
 
-  @ViewChild('btn', { static: true }) button: ElementRef;
-
   @ViewChild(NgxMasonryComponent, { static: false })
 
   masonry: NgxMasonryComponent;
 
   constructor(
     private characterDataService: CharacterdataService,
-    private httpClient: HttpClient,
   ) {
 
   }
@@ -67,6 +75,7 @@ export class DcCharactersComponent implements OnInit {
 
 
     this.getDcCharactersData();
+    
     $(".filterButton").click(this.toggleFilter);
 
   }
@@ -91,10 +100,14 @@ export class DcCharactersComponent implements OnInit {
 
   getDcCharactersData(){
 
-    this.characterDataService.getAllDcCharactersListingJSON().subscribe( response => {
+    this.characterDataService.getAllDcCharactersListingJSON().subscribe( (response: any[]) => {
 
       this.charactersData = response;
-    
+
+      this.characterStore.cached = response;
+
+      this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
     });
 
   }
@@ -134,22 +147,14 @@ export class DcCharactersComponent implements OnInit {
   }
 
   filterCharacters(category:any){
-
-    // const filteredCharacters = fromEvent(this.button.nativeElement, 'click').pipe(
-    //   map((characters) => this.charactersData.filter((obj) => 
-    //       obj.category == category || category == 'all' ))
-    //   );
-
-      // this.charactersData.pipe(
-      //   map((characters) => characters.charactersData.filter((obj) => 
-      //     obj.category == category || category == 'all' ))
-      // );
-
-      let filterCharacters = this.charactersData.filter(obj=> obj.category == category || category == 'all' );
-
-      console.log("Filtered result of: " + category, filterCharacters);
-
+    
+      this.characterStore.refined = this.characterStore.cached.filter(
+        (p) => p.category == category || category == 'all'
+      );
+    
       this.masonry.reloadItems();
+
+      console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 

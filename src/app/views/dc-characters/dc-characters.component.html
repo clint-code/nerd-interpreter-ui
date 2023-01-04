@@ -81,17 +81,17 @@
             [updateLayout]="charactersData"
             [useImagesLoaded]="true" >
 
-        <div ngxMasonryItem *ngFor="let item of charactersData">
+        <div ngxMasonryItem *ngFor="let character of characterStore.refined">
 
             <!-- Character Item -->
             <div class="character-item">
 
                 <div class="character-image">
-                    <img src="{{ item.characterImage }}" alt="{{ item.alt }}" class="img-fluid">
+                    <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
                 </div>
 
                 <a class="btn btn-light name" routerLink="/single-character">
-                    <h3 class="name display-4">{{item.title}}</h3>
+                    <h3 class="name display-4">{{character.title}}</h3>
                 </a>
                 
             </div>

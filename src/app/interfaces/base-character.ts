@@ -1,6 +1,6 @@
-export interface BaseCharacter {
-    id: number, 
-    title: string, 
-    category: string, 
-    characterImage: string,
+export class BaseCharacter {
+    id: number = 0;
+    title: string  = ''; 
+    category: string = ''; 
+    characterImage: string = '';
 }

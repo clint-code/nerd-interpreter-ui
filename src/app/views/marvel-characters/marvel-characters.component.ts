@@ -1,29 +1,26 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-import { map } from 'rxjs/operators';
-
 import { CharacterdataService } from '../../services/characterdata.service';
-
 import  $  from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-// export interface RecordData { 
-//   id: number, 
-//   title: string, 
-//   category: string, 
-//   characterImage: string,
-// };
+export interface characterInfo {
+  id: number;
+  title: string;
+  category: string;
+  characterImage: string;
+  alt: string;
+}
 
-// interface RecordcharactersData {
-//   cached?: RecordData[];
-//   refined?: RecordData[];
-// }
+interface characterStore {
+  cached?: characterInfo[];
+  refined?: characterInfo[];
+}
 
 @Component({
   selector: 'app-marvel-characters',
@@ -42,9 +39,7 @@ export class MarvelCharactersComponent implements OnInit {
   selection: string;
   reset: string;
   charactersData:any;
-  response: any = [];
-
-  //charactersData: RecordcharactersData = {};
+  characterStore : characterStore = {};
 
   options: NgxMasonryOptions = {
 
@@ -74,79 +69,11 @@ export class MarvelCharactersComponent implements OnInit {
       })
     }, 500);
 
-    // let data = [
-
-    //   {
-    //     id: 1,
-    //     title: "Black Widow",
-    //     category: "hero",
-    //     characterImage: "./assets/img/marvel-characters/black-widow.png",
-    //     alt: "blackwidow"
-    //   },
-
-    //   {
-    //     id: 4,
-    //     title: "Black Panther",
-    //     category: "hero",
-    //     characterImage: "./assets/img/marvel-characters/black-panther.png",
-    //     alt: "blackpanther"
-    //   }, 
-    //   {
-    //     id: 3,
-    //     title: "Erik Killmonger",
-    //     category: "villain",
-    //     characterImage: "./assets/img/marvel-characters/erik-killmonger.png",
-    //     alt: "erik-killmonger"
-    //   },
-    //   {
-    //     id: 5,
-    //     title: "Iron Man",
-    //     category: "hero",
-    //     characterImage: "./assets/img/marvel-characters/iron-man.png",
-    //     alt: "iron-man"
-    //   },
-
-    //   {
-    //     id: 2,
-    //     title: "Magneto",
-    //     category: "villain",
-    //     characterImage: "./assets/img/marvel-characters/magneto.png",
-    //     alt: "magneto"
-    //   },
-  
-    //   {
-    //     id: 6,
-    //     title: "Thanos",
-    //     category: "villain",
-    //     characterImage: "./assets/img/marvel-characters/thanos.png",
-    //     alt: "thanos"
-    //   }
-
-    // ]
-
     this.getMarvelCharactersData();
-
-    // this.selection = 'all';
-    // this.charactersData.cached = this.response;
-
-    // this.charactersData.refined = this.response.sort((a,b) => a.id - b.id);
 
     $(".filterButton").click(this.toggleFilter);
 
   }
-
-  // expand(item){
-  //   item.opened = !item.opened;
-  //   this.masonry.layout();
-  // }
-
-  // styles(item){
-
-  //   return {
-  //     'opened' : item.opened
-  //   }
-
-  // }
 
   ngAfterViewInit():void{
 
@@ -170,21 +97,9 @@ export class MarvelCharactersComponent implements OnInit {
 
       this.charactersData = response;
 
-      // this.charactersData.cached = response;
+      this.characterStore.cached = response;
 
-      // this.charactersData.refined = response.sort((a, b) => a.id - b.id);
-
-      // let heroes = response.filter(obj=> obj.category == "hero");
-
-      // let villains = response.filter(obj=> obj.category == "villain");
-
-      // console.log(this.charactersData);
-
-      // console.log("Heroes:", heroes);
-
-      // console.log("Villains", villains);
-
-      //this.filterCharacters(obj.category);
+      this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
 
     });
 
@@ -226,34 +141,13 @@ export class MarvelCharactersComponent implements OnInit {
 
   filterCharacters(category:any){
 
-    let filterCharacters = this.charactersData.filter(obj=> obj.category == category || category == 'all' );
+    this.characterStore.refined = this.characterStore.cached.filter(
+      (p) => p.category == category || category == 'all'
+    );
+    
+    this.masonry.reloadItems();
 
-      console.log("Filtered result of: " + category, filterCharacters);
-
-      this.masonry.reloadItems();
-
-    // this.characterDataService.getAllMarvelCharactersListingJSON().subscribe( (response: any[]) => {
-
-    //   this.charactersData = response;
-
-    //   let result = response.filter(obj=> obj.category == category || category == 'all' );
-
-    //   console.log("Filtered result: ",result);
-
-    //   this.masonry.reloadItems();
-
-    // });
-
-
-    //let result = response.filter(obj=> obj.category == category || category == 'all' );
-
-    //console.log(category);
-
-    // this.charactersData.refined = this.charactersData.cached
-
-    //     .filter(p => p.category == category || category == 'all');
-
-    //   this.masonry.reloadItems();
+    console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 
