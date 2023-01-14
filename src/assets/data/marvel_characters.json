@@ -65,6 +65,14 @@
       "category": "hero",
       "characterImage": "./assets/img/marvel-characters/thor.png",
       "alt": "thor"
+    },
+
+    {
+      "id": 10,
+      "title": "Loki",
+      "category": "villain",
+      "characterImage": "./assets/img/marvel-characters/loki.png",
+      "alt": "loki"
     }
 
 

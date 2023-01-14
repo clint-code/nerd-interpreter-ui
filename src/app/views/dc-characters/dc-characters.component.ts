@@ -2,7 +2,6 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
-
 import { CharacterdataService } from '../../services/characterdata.service';
 import $ from 'jquery';
 
@@ -49,7 +48,8 @@ export class DcCharactersComponent implements OnInit {
     horizontalOrder: true,
     fitWidth: true,
     percentPosition: true,
-    columnWidth: 190
+    columnWidth: 190,
+    originLeft: false
 
   };
 
@@ -72,6 +72,8 @@ export class DcCharactersComponent implements OnInit {
         top: 0
       })
     }, 500);
+
+    this.getDcCharactersData();
     
     $(".filterButton").click(this.toggleFilter);
 
@@ -93,11 +95,11 @@ export class DcCharactersComponent implements OnInit {
 
     }, 1000);
 
-    setTimeout(() => {
+    // setTimeout(() => {
 
-      this.getDcCharactersData();
+    //   this.getDcCharactersData();
 
-    }, 3000);
+    // }, 3000);
 
   }
 

@@ -77,6 +77,8 @@ export class MarvelCharactersComponent implements OnInit {
 
   ngAfterViewInit():void{
 
+    this.siteImages = Preloader.getImages();
+
     gsap.registerPlugin(ScrollTrigger);
     
     setTimeout(() => {
@@ -88,12 +90,6 @@ export class MarvelCharactersComponent implements OnInit {
       this.fadeInLeft();
 
     }, 1000);
-
-    setTimeout(() => {
-
-      this.getMarvelCharactersData();
-
-    }, 3000);
 
   }
 

@@ -10,9 +10,14 @@
         "alt": "jokers-five-way-revenge"
     },
     {
-        "id": 1,
+        "id": 3,
         "url": "./assets/img/character-page/killing-joke.jpg",
         "alt": "killing-joke"
+    },
+    {
+        "id": 4,
+        "url": "./assets/img/character-page/death-of-the-family.jpg",
+        "alt": "death-of-the-family"
     }
 
 ]

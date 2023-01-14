@@ -178,7 +178,7 @@ body {
     left: -100%;
     top: 0px;
     bottom: 0px;
-    z-index: 20;
+    z-index: 1;
     display: block;
     @include transition(0.5s, linear);
 }
@@ -1046,7 +1046,7 @@ body {
             margin: 2em auto;
 
             li {
-                padding: 5px !important;
+                padding: 5px;
 
                 a {
                     font-size: 35px;
@@ -1464,8 +1464,6 @@ body {
     .menuOpener,
     .menuCloser {
         top: 2%;
-        width: 50px;
-        height: 55px;
     }
 
     .mainMenu {
@@ -1474,7 +1472,7 @@ body {
 
             li {
 
-                text-align: left !important;
+                text-align: left;
 
                 a {
                     font-size: 25px;
@@ -1485,7 +1483,8 @@ body {
         }
 
         .nav-logo-section {
-            left: 35%;
+            left: 25%;
+            width: 40%;
         }
     }
 
@@ -1685,6 +1684,10 @@ body {
 
 //max-width 400px
 @media (max-width:400px) {
+
+    .nav-logo-section {
+        top: 6%;
+    }
 
     #scrollbar {
         height: 4%;

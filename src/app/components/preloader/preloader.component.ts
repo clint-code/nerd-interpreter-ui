@@ -63,8 +63,6 @@ export class PreloaderComponent implements OnInit {
 
       // setTimeout(()=>{      }, 2000);
         this.loadComplete();
-
-
       
     }
 
