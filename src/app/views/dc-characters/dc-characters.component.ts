@@ -48,8 +48,8 @@ export class DcCharactersComponent implements OnInit {
     horizontalOrder: true,
     //fitWidth: true,
     //percentPosition: true,
-    columnWidth: 200,
-    originLeft: false,
+    columnWidth: 20,
+    //originLeft: false,
     resize: true
 
   };

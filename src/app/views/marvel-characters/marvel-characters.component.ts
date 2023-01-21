@@ -47,10 +47,10 @@ export class MarvelCharactersComponent implements OnInit {
     gutter: 10,
     transitionDuration: '1.2s',
     horizontalOrder: true,
-    fitWidth: true,
-    percentPosition: true,
-    columnWidth: 190
-
+    //fitWidth: true,
+    //percentPosition: true,
+    columnWidth: 20,
+    resize: true
   };
 
   @ViewChild(NgxMasonryComponent, {static: false}) 

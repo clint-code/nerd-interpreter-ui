@@ -77,7 +77,8 @@
 
         <ngx-masonry 
             [options]="options" 
-            [updateLayout]="characterStore.refined">
+            [updateLayout]="characterStore.refined"
+            [useImagesLoaded]="true">
 
             <div ngxMasonryItem *ngFor="let character of characterStore.refined">
 
@@ -88,7 +89,7 @@
                         <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
                     </div>
     
-                    <a class="btn btn-light name" routerLink="/single-character">
+                    <a class="name" routerLink="/single-character">
                         <h3 class="name display-4">{{character.title}}</h3>
                     </a>
                     
@@ -116,13 +117,14 @@
 
             <div class="mini-background-section mb-5">
 
-                <div class="caption-text-section mb-5">
+                <div class="caption-text-section">
                     <h3 class="text-white display-3 text-right">DC Characters</h3>
                     <p class="text-white text-right">
                         Check out character studies from the characters in the DC Universe, both heroes and villains
                     </p>
+                    
                     <a routerLink="/dc-characters" 
-                        class="btn btn-light text-black m-3">
+                        class="btn btn-light text-black">
                         Discover More
                     </a>
                 </div>
@@ -136,7 +138,7 @@
 
             <div class="mini-background-section mt-5">
 
-                <div class="caption-text-section mb-5">
+                <div class="caption-text-section">
 
                     <h3 class="text-white display-3 text-right">Hero's Journey</h3>
                     <p class="text-white text-right">
