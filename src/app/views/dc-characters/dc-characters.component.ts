@@ -46,16 +46,15 @@ export class DcCharactersComponent implements OnInit {
     gutter: 10,
     transitionDuration: '1.2s',
     horizontalOrder: true,
-    fitWidth: true,
-    percentPosition: true,
-    columnWidth: 190,
-    originLeft: false
+    //fitWidth: true,
+    //percentPosition: true,
+    columnWidth: 200,
+    originLeft: false,
+    resize: true
 
   };
 
-  @ViewChild(NgxMasonryComponent, { static: false })
-
-  masonry: NgxMasonryComponent;
+  @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
 
   constructor(
     private characterDataService: CharacterdataService,

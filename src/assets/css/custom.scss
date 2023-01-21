@@ -363,7 +363,6 @@ body {
     .banner-text {
         position: absolute;
         top: 50%;
-        right: 10%;
         width: 100%;
     }
 
@@ -392,9 +391,9 @@ body {
     .grid-sizer,
     .character-item {
         width: 27%;
-        margin-left: 2.5%;
-        padding: 20px;
-        margin-right: 2.5%;
+        margin-left: 1.5%;
+        padding: 10px;
+        margin-right: 1.5%;
         //float: left;
 
         a {

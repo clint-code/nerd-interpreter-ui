@@ -276,7 +276,6 @@ body {
 .banner-image-section .banner-text {
   position: absolute;
   top: 50%;
-  right: 10%;
   width: 100%;
 }
 
@@ -302,9 +301,9 @@ body {
 .grid .grid-sizer,
 .grid .character-item {
   width: 27%;
-  margin-left: 2.5%;
-  padding: 20px;
-  margin-right: 2.5%;
+  margin-left: 1.5%;
+  padding: 10px;
+  margin-right: 1.5%;
 }
 .grid .grid-sizer a,
 .grid .character-item a {
