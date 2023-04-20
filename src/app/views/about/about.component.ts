@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import  $  from 'jquery';
+import { Title, Meta } from '@angular/platform-browser';
 
 import { CharacterdataService } from '../../services/characterdata.service';
 
@@ -40,12 +41,30 @@ export class AboutComponent implements OnInit {
   }
 
   constructor(
-    private characterPortraitsData: CharacterdataService
+    private characterPortraitsData: CharacterdataService,
+    private titleService: Title,
+    private metaService: Meta,
   ) { }
 
   ngOnInit(): void {
 
     this.loadingView = true;
+
+    this.titleService.setTitle("The Nerd Interpreter - About");
+
+    this.metaService.updateTag(
+		  { 
+        name: 'keywords', 
+        content: 'Marvel Characters, DC Characters, DC, Marvel, Heroes, Villains'
+		  }
+	  );
+
+	  this.metaService.updateTag(
+		  { 
+        name: 'description', 
+        content: 'About the blog'
+		  }
+	  );
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({

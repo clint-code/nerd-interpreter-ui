@@ -2,7 +2,10 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
+import { Title, Meta } from '@angular/platform-browser';
+
 import { CharacterdataService } from '../../services/characterdata.service';
+
 import $ from 'jquery';
 
 import { gsap } from 'gsap';
@@ -58,6 +61,8 @@ export class DcCharactersComponent implements OnInit {
 
   constructor(
     private characterDataService: CharacterdataService,
+    private titleService: Title,
+    private metaService: Meta,
   ) {
 
   }
@@ -65,6 +70,22 @@ export class DcCharactersComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadingView = true;
+
+    this.titleService.setTitle("The Nerd Interpreter - DC Characters");
+
+    this.metaService.updateTag(
+		  { 
+        name: 'keywords', 
+        content: 'Marvel Characters, DC Characters, DC, Marvel, Heroes, Villains'
+		  }
+	  );
+
+	  this.metaService.updateTag(
+		  { 
+        name: 'description', 
+        content: 'DC comic book heroes and villains'
+		  }
+	  );
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({
