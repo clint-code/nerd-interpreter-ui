@@ -38,7 +38,7 @@ export class DcCharactersComponent implements OnInit {
   selection: string;
   reset: string;
   charactersData: any;
-  characterStore : characterStore = {};
+  characterStore: characterStore = {};
 
   options: NgxMasonryOptions = {
 
@@ -68,12 +68,12 @@ export class DcCharactersComponent implements OnInit {
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({
-        top: 0
+        top: 40
       })
     }, 500);
 
     this.getDcCharactersData();
-    
+
     $(".filterButton").click(this.toggleFilter);
 
   }
@@ -102,9 +102,9 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  getDcCharactersData(){
+  getDcCharactersData() {
 
-    this.characterDataService.getAllDcCharactersListingJSON().subscribe( (response: any[]) => {
+    this.characterDataService.getAllDcCharactersListingJSON().subscribe((response: any[]) => {
 
       this.charactersData = response;
 
@@ -150,15 +150,15 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category:any){
-    
-      this.characterStore.refined = this.characterStore.cached.filter(
-        (p) => p.category == category || category == 'all'
-      );
-    
-      this.masonry.reloadItems();
+  filterCharacters(category: any) {
 
-      console.log("Filtered result of: " + category, this.characterStore.refined);
+    this.characterStore.refined = this.characterStore.cached.filter(
+      (p) => p.category == category || category == 'all'
+    );
+
+    this.masonry.reloadItems();
+
+    console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 

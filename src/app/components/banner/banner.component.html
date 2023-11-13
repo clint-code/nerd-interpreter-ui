@@ -1,19 +1,25 @@
-<div class="row banner-image-section">
+<div class="banner-image-section">
 
-    <div 
-        class=""
-        [ngClass]="bannerImage !== '' ? 'parallaxEffect' : '' "
-        [ngStyle]="{'background-image': 'url(' + bannerImage + ')'}">
+    <!-- <div class="banner-text">
 
-        <div class="overlayBanner"></div>
+        <h1 class="display-1 text-center">
+            {{bannerTitle}}
+        </h1>
 
-        <div class="banner-text">
-            <h1 class="text-white display-1 text-center">
-                {{bannerTitle}}
-            </h1>
-        </div>
+    </div> -->
 
-        <img src="{{bannerImage}}" alt="" class="hideImage">
+    <div class="bannerImage">
+
+        <img src="{{bannerImage}}" alt="" class="img-fluid">
+        
     </div>
+
+<!--  <div class="banner-text"></div> -->
+
+        <h1 class="display-1 text-center">
+            {{bannerTitle}}
+        </h1>
+
+    
 
 </div>

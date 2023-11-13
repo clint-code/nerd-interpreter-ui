@@ -5,99 +5,106 @@
 ></app-preloader>
 <!--END Site Preloaders-->
 
-<!--Logo section-->
-<div class="row">
+<div class="container-fluid">
 
-    <div class="mini-logo-section">
-        <a routerLink="/">
-            <img src="../../../assets/img/nav-menu/sm-logo-white.png" alt="the-nerd-interpreter" class="img-fluid">
-        </a>
+    <!--Logo section-->
+    <div class="row ml-1 mr-">
+
+        <div class="mini-logo-section">
+            <a routerLink="/">
+                <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+            </a>
+        </div>
+
     </div>
+    <!--End of logo section-->
 
-</div>
-<!--End of logo section-->
+    <app-banner
+        bannerTitle="Marvel Characters"
+        bannerImage="../../../assets/img/marvel-characters/marvel-characters-hero-banner.jpg"
+    >
+    </app-banner>
 
-<app-banner
-    bannerTitle="Marvel Characters"
-    bannerImage="../../../assets/img/marvel-characters/marvel-characters-hero-banner.jpg"
->
+    <div class="row">
 
-</app-banner>
+        <div class="p-3 mt-3 text-intro-section">
 
-<div class="row">
-    <div class="p-3 mt-3 text-intro-section">
-        <p class="text-center">
-            Here's an in-depth analysis of what makes these Marvel comic book
-            characters unique, with a look at their nuances and reasons
-            behind their intentions as heroes or villains
-        </p>
-    </div>
-</div>
-
-<div class="row">
-
-    <div class="col explore-characters-txt mt-5">
-        <h4 class="text-center display-3">
-            Explore the Characters
-        </h4>
-    </div>
-
-</div>
-
-<div class="row">
-
-    <div class="col p-3">
-
-        <div class="filter-button-group text-center">
-            <button 
-                class="button filterButton is-checked p-3 m-3" 
-                (click)="filterCharacters('all')">
-                all characters
-            </button>
-
-            <button 
-                class="button filterButton p-3 m-3" 
-                (click)="filterCharacters('hero')">
-                Heroes
-            </button>
-
-            <button 
-                class="button filterButton p-3 m-3" 
-                (click)="filterCharacters('villain')">
-                Villains
-            </button>
+            <p class="text-center">
+                Here's an in-depth analysis of what makes these Marvel comic book
+                characters unique, with a look at their nuances and reasons
+                behind their intentions as heroes or villains
+            </p>
 
         </div>
 
     </div>
 
-    <div class="grid">
+    <div class="row">
 
-        <div class="grid-sizer"></div>
+        <div class="col explore-characters-txt mt-5">
+            <h4 class="text-center display-3">
+                Explore the Characters
+            </h4>
+        </div>
 
-        <ngx-masonry 
-            [options]="options" 
-            [updateLayout]="characterStore.refined"
-            [useImagesLoaded]="true">
+    </div>
 
-            <div ngxMasonryItem *ngFor="let character of characterStore.refined">
+    <div class="row">
 
-                <!-- Character Item -->
-                <div class="character-item">
-    
-                    <div class="character-image">
-                        <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
-                    </div>
-    
-                    <a class="name" routerLink="/single-character">
-                        <h3 class="name display-4">{{character.title}}</h3>
-                    </a>
-                    
-                </div>
-    
+        <div class="col p-3">
+
+            <div class="filter-button-group text-center">
+                <button 
+                    class="button filterButton is-checked p-3 m-3" 
+                    (click)="filterCharacters('all')">
+                    all characters
+                </button>
+
+                <button 
+                    class="button filterButton p-3 m-3" 
+                    (click)="filterCharacters('hero')">
+                    Heroes
+                </button>
+
+                <button 
+                    class="button filterButton p-3 m-3" 
+                    (click)="filterCharacters('villain')">
+                    Villains
+                </button>
+
             </div>
 
-       </ngx-masonry>
+        </div>
+
+        <div class="grid">
+
+            <div class="grid-sizer"></div>
+
+            <ngx-masonry 
+                [options]="options" 
+                [updateLayout]="characterStore.refined"
+                [useImagesLoaded]="true">
+
+                <div ngxMasonryItem *ngFor="let character of characterStore.refined">
+
+                    <!-- Character Item -->
+                    <div class="character-item">
+        
+                        <div class="character-image">
+                            <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
+                        </div>
+        
+                        <a class="name" routerLink="/single-character">
+                            <h3 class="name display-4">{{character.title}}</h3>
+                        </a>
+                        
+                    </div>
+        
+                </div>
+
+        </ngx-masonry>
+
+        </div>
 
     </div>
 
@@ -140,7 +147,7 @@
 
                 <div class="caption-text-section">
 
-                    <h3 class="text-white display-3 text-right">Hero's Journey</h3>
+                    <h3 class="text-white display-3 text-right">Superheroes and Saints</h3>
                     <p class="text-white text-right">
                         The Hero’s Journey, illustrates the growth process of a character to greatness.
                     </p>
@@ -163,6 +170,6 @@
 
 </section>
 
-<app-emailsubscription></app-emailsubscription>
+<!-- <app-emailsubscription></app-emailsubscription> -->
 
 <app-footer-alt></app-footer-alt>

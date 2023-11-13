@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
-import  $  from 'jquery';
+import $ from 'jquery';
 
 import { CharacterdataService } from '../../services/characterdata.service';
 
@@ -15,9 +15,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class SingleCharacterComponent implements OnInit {
 
-  loadingView:boolean = false;
-  imagesLoaded:boolean = false;
-  siteImages:any = [];
+  loadingView: boolean = false;
+  imagesLoaded: boolean = false;
+  siteImages: any = [];
 
   comicCovers: any;
 
@@ -39,7 +39,7 @@ export class SingleCharacterComponent implements OnInit {
         items: 1,
       }
     }
-  }
+  };
 
   constructor(
     private comicCharacterDataService: CharacterdataService
@@ -55,7 +55,7 @@ export class SingleCharacterComponent implements OnInit {
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({
-        top: 0
+        top: 30
       })
     }, 500);
 
@@ -63,7 +63,7 @@ export class SingleCharacterComponent implements OnInit {
 
   }
 
-  ngAfterViewInit():void{
+  ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
 
@@ -76,10 +76,10 @@ export class SingleCharacterComponent implements OnInit {
       this.animateContentCategory();
 
     }, 1000);
-    
+
   }
 
-  progressScrollBar(){
+  progressScrollBar() {
 
     let barBackground = $("#scrollbar-bg");
     let scrollTop = window.scrollY;
@@ -92,14 +92,14 @@ export class SingleCharacterComponent implements OnInit {
       barBackground.css("min-width", $(document).width() + "px");
     });
 
-    let scrollPercent = scrollTop / (docHeight - winHeight) *100;
+    let scrollPercent = scrollTop / (docHeight - winHeight) * 100;
 
     $("#scrollbar").css("width", scrollPercent + "%");
 
 
   }
 
-  getComicCovers(){
+  getComicCovers() {
 
     this.comicCharacterDataService.getComicCoversListing().subscribe(response => {
 
@@ -111,7 +111,7 @@ export class SingleCharacterComponent implements OnInit {
 
   }
 
-  scrollPage(event){
+  scrollPage(event) {
 
     console.log(event);
 
@@ -126,15 +126,15 @@ export class SingleCharacterComponent implements OnInit {
 
   }
 
-  showUpScroll(){
+  showUpScroll() {
 
-    let scrollUp= $(".scrollup");
+    let scrollUp = $(".scrollup");
 
     scrollUp.toggleClass('scrollup-visible', $(this).scrollTop() > scrollUp.height());
 
   }
 
-  fadeInLeft(){
+  fadeInLeft() {
 
     const scrollBox = gsap.timeline({
 
@@ -144,15 +144,15 @@ export class SingleCharacterComponent implements OnInit {
       }
     });
 
-      scrollBox.from('.mini-navigation',{
-         opacity: 0, 
-         x: -100,
-         duration: 2
-      });
+    scrollBox.from('.mini-navigation', {
+      opacity: 0,
+      x: -100,
+      duration: 2
+    });
 
   }
 
-  animateContentCategory(){
+  animateContentCategory() {
 
     document.querySelectorAll('.main-cnt').forEach((box) => {
 
@@ -163,11 +163,11 @@ export class SingleCharacterComponent implements OnInit {
         },
       });
 
-      scrollBox.from(box, { 
-        y: 150, 
+      scrollBox.from(box, {
+        y: 150,
         opacity: 0,
         duration: 2.5,
-        stagger: 1, 
+        stagger: 1,
       });
 
     });

@@ -26,6 +26,7 @@
     "jquery": "^3.5.0",
     "ngx-masonry": "^1.1.4",
     "ngx-owl-carousel-o": "^2.0.3",
+    "npm": "^10.2.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

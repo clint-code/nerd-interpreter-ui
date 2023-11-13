@@ -122,7 +122,7 @@ body {
     right: 0px;
     top: 0px;
     bottom: 0px;
-    z-index: 10;
+    z-index: 100;
 
     .loaderContent {
         text-align: center;
@@ -163,7 +163,7 @@ body {
     height: 62px;
     cursor: pointer;
     z-index: 20;
-    background: url("../img/icons/nav-icon.png") no-repeat;
+    background: url("../img/icons/nav-icon-orange.png") no-repeat;
 }
 
 .menuCloser {
@@ -189,10 +189,6 @@ body {
     transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
     left: 50%;
     z-index: 10;
-}
-
-.mini-logo-section {
-    z-index: 1;
 }
 
 .mainMenu {
@@ -341,9 +337,9 @@ body {
 
 
 .mini-logo-section {
-    position: absolute;
-    top: 5%;
-    left: 5%;
+    // position: absolute;
+    // top: 5%;
+    // left: 5%;
 }
 
 .parallaxEffect {
@@ -359,11 +355,18 @@ body {
 
 .banner-image-section {
     position: relative;
+    margin-top: 45px;
 
-    .banner-text {
-        position: absolute;
-        top: 50%;
-        width: 100%;
+    // .banner-text {
+    //     position: absolute;
+    //     top: 50%;
+    //     width: 100%;
+    // }
+
+    .bannerImage{
+        img{
+            border-radius: 70px;
+        }
     }
 
 }
@@ -714,7 +717,25 @@ body {
     display: block;
 }
 
+.source-section{
+    
+    .text-section{
+        border: 4px solid #000;
+        background: #fff;
+        border-radius: 28px;
+    }
 
+    .list-group{
+        .list-group-item{
+            border: none;
+            background-color: transparent;
+            a{
+                font-size: 24px;
+            }
+        }
+    }
+
+}
 
 /*about page section*/
 

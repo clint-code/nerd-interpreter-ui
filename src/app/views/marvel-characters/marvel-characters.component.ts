@@ -4,7 +4,7 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 
 import { CharacterdataService } from '../../services/characterdata.service';
-import  $  from 'jquery';
+import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -26,20 +26,20 @@ interface characterStore {
   selector: 'app-marvel-characters',
   templateUrl: './marvel-characters.component.html',
   styleUrls: ['./marvel-characters.component.css'],
-  providers:[
+  providers: [
     CharacterdataService
   ]
 })
 export class MarvelCharactersComponent implements OnInit {
 
-  loadingView:boolean = false;
-  imagesLoaded:boolean = false;
-  siteImages:any = [];
+  loadingView: boolean = false;
+  imagesLoaded: boolean = false;
+  siteImages: any = [];
 
   selection: string;
   reset: string;
-  charactersData:any;
-  characterStore : characterStore = {};
+  charactersData: any;
+  characterStore: characterStore = {};
 
   options: NgxMasonryOptions = {
 
@@ -53,7 +53,7 @@ export class MarvelCharactersComponent implements OnInit {
     resize: true
   };
 
-  @ViewChild(NgxMasonryComponent, {static: false}) 
+  @ViewChild(NgxMasonryComponent, { static: false })
 
   masonry: NgxMasonryComponent;
 
@@ -65,7 +65,7 @@ export class MarvelCharactersComponent implements OnInit {
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({
-        top: 0
+        top: 40
       })
     }, 500);
 
@@ -75,12 +75,12 @@ export class MarvelCharactersComponent implements OnInit {
 
   }
 
-  ngAfterViewInit():void{
+  ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
 
     gsap.registerPlugin(ScrollTrigger);
-    
+
     setTimeout(() => {
 
       this.siteImages = Preloader.getImages();
@@ -93,9 +93,9 @@ export class MarvelCharactersComponent implements OnInit {
 
   }
 
-  getMarvelCharactersData(){
+  getMarvelCharactersData() {
 
-    this.characterDataService.getAllMarvelCharactersListingJSON().subscribe( (response: any[]) => {
+    this.characterDataService.getAllMarvelCharactersListingJSON().subscribe((response: any[]) => {
 
       this.charactersData = response;
 
@@ -107,7 +107,7 @@ export class MarvelCharactersComponent implements OnInit {
 
   }
 
-  fadeInUp(){
+  fadeInUp() {
 
     const scrollBox = gsap.timeline({
 
@@ -117,21 +117,21 @@ export class MarvelCharactersComponent implements OnInit {
       }
     });
 
-      scrollBox.from('.text-intro-section',{
-         opacity: 0, 
-         y: 100,
-         duration: 2
-      });
+    scrollBox.from('.text-intro-section', {
+      opacity: 0,
+      y: 100,
+      duration: 2
+    });
 
   }
 
-  toggleFilter(){
+  toggleFilter() {
 
-    if($(this).hasClass("is-checked") ) {
+    if ($(this).hasClass("is-checked")) {
 
       $(".filterButton").removeClass("is-checked");
       $(this).removeClass("is-checked");
-    
+
     } else {
 
       $(".filterButton").removeClass("is-checked");
@@ -141,19 +141,19 @@ export class MarvelCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category:any){
+  filterCharacters(category: any) {
 
     this.characterStore.refined = this.characterStore.cached.filter(
       (p) => p.category == category || category == 'all'
     );
-    
+
     this.masonry.reloadItems();
 
     console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 
-  fadeInLeft(){
+  fadeInLeft() {
 
     const scrollBox = gsap.timeline({
 
@@ -164,11 +164,11 @@ export class MarvelCharactersComponent implements OnInit {
       }
     });
 
-      scrollBox.from('.more-cnt-section',{
-         opacity: 0, 
-         x: -100,
-         duration: 2
-      });
+    scrollBox.from('.more-cnt-section', {
+      opacity: 0,
+      x: -100,
+      duration: 2
+    });
 
   }
 
