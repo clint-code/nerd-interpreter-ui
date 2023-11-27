@@ -21,7 +21,7 @@
 
                     <img class="backgroundImage contact" src="./assets/img/nav-menu/bat-signal-banner.jpg" alt="">
 
-                    <img class="backgroundImage hero-journey" src="./assets/img/nav-menu/heroes-journey-background.jpg"
+                    <img class="backgroundImage superheroes-saints" src="./assets/img/nav-menu/heroes-journey-background.jpg"
                         alt="">
 
                 </div>
@@ -67,6 +67,19 @@
                             (mouseleave)="resetStyles($event)"
                             (click)="toggleMenu()">
                             Marvel Characters
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a 
+                            routerLink="/superheroes-saints"
+                            routerLinkActive="active"
+                            data-background="superheroes-saints"
+                            (mouseenter)="handleLinkHover($event)"
+                            (mouseleave)="resetStyles($event)"
+                            (click)="toggleMenu()">
+                            Superheroes and Saints
                         </a>
                     </li>
 

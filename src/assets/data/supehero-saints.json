@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "characterImage": "./assets/img/superheroes-saints/Captain-America-St.Sebastian.jpg",
+      "alt": "Captain-America-Sebastian"
+    },
+    {
+        "id": 2,
+        "characterImage": "./assets/img/superheroes-saints/Daredevil-Thomas-More.jpg",
+        "alt": "Daredevil-Thomas-More"
+    },
+    {
+        "id": 3,
+        "characterImage": "./assets/img/superheroes-saints/Iron-Man-St-Augustine.jpg",
+        "alt": "Iron-Man-St-Augustine"
+    },
+    {
+        "id": 4,
+        "characterImage": "./assets/img/superheroes-saints/Wonder-Woman-Joan-of-Arc.jpg",
+        "alt": "Wonder-Woman-Joan-of-Arc"
+    }
+
+]

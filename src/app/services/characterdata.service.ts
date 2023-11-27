@@ -12,25 +12,30 @@ export class CharacterdataService {
     private http: HttpClient
   ) { }
 
-  getAllDcCharactersListingJSON(){
+  getAllDcCharactersListingJSON() {
 
     return this.http.get("/assets/data/dc_characters.json");
-    
+
   }
 
-  getAllMarvelCharactersListingJSON(){
+  getAllMarvelCharactersListingJSON() {
 
     return this.http.get("/assets/data/marvel_characters.json");
-    
+
   }
 
-  getComicCoversListing(){
+  getAllSuperheroesSaintsListing() {
+
+    return this.http.get("/assets/data/supehero-saints.json");
+  }
+
+  getComicCoversListing() {
 
     return this.http.get("/assets/data/comics_covers.json");
 
   }
 
-  getCharacterPortraitsListing(){
+  getCharacterPortraitsListing() {
 
     return this.http.get("/assets/data/character_portraits.json");
 

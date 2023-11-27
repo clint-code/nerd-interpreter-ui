@@ -22,6 +22,8 @@ import { SingleHeroJourneyComponent } from './views/single-hero-journey/single-h
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { EmailsubscriptionComponent } from './components/emailsubscription/emailsubscription.component';
 import { ProgressOnscrollbarComponent } from './components/progress-onscrollbar/progress-onscrollbar.component';
+import { SuperheroesSaintsComponent } from './views/superheroes-saints/superheroes-saints.component';
+import { SingleSuperheroSaintViewComponent } from './views/single-superhero-saint-view/single-superhero-saint-view.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { ProgressOnscrollbarComponent } from './components/progress-onscrollbar/
     PreloaderComponent,
     EmailsubscriptionComponent,
     ProgressOnscrollbarComponent,
+    SuperheroesSaintsComponent,
+    SingleSuperheroSaintViewComponent,
     
   ],
   imports: [

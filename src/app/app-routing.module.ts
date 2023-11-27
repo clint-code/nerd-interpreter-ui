@@ -7,6 +7,8 @@ import { DcCharactersComponent } from './views/dc-characters/dc-characters.compo
 import { HomeComponent } from './views/home/home.component';
 import { MarvelCharactersComponent } from './views/marvel-characters/marvel-characters.component';
 import { SingleCharacterComponent } from './views/single-character/single-character.component';
+import { SuperheroesSaintsComponent } from './views/superheroes-saints/superheroes-saints.component';
+import { SingleSuperheroSaintViewComponent } from './views/single-superhero-saint-view/single-superhero-saint-view.component';
 
 const routes: Routes = [
     {
@@ -35,11 +37,21 @@ const routes: Routes = [
     },
 
     {
+        path: 'superheroes-saints',
+        component: SuperheroesSaintsComponent
+    },
+
+    {
+        path: 'single-superhero-saint',
+        component: SingleSuperheroSaintViewComponent
+    },
+
+    {
         path: 'contact',
         component: ContactComponent
     },
-    
-  	{ path: '**', redirectTo: '' },
+
+    { path: '**', redirectTo: '' },
 
 ];
 
@@ -49,4 +61,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

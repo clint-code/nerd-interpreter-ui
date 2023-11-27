@@ -69,18 +69,18 @@ export class MarvelCharactersComponent implements OnInit {
     this.titleService.setTitle("The Nerd Interpreter - Marvel Characters");
 
     this.metaService.updateTag(
-		  { 
-        name: 'keywords', 
+      {
+        name: 'keywords',
         content: 'Marvel Characters, DC Characters, DC, Marvel, Heroes, Villains'
-		  }
-	  );
+      }
+    );
 
-	  this.metaService.updateTag(
-		  { 
-        name: 'description', 
+    this.metaService.updateTag(
+      {
+        name: 'description',
         content: 'Marvel comic book heroes and villains'
-		  }
-	  );
+      }
+    );
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({

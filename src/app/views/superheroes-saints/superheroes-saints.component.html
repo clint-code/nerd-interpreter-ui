@@ -5,6 +5,7 @@
 ></app-preloader>
 <!--END Site Preloaders-->
 
+
 <div class="container-fluid">
 
     <!--Logo section-->
@@ -20,19 +21,19 @@
     <!--End of logo section-->
 
     <app-banner
-        bannerTitle="Marvel Characters"
-        bannerImage="../../../assets/img/marvel-characters/marvel-characters-hero-banner.jpg"
+        bannerTitle="Superheroes and Saints"
+        bannerImage="../../../assets/img/superheroes-saints/superheroes-saints-banner.jpg"
     >
     </app-banner>
+
 
     <div class="row">
 
         <div class="p-3 mt-3 text-intro-section">
 
             <p class="text-center">
-                Here's an in-depth analysis of what makes these Marvel comic book
-                characters unique, with a look at their nuances and reasons
-                behind their intentions as heroes or villains
+                Here's an in-depth analysis of the similarities and struggles of superheroes 
+                in DC and Marvel, and saints in the Catholic Church. 
             </p>
 
         </div>
@@ -43,7 +44,7 @@
 
         <div class="col explore-characters-txt mt-5">
             <h4 class="text-center display-3">
-                Explore the Characters
+                Podcast Episodes
             </h4>
         </div>
 
@@ -51,41 +52,16 @@
 
     <div class="row">
 
-        <div class="col p-3">
-
-            <div class="filter-button-group text-center">
-                <button 
-                    class="button filterButton is-checked p-3 m-3" 
-                    (click)="filterCharacters('all')">
-                    all characters
-                </button>
-
-                <button 
-                    class="button filterButton p-3 m-3" 
-                    (click)="filterCharacters('hero')">
-                    Heroes
-                </button>
-
-                <button 
-                    class="button filterButton p-3 m-3" 
-                    (click)="filterCharacters('villain')">
-                    Villains
-                </button>
-
-            </div>
-
-        </div>
-
         <div class="grid">
 
             <div class="grid-sizer"></div>
 
-            <ngx-masonry 
+            <ngx-masonry
                 [options]="options" 
                 [updateLayout]="characterStore.refined"
                 [useImagesLoaded]="true">
 
-                <div ngxMasonryItem *ngFor="let character of characterStore.refined">
+                <div ngxMasonryItem *ngFor="let character of charactersData">
 
                     <!-- Character Item -->
                     <div class="character-item">
@@ -95,7 +71,7 @@
                         </div>
         
                         <a class="name" routerLink="/single-character">
-                            <h3 class="name display-4">{{character.title}}</h3>
+                            <h3 class="name display-4">Listen Now</h3>
                         </a>
                         
                     </div>
@@ -143,24 +119,24 @@
 
             </div>
 
-            <div class="mini-background-section mt-5">
+            <div class="mini-background-section mb-5">
 
                 <div class="caption-text-section">
-
-                    <h3 class="text-white display-3 text-right">Superheroes and Saints</h3>
+                    <h3 class="text-white display-3 text-right">Marvel Characters</h3>
                     <p class="text-white text-right">
-                        An interesting view of the similarities and struggles of superheroes in DC and Marvel, and saints in the Catholic Church.
+                        Check out character studies from the characters in the Marvel Universe, both heroes and villains
                     </p>
-                    <a routerLink="/superheroes-saints" 
-                        class="btn btn-light text-black">
+
+                    <a routerLink="/marvel-characters" 
+                        class="btn btn-light text-black m-3">
                         Discover More
                     </a>
 
                 </div>
 
                 <img 
-                    src="./assets/img/heroes-journey-background.jpg"
-                    alt="heroes-journey-background" 
+                    src="./assets/img/marvel-mini-background.jpg"
+                    alt="marvel-mini-background" 
                     class="img-fluid">
 
             </div>
@@ -171,6 +147,5 @@
 
 </section>
 
-<!-- <app-emailsubscription></app-emailsubscription> -->
 
 <app-footer-alt></app-footer-alt>
