@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import $ from 'jquery';
+import { Title, Meta } from '@angular/platform-browser';
 import Preloader from '../../utils/preloader';
 
 @Component({
@@ -14,10 +15,14 @@ export class HomeComponent implements OnInit {
   imagesLoaded:boolean = false;
   siteImages:any = [];
 
-  constructor() { }
+  constructor(
+    private titleService: Title
+  ) { }
 
   ngOnInit(): void {
 
+    this.titleService.setTitle("The Nerd Interpreter - All about comic characters");
+    
     this.loadingView = true;
 
     this.backgroundAnimate();
