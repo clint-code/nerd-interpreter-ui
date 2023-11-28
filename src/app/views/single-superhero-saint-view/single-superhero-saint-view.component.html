@@ -1,1 +1,209 @@
-<p>single-superhero-saint-view works!</p>
+<!-- Site Preloaders-->
+<app-preloader
+    *ngIf="siteImages.length > 0"
+    [images]="siteImages"
+></app-preloader>
+<!--END Site Preloaders -->
+
+<div id="scrollbar">
+    <div id="scrollbar-bg"></div>
+</div>
+
+<!--Logo section-->
+<div class="row ml-1 mr-1">
+
+    <div class="mini-logo-section">
+        <a routerLink="/">
+            <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+        </a>
+    </div>
+
+</div>
+
+<div class="container-fluid">
+
+    <app-banner
+        bannerTitle="Iron Man and St. Augustine of Hippo"
+        bannerImage="./assets/img/superheroes-saints/iron-man-st-augustine-banner.jpg"
+    >
+    </app-banner>
+
+        <div class="content-container">
+
+                <!--comic superhero-facts-->
+                <section class="main-cnt mt-5 character-facts">
+
+                    <div class="container">
+
+                        <div class="row mb-2">
+
+                            <iframe 
+                                width="1536" 
+                                height="534" 
+                                src="https://www.youtube.com/embed/RNjwEaGr368" 
+                                title="Joan of Arc, Wonder Woman, and the Veiled Strength of Femininity (7 of 10)" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="intro-section text-center ">
+
+                                <h2 class="display-2 p-2 heading-txt">
+                                    Facts about Iron Man
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-5">
+
+                            <div class="cnt-description-section mb-4">
+
+                                <div class="img-section text-center">
+                                    <img src="./assets/img/superheroes-saints/iron-man.jpg" alt="joker-card" class="img-fluid">
+                                </div>
+
+
+                                <h3 class="display-4">
+                                    Origin Of The Superhero
+                                </h3>
+                                <p>
+                                    The Joker is a supervillain, who came to be in mainstream comic books back in the 1940s and was
+                                    created by Bill Finger, Bob Kane (the creator of the Batman) and Jerry Robinson.
+                                </p>
+
+                            </div>
+
+                            <div class="cnt-description-section mb-4">
+                                <h3 class="display-4">
+                                    Abilities, Powers Of The Superhero
+                                </h3>
+                                <p>
+                                    The Joker doesn’t have superhuman abilities, but he’s a highly intelligent criminal mastermind.
+                                    He
+                                    commits sadistic crimes with a variety of goofey-thematic props such as: the joker venom and a
+                                    deck
+                                    of razor-tipped cards.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+                <!--end of character-facts-->
+
+                <!--saint-facts-->
+                <section class="main-cnt mt-5 character-facts">
+
+                    <div class="container">
+        
+                        <div class="row">
+        
+                            <div class="intro-section text-center ">
+        
+                                <h2 class="display-2 p-2 heading-txt">
+                                    Facts about St. Augustine of Hippo
+                                </h2>
+        
+                            </div>
+        
+                        </div>
+        
+                        <div class="row mt-5">
+        
+                            <div class="cnt-description-section mb-4">
+        
+                                <div class="img-section text-center">
+                                    <img src="./assets/img/superheroes-saints/st-augustine.jpg" alt="st-augustine" class="img-fluid">
+                                </div>
+        
+        
+                                <h3 class="display-4">
+                                    Origin Of The Saint
+                                </h3>
+                                <p>
+                                    The Joker is a supervillain, who came to be in mainstream comic books back in the 1940s and was
+                                    created by Bill Finger, Bob Kane (the creator of the Batman) and Jerry Robinson.
+                                </p>
+        
+                            </div>
+        
+                            <div class="cnt-description-section mb-4">
+                                <h3 class="display-4">
+                                    Talents and Gifts Of The Saint
+                                </h3>
+                                <p>
+                                    The Joker doesn’t have superhuman abilities, but he’s a highly intelligent criminal mastermind.
+                                    He
+                                    commits sadistic crimes with a variety of goofey-thematic props such as: the joker venom and a
+                                    deck
+                                    of razor-tipped cards.
+                                </p>
+        
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+        
+                </section>
+                <!--end of character-facts-->
+
+        </div>
+
+        <!--source section-->
+        <section class="mt-5 mb-5 main-cnt source-section">
+
+            <div class="container">
+    
+                <div class="row">
+    
+                    <div class="intro-section text-center mb-5">
+
+                        <h2 class="display-2 p-2 heading-txt">
+                            Sources
+                        </h2>
+
+                    </div>
+
+                    <div class="col-md-12 text-section">
+
+                        <ol class="list-group">
+
+                            <li class="list-group-item">
+                                <a href="#">
+                                    The Philosophy Of The Joker
+                                </a>
+                            </li>
+
+                            <li class="list-group-item">
+                                <a href="#">
+                                    The Dark Knight- Creating The Ultimate Antagonist
+                                </a>
+                            </li>
+
+                        </ol>
+
+                    </div>                    
+    
+                </div>
+    
+            </div>
+    
+    </section>
+    <!--end of source-section -->
+
+</div>
+
+<app-footer-alt></app-footer-alt>

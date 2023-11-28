@@ -89,7 +89,7 @@ export class DcCharactersComponent implements OnInit {
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({
-        top: 40
+        top: 90
       })
     }, 500);
 

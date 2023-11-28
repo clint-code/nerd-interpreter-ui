@@ -443,6 +443,10 @@ body {
 
 .mini-background-section {
     position: relative;
+
+    .img-fluid{
+        border-radius: 30px;
+    }
 }
 
 .caption-text-section {
@@ -628,7 +632,7 @@ body {
     }
 
     img {
-        border: 10px solid #fff;
+        border-radius: 30px;
     }
 }
 

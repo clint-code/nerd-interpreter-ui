@@ -335,6 +335,9 @@ body {
 .mini-background-section {
   position: relative;
 }
+.mini-background-section .img-fluid {
+  border-radius: 30px;
+}
 
 .caption-text-section {
   position: absolute;
@@ -492,7 +495,7 @@ body {
 }
 .intro-section img,
 .cnt-description-section img {
-  border: 10px solid #fff;
+  border-radius: 30px;
 }
 
 .intro-section {
