@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
+import $ from 'jquery';
+
 import Preloader from '../../utils/preloader';
 
 @Component({
@@ -10,7 +12,7 @@ import Preloader from '../../utils/preloader';
 })
 export class ContactComponent implements OnInit {
 
-  siteImages:any = [];
+  siteImages: any = [];
 
   constructor(
     private titleService: Title,
@@ -22,18 +24,24 @@ export class ContactComponent implements OnInit {
     this.titleService.setTitle("The Nerd Interpreter - Contact");
 
     this.metaService.updateTag(
-		  { 
-        name: 'keywords', 
+      {
+        name: 'keywords',
         content: 'Contact Me'
-		  }
-	  );
+      }
+    );
+
+    $('html, body').animate({
+      scrollTop: $(".banner-image-section").offset({
+        top: 40
+      })
+    }, 500);
 
   }
 
-  ngAfterViewInit():void{
+  ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
-    
+
   }
 
 }

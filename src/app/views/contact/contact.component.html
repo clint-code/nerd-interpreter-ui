@@ -5,31 +5,35 @@
 ></app-preloader>
 <!--END Site Preloaders -->
 
-<!--Logo section-->
-<div class="row">
+<div class="container-fluid">
 
-    <div class="mini-logo-section">
-        <a routerLink="/">
-            <img src="../../../assets/img/nav-menu/sm-logo-white.png" alt="the-nerd-interpreter" class="img-fluid">
-        </a>
+    <!--Logo section-->
+    <div class="row">
+
+        <div class="mini-logo-section">
+            <a routerLink="/">
+                <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+            </a>
+        </div>
+
+    </div>
+    <!--End of logo section-->
+
+    <app-banner
+        bannerTitle="Get in Touch"
+        bannerImage="../../../assets/img/contact/bat-signal-banner.jpg"
+    >
+
+    </app-banner>
+
+    <div class="row">
+        <div class="p-3 mt-3 text-intro-section">
+            <p class="text-center">
+                Drop your feedback or queries on the form below:
+            </p>
+        </div>
     </div>
 
-</div>
-<!--End of logo section-->
-
-<app-banner
-    bannerTitle="Get in Touch"
-    bannerImage="../../../assets/img/contact/bat-signal-banner.jpg"
->
-
-</app-banner>
-
-<div class="row">
-    <div class="p-3 mt-3 text-intro-section">
-        <p class="text-center">
-            Drop your feedback or queries on the form below:
-        </p>
-    </div>
 </div>
 
 <app-footer-alt></app-footer-alt>

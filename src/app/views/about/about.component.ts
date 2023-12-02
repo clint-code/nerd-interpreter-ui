@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
-import  $  from 'jquery';
+import $ from 'jquery';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { CharacterdataService } from '../../services/characterdata.service';
@@ -14,9 +14,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class AboutComponent implements OnInit {
 
-  loadingView:boolean = false;
-  imagesLoaded:boolean = false;
-  siteImages:any = [];
+  loadingView: boolean = false;
+  imagesLoaded: boolean = false;
+  siteImages: any = [];
 
   characterPotraits: any;
 
@@ -38,7 +38,7 @@ export class AboutComponent implements OnInit {
         items: 1,
       }
     }
-  }
+  };
 
   constructor(
     private characterPortraitsData: CharacterdataService,
@@ -53,22 +53,22 @@ export class AboutComponent implements OnInit {
     this.titleService.setTitle("The Nerd Interpreter - About");
 
     this.metaService.updateTag(
-		  { 
-        name: 'keywords', 
+      {
+        name: 'keywords',
         content: 'Marvel Characters, DC Characters, DC, Marvel, Heroes, Villains'
-		  }
-	  );
+      }
+    );
 
-	  this.metaService.updateTag(
-		  { 
-        name: 'description', 
+    this.metaService.updateTag(
+      {
+        name: 'description',
         content: 'About the blog'
-		  }
-	  );
+      }
+    );
 
     $('html, body').animate({
       scrollTop: $(".banner-image-section").offset({
-        top: 0
+        top: 40
       })
     }, 500);
 
@@ -76,13 +76,13 @@ export class AboutComponent implements OnInit {
 
   }
 
-  ngAfterViewInit():void{
+  ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
-    
+
   }
 
-  getCharacterPortaits(){
+  getCharacterPortaits() {
 
     this.characterPortraitsData.getCharacterPortraitsListing().subscribe(response => {
 
