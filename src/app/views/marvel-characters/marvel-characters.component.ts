@@ -83,8 +83,8 @@ export class MarvelCharactersComponent implements OnInit {
     );
 
     $('html, body').animate({
-      scrollTop: $(".banner-image-section").offset({
-        top: 40
+      scrollTop: $(".content-section").offset({
+        top: 50
       })
     }, 500);
 

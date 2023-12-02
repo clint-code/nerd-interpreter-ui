@@ -54,8 +54,8 @@ export class SingleCharacterComponent implements OnInit {
     $(window).scroll(this.showUpScroll);
 
     $('html, body').animate({
-      scrollTop: $(".banner-image-section").offset({
-        top: 30
+      scrollTop: $(".content-section").offset({
+        top: 50
       })
     }, 500);
 

@@ -20,6 +20,13 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    $('html, body').animate({
+      scrollTop: $(".content-section").offset({
+        top: 50
+      })
+    }, 500);
+
   }
 
 }
