@@ -85,7 +85,7 @@
 
                     <owl-carousel-o [options]="customOptions">
 
-                        <ng-container *ngFor="let slide of characterPotraits">
+                        <ng-container *ngFor="let slide of characterPortraits">
                         <ng-template class="slide" carouselSlide [id]="slide.id">
                             <img [src]="slide.url" [alt]="slide.alt" [title]="slide.id">
                         </ng-template>
@@ -101,6 +101,71 @@
 
     </section>
     <!--End of About Comic Characters Section-->
+
+        <!--About Comic Characters Section-->
+        <section class="about-comic-characters-section p-5">
+
+            <div class="container">
+
+                <div class="row">
+    
+                    <div class="cnt-section-title">
+                        <h3 class="display-4 p-2">
+                            Superheroes and Saints
+                        </h3>
+                    </div>
+
+                    <div class="col-md-4 slider-section">
+    
+                        <owl-carousel-o [options]="customOptions">
+    
+                            <ng-container *ngFor="let slide of superheroSaintsPortraits">
+                            <ng-template class="slide" carouselSlide [id]="slide.id">
+                                <img [src]="slide.characterImage" [alt]="slide.alt" [title]="slide.id">
+                            </ng-template>
+                            </ng-container>
+                        
+                        </owl-carousel-o> 
+    
+                    </div>
+    
+                    <div class="col-md-8 text-section">
+    
+                        <div class="text-section">
+    
+                            <div class="cnt-section text-left p-2">
+    
+                                <p>
+                                    Comic book characters are very intriguing.
+                                </p>
+    
+                                <p>
+                                    Be it the heroes' struggles or triumphs, their moral codes, or the villains' 
+                                    their twisted sense of morality, we can, to some extent, relate with these 
+                                    larger-than-life characters. If we can't relate to them, maybe we'll just be fascinated by them.
+                                </p>
+    
+                                <p>
+                                    In this blog, there are character-deep-dives where we study certain aspects 
+                                    of these characters, with examples from comic books and films, what makes them 
+                                    who they are and what we can learn from them.
+                                </p>
+    
+                                <p>
+                                    Hope you enjoy!!
+                                </p>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </section>
+        <!--End of About Comic Characters Section-->
 
     <section class="about-section p-5" data-aos="fade-up" data-aos-duration="1300">
 
@@ -142,6 +207,7 @@
         </div>
 
     </section>
+    
 
 </div>
 

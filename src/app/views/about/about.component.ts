@@ -18,7 +18,8 @@ export class AboutComponent implements OnInit {
   imagesLoaded: boolean = false;
   siteImages: any = [];
 
-  characterPotraits: any;
+  characterPortraits: any;
+  superheroSaintsPortraits: any;
 
   customOptions: OwlOptions = {
     loop: true,
@@ -74,6 +75,8 @@ export class AboutComponent implements OnInit {
 
     this.getCharacterPortaits();
 
+    this.getSuperheroesSaintsPortraits();
+
   }
 
   ngAfterViewInit(): void {
@@ -86,11 +89,21 @@ export class AboutComponent implements OnInit {
 
     this.characterPortraitsData.getCharacterPortraitsListing().subscribe(response => {
 
-      this.characterPotraits = response;
+      this.characterPortraits = response;
 
-      console.log(this.characterPotraits);
     });
 
+  }
+
+  getSuperheroesSaintsPortraits() {
+
+    this.characterPortraitsData.getAllSuperheroesSaintsListing().subscribe(response => {
+
+      this.superheroSaintsPortraits = response;
+
+      console.log(this.superheroSaintsPortraits);
+
+    });
   }
 
 }
