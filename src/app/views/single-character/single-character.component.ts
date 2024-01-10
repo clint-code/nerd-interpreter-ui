@@ -55,7 +55,7 @@ export class SingleCharacterComponent implements OnInit {
 
     $('html, body').animate({
       scrollTop: $(".content-section").offset({
-        top: 50
+        top: 30
       })
     }, 500);
 

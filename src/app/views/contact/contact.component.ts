@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
     );
 
     $('html, body').animate({
-      scrollTop: $(".banner-image-section").offset({
+      scrollTop: $(".content-section").offset({
         top: 40
       })
     }, 500);

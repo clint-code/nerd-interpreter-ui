@@ -4,7 +4,8 @@ import $ from 'jquery';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { CharacterdataService } from '../../services/characterdata.service';
-
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -67,11 +68,12 @@ export class AboutComponent implements OnInit {
       }
     );
 
-    $('html, body').animate({
-      scrollTop: $(".banner-image-section").offset({
-        top: 40
-      })
-    }, 500);
+    // $('html, body').animate({
+    //   scrollTop: $(".content-section").offset({
+    //     top: 50
+    //   })
+
+    // }, 500);
 
     this.getCharacterPortaits();
 
@@ -82,6 +84,14 @@ export class AboutComponent implements OnInit {
   ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    setTimeout(() => {
+
+      this.animateContentCategory();
+
+    }, 1000);
 
   }
 
@@ -104,6 +114,28 @@ export class AboutComponent implements OnInit {
       console.log(this.superheroSaintsPortraits);
 
     });
+  }
+
+  animateContentCategory() {
+
+    document.querySelectorAll('.about-section').forEach((box) => {
+
+      const scrollBox = gsap.timeline({
+        scrollTrigger: {
+          trigger: box,
+          toggleActions: 'restart none none restart',
+        },
+      });
+
+      scrollBox.from(box, {
+        y: 150,
+        opacity: 0,
+        duration: 2.5,
+        stagger: 1,
+      });
+
+    });
+
   }
 
 }

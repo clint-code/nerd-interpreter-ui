@@ -262,7 +262,7 @@ body {
 
 .banner-image-section {
   position: relative;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 .banner-image-section .bannerImage img {
   border-radius: 70px;
@@ -586,6 +586,7 @@ body {
 /*about page section*/
 .cnt-section-title {
   width: 100%;
+  text-align: center;
 }
 
 .cnt-section {

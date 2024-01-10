@@ -7,76 +7,80 @@
 
 <div class="container-fluid">
 
-    <!--Logo section-->
-    <div class="row ml-1 mr-">
-
-        <div class="mini-logo-section">
-            <a routerLink="/">
-                <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
-            </a>
-        </div>
-
-    </div>
-    <!--End of logo section-->
-
-    <app-banner
-        bannerTitle="Superheroes and Saints"
-        bannerImage="../../../assets/img/superheroes-saints/superheroes-saints-banner.jpg"
-    >
-    </app-banner>
-
-    <div class="row">
-
-        <div class="p-3 mt-3 text-intro-section">
-
-            <p class="text-center">
-                Here's an in-depth analysis of the similarities and struggles of superheroes 
-                in DC and Marvel, and saints in the Catholic Church. 
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col explore-characters-txt mt-5">
-            <h4 class="text-center display-3">
-                Podcast Episodes
-            </h4>
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="grid">
-
-            <div class="grid-sizer"></div>
-
-            <ngx-masonry
-                [options]="options" 
-                [updateLayout]="characterStore.refined"
-                [useImagesLoaded]="true">
-
-                <div ngxMasonryItem *ngFor="let character of charactersData">
-
-                    <!-- Character Item -->
-                    <div class="character-item">
+    <div class="content-section">
         
-                        <div class="character-image">
-                            <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
+        <!--Logo section-->
+        <div class="row ml-1 mr-">
+
+            <div class="mini-logo-section">
+                <a routerLink="/">
+                    <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+                </a>
+            </div>
+
+        </div>
+        <!--End of logo section-->
+
+        <app-banner
+            bannerTitle="Superheroes and Saints"
+            bannerImage="../../../assets/img/superheroes-saints/superheroes-saints-banner.jpg"
+        >
+        </app-banner>
+
+        <div class="row">
+
+            <div class="p-3 mt-3 text-intro-section">
+
+                <p class="text-center">
+                    Here's an in-depth analysis of the similarities and struggles of superheroes 
+                    in DC and Marvel, and saints in the Catholic Church. 
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col explore-characters-txt mt-5">
+                <h4 class="text-center display-3">
+                    Podcast Episodes
+                </h4>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="grid">
+
+                <div class="grid-sizer"></div>
+
+                <ngx-masonry
+                    [options]="options" 
+                    [updateLayout]="characterStore.refined"
+                    [useImagesLoaded]="true">
+
+                    <div ngxMasonryItem *ngFor="let character of charactersData">
+
+                        <!-- Character Item -->
+                        <div class="character-item">
+            
+                            <div class="character-image">
+                                <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
+                            </div>
+            
+                            <a class="name" routerLink="/single-superhero-saint">
+                                <h3 class="name display-4">Listen Now</h3>
+                            </a>
+                            
                         </div>
-        
-                        <a class="name" routerLink="/single-superhero-saint">
-                            <h3 class="name display-4">Listen Now</h3>
-                        </a>
-                        
+            
                     </div>
-        
-                </div>
 
-            </ngx-masonry>
+                </ngx-masonry>
+
+            </div>
 
         </div>
 
