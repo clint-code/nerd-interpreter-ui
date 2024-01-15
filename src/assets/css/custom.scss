@@ -1044,7 +1044,6 @@ body {
 
 
 }
-
 //end of max-width 1200px
 
 //max-width 1000px
@@ -1260,7 +1259,6 @@ body {
     }
 
 }
-
 //end of max-width 1000px
 
 //max-width 768px
@@ -1272,9 +1270,28 @@ body {
         }
     }
 
+    .preloader{
+
+        .loaderContent{
+            top: 50%;
+            transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
+            left: 50%;
+            margin-top: 0px;
+
+            img{
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+    }
+
     .menuOpener,
     .menuCloser {
         right: 7%;
+        width: 50px;
+        height: 50px;
     }
 
     .mainMenu {
@@ -1483,7 +1500,6 @@ body {
     }
 
 }
-
 //end of max-width 768px
 
 //max-width 500px

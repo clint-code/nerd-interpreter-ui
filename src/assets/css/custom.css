@@ -932,9 +932,21 @@ body {
   .progress-section img {
     max-width: 100%;
   }
+  .preloader .loaderContent {
+    top: 50%;
+    transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
+    left: 50%;
+    margin-top: 0px;
+  }
+  .preloader .loaderContent img {
+    width: 100%;
+    text-align: center;
+  }
   .menuOpener,
   .menuCloser {
     right: 7%;
+    width: 50px;
+    height: 50px;
   }
   .mainMenu .nav-links {
     right: 0%;
