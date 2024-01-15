@@ -9,480 +9,483 @@
     <div id="scrollbar-bg"></div>
 </div>
 
-<div class="content-section">
+<div class="container-fluid">
+    <div class="content-section">
 
-    <!--Logo section-->
-    <div class="row ml-1 mr-1">
-
-        <div class="mini-logo-section">
-            <a routerLink="/">
-                <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
-            </a>
+        <!--Logo section-->
+        <div class="row ml-1 mr-1">
+    
+            <div class="mini-logo-section">
+                <a routerLink="/">
+                    <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+                </a>
+            </div>
+    
         </div>
-
-    </div>
-    <!--End of logo section-->
-
-    <div class="container-fluid">
-
-        <app-banner
-            bannerTitle="The Joker"
-            bannerImage="./assets/img/character-page/joker-banner.jpg"
-        >
-        </app-banner>
-
-        <app-character-stats
-            comicUniverse="DC"
-            characterAlignment="Villain"
-            baseOfOperation="Gotham City"
-        >
-        </app-character-stats>
-
-        <!--mini navigation section-->
-        <section class="mini-navigation">
-
-            <h2 class="text-center display-4 p-5">Where would you like to start?</h2>
-
-            <div class="row nav-section p-4">
-
-                <div class="singleItem">
-
-                    <div class="clickArea" data-target="character-facts"(click)="scrollPage($event)"></div>
-                            
-                        <div class="top-cnt text-center">
-                            <img src="./assets/img/icons/facts.png" alt="facts">
-                        </div>
-                            
-                        <div class="text-center bottom-cnt-section">
-                            <p class="bottom-cnt">Facts about the Character</p>
-                        </div>
-
-                </div>
-
-                <div class="singleItem">
-
-                    <div class="clickArea" data-target="character-deep-dive"(click)="scrollPage($event);"></div>
-
-                        <div class="top-cnt text-center">
-                            <img src="./assets/img/icons/open-magnifying-glass.png" alt="magnifying-glass">
-                        </div>
-
-                        <div class="text-center bottom-cnt-section">
-                            <p class="bottom-cnt">Character Deep Dive</p>
-                        </div>
-
-                </div>
-
-                <div class="singleItem">
-
-                    <div class="clickArea" data-target="comic-recommendations" (click)="scrollPage($event);"></div>
-
-                        <div class="top-cnt text-center">
-                            <img src="./assets/img/icons/movie-comics.png" alt="movies-comics">
-                        </div>
-
-                        <div class="text-center bottom-cnt-section">
-                            <p class="bottom-cnt">Comics</p>
-                        </div>
-
-                </div>
-
-            </div>
-
-        </section>
-        <!--end of mini-navigation section-->
-
-        <div class="content-container">
-
-            <!--character-facts-->
-            <section class="main-cnt mt-5 character-facts">
-
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="intro-section text-center ">
-
-                            <h2 class="display-2 p-2 heading-txt">
-                                Facts about the Character
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-                    <div class="row mt-5">
-
-                        <div class="cnt-description-section mb-4">
-
-                            <div class="img-section text-center">
-                                <img src="./assets/img/character-page/joker-card.png" alt="joker-card" class="img-fluid">
-                            </div>
-
-
-                            <h3 class="display-4">
-                                His creation in comics
-                            </h3>
-                            <p>
-                                The Joker is a supervillain, who came to be in mainstream comic books back in the 1940s and was
-                                created by Bill Finger, Bob Kane (the creator of the Batman) and Jerry Robinson.
-                            </p>
-
-                        </div>
-
-                        <div class="cnt-description-section mb-4">
-                            <h3 class="display-4">
-                                His Abilities
-                            </h3>
-                            <p>
-                                The Joker doesn’t have superhuman abilities, but he’s a highly intelligent criminal mastermind.
-                                He
-                                commits sadistic crimes with a variety of goofey-thematic props such as: the joker venom and a
-                                deck
-                                of razor-tipped cards.
-                            </p>
-
-                        </div>
-
-                        <div class="cnt-description-section mb-4">
-                            <h3 class="display-4">
-                                His Origin
-                            </h3>
-                            <p>
-                                The Joker doesn't have a definite origin story, although the generally accepted origin one is
-                                that
-                                he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
-                                chemical factory and in the process the, falls into the acidic chemical plant that disfigures
-                                his
-                                skin, turning him into the Joker.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </section>
-            <!--end of character-facts-->
-
-            <!--character-deep dive-->
-            <section class="main-cnt mt-5 character-deep-dive">
-
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="intro-section text-center ">
-
-                            <h2 class="display-2 p-2 heading-txt">
-                                Character Deep Dive
-                            </h2>
-
-                        </div>
-
-                    </div>
-
-                    <div class="row mt-5">
-
-                        <div class="cnt-description-section mb-4">
-
-                            <div class="img-section text-center">
-
-                                <img src="./assets/img/character-page/joker.png" alt="joker" class="img-fluid">
-
-                            </div>
-
-                            <p>
-                                Here we'll take a deep look into the Joker's motives, based on the films, The Dark Knight and
-                                Joker,
-                                why he does what he does and other nuance facts about the Crown Prince of Crime
-                            </p>
-
-                        </div>
-
-                        <div class="cnt-description-section mb-4">
-                            <h3 class="display-4 cnt-heading pt-3 pb-3">
-                                1. Destroying what good means
-                            </h3>
-                            <p>
-                                The Joker has shocked the world of comic readers through some of the horrifying things he has
-                                done
-                                such as beating up Jason Todd, the boy-wonder Robin with a crowbar and killing him in Death in
-                                the
-                                Family, shooting Barbara Gordon, Commissioner Gordon’s daughter, in her waist, paralyzing her
-                                permanently in The Killing Joke and curving out his face and stitching it back to his deformed
-                                face
-                                (which is beyond insane and sick) in the New 52, Death of the Family.
-                            </p>
-
-                            <img src="./assets/img/character-page/joker-killing-joke.png" alt="joker-killing-joke"
-                                class="img-fluid">
-                            
-
-                            <p>
-                                The Joker doesn't have a definite origin story, although the generally accepted origin one is
-                                that
-                                he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
-                                chemical factory and in the process the, falls into the acidic chemical plant that disfigures
-                                his
-                                skin, turning him into the Joker.
-                            </p>
-
-                            <img src="./assets/img/character-page/joker-quote-1.jpg" alt="joker-killing-joke" class="img-fluid">
-                        
-
-                        </div>
-
-                        <div class="cnt-description-section mb-4">
-                            <h3 class="display-4 cnt-heading pt-3 pb-3">
-                                2. All it takes is one bad day
-                            </h3>
-                            <p>
-                                The Joker has shocked the world of comic readers through some of the horrifying things he has
-                                done
-                                such as beating up Jason Todd, the boy-wonder Robin with a crowbar and killing him in Death in
-                                the
-                                Family, shooting Barbara Gordon, Commissioner Gordon’s daughter, in her waist, paralyzing her
-                                permanently in The Killing Joke and curving out his face and stitching it back to his deformed
-                                face
-                                (which is beyond insane and sick) in the New 52, Death of the Family.
-                            </p>
-
-                            <img src="./assets/img/character-page/joker-killing-joke.png" alt="joker-killing-joke"
-                                class="img-fluid">
-                            
-
-                            <p>
-                                The Joker doesn't have a definite origin story, although the generally accepted origin one is
-                                that
-                                he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
-                                chemical factory and in the process the, falls into the acidic chemical plant that disfigures
-                                his
-                                skin, turning him into the Joker.
-                            </p>
-
-                            <img src="./assets/img/character-page/joker-quote-2.jpg" alt="joker-killing-joke" class="img-fluid">
-                        
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </section>
-            <!--end of character-facts-->
-
-            <div class="scrollup">
-                <img src="./assets/img/icons/scroll-up-icon.png" 
-                alt="" 
-                class="img-fluid" 
-                data-target="mini-navigation" 
-                (click)="scrollPage($event)" />
-            </div>
-
-            <!--comics section-->
-            <section id="character-comics" class="main-cnt comic-recommendations p-5">
-
-                <div class="container">
-                    
-                    <div class="row">
-
-                        <div class="intro-section text-center mb-5">
-
-                            <h2 class="display-2 p-2 heading-txt">
-                                Comics
-                            </h2>
-
-                        </div>
-
-                        <div class="col-md-8 text-section">
-
-                            <div class="text-section">
-
-                                <div class="cnt-section text-left p-2">
-                                    <p>
-                                        Here's a showcase of some comics stories of the Joker.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                            <div class="col-md-4 slider-section">
-
-                                <owl-carousel-o [options]="customOptions">
-
-                                    <ng-container *ngFor="let slide of comicCovers">
-                                    <ng-template class="slide" carouselSlide [id]="slide.id">
-                                        <img [src]="slide.url" [alt]="slide.alt" [title]="slide.id">
-                                    </ng-template>
-                                    </ng-container>
+        <!--End of logo section-->
+    
+        <div class="container-fluid">
+    
+            <app-banner
+                bannerTitle="The Joker"
+                bannerImage="./assets/img/character-page/joker-banner.jpg"
+            >
+            </app-banner>
+    
+            <app-character-stats
+                comicUniverse="DC"
+                characterAlignment="Villain"
+                baseOfOperation="Gotham City"
+            >
+            </app-character-stats>
+    
+            <!--mini navigation section-->
+            <section class="mini-navigation">
+    
+                <h2 class="text-center display-4 p-5">Where would you like to start?</h2>
+    
+                <div class="row nav-section p-4">
+    
+                    <div class="singleItem">
+    
+                        <div class="clickArea" data-target="character-facts"(click)="scrollPage($event)"></div>
                                 
-                                </owl-carousel-o> 
-
+                            <div class="top-cnt text-center">
+                                <img src="./assets/img/icons/facts.png" alt="facts">
                             </div>
+                                
+                            <div class="text-center bottom-cnt-section">
+                                <p class="bottom-cnt">Facts about the Character</p>
+                            </div>
+    
+                    </div>
+    
+                    <div class="singleItem">
+    
+                        <div class="clickArea" data-target="character-deep-dive"(click)="scrollPage($event);"></div>
+    
+                            <div class="top-cnt text-center">
+                                <img src="./assets/img/icons/open-magnifying-glass.png" alt="magnifying-glass">
+                            </div>
+    
+                            <div class="text-center bottom-cnt-section">
+                                <p class="bottom-cnt">Character Deep Dive</p>
+                            </div>
+    
+                    </div>
+    
+                    <div class="singleItem">
+    
+                        <div class="clickArea" data-target="comic-recommendations" (click)="scrollPage($event);"></div>
+    
+                            <div class="top-cnt text-center">
+                                <img src="./assets/img/icons/movie-comics.png" alt="movies-comics">
+                            </div>
+    
+                            <div class="text-center bottom-cnt-section">
+                                <p class="bottom-cnt">Comics</p>
+                            </div>
+    
+                    </div>
+    
+                </div>
+    
+            </section>
+            <!--end of mini-navigation section-->
+    
+            <div class="content-container">
+    
+                <!--character-facts-->
+                <section class="main-cnt mt-5 character-facts">
+    
+                    <div class="container">
+    
+                        <div class="row">
+    
+                            <div class="intro-section text-center ">
+    
+                                <h2 class="display-2 p-2 heading-txt">
+                                    Facts about the Character
+                                </h2>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="row mt-5">
+    
+                            <div class="cnt-description-section mb-4">
+    
+                                <div class="img-section text-center">
+                                    <img src="./assets/img/character-page/joker-card.png" alt="joker-card" class="img-fluid">
+                                </div>
+    
+    
+                                <h3 class="display-4">
+                                    His creation in comics
+                                </h3>
+                                <p>
+                                    The Joker is a supervillain, who came to be in mainstream comic books back in the 1940s and was
+                                    created by Bill Finger, Bob Kane (the creator of the Batman) and Jerry Robinson.
+                                </p>
+    
+                            </div>
+    
+                            <div class="cnt-description-section mb-4">
+                                <h3 class="display-4">
+                                    His Abilities
+                                </h3>
+                                <p>
+                                    The Joker doesn’t have superhuman abilities, but he’s a highly intelligent criminal mastermind.
+                                    He
+                                    commits sadistic crimes with a variety of goofey-thematic props such as: the joker venom and a
+                                    deck
+                                    of razor-tipped cards.
+                                </p>
+    
+                            </div>
+    
+                            <div class="cnt-description-section mb-4">
+                                <h3 class="display-4">
+                                    His Origin
+                                </h3>
+                                <p>
+                                    The Joker doesn't have a definite origin story, although the generally accepted origin one is
+                                    that
+                                    he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
+                                    chemical factory and in the process the, falls into the acidic chemical plant that disfigures
+                                    his
+                                    skin, turning him into the Joker.
+                                </p>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+    
+                </section>
+                <!--end of character-facts-->
+    
+                <!--character-deep dive-->
+                <section class="main-cnt mt-5 character-deep-dive">
+    
+                    <div class="container">
+    
+                        <div class="row">
+    
+                            <div class="intro-section text-center ">
+    
+                                <h2 class="display-2 p-2 heading-txt">
+                                    Character Deep Dive
+                                </h2>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="row mt-5">
+    
+                            <div class="cnt-description-section mb-4">
+    
+                                <div class="img-section text-center">
+    
+                                    <img src="./assets/img/character-page/joker.png" alt="joker" class="img-fluid">
+    
+                                </div>
+    
+                                <p>
+                                    Here we'll take a deep look into the Joker's motives, based on the films, The Dark Knight and
+                                    Joker,
+                                    why he does what he does and other nuance facts about the Crown Prince of Crime
+                                </p>
+    
+                            </div>
+    
+                            <div class="cnt-description-section mb-4">
+                                <h3 class="display-4 cnt-heading pt-3 pb-3">
+                                    1. Destroying what good means
+                                </h3>
+                                <p>
+                                    The Joker has shocked the world of comic readers through some of the horrifying things he has
+                                    done
+                                    such as beating up Jason Todd, the boy-wonder Robin with a crowbar and killing him in Death in
+                                    the
+                                    Family, shooting Barbara Gordon, Commissioner Gordon’s daughter, in her waist, paralyzing her
+                                    permanently in The Killing Joke and curving out his face and stitching it back to his deformed
+                                    face
+                                    (which is beyond insane and sick) in the New 52, Death of the Family.
+                                </p>
+    
+                                <img src="./assets/img/character-page/joker-killing-joke.png" alt="joker-killing-joke"
+                                    class="img-fluid">
+                                
+    
+                                <p>
+                                    The Joker doesn't have a definite origin story, although the generally accepted origin one is
+                                    that
+                                    he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
+                                    chemical factory and in the process the, falls into the acidic chemical plant that disfigures
+                                    his
+                                    skin, turning him into the Joker.
+                                </p>
+    
+                                <img src="./assets/img/character-page/joker-quote-1.jpg" alt="joker-killing-joke" class="img-fluid">
+                            
+    
+                            </div>
+    
+                            <div class="cnt-description-section mb-4">
+                                <h3 class="display-4 cnt-heading pt-3 pb-3">
+                                    2. All it takes is one bad day
+                                </h3>
+                                <p>
+                                    The Joker has shocked the world of comic readers through some of the horrifying things he has
+                                    done
+                                    such as beating up Jason Todd, the boy-wonder Robin with a crowbar and killing him in Death in
+                                    the
+                                    Family, shooting Barbara Gordon, Commissioner Gordon’s daughter, in her waist, paralyzing her
+                                    permanently in The Killing Joke and curving out his face and stitching it back to his deformed
+                                    face
+                                    (which is beyond insane and sick) in the New 52, Death of the Family.
+                                </p>
+    
+                                <img src="./assets/img/character-page/joker-killing-joke.png" alt="joker-killing-joke"
+                                    class="img-fluid">
+                                
+    
+                                <p>
+                                    The Joker doesn't have a definite origin story, although the generally accepted origin one is
+                                    that
+                                    he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
+                                    chemical factory and in the process the, falls into the acidic chemical plant that disfigures
+                                    his
+                                    skin, turning him into the Joker.
+                                </p>
+    
+                                <img src="./assets/img/character-page/joker-quote-2.jpg" alt="joker-killing-joke" class="img-fluid">
+                            
+                            </div>
+    
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+                <!--end of character-facts-->
+    
+                <div class="scrollup">
+                    <img src="./assets/img/icons/scroll-up-icon.png" 
+                    alt="" 
+                    class="img-fluid" 
+                    data-target="mini-navigation" 
+                    (click)="scrollPage($event)" />
+                </div>
+    
+                <!--comics section-->
+                <section id="character-comics" class="main-cnt comic-recommendations p-5">
+    
+                    <div class="container">
+                        
+                        <div class="row">
+    
+                            <div class="intro-section text-center mb-5">
+    
+                                <h2 class="display-2 p-2 heading-txt">
+                                    Comics
+                                </h2>
+    
+                            </div>
+    
+                            <div class="col-md-8 text-section">
+    
+                                <div class="text-section">
+    
+                                    <div class="cnt-section text-left p-2">
+                                        <p>
+                                            Here's a showcase of some comics stories of the Joker.
+                                        </p>
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+    
+                                <div class="col-md-4 slider-section">
+    
+                                    <owl-carousel-o [options]="customOptions">
+    
+                                        <ng-container *ngFor="let slide of comicCovers">
+                                        <ng-template class="slide" carouselSlide [id]="slide.id">
+                                            <img [src]="slide.url" [alt]="slide.alt" [title]="slide.id">
+                                        </ng-template>
+                                        </ng-container>
+                                    
+                                    </owl-carousel-o> 
+    
+                                </div>
+                        
+                        </div>
                     
                     </div>
+    
+                </section>
+                <!--end of comics section-->
+    
+                <!--source section-->
+                <section class="mt-5 mb-5 main-cnt source-section">
+    
+                        <div class="container">
                 
-                </div>
-
-            </section>
-            <!--end of comics section-->
-
-            <!--source section-->
-            <section class="mt-5 mb-5 main-cnt source-section">
-
-                    <div class="container">
-            
-                        <div class="row">
-            
-                            <div class="intro-section text-center mb-5">
-
-                                <h2 class="display-2 p-2 heading-txt">
-                                    Sources
-                                </h2>
-
+                            <div class="row">
+                
+                                <div class="intro-section text-center mb-5">
+    
+                                    <h2 class="display-2 p-2 heading-txt">
+                                        Sources
+                                    </h2>
+    
+                                </div>
+    
+                                <div class="col-md-12 text-section">
+    
+                                    <ol class="list-group">
+    
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                The Philosophy Of The Joker
+                                            </a>
+                                        </li>
+    
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                The Dark Knight- Creating The Ultimate Antagonist
+                                            </a>
+                                        </li>
+    
+                                    </ol>
+    
+                                </div>                    
+                
                             </div>
-
-                            <div class="col-md-12 text-section">
-
-                                <ol class="list-group">
-
-                                    <li class="list-group-item">
-                                        <a href="#">
-                                            The Philosophy Of The Joker
-                                        </a>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <a href="#">
-                                            The Dark Knight- Creating The Ultimate Antagonist
-                                        </a>
-                                    </li>
-
-                                </ol>
-
-                            </div>                    
-            
+                
                         </div>
-            
-                    </div>
-            
-            </section>
-            <!--end of source-section -->
-
-        </div>
-
-        <!--more characters-->
-
-        <!-- <section class="mt-5">
-            
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="intro-section text-center ">
-
-                        <h2 class="display-2 p-2">
-                            More Characters
-                        </h2>
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
-
-                        <div class="card character">
-
-                            <img src="./src/img/dc-characters/aquaman.png" class="card-img-top img-fluid"/>
-
-                            <div class="card-body">
-
-                                <a class="card-text text-center">
-                                    <h4 class="display-4">
-                                        Aquaman
-                                    </h4>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
-
-                        <div class="card character">
-
-                            <img src="src/assets/img/dc-characters/aquaman.png" class="card-img-top img-fluid"/>
-                        
-                            <div class="card-body">
-
-                                <a class="card-text text-center">
-                                    <h4 class="display-4">
-                                        Aquaman
-                                    </h4>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
-
-                        <div class="card character">
-
-                            <img src="src/assets/img/dc-characters/batman.png" class="card-img-top img-fluid"/>
-
-                            <div class="card-body">
-
-                                <a class="card-text text-center">
-                                    <h4 class="display-4">
-                                        Batman
-                                    </h4>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
-
-                        <div class="card character">
-
-                            <img src="src/assets/img/dc-characters/two-face.png" class="card-img-top img-fluid"/>
-
-                            <div class="card-body">
-
-                                <a class="card-text text-center">
-                                    <h4 class="display-4">
-                                        Two-Face
-                                    </h4>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+                
+                </section>
+                <!--end of source-section -->
+    
             </div>
-
-        </section> -->
-
-        <!--end of more characters-->
-
+    
+            <!--more characters-->
+    
+            <!-- <section class="mt-5">
+                
+                <div class="container">
+    
+                    <div class="row">
+    
+                        <div class="intro-section text-center ">
+    
+                            <h2 class="display-2 p-2">
+                                More Characters
+                            </h2>
+    
+                        </div>
+    
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+    
+                            <div class="card character">
+    
+                                <img src="./src/img/dc-characters/aquaman.png" class="card-img-top img-fluid"/>
+    
+                                <div class="card-body">
+    
+                                    <a class="card-text text-center">
+                                        <h4 class="display-4">
+                                            Aquaman
+                                        </h4>
+                                    </a>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+    
+                            <div class="card character">
+    
+                                <img src="src/assets/img/dc-characters/aquaman.png" class="card-img-top img-fluid"/>
+                            
+                                <div class="card-body">
+    
+                                    <a class="card-text text-center">
+                                        <h4 class="display-4">
+                                            Aquaman
+                                        </h4>
+                                    </a>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+    
+                            <div class="card character">
+    
+                                <img src="src/assets/img/dc-characters/batman.png" class="card-img-top img-fluid"/>
+    
+                                <div class="card-body">
+    
+                                    <a class="card-text text-center">
+                                        <h4 class="display-4">
+                                            Batman
+                                        </h4>
+                                    </a>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+    
+                            <div class="card character">
+    
+                                <img src="src/assets/img/dc-characters/two-face.png" class="card-img-top img-fluid"/>
+    
+                                <div class="card-body">
+    
+                                    <a class="card-text text-center">
+                                        <h4 class="display-4">
+                                            Two-Face
+                                        </h4>
+                                    </a>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </section> -->
+    
+            <!--end of more characters-->
+    
+        </div>
+    
     </div>
-
+    
 </div>
 
 <!-- <app-emailsubscription></app-emailsubscription> -->
