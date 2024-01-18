@@ -269,6 +269,10 @@ body {
   border: 5px solid #000;
 }
 
+.explore-characters-txt {
+  margin-top: 20px;
+}
+
 .text-intro-section {
   width: 55%;
   margin: 0 auto;
@@ -287,13 +291,13 @@ body {
   margin-left: 5%;
   width: 90%;
   margin-right: 5%;
+  text-align: center;
 }
 .grid .grid-sizer,
 .grid .character-item {
   width: 27%;
-  margin-left: 1.5%;
+  margin-left: 4%;
   padding: 10px;
-  margin-right: 1.5%;
 }
 .grid .grid-sizer a,
 .grid .character-item a {
@@ -754,15 +758,12 @@ body {
   .mainMenu .nav-links a {
     font-size: 45px;
   }
-  .banner-image-section .banner-text {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .banner-image-section .banner-text h1 {
-    font-size: 6em;
+  .banner-image-section h1 {
+    font-size: 5em;
   }
   .text-intro-section p {
     font-size: 2em;
+    margin-bottom: 0px;
   }
   .explore-characters-txt h4 {
     font-size: 3rem;
@@ -774,10 +775,10 @@ body {
     display: none;
   }
   .more-cnt-section {
-    max-width: 100%;
-    flex: 0 0 99.999%;
-    -webkit-flex: 0 0 99.999%;
-    -ms-flex: 0 0 99.999%;
+    max-width: 100% !important;
+    flex: 0 0 99.999% !important;
+    -webkit-flex: 0 0 99.999% !important;
+    -ms-flex: 0 0 99.999% !important;
   }
   .newsletter-section .center-text-section {
     width: 80%;
@@ -819,8 +820,11 @@ body {
   .mini-logo-section {
     width: 25%;
   }
-  .banner-image-section .banner-text h1 {
-    font-size: 4.5em;
+  .banner-image-section .bannerImage img {
+    border-radius: 35px;
+  }
+  .banner-image-section h1 {
+    font-size: 4em;
   }
   .text-intro-section {
     width: 80%;
@@ -831,7 +835,7 @@ body {
     font-size: 24px;
   }
   .grid .character-item h3 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
   }
   .caption-text-section h3 {
     font-size: 3.5rem;
@@ -970,23 +974,17 @@ body {
     font-size: 3.5em;
   }
   .explore-characters-txt h4 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+  }
+  .grid .grid-sizer {
+    width: 30%;
+    margin-left: 0%;
   }
   .grid .character-item a {
     padding: 0px;
   }
   .grid .character-item h3 {
     font-size: 2rem;
-  }
-  .filter-button-group {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-direction: column;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
   }
   .filter-button-group button {
     border: 4px solid #000;
@@ -1121,6 +1119,16 @@ body {
   }
   .mini-navigation h2 {
     font-size: 2.5rem;
+  }
+  .filter-button-group {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .filter-button-group button {
     font-size: 1.25em;
