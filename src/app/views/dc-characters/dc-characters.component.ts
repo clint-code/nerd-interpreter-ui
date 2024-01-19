@@ -46,12 +46,12 @@ export class DcCharactersComponent implements OnInit {
   options: NgxMasonryOptions = {
 
     itemSelector: '.character-item',
-    gutter: 10,
+    //gutter: 5,
     transitionDuration: '1.2s',
     horizontalOrder: true,
     //fitWidth: true,
-    //percentPosition: true,
-    columnWidth: 20,
+    percentPosition: true,
+    columnWidth: 30,
     //originLeft: false,
     resize: true
 
