@@ -13,6 +13,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './single-character.component.html',
   styleUrls: ['./single-character.component.css']
 })
+
 export class SingleCharacterComponent implements OnInit {
 
   loadingView: boolean = false;
@@ -25,7 +26,7 @@ export class SingleCharacterComponent implements OnInit {
     loop: true,
     autoplay: true,
     center: true,
-    dots: false,
+    dots: true,
     autoHeight: true,
     autoWidth: true,
     responsive: {

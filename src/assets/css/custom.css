@@ -271,6 +271,9 @@ body {
   border-radius: 70px;
   border: 5px solid #000;
 }
+.banner-image-section h1 {
+  margin-bottom: 20px;
+}
 
 .explore-characters-txt {
   margin-top: 20px;
@@ -457,7 +460,7 @@ body {
 
 .character-stats-section {
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   border: 10px solid #000;
 }
 
@@ -505,9 +508,6 @@ body {
 .intro-section h2,
 .cnt-description-section h2 {
   color: #EE5A24;
-  z-index: 2;
-  position: relative;
-  margin-left: -5%;
   margin-bottom: 0px;
 }
 .intro-section .img-section,
@@ -521,33 +521,16 @@ body {
 }
 
 .intro-section {
-  position: relative;
-}
-.intro-section:before {
-  content: "";
-  width: 100%;
-  height: 100%;
   background-color: #fff;
   border: 10px solid #000;
-  position: absolute;
-  z-index: 2;
-  left: -5%;
-}
-.intro-section:after {
-  content: "";
-  position: absolute;
-  right: 40px;
-  top: 10px;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  z-index: 1;
 }
 
 .cnt-description-section h3 {
   text-transform: capitalize;
 }
 .cnt-description-section p {
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-bottom: 0px;
 }
 .cnt-description-section img {
@@ -638,6 +621,7 @@ body {
   z-index: 2;
   width: 90%;
   margin-top: 3%;
+  margin-bottom: 0px;
 }
 
 /*contact page*/
@@ -776,7 +760,7 @@ body {
   }
   .banner-image-section h1 {
     font-size: 5em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .text-intro-section p {
     font-size: 2em;
@@ -993,6 +977,10 @@ body {
     margin-left: 5%;
     margin-right: 5%;
   }
+  .mini-navigation h2 {
+    margin-bottom: 0px;
+    padding: 2rem !important;
+  }
   .explore-characters-txt h4 {
     font-size: 2.5rem;
   }
@@ -1051,6 +1039,10 @@ body {
   .newsletter-section .center-text-section .input-group .btn-black {
     padding: 5px !important;
   }
+  .character-stats-section {
+    width: 60%;
+    margin: 0 auto;
+  }
   .character-stats-list {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1066,7 +1058,7 @@ body {
   }
   .character-stats-list .top-cnt,
   .character-stats-list .bottom-cnt {
-    padding: 0.5rem 1rem !important;
+    padding: 0rem !important;
   }
   .main-cnt {
     width: 90%;
@@ -1119,6 +1111,9 @@ body {
   }
   .explore-characters-txt h4 {
     font-size: 2.5rem;
+  }
+  .character-stats-section {
+    width: 100%;
   }
   .text-intro-section p {
     font-size: 18px;
@@ -1252,6 +1247,9 @@ body {
     transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
     left: 50%;
   }
+  .nav-section .singleItem .bottom-cnt {
+    font-size: 1.85em;
+  }
   .caption-text-section {
     width: 94%;
     right: 3%;
@@ -1267,6 +1265,20 @@ body {
   }
   .caption-text-section a {
     margin: 8px auto !important;
+  }
+  .character-stats-list .stat-top,
+  .character-stats-list .stat-bottom {
+    font-size: 1.5em;
+  }
+  .mini-navigation h2 {
+    font-size: 2.25rem;
+    padding-bottom: 0rem !important;
+  }
+  .intro-section h2 {
+    font-size: 2.25em;
+  }
+  .cnt-description-section h3 {
+    font-size: 1.85rem;
   }
   .about-comic-characters-section,
   .heroes-journey-section,

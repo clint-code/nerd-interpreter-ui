@@ -371,6 +371,10 @@ body {
         }
     }
 
+    h1{
+        margin-bottom: 20px;
+    }
+
 }
 
 .explore-characters-txt{
@@ -583,7 +587,7 @@ body {
 
 .character-stats-section {
     background-color: #fff;
-    padding: 20px;
+    padding: 10px;
     border: 10px solid #000;
 }
 
@@ -642,9 +646,6 @@ body {
 
     h2 {
         color: $color-8;
-        z-index: 2;
-        position: relative;
-        margin-left: -5%;
         margin-bottom: 0px;
     }
 
@@ -658,32 +659,10 @@ body {
     }
 }
 
-.intro-section {
-
-    position: relative;
-
-    &:before {
-        content: "";
-        width: 100%;
-        height: 100%;
+    .intro-section {
         background-color: #fff;
         border: 10px solid #000;
-        position: absolute;
-        z-index: 2;
-        left: -5%;
     }
-
-    &:after {
-        content: "";
-        position: absolute;
-        right: 40px;
-        top: 10px;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        z-index: 1;
-    }
-}
 
 .cnt-description-section {
     h3 {
@@ -691,8 +670,8 @@ body {
     }
 
     p {
-        // padding-top: 20px;
-        // padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin-bottom: 0px;
     }
 
@@ -802,6 +781,7 @@ body {
         z-index: 2;
         width: 90%;
         margin-top: 3%;
+        margin-bottom: 0px;
     }
 
 }
@@ -986,14 +966,9 @@ body {
 
     .banner-image-section {
 
-        // .banner-text {
-        //     width: 100%;
-        //     margin: 0 auto;
-        // }
-
             h1 {
                 font-size: 5em;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
             }
 
     }
@@ -1366,6 +1341,13 @@ body {
         margin-right: 5%;
     }
 
+    .mini-navigation{
+        h2{
+            margin-bottom: 0px;
+            padding: 2rem!important;
+        }
+    }
+
     .explore-characters-txt {
 
         h4 {
@@ -1485,6 +1467,11 @@ body {
         }
     }
 
+    .character-stats-section{
+        width: 60%;
+        margin: 0 auto;
+    }
+
     .character-stats-list {
         @include display-flex(flex, column);
 
@@ -1494,7 +1481,7 @@ body {
 
         .top-cnt,
         .bottom-cnt {
-            padding: 0.5rem 1rem !important;
+            padding: 0rem !important;
         }
     }
 
@@ -1602,6 +1589,10 @@ body {
         h4 {
             font-size: 2.5rem;
         }
+    }
+
+    .character-stats-section{
+        width: 100%;
     }
 
     .text-intro-section {
@@ -1812,6 +1803,16 @@ body {
         left: 50%;
     }
 
+    .nav-section {
+
+        .singleItem {
+
+            .bottom-cnt {
+                font-size: 1.85em;
+            }
+        }
+    }
+
     .caption-text-section {
         width: 94%;
         right: 3%;
@@ -1833,9 +1834,34 @@ body {
 
     }
 
-    // .more-cnt-section{
-    //     display: none;
-    // }
+    .character-stats-list {
+
+        .stat-top,
+        .stat-bottom {
+            font-size: 1.5em;
+        }
+
+    }
+
+    .mini-navigation{
+
+        h2{
+            font-size: 2.25rem;
+            padding-bottom: 0rem !important;
+        }
+    }
+
+    .intro-section {
+        h2 {
+            font-size: 2.25em;
+        }
+    }
+
+    .cnt-description-section {
+        h3 {
+            font-size: 1.85rem;
+        }
+    }
 
     .about-comic-characters-section,
     .heroes-journey-section,
