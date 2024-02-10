@@ -27,6 +27,7 @@ interface characterStore {
   styleUrls: ['./superheroes-saints.component.css'],
   providers: [CharacterdataService]
 })
+
 export class SuperheroesSaintsComponent implements OnInit {
 
   loadingView: boolean = false;

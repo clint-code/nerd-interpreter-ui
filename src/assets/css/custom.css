@@ -362,10 +362,12 @@ body {
 .caption-text-section h3 {
   font-family: "sf-speakeasy";
   text-transform: uppercase;
+  text-align: left;
 }
 .caption-text-section p {
   font-size: 30px;
   line-height: 35px;
+  text-align: left;
 }
 .caption-text-section a {
   text-transform: uppercase;
@@ -574,6 +576,10 @@ body {
   display: block;
 }
 
+.about-comic-characters-section {
+  padding: 30px 25px;
+}
+
 .source-section .text-section {
   border: 4px solid #000;
   background: #fff;
@@ -636,8 +642,9 @@ body {
   border-bottom: 3px solid #000;
   background-color: transparent;
   font-size: 1.25em;
-  width: 50%;
-  margin: 15px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 100px;
   font-family: "procionoregular";
   border-width: 1px;
@@ -654,32 +661,8 @@ body {
 }
 
 .cnt-form-section {
-  position: relative;
-}
-.cnt-form-section:before {
-  content: "";
-  width: 80%;
-  height: 100%;
   background-color: #fff;
   border: 10px solid #000;
-  position: absolute;
-  z-index: 2;
-  left: 10%;
-}
-.cnt-form-section:after {
-  content: "";
-  position: absolute;
-  right: 8%;
-  top: 30px;
-  width: 80%;
-  height: 100%;
-  background: #000;
-  z-index: 1;
-}
-.cnt-form-section p,
-.cnt-form-section button {
-  position: relative;
-  z-index: 2;
 }
 
 .intro-text-section .cnt-section p {
@@ -760,7 +743,7 @@ body {
   }
   .banner-image-section h1 {
     font-size: 5em;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .text-intro-section p {
     font-size: 2em;
@@ -844,6 +827,7 @@ body {
   }
   .caption-text-section h3 {
     font-size: 3.5rem;
+    text-align: center;
   }
   .caption-text-section p {
     font-size: 25px;
@@ -1160,12 +1144,17 @@ body {
   .caption-text-section p {
     font-size: 16px;
     line-height: 20px;
+    text-align: center;
+    padding-bottom: 0px;
   }
   .caption-text-section a {
     font-size: 1em;
   }
   .mini-background-section .img-fluid {
     border-radius: 10px;
+  }
+  .about-comic-characters-section {
+    padding: 20px 0px;
   }
   .newsletter-section .center-text-section h4 {
     font-size: 1.65rem;
@@ -1218,6 +1207,9 @@ body {
   .cnt-section p {
     font-size: 16px;
     line-height: 1.55;
+  }
+  .cnt-section-title h3 {
+    font-size: 2rem;
   }
   .icon-section img {
     width: 55%;
@@ -1279,11 +1271,6 @@ body {
   }
   .cnt-description-section h3 {
     font-size: 1.85rem;
-  }
-  .about-comic-characters-section,
-  .heroes-journey-section,
-  .about-section {
-    padding: 2rem !important;
   }
   .cnt-form-section p {
     padding: 20px;

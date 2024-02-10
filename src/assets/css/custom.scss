@@ -475,11 +475,13 @@ body {
     h3 {
         font-family: 'sf-speakeasy';
         text-transform: uppercase;
+        text-align: left;
     }
 
     p {
         font-size: 30px;
         line-height: 35px;
+        text-align: left;
     }
 
     a {
@@ -723,6 +725,10 @@ body {
     display: block;
 }
 
+.about-comic-characters-section{
+    padding: 30px 25px;
+}
+
 .source-section{
     
     .text-section{
@@ -801,8 +807,9 @@ body {
         border-bottom: 3px solid #000;
         background-color: transparent;
         font-size: 1.25em;
-        width: 50%;
-        margin: 15px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
         height: 100px;
         font-family: 'procionoregular';
         border-width: 1px;
@@ -822,35 +829,37 @@ body {
 
 .cnt-form-section {
 
-    position: relative;
+    background-color: #fff;
+    border: 10px solid #000;
+    // position: relative;
 
-    &:before {
-        content: "";
-        width: 80%;
-        height: 100%;
-        background-color: #fff;
-        border: 10px solid #000;
-        position: absolute;
-        z-index: 2;
-        left: 10%;
-    }
+    // &:before {
+    //     content: "";
+    //     width: 80%;
+    //     height: 100%;
+    //     background-color: #fff;
+    //     border: 10px solid #000;
+    //     position: absolute;
+    //     z-index: 2;
+    //     left: 10%;
+    // }
 
-    &:after {
-        content: "";
-        position: absolute;
-        right: 8%;
-        top: 30px;
-        width: 80%;
-        height: 100%;
-        background: #000;
-        z-index: 1;
-    }
+    // &:after {
+    //     content: "";
+    //     position: absolute;
+    //     right: 8%;
+    //     top: 30px;
+    //     width: 80%;
+    //     height: 100%;
+    //     background: #000;
+    //     z-index: 1;
+    // }
 
-    p,
-    button {
-        position: relative;
-        z-index: 2;
-    }
+    // p,
+    // button {
+    //     position: relative;
+    //     z-index: 2;
+    // }
 
 }
 
@@ -968,7 +977,7 @@ body {
 
             h1 {
                 font-size: 5em;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
 
     }
@@ -1115,6 +1124,7 @@ body {
     .caption-text-section {
         h3 {
             font-size: 3.5rem;
+            text-align: center;
         }
 
         p {
@@ -1570,7 +1580,6 @@ body {
         }
     }
 
-
     .banner-image-section {
 
         margin-top: 15px;
@@ -1659,6 +1668,8 @@ body {
         p {
             font-size: 16px;
             line-height: 20px;
+            text-align: center;
+            padding-bottom: 0px;
         }
 
         a {
@@ -1670,8 +1681,14 @@ body {
         border-radius: 10px;
     }
 
+    .about-comic-characters-section {
+        padding: 20px 0px;
+    }
+
     .newsletter-section {
+
         .center-text-section {
+
             h4 {
                 font-size: 1.65rem;
             }
@@ -1684,7 +1701,9 @@ body {
                 .btn-black {
                     padding: 2px !important;
                 }
+
             }
+
         }
     }
 
@@ -1757,6 +1776,14 @@ body {
         p {
             font-size: 16px;
             line-height: 1.55;
+        }
+
+    }
+
+    .cnt-section-title {
+
+        h3 {
+            font-size: 2rem;
         }
 
     }
@@ -1863,11 +1890,11 @@ body {
         }
     }
 
-    .about-comic-characters-section,
-    .heroes-journey-section,
-    .about-section {
-        padding: 2rem !important;
-    }
+    // .about-comic-characters-section,
+    // .heroes-journey-section,
+    // .about-section {
+    //     padding: 2rem !important;
+    // }
 
     .cnt-form-section {
         p {

@@ -68,12 +68,12 @@ export class AboutComponent implements OnInit {
       }
     );
 
-    // $('html, body').animate({
-    //   scrollTop: $(".content-section").offset({
-    //     top: 50
-    //   })
+    $('html, body').animate({
+      scrollTop: $(".content-section").offset({
+        top: 50
+      })
 
-    // }, 500);
+    }, 500);
 
     this.getCharacterPortaits();
 
