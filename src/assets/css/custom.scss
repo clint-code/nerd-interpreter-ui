@@ -594,7 +594,7 @@ body {
 
     .stat-top {
         font-family: 'bangersregular';
-        font-size: 3em;
+        font-size: 2.5em;
         color: $color-8;
     }
 
@@ -645,6 +645,12 @@ body {
         z-index: 2;
         position: relative;
         margin-left: -5%;
+        margin-bottom: 0px;
+    }
+
+    .img-section{
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     img {
@@ -685,8 +691,9 @@ body {
     }
 
     p {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        // padding-top: 20px;
+        // padding-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     img {
@@ -986,7 +993,7 @@ body {
 
             h1 {
                 font-size: 5em;
-                margin-bottom: 0px;
+                margin-bottom: 10px;
             }
 
     }
@@ -1606,6 +1613,7 @@ body {
     .mini-navigation {
         h2 {
             font-size: 2.5rem;
+            margin-bottom: 0px;
         }
     }
 

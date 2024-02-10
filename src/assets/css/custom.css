@@ -466,7 +466,7 @@ body {
 }
 .character-stats-list .stat-top {
   font-family: "bangersregular";
-  font-size: 3em;
+  font-size: 2.5em;
   color: #EE5A24;
 }
 .character-stats-list .stat-bottom {
@@ -508,6 +508,12 @@ body {
   z-index: 2;
   position: relative;
   margin-left: -5%;
+  margin-bottom: 0px;
+}
+.intro-section .img-section,
+.cnt-description-section .img-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .intro-section img,
 .cnt-description-section img {
@@ -542,8 +548,7 @@ body {
   text-transform: capitalize;
 }
 .cnt-description-section p {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 0px;
 }
 .cnt-description-section img {
   border: 10px solid #fff;
@@ -771,7 +776,7 @@ body {
   }
   .banner-image-section h1 {
     font-size: 5em;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
   .text-intro-section p {
     font-size: 2em;
@@ -1120,6 +1125,7 @@ body {
   }
   .mini-navigation h2 {
     font-size: 2.5rem;
+    margin-bottom: 0px;
   }
   .filter-button-group {
     display: -webkit-box;
