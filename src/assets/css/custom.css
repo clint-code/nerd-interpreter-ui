@@ -999,6 +999,9 @@ body {
   .cnt-section-title h3 {
     font-size: 2.5rem;
   }
+  .about-comic-characters-section .image-section {
+    margin-top: 15px;
+  }
   .newsletter-section .center-text-section {
     width: 80%;
   }
