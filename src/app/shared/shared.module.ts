@@ -17,39 +17,39 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
 
 @NgModule({
 
-    declarations: [
-        HeaderComponent,
-        FooterAltComponent,
-        FooterComponent,
-        BannerComponent,
-        CharacterStatsComponent,
-        MiniNavigationComponent,
-        ComicSliderComponent,
-        SingleCharacterCardComponent
-      ],
+  declarations: [
+    HeaderComponent,
+    FooterAltComponent,
+    FooterComponent,
+    BannerComponent,
+    CharacterStatsComponent,
+    MiniNavigationComponent,
+    ComicSliderComponent,
+    SingleCharacterCardComponent
+  ],
 
-      imports: [
-        RouterModule,
-        CommonModule,
-        FormsModule,
-        NgxMasonryModule
-      ],
+  imports: [
+    RouterModule,
+    CommonModule,
+    FormsModule,
+    NgxMasonryModule
+  ],
 
-      exports: [
-        HeaderComponent,
-        FooterAltComponent,
-        FooterComponent,
-        BannerComponent,
-        CharacterStatsComponent,
-        MiniNavigationComponent,
-        ComicSliderComponent,
-        SingleCharacterCardComponent,
-        NgxMasonryModule
-      ]
+  exports: [
+    HeaderComponent,
+    FooterAltComponent,
+    FooterComponent,
+    BannerComponent,
+    CharacterStatsComponent,
+    MiniNavigationComponent,
+    ComicSliderComponent,
+    SingleCharacterCardComponent,
+    NgxMasonryModule
+  ]
 
 })
 
 
-export class SharedModule{
+export class SharedModule {
 
 }

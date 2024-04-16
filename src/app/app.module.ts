@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
+//import { XoModule } from 'angular-xo';
+//import { NgwpThemeKitModule } from 'ngwp-theme-kit';
+
 //View Imports
 import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
@@ -50,10 +53,12 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    CarouselModule
+    CarouselModule,
+    //XoModule
+    //NgwpThemeKitModule
   ],
   providers: [
-    Title,
+    Title
   ],
   bootstrap: [AppComponent]
 })
