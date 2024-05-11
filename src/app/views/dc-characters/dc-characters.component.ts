@@ -4,7 +4,11 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { CharacterdataService } from '../../services/characterdata.service';
+
+import { ContentManagementService } from '../../services/content-management.service';
 
 import $ from 'jquery';
 
@@ -35,6 +39,7 @@ interface characterStore {
 
 export class DcCharactersComponent implements OnInit {
 
+  slug: string = '';
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
@@ -61,6 +66,8 @@ export class DcCharactersComponent implements OnInit {
 
   constructor(
     private characterDataService: CharacterdataService,
+    private route: ActivatedRoute,
+    private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
   ) {
@@ -70,6 +77,8 @@ export class DcCharactersComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadingView = true;
+
+    this.slug = this.route.snapshot.paramMap.get('slug');
 
     this.titleService.setTitle("The Nerd Interpreter - DC Characters");
 
@@ -92,6 +101,8 @@ export class DcCharactersComponent implements OnInit {
         top: 50
       })
     }, 500);
+
+    this.dcCharactersPage();
 
     this.getDcCharactersData();
 
@@ -125,7 +136,19 @@ export class DcCharactersComponent implements OnInit {
 
   getDcCharactersData() {
 
-    this.characterDataService.getAllDcCharactersListingJSON().subscribe((response: any[]) => {
+    // this.characterDataService.getAllDcCharactersListingJSON().subscribe((response: any[]) => {
+
+    //   this.charactersData = response;
+
+    //   console.log("Data:", this.charactersData);
+
+    //   this.characterStore.cached = response;
+
+    //   this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+    // });
+
+    this.contentService.getAllDCCharacters(this.slug).subscribe((response: any[]) => {
 
       this.charactersData = response;
 
@@ -135,6 +158,14 @@ export class DcCharactersComponent implements OnInit {
 
       this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
 
+    });
+
+  }
+
+  dcCharactersPage() {
+
+    this.contentService.getContentByPostSlug("dc-characters").subscribe(response => {
+      console.log(response);
     });
 
   }

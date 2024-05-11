@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
 import { CharacterdataService } from '../../services/characterdata.service';
+
+import { ContentManagementService } from '../../services/content-management.service';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -16,6 +19,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 
 export class SingleCharacterComponent implements OnInit {
 
+  characterSlug: string = "";
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
@@ -43,12 +47,16 @@ export class SingleCharacterComponent implements OnInit {
   };
 
   constructor(
-    private comicCharacterDataService: CharacterdataService
+    private route: ActivatedRoute,
+    private comicCharacterDataService: CharacterdataService,
+    private contentService: ContentManagementService
   ) { }
 
   ngOnInit(): void {
 
     this.loadingView = true;
+
+    this.characterSlug = this.route.snapshot.paramMap.get('slug');
 
     $(window).scroll(this.progressScrollBar);
 
@@ -58,7 +66,13 @@ export class SingleCharacterComponent implements OnInit {
       scrollTop: $(".content-section").offset().top - 50
     }, 500);
 
-    this.getComicCovers();
+    //this.getComicCovers();
+
+    this.contentService.getSingleCharacter(this.characterSlug).subscribe(response => {
+
+      console.log("Response:", response);
+
+    });
 
   }
 
