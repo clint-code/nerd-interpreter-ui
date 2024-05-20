@@ -78,8 +78,6 @@ export class DcCharactersComponent implements OnInit {
 
     this.loadingView = true;
 
-    this.slug = this.route.snapshot.paramMap.get('slug');
-
     this.titleService.setTitle("The Nerd Interpreter - DC Characters");
 
     this.metaService.updateTag(
@@ -148,7 +146,7 @@ export class DcCharactersComponent implements OnInit {
 
     // });
 
-    this.contentService.getAllDCCharacters(this.slug).subscribe((response: any[]) => {
+    this.contentService.getAllDCCharacters().subscribe((response: any[]) => {
 
       this.charactersData = response;
 

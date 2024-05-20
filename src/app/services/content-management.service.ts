@@ -19,9 +19,9 @@ export class ContentManagementService {
 
   }
 
-  getAllDCCharacters(slug) {
+  getAllDCCharacters() {
 
-    return this.http.get(`${environment.contentRoot}posts?slug=${slug}`);
+    return this.http.get(`${environment.contentRoot}dc_characters`);
 
   }
 
