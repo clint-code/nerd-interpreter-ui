@@ -25,6 +25,12 @@ export class ContentManagementService {
 
   }
 
+  getAllMarvelCharacters() {
+
+    return this.http.get(`${environment.contentRoot}marvel_characters`);
+
+  }
+
   getSingleCharacter(characterSlug) {
 
     return this.http.get(`${environment.contentRoot}posts?slug=${characterSlug}`);

@@ -91,13 +91,13 @@
 
                         <!-- Character Item -->
                         <div class="character-item">
-            
-                            <div class="character-image">
+
+                            <!--<div class="character-image">
                                 <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
-                            </div>
-            
-                            <a class="name" routerLink="/single-character">
-                                <h3 class="name display-4">{{character.title}}</h3>
+                            </div>-->
+    
+                            <a class="name" routerLink="{{character?.slug}}">
+                                <h3 class="name display-4">{{character?.title?.rendered}}</h3>
                             </a>
                             
                         </div>

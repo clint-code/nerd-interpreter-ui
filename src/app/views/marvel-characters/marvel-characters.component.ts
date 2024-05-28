@@ -4,7 +4,10 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
 
-import { CharacterdataService } from '../../services/characterdata.service';
+//import { CharacterdataService } from '../../services/characterdata.service';
+
+import { ContentManagementService } from '../../services/content-management.service';
+
 import $ from 'jquery';
 
 import { gsap } from 'gsap';
@@ -28,7 +31,7 @@ interface characterStore {
   templateUrl: './marvel-characters.component.html',
   styleUrls: ['./marvel-characters.component.css'],
   providers: [
-    CharacterdataService
+    //CharacterdataService
   ]
 })
 export class MarvelCharactersComponent implements OnInit {
@@ -59,7 +62,8 @@ export class MarvelCharactersComponent implements OnInit {
   masonry: NgxMasonryComponent;
 
   constructor(
-    private characterDataService: CharacterdataService,
+    //private characterDataService: CharacterdataService,
+    private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
   ) { }
@@ -114,9 +118,21 @@ export class MarvelCharactersComponent implements OnInit {
 
   getMarvelCharactersData() {
 
-    this.characterDataService.getAllMarvelCharactersListingJSON().subscribe((response: any[]) => {
+    // this.characterDataService.getAllMarvelCharactersListingJSON().subscribe((response: any[]) => {
+
+    //   this.charactersData = response;
+
+    //   this.characterStore.cached = response;
+
+    //   this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+    // });
+
+    this.contentService.getAllMarvelCharacters().subscribe((response: any[]) => {
 
       this.charactersData = response;
+
+      console.log("Data:", this.charactersData);
 
       this.characterStore.cached = response;
 

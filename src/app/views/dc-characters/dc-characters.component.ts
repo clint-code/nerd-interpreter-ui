@@ -4,9 +4,7 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
 
-import { ActivatedRoute, Router } from '@angular/router';
-
-import { CharacterdataService } from '../../services/characterdata.service';
+//import { CharacterdataService } from '../../services/characterdata.service';
 
 import { ContentManagementService } from '../../services/content-management.service';
 
@@ -33,7 +31,7 @@ interface characterStore {
   templateUrl: './dc-characters.component.html',
   styleUrls: ['./dc-characters.component.css'],
   providers: [
-    CharacterdataService
+    //CharacterdataService
   ]
 })
 
@@ -65,8 +63,7 @@ export class DcCharactersComponent implements OnInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
 
   constructor(
-    private characterDataService: CharacterdataService,
-    private route: ActivatedRoute,
+    //private characterDataService: CharacterdataService,
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
@@ -99,8 +96,6 @@ export class DcCharactersComponent implements OnInit {
         top: 50
       })
     }, 500);
-
-    this.dcCharactersPage();
 
     this.getDcCharactersData();
 
@@ -156,14 +151,6 @@ export class DcCharactersComponent implements OnInit {
 
       this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
 
-    });
-
-  }
-
-  dcCharactersPage() {
-
-    this.contentService.getContentByPostSlug("dc-characters").subscribe(response => {
-      console.log(response);
     });
 
   }
