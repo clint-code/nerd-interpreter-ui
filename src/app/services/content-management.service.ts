@@ -22,7 +22,7 @@ export class ContentManagementService {
   getAllDCCharacters() {
 
     return this.http.get(`${environment.contentRoot}dc_characters`);
-
+    //return this.http.get(`${environment.contentRoot}dc_characters?per_page=100&_fields=acf&acf_format=standard`);
   }
 
   getAllMarvelCharacters() {

@@ -50,7 +50,14 @@ export class SingleCharacterComponent implements OnInit {
     private route: ActivatedRoute,
     private comicCharacterDataService: CharacterdataService,
     private contentService: ContentManagementService
-  ) { }
+  ) {
+
+    this.route.paramMap.subscribe(params => {
+      this.ngOnInit();
+    });
+
+  }
+
 
   ngOnInit(): void {
 

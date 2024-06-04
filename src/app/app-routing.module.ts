@@ -33,7 +33,13 @@ const routes: Routes = [
 
     {
         path: 'single-character',
-        component: SingleCharacterComponent
+        children: [
+            {
+                path: ':slug',
+                component: SingleCharacterComponent,
+            }
+        ]
+
     },
 
     {
@@ -56,9 +62,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes)
-    ],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
 export class AppRoutingModule { }
