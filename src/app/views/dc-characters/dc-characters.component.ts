@@ -3,12 +3,11 @@ import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
+import $ from 'jquery';
 
 //import { CharacterdataService } from '../../services/characterdata.service';
 
 import { ContentManagementService } from '../../services/content-management.service';
-
-import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -16,7 +15,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 export interface characterInfo {
   id: number;
   title: string;
-  category: string;
+  character_alignment: string;
   characterImage: string;
   alt: string;
 }
@@ -45,6 +44,7 @@ export class DcCharactersComponent implements OnInit {
   reset: string;
   charactersData: any;
   characterStore: characterStore = {};
+  characterAlignment: string = "";
 
   options: NgxMasonryOptions = {
 
@@ -129,18 +129,6 @@ export class DcCharactersComponent implements OnInit {
 
   getDcCharactersData() {
 
-    // this.characterDataService.getAllDcCharactersListingJSON().subscribe((response: any[]) => {
-
-    //   this.charactersData = response;
-
-    //   console.log("Data:", this.charactersData);
-
-    //   this.characterStore.cached = response;
-
-    //   this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
-
-    // });
-
     this.contentService.getAllDCCharacters().subscribe((response: any[]) => {
 
       this.charactersData = response;
@@ -189,15 +177,23 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category: any) {
+  filterCharacters(category) {
 
-    this.characterStore.refined = this.characterStore.cached.filter(
-      (p) => p.category == category || category == 'all'
+    console.log(category);
+
+    console.log(this.charactersData);
+
+    let filteredData = this.charactersData.filter((character) => {
+      return character.acf.character_alignment[0] === category;
+    });
+
+    console.log("Character alignment:", filteredData);
+
+    this.characterStore.refined = this.charactersData.filter(
+      (character) => character.acf.character_alignment == category || category == 'all'
     );
 
     this.masonry.reloadItems();
-
-    console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 

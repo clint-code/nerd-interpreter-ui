@@ -176,15 +176,13 @@ export class MarvelCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category: any) {
+  filterCharacters(category) {
 
-    this.characterStore.refined = this.characterStore.cached.filter(
-      (p) => p.category == category || category == 'all'
+    this.characterStore.refined = this.charactersData.filter(
+      (character) => character.acf.character_alignment == category || category == 'all'
     );
 
     this.masonry.reloadItems();
-
-    console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 
