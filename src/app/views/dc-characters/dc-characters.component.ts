@@ -179,16 +179,6 @@ export class DcCharactersComponent implements OnInit {
 
   filterCharacters(category) {
 
-    console.log(category);
-
-    console.log(this.charactersData);
-
-    let filteredData = this.charactersData.filter((character) => {
-      return character.acf.character_alignment[0] === category;
-    });
-
-    console.log("Character alignment:", filteredData);
-
     this.characterStore.refined = this.charactersData.filter(
       (character) => character.acf.character_alignment == category || category == 'all'
     );
