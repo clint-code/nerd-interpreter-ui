@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
-import { CharacterdataService } from '../../services/characterdata.service';
+//import { CharacterdataService } from '../../services/characterdata.service';
 
 import { ContentManagementService } from '../../services/content-management.service';
 
@@ -48,7 +48,7 @@ export class SingleCharacterComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private comicCharacterDataService: CharacterdataService,
+    //private comicCharacterDataService: CharacterdataService,
     private contentService: ContentManagementService
   ) {
 
@@ -75,7 +75,7 @@ export class SingleCharacterComponent implements OnInit {
 
     //this.getComicCovers();
 
-    this.contentService.getSingleCharacter(this.characterSlug).subscribe(response => {
+    this.contentService.getSingleDcCharacter(this.characterSlug).subscribe(response => {
 
       console.log("Response:", response);
 
@@ -121,13 +121,13 @@ export class SingleCharacterComponent implements OnInit {
 
   getComicCovers() {
 
-    this.comicCharacterDataService.getComicCoversListing().subscribe(response => {
+    // this.comicCharacterDataService.getComicCoversListing().subscribe(response => {
 
-      this.comicCovers = response;
+    //   this.comicCovers = response;
 
-      console.log(this.comicCovers);
+    //   console.log(this.comicCovers);
 
-    });
+    // });
 
   }
 
