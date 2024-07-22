@@ -47,6 +47,8 @@ export class DcCharactersComponent implements OnInit {
   characterStore: characterStore = {};
   characterAlignment: string = "";
 
+  dcBannerIntroContent: any;
+
   options: NgxMasonryOptions = {
 
     itemSelector: '.character-item',
@@ -99,10 +101,7 @@ export class DcCharactersComponent implements OnInit {
       })
     }, 500);
 
-    this.getDcCharactersData();
-
     $(".filterButton").click(this.toggleFilter);
-
 
   }
 
@@ -122,11 +121,25 @@ export class DcCharactersComponent implements OnInit {
 
     }, 1000);
 
-    // setTimeout(() => {
+    this.getDcBannerIntroData();
 
-    //   this.getDcCharactersData();
+    this.getDcCharactersData();
 
-    // }, 3000);
+  }
+
+  getDcBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("dc-characters").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.dcBannerIntroContent = response[0];
+
+        console.log("Intro content:", this.dcBannerIntroContent);
+
+      }
+
+    });
 
   }
 
@@ -135,10 +148,6 @@ export class DcCharactersComponent implements OnInit {
     this.contentService.getAllDCCharacters().subscribe((response: any[]) => {
 
       if (response !== null) {
-
-        // if(){
-
-        // }
 
         this.charactersData = response;
 

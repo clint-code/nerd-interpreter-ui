@@ -45,6 +45,8 @@ export class MarvelCharactersComponent implements OnInit {
   charactersData: any;
   characterStore: characterStore = {};
 
+  marvelBannerIntroContent: any;
+
   options: NgxMasonryOptions = {
 
     itemSelector: '.character-item',
@@ -94,6 +96,8 @@ export class MarvelCharactersComponent implements OnInit {
 
     this.getMarvelCharactersData();
 
+    this.getMarvelBannerIntroData();
+
     $(".filterButton").click(this.toggleFilter);
 
   }
@@ -118,16 +122,6 @@ export class MarvelCharactersComponent implements OnInit {
 
   getMarvelCharactersData() {
 
-    // this.characterDataService.getAllMarvelCharactersListingJSON().subscribe((response: any[]) => {
-
-    //   this.charactersData = response;
-
-    //   this.characterStore.cached = response;
-
-    //   this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
-
-    // });
-
     this.contentService.getAllMarvelCharacters().subscribe((response: any[]) => {
 
       this.charactersData = response;
@@ -137,6 +131,22 @@ export class MarvelCharactersComponent implements OnInit {
       this.characterStore.cached = response;
 
       this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+    });
+
+  }
+
+  getMarvelBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("marvel-characters").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.marvelBannerIntroContent = response[0];
+
+        console.log("Intro content:", this.marvelBannerIntroContent);
+
+      }
 
     });
 

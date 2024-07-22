@@ -22,8 +22,9 @@
     <!--End of logo section-->
 
         <app-banner
-            bannerTitle="Marvel Characters"
-            bannerImage="../../../assets/img/marvel-characters/marvel-characters-hero-banner.jpg"
+            bannerTitle="{{marvelBannerIntroContent?.title?.rendered}}"
+            bannerImage="{{marvelBannerIntroContent?.acf?.page_banner_image?.url}}"
+            bannerImageAlt="{{marvelBannerIntroContent?.acf?.page_banner_image?.alt}}"
         >
         </app-banner>
 

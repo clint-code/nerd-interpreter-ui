@@ -22,8 +22,9 @@
         <!--End of logo section-->
 
         <app-banner 
-            bannerTitle="DC Characters" 
-            bannerImage="../../../assets/img/dc-characters/dc-characters-banner.jpg">
+            bannerTitle="{{dcBannerIntroContent?.title?.rendered}}" 
+            bannerImage="{{dcBannerIntroContent?.acf?.page_banner_image?.url}}"
+            bannerImageAlt="{{dcBannerIntroContent?.acf?.page_banner_image?.alt}}">
         </app-banner>
 
         <div class="row">

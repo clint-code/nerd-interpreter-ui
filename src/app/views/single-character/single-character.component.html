@@ -28,9 +28,9 @@
         <div class="container-fluid">
     
             <app-banner
-                bannerTitle="{{pageDetails?.acf?.character_title}}"
-                bannerImage="{{pageDetails?.acf?.post_banner_image}}"
-                bannerImageAlt="{{pageDetails?.acf?.post_banner_image_alt}}"
+                bannerTitle="{{pageDetails?.title?.rendered}}"
+                bannerImage="{{pageDetails?.acf?.post_banner_image?.url}}"
+                bannerImageAlt="{{pageDetails?.acf?.post_banner_image_alt?.alt}}"
             >
             </app-banner>
     

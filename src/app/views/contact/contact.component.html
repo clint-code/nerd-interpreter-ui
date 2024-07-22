@@ -18,9 +18,9 @@
         <!--End of logo section-->
 
         <app-banner
-            bannerTitle="Get in Touch"
-            bannerImage="./assets/img/contact/bat-signal-banner.jpg"
-        >
+                bannerTitle="{{contactBannerIntroContent?.title?.rendered}}" 
+                bannerImage="{{contactBannerIntroContent?.acf?.page_banner_image?.url}}"
+                bannerImageAlt="{{contactBannerIntroContent?.acf?.page_banner_image?.alt}}">
         </app-banner>
 
         <div class="row">
