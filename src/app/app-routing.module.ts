@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AboutComponent } from './views/about/about.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { DcCharactersComponent } from './views/dc-characters/dc-characters.component';
@@ -32,17 +31,6 @@ const routes: Routes = [
     },
 
     {
-        path: 'single-character',
-        children: [
-            {
-                path: ':slug',
-                component: SingleCharacterComponent,
-            }
-        ]
-
-    },
-
-    {
         path: 'superheroes-saints',
         component: SuperheroesSaintsComponent
     },
@@ -55,6 +43,16 @@ const routes: Routes = [
     {
         path: 'contact',
         component: ContactComponent
+    },
+    {
+        path: 'single-character',
+        children: [
+            {
+                path: ':slug',
+                component: SingleCharacterComponent,
+            }
+        ]
+
     },
 
     { path: '**', redirectTo: '' },

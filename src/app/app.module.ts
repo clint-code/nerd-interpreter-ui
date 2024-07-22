@@ -5,13 +5,11 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
-//import { XoModule } from 'angular-xo';
-//import { NgwpThemeKitModule } from 'ngwp-theme-kit';
+
 
 //View Imports
 import { HomeComponent } from './views/home/home.component';
@@ -44,7 +42,6 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
     ProgressOnscrollbarComponent,
     SuperheroesSaintsComponent,
     SingleSuperheroSaintViewComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -54,8 +51,6 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
     HttpClientModule,
     SharedModule,
     CarouselModule,
-    //XoModule
-    //NgwpThemeKitModule
   ],
   providers: [
     Title

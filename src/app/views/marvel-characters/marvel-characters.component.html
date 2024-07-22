@@ -89,18 +89,22 @@
 
                     <div ngxMasonryItem *ngFor="let character of characterStore.refined">
 
-                        <!-- Character Item -->
-                        <div class="character-item">
+                        <ng-container *ngIf="character?.acf?.character_stats_section?.comic_universe === 'Marvel'">
 
-                            <div class="character-image">
-                                <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid">
+                            <!-- Character Item -->
+                            <div class="character-item">
+
+                                <div class="character-image">
+                                    <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid">
+                                </div>
+        
+                                <a class="name" routerLink="{{character?.slug}}">
+                                    <h3 class="name display-4">{{character?.title?.rendered}}</h3>
+                                </a>
+                                
                             </div>
-    
-                            <a class="name" routerLink="{{character?.slug}}">
-                                <h3 class="name display-4">{{character?.title?.rendered}}</h3>
-                            </a>
-                            
-                        </div>
+
+                        </ng-container>
             
                     </div>
 

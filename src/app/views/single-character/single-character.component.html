@@ -28,16 +28,16 @@
         <div class="container-fluid">
     
             <app-banner
-                bannerTitle="The Joker"
-                bannerImage="./assets/img/character-page/joker-banner.jpg"
-                bannerImageAlt="killing-joke-smile"
+                bannerTitle="{{pageDetails?.acf?.character_title}}"
+                bannerImage="{{pageDetails?.acf?.post_banner_image}}"
+                bannerImageAlt="{{pageDetails?.acf?.post_banner_image_alt}}"
             >
             </app-banner>
     
             <app-character-stats
-                comicUniverse="DC"
-                characterAlignment="Villain"
-                baseOfOperation="Gotham City"
+                comicUniverse="{{pageDetails?.acf?.character_stats_section?.comic_universe}}"
+                characterAlignment="{{pageDetails?.acf?.character_stats_section?.character_alignment}}"
+                baseOfOperation="{{pageDetails?.acf?.character_stats_section?.base_of_operation}}"
             >
             </app-character-stats>
     

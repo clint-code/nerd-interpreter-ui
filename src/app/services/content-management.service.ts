@@ -13,7 +13,8 @@ export class ContentManagementService {
     private http: HttpClient
   ) { }
 
-  getContentByPostSlug(slug) {
+  //get content by page slug
+  getContentByPageSlug(slug) {
 
     return this.http.get(`${environment.contentRoot}pages?slug=${slug}`);
 
@@ -21,7 +22,7 @@ export class ContentManagementService {
 
   getAllDCCharacters() {
 
-    return this.http.get(`${environment.contentRoot}dc_characters`);
+    return this.http.get(`${environment.contentRoot}comic_characters`);
     //return this.http.get(`${environment.contentRoot}dc_characters?per_page=100&_fields=acf&acf_format=standard`);
   }
 

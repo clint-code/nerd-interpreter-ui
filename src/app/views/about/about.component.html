@@ -22,8 +22,9 @@
         <!--End of logo section-->
 
         <app-banner
-            bannerTitle="About the Blog"
-            bannerImage="./assets/img/about/about-banner.jpg">
+            bannerTitle="{{aboutContent?.title?.rendered}}"
+            bannerImage="{{aboutContent?.acf?.about_banner_image?.url}}"
+            bannerImageAlt="{{aboutContent?.acf?.about_banner_image?.alt}}">
         </app-banner>
 
         <div class="row">
@@ -31,9 +32,7 @@
             <div class="p-3 text-intro-section about-section">
 
                 <p class="text-center">
-                    The Nerd Inerpreter is a blog that looks 
-                    deep into the iconic comic book characters that we
-                    know and love
+                    {{aboutContent?.acf?.about_intro}}
                 </p>
 
             </div>
@@ -59,25 +58,8 @@
 
                             <div class="cnt-section text-left p-2">
 
-                                <p>
-                                    Comic book characters are very intriguing.
-                                </p>
-
-                                <p>
-                                    Be it the heroes' struggles or triumphs, their moral codes, or the villains' 
-                                    their twisted sense of morality, we can, to some extent, relate with these 
-                                    larger-than-life characters. If we can't relate to them, maybe we'll just be fascinated by them.
-                                </p>
-
-                                <p>
-                                    In this blog, there are character-deep-dives where we study certain aspects 
-                                    of these characters, with examples from comic books and films, what makes them 
-                                    who they are and what we can learn from them.
-                                </p>
-
-                                <p>
-                                    Hope you enjoy!!
-                                </p>
+                                <div [innerHTML]="aboutContent?.acf?.about_comic_characters"></div>
+                                
                             </div>
 
                         </div>
@@ -124,25 +106,8 @@
     
                             <div class="cnt-section text-left p-2">
     
-                                <p>
-                                    Comic book characters are very intriguing.
-                                </p>
-    
-                                <p>
-                                    Be it the heroes' struggles or triumphs, their moral codes, or the villains' 
-                                    their twisted sense of morality, we can, to some extent, relate with these 
-                                    larger-than-life characters. If we can't relate to them, maybe we'll just be fascinated by them.
-                                </p>
-    
-                                <p>
-                                    In this blog, there are character-deep-dives where we study certain aspects 
-                                    of these characters, with examples from comic books and films, what makes them 
-                                    who they are and what we can learn from them.
-                                </p>
-    
-                                <p>
-                                    Hope you enjoy!!
-                                </p>
+                                <div [innerHTML]="aboutContent?.acf?.superheroes_and_saints"></div>
+
                             </div>
     
                         </div>
@@ -187,24 +152,7 @@
 
                     <div class="cnt-section text-left p-2">
 
-                        <p>
-                            From a young age, I've been fascinated by the world of fiction, particularly science fiction. 
-                            I was lucky enough to be introduced into the world of DC and Marvel comic book lore. Primarily, 
-                            this was through the animated TV shows such as Superman The Animated Series, Batman The Animated Series, 
-                            Justice League, X-Men Evolution and Batman: The Brave and The Bold (The nostalgia!!!).
-                        </p>
-
-                        <p>
-                            Through this, I got to know the characters and most importantly their powers and enemies 
-                            (simply because at that time, the fights were awesome and the one-liners of the characters witty). 
-                            Fast forward, there has been a surge of live-action comic book films, from the DCEU and the MCU. This 
-                            got me interested in reading comics, listening to podcasts on the Hero's Journey and character studies 
-                            and most importantly, watching the films themselve
-                        </p>
-
-                        <p>
-                            My name is Clinton Mutinda, and I love comics.
-                        </p>
+                        <div [innerHTML]="aboutContent?.acf?.about_me_section?.about_me"></div>
                     
                     </div>
 
@@ -212,7 +160,7 @@
 
                 <div class="col-md-4 image-section">
 
-                    <img src="../../../assets/img/about/comic-me.jpg" alt="" class="img-fluid">
+                    <img src="{{aboutContent?.acf?.about_me_section?.profile_image?.url}}" alt="{{aboutContent?.acf?.about_me_section?.profile_image?.alt}}" class="img-fluid">
 
                 </div>
 

@@ -3,6 +3,7 @@ import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import $ from 'jquery';
 
 //import { CharacterdataService } from '../../services/characterdata.service';
@@ -67,6 +68,7 @@ export class DcCharactersComponent implements OnInit {
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
+    private router: Router
   ) {
 
   }
@@ -101,6 +103,7 @@ export class DcCharactersComponent implements OnInit {
 
     $(".filterButton").click(this.toggleFilter);
 
+
   }
 
   ngAfterViewInit(): void {
@@ -131,13 +134,21 @@ export class DcCharactersComponent implements OnInit {
 
     this.contentService.getAllDCCharacters().subscribe((response: any[]) => {
 
-      this.charactersData = response;
+      if (response !== null) {
 
-      console.log("Data:", this.charactersData);
+        // if(){
 
-      this.characterStore.cached = response;
+        // }
 
-      this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+        this.charactersData = response;
+
+        console.log("Data:", this.charactersData);
+
+        this.characterStore.cached = response;
+
+        this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+      }
 
     });
 

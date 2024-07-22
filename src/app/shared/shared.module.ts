@@ -36,6 +36,8 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
   ],
 
   exports: [
+    RouterModule,
+    CommonModule,
     HeaderComponent,
     FooterAltComponent,
     FooterComponent,

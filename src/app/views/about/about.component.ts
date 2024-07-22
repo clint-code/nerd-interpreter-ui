@@ -4,6 +4,8 @@ import $ from 'jquery';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { CharacterdataService } from '../../services/characterdata.service';
+import { ContentManagementService } from '../../services/content-management.service';
+
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -11,9 +13,15 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
+  providers: [
+    ContentManagementService
+  ]
 })
+
 export class AboutComponent implements OnInit {
+
+  aboutContent: any;
 
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
@@ -44,6 +52,7 @@ export class AboutComponent implements OnInit {
 
   constructor(
     private characterPortraitsData: CharacterdataService,
+    private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
   ) { }
@@ -75,6 +84,8 @@ export class AboutComponent implements OnInit {
 
     }, 500);
 
+    this.getAboutContent();
+
     this.getCharacterPortaits();
 
     this.getSuperheroesSaintsPortraits();
@@ -92,6 +103,25 @@ export class AboutComponent implements OnInit {
       this.animateContentCategory();
 
     }, 1000);
+
+  }
+
+  getAboutContent() {
+
+    this.contentService.getContentByPageSlug("about").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.aboutContent = response[0];
+
+        console.log(this.aboutContent);
+
+        this.loadingView = false;
+
+      }
+
+
+    });
 
   }
 

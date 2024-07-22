@@ -14,12 +14,14 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-single-character',
   templateUrl: './single-character.component.html',
-  styleUrls: ['./single-character.component.css']
+  styleUrls: ['./single-character.component.css'],
+  providers: [ContentManagementService]
 })
 
 export class SingleCharacterComponent implements OnInit {
 
   characterSlug: string = "";
+  pageDetails: any = [];
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
@@ -48,6 +50,7 @@ export class SingleCharacterComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     //private comicCharacterDataService: CharacterdataService,
     private contentService: ContentManagementService
   ) {
@@ -65,6 +68,8 @@ export class SingleCharacterComponent implements OnInit {
 
     this.characterSlug = this.route.snapshot.paramMap.get('slug');
 
+    console.log("Character slug:", this.characterSlug);
+
     $(window).scroll(this.progressScrollBar);
 
     $(window).scroll(this.showUpScroll);
@@ -77,7 +82,16 @@ export class SingleCharacterComponent implements OnInit {
 
     this.contentService.getSingleDcCharacter(this.characterSlug).subscribe(response => {
 
-      console.log("Response:", response);
+      if (response !== null) {
+
+        this.pageDetails = response[0];
+
+        this.loadingView = false;
+
+        console.log("Response:", this.pageDetails);
+
+      }
+
 
     });
 
