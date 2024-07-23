@@ -48,7 +48,7 @@ const routes: Routes = [
         path: 'single-character',
         children: [
             {
-                path: '::slug',
+                path: ':slug',
                 component: SingleCharacterComponent,
             }
         ]
