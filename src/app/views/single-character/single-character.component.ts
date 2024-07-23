@@ -20,6 +20,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 
 export class SingleCharacterComponent implements OnInit {
 
+  parentSlug: string;
   characterSlug: string = "";
   pageDetails: any = [];
   loadingView: boolean = false;

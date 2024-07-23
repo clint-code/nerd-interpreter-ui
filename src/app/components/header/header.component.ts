@@ -16,15 +16,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.router.events.subscribe(val => {
+    // this.router.events.subscribe(val => {
 
-      if (val instanceof NavigationEnd && $(".menuCloser").hasClass("open")) {
+    //   if (val instanceof NavigationEnd && $(".menuCloser").hasClass("open")) {
 
-        this.toggleMenu();
+    //     this.toggleMenu();
 
-      }
+    //   }
 
-    });
+    // });
 
   }
 

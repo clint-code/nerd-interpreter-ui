@@ -3,7 +3,7 @@ import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import $ from 'jquery';
 
 //import { CharacterdataService } from '../../services/characterdata.service';
@@ -37,7 +37,10 @@ interface characterStore {
 
 export class DcCharactersComponent implements OnInit {
 
-  slug: string = '';
+  //slug: string = '';
+
+  parentSlug: string;
+
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
@@ -70,7 +73,8 @@ export class DcCharactersComponent implements OnInit {
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
 
   }
@@ -80,6 +84,10 @@ export class DcCharactersComponent implements OnInit {
     this.loadingView = true;
 
     this.titleService.setTitle("The Nerd Interpreter - DC Characters");
+
+    this.parentSlug = this.route.snapshot.paramMap.get('slug');
+
+    console.log("Parent slug:", this.parentSlug);
 
     this.metaService.updateTag(
       {
@@ -134,8 +142,6 @@ export class DcCharactersComponent implements OnInit {
       if (response !== "" || response !== null) {
 
         this.dcBannerIntroContent = response[0];
-
-        console.log("Intro content:", this.dcBannerIntroContent);
 
       }
 

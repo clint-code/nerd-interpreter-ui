@@ -45,14 +45,8 @@ const routes: Routes = [
         component: ContactComponent
     },
     {
-        path: 'single-character',
-        children: [
-            {
-                path: '::slug',
-                component: SingleCharacterComponent,
-            }
-        ]
-
+        path: 'dc-characters/single-character/:slug',
+        component: SingleCharacterComponent,
     },
 
     { path: '**', redirectTo: '' },
