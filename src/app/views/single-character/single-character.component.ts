@@ -73,13 +73,13 @@ export class SingleCharacterComponent implements OnInit {
 
     $(window).scroll(this.showUpScroll);
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset().top - 50
-    }, 500);
+    // $('html, body').animate({
+    //   scrollTop: $(".content-section").offset().top - 50
+    // }, 500);
 
     //this.getComicCovers();
 
-    this.contentService.getSingleDcCharacter(this.characterSlug).subscribe(response => {
+    this.contentService.getSingleCharacter(this.characterSlug).subscribe(response => {
 
       if (response !== null) {
 
@@ -149,7 +149,7 @@ export class SingleCharacterComponent implements OnInit {
     let targetDiv = event.target.dataset.target;
     let contentDiv = $('.' + targetDiv);
 
-    console.log(targetDiv + " " + contentDiv);
+    //console.log(targetDiv + " " + contentDiv);
 
     $('html, body').stop().animate({
       scrollTop: contentDiv.offset().top

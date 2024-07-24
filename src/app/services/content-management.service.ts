@@ -28,20 +28,20 @@ export class ContentManagementService {
 
   getSingleCharacter(characterSlug) {
 
-    return this.http.get(`${environment.contentRoot}posts?slug=${characterSlug}`);
+    return this.http.get(`${environment.contentRoot}comic_characters?slug=${characterSlug}`);
 
   }
 
-  getSingleDcCharacter(characterSlug) {
+  // getSingleDcCharacter(characterSlug) {
 
-    return this.http.get(`${environment.contentRoot}dc_characters?slug=${characterSlug}`);
+  //   return this.http.get(`${environment.contentRoot}comic_characters?slug=${characterSlug}`);
 
-  }
+  // }
 
-  getSingleMarvelCharacter(characterSlug) {
+  // getSingleMarvelCharacter(characterSlug) {
 
-    return this.http.get(`${environment.contentRoot}marvel_characters?slug=${characterSlug}`);
+  //   return this.http.get(`${environment.contentRoot}marvel_characters?slug=${characterSlug}`);
 
-  }
+  // }
 
 }
