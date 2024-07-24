@@ -3,10 +3,7 @@ import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import $ from 'jquery';
-
-//import { CharacterdataService } from '../../services/characterdata.service';
 
 import { ContentManagementService } from '../../services/content-management.service';
 
@@ -37,10 +34,10 @@ interface characterStore {
 
 export class DcCharactersComponent implements OnInit {
 
-  slug: string = '';
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
+
   selection: string;
   reset: string;
   charactersData: any;
@@ -66,11 +63,9 @@ export class DcCharactersComponent implements OnInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
 
   constructor(
-    //private characterDataService: CharacterdataService,
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
-    private router: Router
   ) {
 
   }
@@ -101,13 +96,15 @@ export class DcCharactersComponent implements OnInit {
       })
     }, 500);
 
+    this.getDcBannerIntroData();
+
+    this.getDcCharactersData();
+
     $(".filterButton").click(this.toggleFilter);
 
   }
 
   ngAfterViewInit(): void {
-
-    this.siteImages = Preloader.getImages();
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -121,31 +118,11 @@ export class DcCharactersComponent implements OnInit {
 
     }, 1000);
 
-    this.getDcBannerIntroData();
-
-    this.getDcCharactersData();
-
-  }
-
-  getDcBannerIntroData() {
-
-    this.contentService.getContentByPageSlug("dc-characters").subscribe(response => {
-
-      if (response !== "" || response !== null) {
-
-        this.dcBannerIntroContent = response[0];
-
-        console.log("Intro content:", this.dcBannerIntroContent);
-
-      }
-
-    });
-
   }
 
   getDcCharactersData() {
 
-    this.contentService.getAllDCCharacters().subscribe((response: any[]) => {
+    this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
       if (response !== null) {
 
@@ -156,6 +133,20 @@ export class DcCharactersComponent implements OnInit {
         this.characterStore.cached = response;
 
         this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+      }
+
+    });
+
+  }
+
+  getDcBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("dc-characters").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.dcBannerIntroContent = response[0];
 
       }
 

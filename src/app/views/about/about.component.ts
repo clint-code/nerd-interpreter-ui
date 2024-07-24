@@ -94,11 +94,11 @@ export class AboutComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
-
     gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
+
+      this.siteImages = Preloader.getImages();
 
       this.animateContentCategory();
 

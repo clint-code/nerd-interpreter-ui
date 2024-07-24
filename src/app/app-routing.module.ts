@@ -44,15 +44,15 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
     },
-    {
-        path: 'single-character',
-        children: [
-            {
-                path: ':slug',
-                component: SingleCharacterComponent,
-            }
-        ]
 
+    {
+        path: 'dc-characters/single-character/:slug',
+        component: SingleCharacterComponent,
+    },
+
+    {
+        path: 'marvel-characters/single-character/:slug',
+        component: SingleCharacterComponent,
     },
 
     { path: '**', redirectTo: '' },

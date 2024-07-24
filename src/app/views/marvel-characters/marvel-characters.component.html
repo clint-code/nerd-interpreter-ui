@@ -1,5 +1,9 @@
 <!--Site Preloaders-->
 <app-preloader
+    *ngIf="siteImages.length < 1"
+></app-preloader>
+
+<app-preloader
     *ngIf="siteImages.length > 0"
     [images]="siteImages"
 ></app-preloader>
@@ -99,7 +103,7 @@
                                     <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid">
                                 </div>
         
-                                <a class="name" routerLink="{{character?.slug}}">
+                                <a class="name" routerLink="single-character/{{character?.slug}}">
                                     <h3 class="name display-4">{{character?.title?.rendered}}</h3>
                                 </a>
                                 

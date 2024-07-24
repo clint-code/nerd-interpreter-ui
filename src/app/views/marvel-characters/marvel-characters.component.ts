@@ -4,8 +4,6 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
 
-//import { CharacterdataService } from '../../services/characterdata.service';
-
 import { ContentManagementService } from '../../services/content-management.service';
 
 import $ from 'jquery';
@@ -64,13 +62,14 @@ export class MarvelCharactersComponent implements OnInit {
   masonry: NgxMasonryComponent;
 
   constructor(
-    //private characterDataService: CharacterdataService,
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
   ) { }
 
   ngOnInit(): void {
+
+    this.loadingView = true;
 
     this.titleService.setTitle("The Nerd Interpreter - Marvel Characters");
 
@@ -104,8 +103,6 @@ export class MarvelCharactersComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
-
     gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
@@ -122,7 +119,7 @@ export class MarvelCharactersComponent implements OnInit {
 
   getMarvelCharactersData() {
 
-    this.contentService.getAllMarvelCharacters().subscribe((response: any[]) => {
+    this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
       this.charactersData = response;
 

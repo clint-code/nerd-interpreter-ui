@@ -420,6 +420,10 @@ body {
         }
     }
 
+    .character-image{
+        border: 10px solid black;
+    }
+
     .character-image>img {
         max-width: 100%;
         display: block;
@@ -660,10 +664,10 @@ body {
         margin-bottom: 20px;
     }
 
-    img {
-        border-radius: 30px;
-    }
-}
+    // img {
+    //     border-radius: 30px;
+    // }
+} 
 
     .intro-section {
         background-color: #fff;
@@ -681,9 +685,9 @@ body {
         margin-bottom: 0px;
     }
 
-    img {
-        border: 10px solid #fff;
-    }
+    // img {
+    //     border: 10px solid #fff;
+    // }
 }
 
 .cnt-heading {

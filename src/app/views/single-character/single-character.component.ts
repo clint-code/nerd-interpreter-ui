@@ -20,6 +20,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 
 export class SingleCharacterComponent implements OnInit {
 
+  parentSlug: string;
   characterSlug: string = "";
   pageDetails: any = [];
   loadingView: boolean = false;
@@ -55,9 +56,6 @@ export class SingleCharacterComponent implements OnInit {
     private contentService: ContentManagementService
   ) {
 
-    this.route.paramMap.subscribe(params => {
-      this.ngOnInit();
-    });
 
   }
 
@@ -68,19 +66,17 @@ export class SingleCharacterComponent implements OnInit {
 
     this.characterSlug = this.route.snapshot.paramMap.get('slug');
 
-    console.log("Character slug:", this.characterSlug);
-
     $(window).scroll(this.progressScrollBar);
 
     $(window).scroll(this.showUpScroll);
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset().top - 50
-    }, 500);
+    // $('html, body').animate({
+    //   scrollTop: $(".content-section").offset().top - 50
+    // }, 500);
 
     //this.getComicCovers();
 
-    this.contentService.getSingleDcCharacter(this.characterSlug).subscribe(response => {
+    this.contentService.getSingleCharacter(this.characterSlug).subscribe(response => {
 
       if (response !== null) {
 
@@ -92,18 +88,17 @@ export class SingleCharacterComponent implements OnInit {
 
       }
 
-
     });
 
   }
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
-
     gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
+
+      this.siteImages = Preloader.getImages();
 
       this.fadeInLeft();
 
@@ -147,12 +142,10 @@ export class SingleCharacterComponent implements OnInit {
 
   scrollPage(event) {
 
-    console.log(event);
-
     let targetDiv = event.target.dataset.target;
     let contentDiv = $('.' + targetDiv);
 
-    console.log(targetDiv + " " + contentDiv);
+    //console.log(targetDiv + " " + contentDiv);
 
     $('html, body').stop().animate({
       scrollTop: contentDiv.offset().top
