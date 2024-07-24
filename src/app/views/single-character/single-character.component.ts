@@ -56,9 +56,6 @@ export class SingleCharacterComponent implements OnInit {
     private contentService: ContentManagementService
   ) {
 
-    this.route.paramMap.subscribe(params => {
-      this.ngOnInit();
-    });
 
   }
 
@@ -73,9 +70,9 @@ export class SingleCharacterComponent implements OnInit {
 
     $(window).scroll(this.showUpScroll);
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset().top - 50
-    }, 500);
+    // $('html, body').animate({
+    //   scrollTop: $(".content-section").offset().top - 50
+    // }, 500);
 
     //this.getComicCovers();
 
@@ -91,18 +88,17 @@ export class SingleCharacterComponent implements OnInit {
 
       }
 
-
     });
 
   }
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
-
     gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
+
+      this.siteImages = Preloader.getImages();
 
       this.fadeInLeft();
 

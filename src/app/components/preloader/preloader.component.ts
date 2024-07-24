@@ -28,7 +28,6 @@ export class PreloaderComponent implements OnInit {
 
     if (this.totalImages > 0) {
 
-      //setTimeout(() => {   }, 50000);
       this.loadImages(this.siteImages);
 
     }
@@ -49,7 +48,6 @@ export class PreloaderComponent implements OnInit {
       }, false);
 
       image.src = this.siteImages[i];
-
     }
 
   }

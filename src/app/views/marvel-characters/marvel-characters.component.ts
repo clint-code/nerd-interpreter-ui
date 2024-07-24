@@ -4,8 +4,6 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
 
-//import { CharacterdataService } from '../../services/characterdata.service';
-
 import { ContentManagementService } from '../../services/content-management.service';
 
 import $ from 'jquery';
@@ -104,8 +102,6 @@ export class MarvelCharactersComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-
-    this.siteImages = Preloader.getImages();
 
     gsap.registerPlugin(ScrollTrigger);
 

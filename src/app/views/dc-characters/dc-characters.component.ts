@@ -5,8 +5,6 @@ import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
 import $ from 'jquery';
 
-//import { CharacterdataService } from '../../services/characterdata.service';
-
 import { ContentManagementService } from '../../services/content-management.service';
 
 import { gsap } from 'gsap';
@@ -36,11 +34,10 @@ interface characterStore {
 
 export class DcCharactersComponent implements OnInit {
 
-  //slug: string = '';
-
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
+
   selection: string;
   reset: string;
   charactersData: any;
@@ -99,13 +96,15 @@ export class DcCharactersComponent implements OnInit {
       })
     }, 500);
 
+    this.getDcBannerIntroData();
+
+    this.getDcCharactersData();
+
     $(".filterButton").click(this.toggleFilter);
 
   }
 
   ngAfterViewInit(): void {
-
-    this.siteImages = Preloader.getImages();
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -118,24 +117,6 @@ export class DcCharactersComponent implements OnInit {
       this.fadeInLeft();
 
     }, 1000);
-
-    this.getDcBannerIntroData();
-
-    this.getDcCharactersData();
-
-  }
-
-  getDcBannerIntroData() {
-
-    this.contentService.getContentByPageSlug("dc-characters").subscribe(response => {
-
-      if (response !== "" || response !== null) {
-
-        this.dcBannerIntroContent = response[0];
-
-      }
-
-    });
 
   }
 
@@ -152,6 +133,20 @@ export class DcCharactersComponent implements OnInit {
         this.characterStore.cached = response;
 
         this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+      }
+
+    });
+
+  }
+
+  getDcBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("dc-characters").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.dcBannerIntroContent = response[0];
 
       }
 
