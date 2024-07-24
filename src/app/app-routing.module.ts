@@ -49,6 +49,11 @@ const routes: Routes = [
         component: SingleCharacterComponent,
     },
 
+    {
+        path: 'marvel-characters/single-character/:slug',
+        component: SingleCharacterComponent,
+    },
+
     { path: '**', redirectTo: '' },
 
 ];

@@ -20,15 +20,9 @@ export class ContentManagementService {
 
   }
 
-  getAllDCCharacters() {
+  getAllCharacters() {
 
     return this.http.get(`${environment.contentRoot}comic_characters`);
-    //return this.http.get(`${environment.contentRoot}dc_characters?per_page=100&_fields=acf&acf_format=standard`);
-  }
-
-  getAllMarvelCharacters() {
-
-    return this.http.get(`${environment.contentRoot}marvel_characters`);
 
   }
 

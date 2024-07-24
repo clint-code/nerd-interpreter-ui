@@ -39,8 +39,6 @@ export class DcCharactersComponent implements OnInit {
 
   //slug: string = '';
 
-  parentSlug: string;
-
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
@@ -84,10 +82,6 @@ export class DcCharactersComponent implements OnInit {
     this.loadingView = true;
 
     this.titleService.setTitle("The Nerd Interpreter - DC Characters");
-
-    this.parentSlug = this.route.snapshot.paramMap.get('slug');
-
-    console.log("Parent slug:", this.parentSlug);
 
     this.metaService.updateTag(
       {
@@ -151,7 +145,7 @@ export class DcCharactersComponent implements OnInit {
 
   getDcCharactersData() {
 
-    this.contentService.getAllDCCharacters().subscribe((response: any[]) => {
+    this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
       if (response !== null) {
 

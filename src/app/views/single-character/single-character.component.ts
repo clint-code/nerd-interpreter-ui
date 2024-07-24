@@ -69,8 +69,6 @@ export class SingleCharacterComponent implements OnInit {
 
     this.characterSlug = this.route.snapshot.paramMap.get('slug');
 
-    console.log("Character slug:", this.characterSlug);
-
     $(window).scroll(this.progressScrollBar);
 
     $(window).scroll(this.showUpScroll);
@@ -147,8 +145,6 @@ export class SingleCharacterComponent implements OnInit {
   }
 
   scrollPage(event) {
-
-    console.log(event);
 
     let targetDiv = event.target.dataset.target;
     let contentDiv = $('.' + targetDiv);

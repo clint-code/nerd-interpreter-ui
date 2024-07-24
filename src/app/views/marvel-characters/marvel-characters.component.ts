@@ -72,6 +72,8 @@ export class MarvelCharactersComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.loadingView = true;
+
     this.titleService.setTitle("The Nerd Interpreter - Marvel Characters");
 
     this.metaService.updateTag(
@@ -122,7 +124,7 @@ export class MarvelCharactersComponent implements OnInit {
 
   getMarvelCharactersData() {
 
-    this.contentService.getAllMarvelCharacters().subscribe((response: any[]) => {
+    this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
       this.charactersData = response;
 
