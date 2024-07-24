@@ -32,16 +32,5 @@ export class ContentManagementService {
 
   }
 
-  // getSingleDcCharacter(characterSlug) {
-
-  //   return this.http.get(`${environment.contentRoot}comic_characters?slug=${characterSlug}`);
-
-  // }
-
-  // getSingleMarvelCharacter(characterSlug) {
-
-  //   return this.http.get(`${environment.contentRoot}marvel_characters?slug=${characterSlug}`);
-
-  // }
 
 }

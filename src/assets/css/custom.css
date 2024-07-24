@@ -523,10 +523,6 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.intro-section img,
-.cnt-description-section img {
-  border-radius: 30px;
-}
 
 .intro-section {
   background-color: #fff;
@@ -540,9 +536,6 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 0px;
-}
-.cnt-description-section img {
-  border: 10px solid #fff;
 }
 
 .cnt-heading {

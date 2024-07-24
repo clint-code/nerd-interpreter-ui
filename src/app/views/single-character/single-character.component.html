@@ -119,7 +119,10 @@
                             <div class="cnt-description-section">
     
                                 <div class="img-section text-center">
-                                    <img src="./assets/img/character-page/joker-card.png" alt="joker-card" class="img-fluid">
+                                    <img 
+                                        src="{{pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.charcter_insignia}}" 
+                                        alt="joker-card" 
+                                        class="img-fluid">
                                 </div>
     
 
@@ -127,10 +130,7 @@
                                     His creation in comics
                                 </h3>
 
-                                <p>
-                                    The Joker is a supervillain, who came to be in mainstream comic books back in the 1940s and was
-                                    created by Bill Finger, Bob Kane (the creator of the Batman) and Jerry Robinson.
-                                </p>
+                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.his_creation_in_comics"></div>
     
                             </div>
     
@@ -140,13 +140,7 @@
                                     His Abilities
                                 </h3>
 
-                                <p>
-                                    The Joker doesn’t have superhuman abilities, but he’s a highly intelligent criminal mastermind.
-                                    He
-                                    commits sadistic crimes with a variety of goofey-thematic props such as: the joker venom and a
-                                    deck
-                                    of razor-tipped cards.
-                                </p>
+                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.his_abilities"></div>
     
                             </div>
     
@@ -156,14 +150,7 @@
                                     His Origin
                                 </h3>
 
-                                <p>
-                                    The Joker doesn't have a definite origin story, although the generally accepted origin one is
-                                    that
-                                    he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
-                                    chemical factory and in the process the, falls into the acidic chemical plant that disfigures
-                                    his
-                                    skin, turning him into the Joker.
-                                </p>
+                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.his_origin"></div>
     
                             </div>
     
@@ -194,87 +181,11 @@
     
                         <div class="row">
     
-                            <div class="cnt-description-section">
-    
-                                <div class="img-section text-center">
-    
-                                    <img src="./assets/img/character-page/joker.png" alt="joker" class="img-fluid">
-    
-                                </div>
-    
-                                <p>
-                                    Here we'll take a deep look into the Joker's motives, based on the films, The Dark Knight and
-                                    Joker,
-                                    why he does what he does and other nuance facts about the Crown Prince of Crime
-                                </p>
-    
-                            </div>
-    
                             <div class="cnt-description-section mb-4">
-                                <h3 class="display-4 cnt-heading pt-3 pb-3">
-                                    1. Destroying what good means
-                                </h3>
-                                <p>
-                                    The Joker has shocked the world of comic readers through some of the horrifying things he has
-                                    done
-                                    such as beating up Jason Todd, the boy-wonder Robin with a crowbar and killing him in Death in
-                                    the
-                                    Family, shooting Barbara Gordon, Commissioner Gordon’s daughter, in her waist, paralyzing her
-                                    permanently in The Killing Joke and curving out his face and stitching it back to his deformed
-                                    face
-                                    (which is beyond insane and sick) in the New 52, Death of the Family.
-                                </p>
-    
-                                <img src="./assets/img/character-page/joker-killing-joke.png" alt="joker-killing-joke"
-                                    class="img-fluid">
-                                
-    
-                                <p>
-                                    The Joker doesn't have a definite origin story, although the generally accepted origin one is
-                                    that
-                                    he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
-                                    chemical factory and in the process the, falls into the acidic chemical plant that disfigures
-                                    his
-                                    skin, turning him into the Joker.
-                                </p>
-    
-                                <img src="./assets/img/character-page/joker-quote-1.jpg" alt="joker-killing-joke" class="img-fluid">
-                            
+
+                                <div [innerHTML]="pageDetails?.acf?.character_deep_dive"></div>
     
                             </div>
-    
-                            <div class="cnt-description-section mb-4">
-                                <h3 class="display-4 cnt-heading pt-3 pb-3">
-                                    2. All it takes is one bad day
-                                </h3>
-                                <p>
-                                    The Joker has shocked the world of comic readers through some of the horrifying things he has
-                                    done
-                                    such as beating up Jason Todd, the boy-wonder Robin with a crowbar and killing him in Death in
-                                    the
-                                    Family, shooting Barbara Gordon, Commissioner Gordon’s daughter, in her waist, paralyzing her
-                                    permanently in The Killing Joke and curving out his face and stitching it back to his deformed
-                                    face
-                                    (which is beyond insane and sick) in the New 52, Death of the Family.
-                                </p>
-    
-                                <img src="./assets/img/character-page/joker-killing-joke.png" alt="joker-killing-joke"
-                                    class="img-fluid">
-                                
-    
-                                <p>
-                                    The Joker doesn't have a definite origin story, although the generally accepted origin one is
-                                    that
-                                    he was a criminal formerly known as the Red Hood who got into a confrontation with Batman in a
-                                    chemical factory and in the process the, falls into the acidic chemical plant that disfigures
-                                    his
-                                    skin, turning him into the Joker.
-                                </p>
-    
-                                <img src="./assets/img/character-page/joker-quote-2.jpg" alt="joker-killing-joke" class="img-fluid">
-                            
-                            </div>
-    
     
                         </div>
     
