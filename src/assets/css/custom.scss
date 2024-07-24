@@ -420,6 +420,10 @@ body {
         }
     }
 
+    .character-image{
+        border: 10px solid black;
+    }
+
     .character-image>img {
         max-width: 100%;
         display: block;

@@ -222,7 +222,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
 }
 
 .background {
@@ -312,6 +312,9 @@ body {
 .grid .character-item a {
   font-family: "sf-speakeasy";
   font-size: 3.5em;
+}
+.grid .character-image {
+  border: 10px solid black;
 }
 .grid .character-image > img {
   max-width: 100%;
