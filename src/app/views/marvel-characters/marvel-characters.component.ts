@@ -64,7 +64,6 @@ export class MarvelCharactersComponent implements OnInit {
   masonry: NgxMasonryComponent;
 
   constructor(
-    //private characterDataService: CharacterdataService,
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,

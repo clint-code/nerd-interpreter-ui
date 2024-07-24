@@ -44,6 +44,7 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
     },
+
     {
         path: 'dc-characters/single-character/:slug',
         component: SingleCharacterComponent,

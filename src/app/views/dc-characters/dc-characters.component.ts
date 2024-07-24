@@ -3,7 +3,6 @@ import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
 import $ from 'jquery';
 
 //import { CharacterdataService } from '../../services/characterdata.service';
@@ -67,12 +66,9 @@ export class DcCharactersComponent implements OnInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
 
   constructor(
-    //private characterDataService: CharacterdataService,
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
-    private router: Router,
-    private route: ActivatedRoute
   ) {
 
   }
