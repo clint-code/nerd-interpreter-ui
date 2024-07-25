@@ -37,7 +37,6 @@ a {
   font-family: "passion_oneregular";
 }
 a:focus {
-  color: transparent;
   text-decoration: none;
 }
 a:hover {
@@ -584,11 +583,10 @@ body {
   background: #fff;
   border-radius: 28px;
 }
-.source-section .list-group .list-group-item {
-  border: none;
-  background-color: transparent;
+.source-section .sources-cnt ol li {
+  padding: 0.75rem 1.25rem;
 }
-.source-section .list-group .list-group-item a {
+.source-section .sources-cnt ol li a {
   font-size: 24px;
 }
 
