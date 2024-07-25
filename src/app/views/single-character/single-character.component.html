@@ -124,8 +124,8 @@
     
                                 <div class="img-section text-center">
                                     <img 
-                                        src="{{pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.charcter_insignia}}" 
-                                        alt="joker-card" 
+                                        src="{{pageDetails?.acf?.facts_about_the_character?.character_emblem?.url}}" 
+                                        alt="{{pageDetails?.acf?.facts_about_the_character?.character_emblem?.title}}" 
                                         class="img-fluid">
                                 </div>
     
@@ -134,7 +134,7 @@
                                     His creation in comics
                                 </h3>
 
-                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.his_creation_in_comics"></div>
+                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.character_comic_creation"></div>
     
                             </div>
     
@@ -144,7 +144,7 @@
                                     His Abilities
                                 </h3>
 
-                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.his_abilities"></div>
+                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.character_abilities"></div>
     
                             </div>
     
@@ -154,7 +154,7 @@
                                     His Origin
                                 </h3>
 
-                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.his_creation_in_comics?.his_origin"></div>
+                                <div [innerHTML]="pageDetails?.acf?.facts_about_the_character?.character_origin"></div>
     
                             </div>
     
