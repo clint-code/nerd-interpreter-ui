@@ -7,10 +7,14 @@ import { CharacterdataService } from '../../services/characterdata.service';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+import { ContentManagementService } from '../../services/content-management.service';
+
+
 @Component({
   selector: 'app-single-superhero-saint-view',
   templateUrl: './single-superhero-saint-view.component.html',
-  styleUrls: ['./single-superhero-saint-view.component.css']
+  styleUrls: ['./single-superhero-saint-view.component.css'],
+  providers: [ContentManagementService]
 })
 
 export class SingleSuperheroSaintViewComponent implements OnInit {
@@ -19,7 +23,9 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
   imagesLoaded: boolean = false;
   siteImages: any = [];
 
-  constructor() { }
+  constructor(
+    private contentService: ContentManagementService
+  ) { }
 
   ngOnInit(): void {
 

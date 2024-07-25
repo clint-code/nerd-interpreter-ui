@@ -36,7 +36,7 @@ const routes: Routes = [
     },
 
     {
-        path: 'single-superhero-saint',
+        path: 'single-superhero-saint/:slug',
         component: SingleSuperheroSaintViewComponent
     },
 

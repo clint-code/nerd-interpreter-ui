@@ -26,8 +26,9 @@
         <!--End of logo section-->
 
         <app-banner
-            bannerTitle="Superheroes and Saints"
-            bannerImage="../../../assets/img/superheroes-saints/superheroes-saints-banner.jpg"
+            bannerTitle="{{pageBannerIntroContent?.title?.rendered}}"
+            bannerImage="{{pageBannerIntroContent?.acf?.page_banner_image?.url}}"
+            bannerImageAlt="{{pageBannerIntroContent?.acf?.page_banner_image?.alt}}"
         >
         </app-banner>
 
@@ -36,8 +37,7 @@
             <div class="p-3 text-intro-section">
 
                 <p class="text-center">
-                    Here's an in-depth analysis of the similarities and struggles of superheroes 
-                    in DC and Marvel, and saints in the Catholic Church. 
+                   {{pageBannerIntroContent?.acf?.page_intro}}
                 </p>
 
             </div>
@@ -65,16 +65,19 @@
                     [updateLayout]="characterStore.refined"
                     [useImagesLoaded]="true">
 
-                    <div ngxMasonryItem *ngFor="let character of charactersData">
+                    <div ngxMasonryItem *ngFor="let superheroSaint of superheroSaintData">
 
                         <!-- Character Item -->
                         <div class="character-item">
             
                             <div class="character-image">
-                                <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
+                                <img 
+                                    src="{{ superheroSaint?.acf?.featured_image?.url }}" 
+                                    alt="{{ superheroSaint?.acf?.featured_image?.title  }}" 
+                                    class="img-fluid">
                             </div>
             
-                            <a class="name" routerLink="/single-superhero-saint">
+                            <a class="name" routerLink="single-superhero-saint/{{superheroSaint?.slug}}">
                                 <h3 class="name display-4">Listen Now</h3>
                             </a>
                             

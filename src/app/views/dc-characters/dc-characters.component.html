@@ -36,9 +36,7 @@
             <div class="p-3 text-intro-section">
                 
                 <p class="text-center">
-                    Here's an in-depth analysis of what makes these DC comic book
-                    characters unique, with a look at their nuances and reasons
-                    behind their intentions as heroes or villains
+                    {{dcBannerIntroContent?.acf?.page_intro}}
                 </p>
 
             </div>
@@ -103,7 +101,7 @@
                                     <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid">
                                 </div>
         
-                                <a routerLink="single-character/{{character.slug}}">
+                                <a routerLink="single-character/{{character?.slug}}">
                                     <h3 class="name display-4">{{character?.title?.rendered}}</h3>
                                 </a>
                             

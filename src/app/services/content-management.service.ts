@@ -32,5 +32,15 @@ export class ContentManagementService {
 
   }
 
+  getAllSuperheroesSaints() {
+
+    return this.http.get(`${environment.contentRoot}superheroes_saints`);
+
+  }
+
+  getSuperheroSaintContent() {
+
+  }
+
 
 }
