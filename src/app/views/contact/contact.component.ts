@@ -39,13 +39,13 @@ export class ContactComponent implements OnInit {
       })
     }, 500);
 
+    this.getContactBannerIntroData();
+
   }
 
   ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
-
-    this.getContactBannerIntroData();
 
   }
 
