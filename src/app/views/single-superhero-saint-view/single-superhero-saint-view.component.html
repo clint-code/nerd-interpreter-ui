@@ -29,8 +29,9 @@
     <div class="content-section">
 
         <app-banner
-            bannerTitle="Iron Man and St. Augustine of Hippo"
-            bannerImage="./assets/img/superheroes-saints/iron-man-st-augustine-banner.jpg"
+            bannerTitle="{{postDetails?.title?.rendered}}"
+            bannerImage="{{postDetails?.acf?.post_banner_image?.url}}"
+            bannerImageAlt="{{postDetails?.acf?.post_banner_image_alt?.alt}}"
         >
         </app-banner>
 
@@ -43,7 +44,9 @@
 
                         <div class="row mb-4">
 
-                            <iframe 
+                            <iframe [innerHTML]="postDetails?.acf?.video_podcast"></iframe>
+
+                            <!-- <iframe 
                                 width="1536" 
                                 height="534" 
                                 src="https://www.youtube.com/embed/RNjwEaGr368" 
@@ -51,7 +54,7 @@
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 allowfullscreen>
-                            </iframe>
+                            </iframe> -->
 
                         </div>
 
@@ -60,7 +63,7 @@
                             <div class="intro-section text-center ">
 
                                 <h2 class="display-2 p-2 heading-txt">
-                                    Facts about Iron Man
+                                    {{postDetails?.acf?.facts_about_the_superhero_section?.hero_title}}
                                 </h2>
 
                             </div>
@@ -72,17 +75,17 @@
                             <div class="cnt-description-section mb-4">
 
                                 <div class="img-section text-center">
-                                    <img src="./assets/img/superheroes-saints/iron-man.jpg" alt="joker-card" class="img-fluid">
+                                    <img 
+                                        src="{{postDetails?.acf?.facts_about_the_superhero_section?.hero_image?.url}}" 
+                                        alt="{{postDetails?.acf?.facts_about_the_superhero_section?.hero_image?.title}}" 
+                                        class="img-fluid">
                                 </div>
 
                                 <h3 class="display-4">
                                     Origin Of The Superhero
                                 </h3>
 
-                                <p>
-                                    The Joker is a supervillain, who came to be in mainstream comic books back in the 1940s and was
-                                    created by Bill Finger, Bob Kane (the creator of the Batman) and Jerry Robinson.
-                                </p>
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_superhero_section?.origin_of_the_superhero"></div>
 
                             </div>
 
@@ -92,13 +95,7 @@
                                     Abilities, Powers Of The Superhero
                                 </h3>
 
-                                <p>
-                                    The Joker doesn’t have superhuman abilities, but he’s a highly intelligent criminal mastermind.
-                                    He
-                                    commits sadistic crimes with a variety of goofey-thematic props such as: the joker venom and a
-                                    deck
-                                    of razor-tipped cards.
-                                </p>
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_superhero_section?.abilities_powers_of_the_superhero"></div>
 
                             </div>
 
@@ -120,7 +117,7 @@
                             <div class="intro-section text-center ">
         
                                 <h2 class="display-2 p-2 heading-txt">
-                                    Facts about St. Augustine of Hippo
+                                    {{postDetails?.acf?.facts_about_the_saint_section?.saint_title}}
                                 </h2>
         
                             </div>
@@ -132,31 +129,28 @@
                             <div class="cnt-description-section">
         
                                 <div class="img-section text-center">
-                                    <img src="./assets/img/superheroes-saints/st-augustine.jpg" alt="st-augustine" class="img-fluid">
+                                    <img 
+                                        src="{{postDetails?.acf?.facts_about_the_saint_section?.saint_image?.url}}" 
+                                        alt="{{postDetails?.acf?.facts_about_the_saint_section?.saint_image?.title}}" 
+                                        class="img-fluid">
                                 </div>
         
 
                                 <h3 class="display-4">
                                     Origin Of The Saint
                                 </h3>
-                                <p>
-                                    The Joker is a supervillain, who came to be in mainstream comic books back in the 1940s and was
-                                    created by Bill Finger, Bob Kane (the creator of the Batman) and Jerry Robinson.
-                                </p>
+
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_saint_section?.origin_of_the_saint"></div>
         
                             </div>
         
                             <div class="cnt-description-section mb-4">
+
                                 <h3 class="display-4">
                                     Talents and Gifts Of The Saint
                                 </h3>
-                                <p>
-                                    The Joker doesn’t have superhuman abilities, but he’s a highly intelligent criminal mastermind.
-                                    He
-                                    commits sadistic crimes with a variety of goofey-thematic props such as: the joker venom and a
-                                    deck
-                                    of razor-tipped cards.
-                                </p>
+
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_saint_section?.talents_and_gifts_of_the_saint"></div>
         
                             </div>
         
@@ -185,23 +179,9 @@
 
                     </div>
 
-                    <div class="col-md-12 text-section">
+                    <div class="col-md-12 text-section sources-cnt">
 
-                        <ol class="list-group">
-
-                            <li class="list-group-item">
-                                <a href="#">
-                                    The Philosophy Of The Joker
-                                </a>
-                            </li>
-
-                            <li class="list-group-item">
-                                <a href="#">
-                                    The Dark Knight- Creating The Ultimate Antagonist
-                                </a>
-                            </li>
-
-                        </ol>
+                        <div [innerHTML]="postDetails?.acf?.sources"></div>
 
                     </div>                    
     

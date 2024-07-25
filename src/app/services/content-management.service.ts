@@ -38,7 +38,9 @@ export class ContentManagementService {
 
   }
 
-  getSuperheroSaintContent() {
+  getSuperheroSaintContent(superheroSaintSlug) {
+
+    return this.http.get(`${environment.contentRoot}superheroes_saints?slug=${superheroSaintSlug}`);
 
   }
 

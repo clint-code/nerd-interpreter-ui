@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
@@ -20,16 +21,21 @@ import { ContentManagementService } from '../../services/content-management.serv
 export class SingleSuperheroSaintViewComponent implements OnInit {
 
   loadingView: boolean = false;
+  postSlug: string = "";
+  postDetails: any = [];
   imagesLoaded: boolean = false;
   siteImages: any = [];
 
   constructor(
+    private route: ActivatedRoute,
     private contentService: ContentManagementService
   ) { }
 
   ngOnInit(): void {
 
     this.loadingView = true;
+
+    this.postSlug = this.route.snapshot.paramMap.get('slug');
 
     $(window).scroll(this.progressScrollBar);
 
@@ -41,15 +47,31 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
       })
     }, 500);
 
+    this.contentService.getSuperheroSaintContent(this.postSlug).subscribe(response => {
+
+      if (response !== null) {
+
+        this.postDetails = response[0];
+
+        this.loadingView = false;
+
+        console.log("Response:", this.postDetails);
+
+      }
+
+    });
+
   }
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
+    gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
 
       this.siteImages = Preloader.getImages();
+
+      this.animateContentCategory();
 
     }, 1000);
 
@@ -79,6 +101,28 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
     let scrollUp = $(".scrollup");
 
     scrollUp.toggleClass('scrollup-visible', $(this).scrollTop() > scrollUp.height());
+
+  }
+
+  animateContentCategory() {
+
+    document.querySelectorAll('.main-cnt').forEach((box) => {
+
+      const scrollBox = gsap.timeline({
+        scrollTrigger: {
+          trigger: box,
+          toggleActions: 'restart none none restart',
+        },
+      });
+
+      scrollBox.from(box, {
+        y: 150,
+        opacity: 0,
+        duration: 2.5,
+        stagger: 1,
+      });
+
+    });
 
   }
 
