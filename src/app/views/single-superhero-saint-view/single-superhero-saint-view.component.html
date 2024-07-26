@@ -44,11 +44,14 @@
 
                         <div class="row mb-4">
 
-                            <iframe [innerHTML]="postDetails?.acf?.video_podcast"></iframe>
+                            <div 
+                                *ngIf="iframeHtml" 
+                                [innerHTML]="iframeHtml">
+                            </div>
 
                             <!-- <iframe 
-                                width="1536" 
-                                height="534" 
+                                width="1200" 
+                                height="720" 
                                 src="https://www.youtube.com/embed/RNjwEaGr368" 
                                 title="Joan of Arc, Wonder Woman, and the Veiled Strength of Femininity (7 of 10)" 
                                 frameborder="0" 
@@ -92,7 +95,7 @@
                             <div class="cnt-description-section">
 
                                 <h3 class="display-4">
-                                    Abilities, Powers Of The Superhero
+                                    Abilities and Powers Of The Superhero
                                 </h3>
 
                                 <div [innerHTML]="postDetails?.acf?.facts_about_the_superhero_section?.abilities_powers_of_the_superhero"></div>

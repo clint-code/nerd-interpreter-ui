@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
-import { CharacterdataService } from '../../services/characterdata.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -25,10 +25,12 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
   postDetails: any = [];
   imagesLoaded: boolean = false;
   siteImages: any = [];
+  iframeHtml: SafeHtml;
 
   constructor(
     private route: ActivatedRoute,
-    private contentService: ContentManagementService
+    private contentService: ContentManagementService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +49,7 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
       })
     }, 500);
 
-    this.contentService.getSuperheroSaintContent(this.postSlug).subscribe(response => {
+    this.contentService.getSuperheroSaintContent(this.postSlug).subscribe((response: any[]) => {
 
       if (response !== null) {
 
@@ -55,7 +57,10 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
 
         this.loadingView = false;
 
-        console.log("Response:", this.postDetails);
+        if (this.postDetails.acf.video_podcast) {
+          const iframeHtmlString = this.postDetails.acf.video_podcast;
+          this.iframeHtml = this.sanitizer.bypassSecurityTrustHtml(iframeHtmlString);
+        }
 
       }
 
