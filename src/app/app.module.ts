@@ -17,9 +17,7 @@ import { AboutComponent } from './views/about/about.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { MarvelCharactersComponent } from './views/marvel-characters/marvel-characters.component';
 import { DcCharactersComponent } from './views/dc-characters/dc-characters.component';
-import { HeroesJourneyComponent } from './views/heroes-journey/heroes-journey.component';
 import { SingleCharacterComponent } from './views/single-character/single-character.component';
-import { SingleHeroJourneyComponent } from './views/single-hero-journey/single-hero-journey.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { EmailsubscriptionComponent } from './components/emailsubscription/emailsubscription.component';
 import { ProgressOnscrollbarComponent } from './components/progress-onscrollbar/progress-onscrollbar.component';
@@ -34,9 +32,7 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
     ContactComponent,
     MarvelCharactersComponent,
     DcCharactersComponent,
-    HeroesJourneyComponent,
     SingleCharacterComponent,
-    SingleHeroJourneyComponent,
     PreloaderComponent,
     EmailsubscriptionComponent,
     ProgressOnscrollbarComponent,
