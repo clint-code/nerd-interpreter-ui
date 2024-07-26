@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
-import { CharacterdataService } from '../../services/characterdata.service';
+//import { CharacterdataService } from '../../services/characterdata.service';
+
+import { ContentManagementService } from '../../services/content-management.service';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -11,10 +14,15 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-single-character',
   templateUrl: './single-character.component.html',
-  styleUrls: ['./single-character.component.css']
+  styleUrls: ['./single-character.component.css'],
+  providers: [ContentManagementService]
 })
+
 export class SingleCharacterComponent implements OnInit {
 
+  parentSlug: string;
+  characterSlug: string = "";
+  pageDetails: any = [];
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
@@ -25,7 +33,7 @@ export class SingleCharacterComponent implements OnInit {
     loop: true,
     autoplay: true,
     center: true,
-    dots: false,
+    dots: true,
     autoHeight: true,
     autoWidth: true,
     responsive: {
@@ -42,34 +50,55 @@ export class SingleCharacterComponent implements OnInit {
   };
 
   constructor(
-    private comicCharacterDataService: CharacterdataService
-  ) { }
+    private route: ActivatedRoute,
+    private router: Router,
+    //private comicCharacterDataService: CharacterdataService,
+    private contentService: ContentManagementService
+  ) {
+
+
+  }
+
 
   ngOnInit(): void {
 
     this.loadingView = true;
+
+    this.characterSlug = this.route.snapshot.paramMap.get('slug');
 
     $(window).scroll(this.progressScrollBar);
 
     $(window).scroll(this.showUpScroll);
 
     $('html, body').animate({
-      scrollTop: $(".banner-image-section").offset({
-        top: 30
-      })
+      scrollTop: $(".content-section").offset().top - 50
     }, 500);
 
-    this.getComicCovers();
+    //this.getComicCovers();
+
+    this.contentService.getSingleCharacter(this.characterSlug).subscribe(response => {
+
+      if (response !== null) {
+
+        this.pageDetails = response[0];
+
+        this.loadingView = false;
+
+        console.log("Response:", this.pageDetails);
+
+      }
+
+    });
 
   }
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
-
     gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
+
+      this.siteImages = Preloader.getImages();
 
       this.fadeInLeft();
 
@@ -101,24 +130,22 @@ export class SingleCharacterComponent implements OnInit {
 
   getComicCovers() {
 
-    this.comicCharacterDataService.getComicCoversListing().subscribe(response => {
+    // this.comicCharacterDataService.getComicCoversListing().subscribe(response => {
 
-      this.comicCovers = response;
+    //   this.comicCovers = response;
 
-      console.log(this.comicCovers);
+    //   console.log(this.comicCovers);
 
-    });
+    // });
 
   }
 
   scrollPage(event) {
 
-    console.log(event);
-
     let targetDiv = event.target.dataset.target;
     let contentDiv = $('.' + targetDiv);
 
-    console.log(targetDiv + " " + contentDiv);
+    //console.log(targetDiv + " " + contentDiv);
 
     $('html, body').stop().animate({
       scrollTop: contentDiv.offset().top

@@ -3,10 +3,9 @@ import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
-
-import { CharacterdataService } from '../../services/characterdata.service';
-
 import $ from 'jquery';
+
+import { ContentManagementService } from '../../services/content-management.service';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -14,7 +13,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 export interface characterInfo {
   id: number;
   title: string;
-  category: string;
+  character_alignment: string;
   characterImage: string;
   alt: string;
 }
@@ -29,7 +28,7 @@ interface characterStore {
   templateUrl: './dc-characters.component.html',
   styleUrls: ['./dc-characters.component.css'],
   providers: [
-    CharacterdataService
+    //CharacterdataService
   ]
 })
 
@@ -38,20 +37,24 @@ export class DcCharactersComponent implements OnInit {
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
+
   selection: string;
   reset: string;
   charactersData: any;
   characterStore: characterStore = {};
+  characterAlignment: string = "";
+
+  dcBannerIntroContent: any;
 
   options: NgxMasonryOptions = {
 
     itemSelector: '.character-item',
-    gutter: 10,
+    //gutter: 5,
     transitionDuration: '1.2s',
     horizontalOrder: true,
     //fitWidth: true,
-    //percentPosition: true,
-    columnWidth: 20,
+    percentPosition: true,
+    columnWidth: 30,
     //originLeft: false,
     resize: true
 
@@ -60,7 +63,7 @@ export class DcCharactersComponent implements OnInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
 
   constructor(
-    private characterDataService: CharacterdataService,
+    private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
   ) {
@@ -88,10 +91,12 @@ export class DcCharactersComponent implements OnInit {
     );
 
     $('html, body').animate({
-      scrollTop: $(".banner-image-section").offset({
-        top: 40
+      scrollTop: $(".content-section").offset({
+        top: 50
       })
     }, 500);
+
+    this.getDcBannerIntroData();
 
     this.getDcCharactersData();
 
@@ -100,8 +105,6 @@ export class DcCharactersComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-
-    this.siteImages = Preloader.getImages();
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -115,25 +118,37 @@ export class DcCharactersComponent implements OnInit {
 
     }, 1000);
 
-    // setTimeout(() => {
-
-    //   this.getDcCharactersData();
-
-    // }, 3000);
-
   }
 
   getDcCharactersData() {
 
-    this.characterDataService.getAllDcCharactersListingJSON().subscribe((response: any[]) => {
+    this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
-      this.charactersData = response;
+      if (response !== null) {
 
-      console.log("Data:", this.charactersData);
+        this.charactersData = response;
 
-      this.characterStore.cached = response;
+        console.log("Data:", this.charactersData);
 
-      this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+        this.characterStore.cached = response;
+
+        this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+      }
+
+    });
+
+  }
+
+  getDcBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("dc-characters").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.dcBannerIntroContent = response[0];
+
+      }
 
     });
 
@@ -173,15 +188,13 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category: any) {
+  filterCharacters(category) {
 
-    this.characterStore.refined = this.characterStore.cached.filter(
-      (p) => p.category == category || category == 'all'
+    this.characterStore.refined = this.charactersData.filter(
+      (character) => character.acf.character_alignment == category || category == 'all'
     );
 
     this.masonry.reloadItems();
-
-    console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 

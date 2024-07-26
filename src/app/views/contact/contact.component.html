@@ -1,35 +1,80 @@
 <!-- Site Preloaders-->
 <app-preloader
+    *ngIf="siteImages.length < 1"
+></app-preloader>
+
+<app-preloader
     *ngIf="siteImages.length > 0"
     [images]="siteImages"
 ></app-preloader>
 <!--END Site Preloaders -->
 
-<!--Logo section-->
-<div class="row">
+<div class="container-fluid">
 
-    <div class="mini-logo-section">
-        <a routerLink="/">
-            <img src="../../../assets/img/nav-menu/sm-logo-white.png" alt="the-nerd-interpreter" class="img-fluid">
-        </a>
+    <div class="content-section">
+
+        <!--Logo section-->
+            <div class="mini-logo-section">
+                <a routerLink="/">
+                    <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+                </a>
+            </div>
+        <!--End of logo section-->
+
+        <app-banner
+                bannerTitle="{{contactBannerIntroContent?.title?.rendered}}" 
+                bannerImage="{{contactBannerIntroContent?.acf?.page_banner_image?.url}}"
+                bannerImageAlt="{{contactBannerIntroContent?.acf?.page_banner_image?.alt}}">
+        </app-banner>
+
+        <div class="row">
+
+            <div class="p-3 text-intro-section">
+                <p class="text-center">
+                    Drop your feedback or queries on the form below:
+                </p>
+            </div>
+
+        </div>
+
+    <!--Form section--->
+
+    <section class="form-section mt-3 mb-5">
+
+        <form action="" class="form-container">
+
+            <fieldset class="cnt-form-section" data-aos="zoom-in-up" data-aos-duration="1900">
+
+                        <input 
+                            type="text" 
+                            placeholder="Name">
+
+                        <input 
+                            type="text" 
+                            placeholder="Email Address">
+                
+                        <textarea 
+                            name="" 
+                            id="" 
+                            placeholder="Message">
+                        </textarea>
+
+                <div class="row">
+
+                    <button type="submit" class="btn btn-danger">Send</button>
+
+                </div>
+
+            </fieldset>
+
+        </form>
+
+    </section>
+
+    <!--End of Form section--->
+
     </div>
 
-</div>
-<!--End of logo section-->
-
-<app-banner
-    bannerTitle="Get in Touch"
-    bannerImage="../../../assets/img/contact/bat-signal-banner.jpg"
->
-
-</app-banner>
-
-<div class="row">
-    <div class="p-3 mt-3 text-intro-section">
-        <p class="text-center">
-            Drop your feedback or queries on the form below:
-        </p>
-    </div>
 </div>
 
 <app-footer-alt></app-footer-alt>

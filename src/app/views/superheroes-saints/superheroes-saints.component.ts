@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-import { HttpClient } from '@angular/common/http';
+
 import { Title, Meta } from '@angular/platform-browser';
 
-import { CharacterdataService } from '../../services/characterdata.service';
+import { ContentManagementService } from '../../services/content-management.service';
+
 import $ from 'jquery';
 
 import { gsap } from 'gsap';
@@ -25,14 +26,16 @@ interface characterStore {
   selector: 'app-superheroes-saints',
   templateUrl: './superheroes-saints.component.html',
   styleUrls: ['./superheroes-saints.component.css'],
-  providers: [CharacterdataService]
+  providers: [ContentManagementService]
 })
+
 export class SuperheroesSaintsComponent implements OnInit {
 
   loadingView: boolean = false;
   imagesLoaded: boolean = false;
   siteImages: any = [];
-  charactersData: any;
+  superheroSaintData: any;
+  pageBannerIntroContent: any;
 
   characterStore: characterStore = {};
 
@@ -49,7 +52,7 @@ export class SuperheroesSaintsComponent implements OnInit {
   };
 
   constructor(
-    private characterDataService: CharacterdataService,
+    private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
   ) { }
@@ -74,10 +77,12 @@ export class SuperheroesSaintsComponent implements OnInit {
 
 
     $('html, body').animate({
-      scrollTop: $(".banner-image-section").offset({
-        top: 40
+      scrollTop: $(".content-section").offset({
+        top: 50
       })
     }, 500);
+
+    this.getSuperheroSaintBannerIntroData();
 
     this.getSuperheroSaintsData();
 
@@ -103,19 +108,36 @@ export class SuperheroesSaintsComponent implements OnInit {
 
   getSuperheroSaintsData() {
 
-    this.characterDataService.getAllSuperheroesSaintsListing().subscribe((response: any[]) => {
+    this.contentService.getAllSuperheroesSaints().subscribe((response: any[]) => {
 
-      this.charactersData = response;
+      if (response !== null) {
 
-      console.log("Data:", this.charactersData);
+        this.superheroSaintData = response;
 
-      // this.characterStore.cached = response;
+        console.log("Data:", this.superheroSaintData);
 
-      // this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+      }
 
     });
 
   }
+
+  getSuperheroSaintBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("superheroes-and-saints").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.pageBannerIntroContent = response[0];
+
+        console.log("Banner intro data:", this.pageBannerIntroContent);
+
+      }
+
+    });
+
+  }
+
 
   fadeInUp() {
 

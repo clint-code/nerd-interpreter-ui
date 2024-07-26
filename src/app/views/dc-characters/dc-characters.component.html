@@ -1,5 +1,9 @@
 <!-- Site Preloaders-->
 <app-preloader
+    *ngIf="siteImages.length < 1"
+></app-preloader>
+
+<app-preloader
     *ngIf="siteImages.length > 0"
     [images]="siteImages"
 ></app-preloader>
@@ -7,108 +11,117 @@
 
 <div class="container-fluid">
 
-    <!--Logo section-->
-    <div class="row ml-1 mr-1">
+    <div class="content-section">
 
-        <div class="mini-logo-section">
-            <a routerLink="/">
-                <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
-            </a>
+        <!--Logo section-->
+        <div class="row ml-1 mr-1">
+
+            <div class="mini-logo-section">
+                <a routerLink="/">
+                    <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+                </a>
+            </div>
+
         </div>
+        <!--End of logo section-->
 
-    </div>
-    <!--End of logo section-->
+        <app-banner 
+            bannerTitle="{{dcBannerIntroContent?.title?.rendered}}" 
+            bannerImage="{{dcBannerIntroContent?.acf?.page_banner_image?.url}}"
+            bannerImageAlt="{{dcBannerIntroContent?.acf?.page_banner_image?.alt}}">
+        </app-banner>
 
-    <app-banner 
-        bannerTitle="DC Characters" 
-        bannerImage="../../../assets/img/dc-characters/dc-characters-banner.jpg">
-    </app-banner>
+        <div class="row">
 
-    <div class="row">
-
-        <div class="p-3 mt-3 text-intro-section">
-            <p class="text-center">
-                Here's an in-depth analysis of what makes these DC comic book
-                characters unique, with a look at their nuances and reasons
-                behind their intentions as heroes or villains
-            </p>
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col explore-characters-txt mt-5">
-            <h4 class="text-center display-3">
-                Explore the Characters
-            </h4>
-        </div>
-
-    </div>
-
-    <div class="">
-
-        <div class="col p-3">
-
-            <div class="filter-button-group text-center">
-
-                <button 
-                    class="button filterButton is-checked p-3 m-3" 
-                    (click)="filterCharacters('all')">
-                    all characters
-                </button>
-
-                <button 
-                    class="button filterButton p-3 m-3" 
-                    (click)="filterCharacters('hero')">
-                    Heroes
-                </button>
-
-                <button 
-                    class="button filterButton p-3 m-3" 
-                    (click)="filterCharacters('villain')">
-                    Villains
-                </button>
+            <div class="p-3 text-intro-section">
+                
+                <p class="text-center">
+                    {{dcBannerIntroContent?.acf?.page_intro}}
+                </p>
 
             </div>
 
         </div>
 
-        <div class="grid">
+        <div class="row">
 
-        <div class="grid-sizer"></div>
+            <div class="col explore-characters-txt">
+                <h4 class="text-center display-3">
+                    Explore the Characters
+                </h4>
+            </div>
 
-        <ngx-masonry 
-                [options]="options" 
-                [updateLayout]="characterStore.refined"
-                [useImagesLoaded]="true">
+        </div>
 
-            <div ngxMasonryItem *ngFor="let character of characterStore.refined">
+        <div class="row">
 
-                <!-- Character Item -->
-                <div class="character-item">
+            <div class="col">
 
-                    <div class="character-image">
-                        <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
-                    </div>
+                <div class="filter-button-group text-center">
 
-                    <a class="name" routerLink="/single-character">
-                        <h3 class="name display-4">{{character.title}}</h3>
-                    </a>
-                    
+                        <button 
+                            class="button filterButton is-checked p-3" 
+                            (click)="filterCharacters('all')">
+                            all characters
+                        </button>
+
+                        <button 
+                            class="button filterButton p-3" 
+                            (click)="filterCharacters('hero')">
+                            Heroes
+                        </button>
+
+                        <button 
+                            class="button filterButton p-3" 
+                            (click)="filterCharacters('villain')">
+                            Villains
+                        </button>
+                
                 </div>
 
             </div>
 
-        </ngx-masonry>
+            <div class="grid">
+
+            <div class="grid-sizer"></div>
+
+            <ngx-masonry 
+                    [options]="options" 
+                    [updateLayout]="characterStore.refined"
+                    [useImagesLoaded]="true">
+
+                <div ngxMasonryItem *ngFor="let character of characterStore.refined">
+
+                    <ng-container *ngIf="character?.acf?.character_stats_section?.comic_universe === 'DC'">
+
+                        <!-- Character Item -->
+                        <div class="character-item">
+
+                                <div class="character-image">
+                                    <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid">
+                                </div>
+        
+                                <a routerLink="single-character/{{character?.slug}}">
+                                    <h3 class="name display-4">{{character?.title?.rendered}}</h3>
+                                </a>
+                            
+                        </div>
+
+                    </ng-container>
+
+                </div>
+
+            </ngx-masonry>
+
+            </div>
 
         </div>
 
-    </div>
+    </div>    
 
 </div>
 
-<section class="more-characters-section p-4 mt-5">
+<section class="more-characters-section">
 
     <div class="row">
         <div class="col-md-1 vertical-text-section">
@@ -120,11 +133,11 @@
 
         <div class="col-md-11 more-cnt-section">
 
-            <div class="mini-background-section mb-5">
+            <div class="mini-background-section">
 
                 <div class="caption-text-section">
-                    <h3 class="text-white display-3 text-right">Marvel Characters</h3>
-                    <p class="text-white text-right">
+                    <h3 class="text-white display-3">Marvel Characters</h3>
+                    <p class="text-white">
                         Check out character studies from the characters in the Marvel Universe, both heroes and villains
                     </p>
 
@@ -142,17 +155,17 @@
 
             </div>
 
-            <div class="mini-background-section mt-5">
+            <div class="mini-background-section">
 
                 <div class="caption-text-section">
 
-                    <h3 class="text-white display-3 text-right">Superheroes and Saints</h3>
-                    <p class="text-white text-right">
+                    <h3 class="text-white display-3">Superheroes and Saints</h3>
+                    <p class="text-white">
                         An interesting view of the similarities and struggles of superheroes in DC and Marvel, and saints in the Catholic Church.
                     </p>
 
                     <a routerLink="/superheroes-saints" 
-                        class="btn btn-light text-black">
+                        class="btn btn-light text-black m-3">
                         Discover More
                     </a>
 

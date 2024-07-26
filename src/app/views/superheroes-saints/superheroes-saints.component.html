@@ -1,84 +1,93 @@
 <!--Site Preloaders-->
 <app-preloader
+    *ngIf="siteImages.length < 1"
+></app-preloader>
+
+<app-preloader
     *ngIf="siteImages.length > 0"
     [images]="siteImages"
 ></app-preloader>
 <!--END Site Preloaders-->
 
-
 <div class="container-fluid">
 
-    <!--Logo section-->
-    <div class="row ml-1 mr-">
-
-        <div class="mini-logo-section">
-            <a routerLink="/">
-                <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
-            </a>
-        </div>
-
-    </div>
-    <!--End of logo section-->
-
-    <app-banner
-        bannerTitle="Superheroes and Saints"
-        bannerImage="../../../assets/img/superheroes-saints/superheroes-saints-banner.jpg"
-    >
-    </app-banner>
-
-
-    <div class="row">
-
-        <div class="p-3 mt-3 text-intro-section">
-
-            <p class="text-center">
-                Here's an in-depth analysis of the similarities and struggles of superheroes 
-                in DC and Marvel, and saints in the Catholic Church. 
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col explore-characters-txt mt-5">
-            <h4 class="text-center display-3">
-                Podcast Episodes
-            </h4>
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="grid">
-
-            <div class="grid-sizer"></div>
-
-            <ngx-masonry
-                [options]="options" 
-                [updateLayout]="characterStore.refined"
-                [useImagesLoaded]="true">
-
-                <div ngxMasonryItem *ngFor="let character of charactersData">
-
-                    <!-- Character Item -->
-                    <div class="character-item">
+    <div class="content-section">
         
-                        <div class="character-image">
-                            <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
+        <!--Logo section-->
+        <div class="row ml-1 mr-">
+
+            <div class="mini-logo-section">
+                <a routerLink="/">
+                    <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+                </a>
+            </div>
+
+        </div>
+        <!--End of logo section-->
+
+        <app-banner
+            bannerTitle="{{pageBannerIntroContent?.title?.rendered}}"
+            bannerImage="{{pageBannerIntroContent?.acf?.page_banner_image?.url}}"
+            bannerImageAlt="{{pageBannerIntroContent?.acf?.page_banner_image?.alt}}"
+        >
+        </app-banner>
+
+        <div class="row">
+
+            <div class="p-3 text-intro-section">
+
+                <p class="text-center">
+                   {{pageBannerIntroContent?.acf?.page_intro}}
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col explore-characters-txt">
+                <h4 class="text-center display-3">
+                    Podcast Episodes
+                </h4>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="grid">
+
+                <div class="grid-sizer"></div>
+
+                <ngx-masonry
+                    [options]="options" 
+                    [updateLayout]="characterStore.refined"
+                    [useImagesLoaded]="true">
+
+                    <div ngxMasonryItem *ngFor="let superheroSaint of superheroSaintData">
+
+                        <!-- Character Item -->
+                        <div class="character-item">
+            
+                            <div class="character-image">
+                                <img 
+                                    src="{{ superheroSaint?.acf?.featured_image?.url }}" 
+                                    alt="{{ superheroSaint?.acf?.featured_image?.title  }}" 
+                                    class="img-fluid">
+                            </div>
+            
+                            <a class="name" routerLink="single-superhero-saint/{{superheroSaint?.slug}}">
+                                <h3 class="name display-4">Listen Now</h3>
+                            </a>
+                            
                         </div>
-        
-                        <a class="name" routerLink="/single-character">
-                            <h3 class="name display-4">Listen Now</h3>
-                        </a>
-                        
+            
                     </div>
-        
-                </div>
 
-            </ngx-masonry>
+                </ngx-masonry>
+
+            </div>
 
         </div>
 
@@ -95,21 +104,23 @@
             </h2>
         </div>
 
-
         <div class="col-md-11 more-cnt-section">
 
             <div class="mini-background-section mb-5">
 
                 <div class="caption-text-section">
-                    <h3 class="text-white display-3 text-right">DC Characters</h3>
-                    <p class="text-white text-right">
+
+                    <h3 class="text-white display-3">DC Characters</h3>
+
+                    <p class="text-white">
                         Check out character studies from the characters in the DC Universe, both heroes and villains
                     </p>
                     
                     <a routerLink="/dc-characters" 
-                        class="btn btn-light text-black">
+                        class="btn btn-light text-black m-3">
                         Discover More
                     </a>
+
                 </div>
 
                 <img 
@@ -119,11 +130,13 @@
 
             </div>
 
-            <div class="mini-background-section mb-5">
+            <div class="mini-background-section">
 
                 <div class="caption-text-section">
-                    <h3 class="text-white display-3 text-right">Marvel Characters</h3>
-                    <p class="text-white text-right">
+
+                    <h3 class="text-white display-3">Marvel Characters</h3>
+                    
+                    <p class="text-white">
                         Check out character studies from the characters in the Marvel Universe, both heroes and villains
                     </p>
 

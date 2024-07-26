@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { AboutComponent } from './views/about/about.component';
 import { ContactComponent } from './views/contact/contact.component';
 import { DcCharactersComponent } from './views/dc-characters/dc-characters.component';
@@ -32,17 +31,12 @@ const routes: Routes = [
     },
 
     {
-        path: 'single-character',
-        component: SingleCharacterComponent
-    },
-
-    {
         path: 'superheroes-saints',
         component: SuperheroesSaintsComponent
     },
 
     {
-        path: 'single-superhero-saint',
+        path: 'superheroes-saints/single-superhero-saint/:slug',
         component: SingleSuperheroSaintViewComponent
     },
 
@@ -51,14 +45,22 @@ const routes: Routes = [
         component: ContactComponent
     },
 
+    {
+        path: 'dc-characters/single-character/:slug',
+        component: SingleCharacterComponent,
+    },
+
+    {
+        path: 'marvel-characters/single-character/:slug',
+        component: SingleCharacterComponent,
+    },
+
     { path: '**', redirectTo: '' },
 
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes)
-    ],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
 export class AppRoutingModule { }

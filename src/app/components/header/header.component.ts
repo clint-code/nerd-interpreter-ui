@@ -11,30 +11,30 @@ import $ from 'jquery';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private router:Router
+    private router: Router
   ) { }
 
   ngOnInit(): void {
 
-      this.router.events.subscribe(val => {
+    // this.router.events.subscribe(val => {
 
-        if(val instanceof NavigationEnd && $(".menuCloser").hasClass("open")){
+    //   if (val instanceof NavigationEnd && $(".menuCloser").hasClass("open")) {
 
-            this.toggleMenu();
+    //     this.toggleMenu();
 
-        }
+    //   }
 
-    });
+    // });
 
   }
 
-  toggleMenu(){
+  toggleMenu() {
 
     //if toggle class is open
 
     $(".menuOpener").toggleClass("open");
 
-    if($(".menuOpener").hasClass("open")) {
+    if ($(".menuOpener").hasClass("open")) {
 
       $(".menuOpener").fadeOut();
 
@@ -55,21 +55,21 @@ export class HeaderComponent implements OnInit {
       }, 500);
 
     }
-      
+
 
   }
 
-  handleLinkHover(event){
+  handleLinkHover(event) {
 
-     let currentBackground = event.target.dataset.background;
+    let currentBackground = event.target.dataset.background;
 
     $(".mainMenu .backgroundImage." + currentBackground).stop().fadeIn();
 
 
-     console.log(currentBackground);
+    console.log(currentBackground);
   }
 
-  resetStyles(event){
+  resetStyles(event) {
 
     $(".mainMenu .backgroundImage").stop().fadeOut();
 

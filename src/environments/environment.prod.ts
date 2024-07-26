@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  contentRoot: "https://nerdinterpreter.co.ke/wp-json/wp/v2/"
 };

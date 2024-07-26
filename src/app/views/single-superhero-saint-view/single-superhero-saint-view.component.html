@@ -1,1 +1,202 @@
-<p>single-superhero-saint-view works!</p>
+<!-- Site Preloaders-->
+<app-preloader
+    *ngIf="siteImages.length < 1"
+></app-preloader>
+
+<app-preloader
+    *ngIf="siteImages.length > 0"
+    [images]="siteImages"
+></app-preloader>
+<!--END Site Preloaders -->
+
+<div id="scrollbar">
+    <div id="scrollbar-bg"></div>
+</div>
+
+<!--Logo section-->
+<div class="row ml-1 mr-1">
+
+    <div class="mini-logo-section">
+        <a routerLink="/">
+            <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
+        </a>
+    </div>
+
+</div>
+
+<div class="container-fluid">
+
+    <div class="content-section">
+
+        <app-banner
+            bannerTitle="{{postDetails?.title?.rendered}}"
+            bannerImage="{{postDetails?.acf?.post_banner_image?.url}}"
+            bannerImageAlt="{{postDetails?.acf?.post_banner_image_alt?.alt}}"
+        >
+        </app-banner>
+
+        <div class="content-container">
+
+                <!--comic superhero-facts-->
+                <section class="main-cnt character-facts">
+
+                    <div class="container">
+
+                        <div class="row mb-4">
+
+                            <div 
+                                *ngIf="iframeHtml" 
+                                [innerHTML]="iframeHtml">
+                            </div>
+
+                            <!-- <iframe 
+                                width="1200" 
+                                height="720" 
+                                src="https://www.youtube.com/embed/RNjwEaGr368" 
+                                title="Joan of Arc, Wonder Woman, and the Veiled Strength of Femininity (7 of 10)" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe> -->
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="intro-section text-center ">
+
+                                <h2 class="display-2 p-2 heading-txt">
+                                    {{postDetails?.acf?.facts_about_the_superhero_section?.hero_title}}
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="cnt-description-section mb-4">
+
+                                <div class="img-section text-center">
+                                    <img 
+                                        src="{{postDetails?.acf?.facts_about_the_superhero_section?.hero_image?.url}}" 
+                                        alt="{{postDetails?.acf?.facts_about_the_superhero_section?.hero_image?.title}}" 
+                                        class="img-fluid">
+                                </div>
+
+                                <h3 class="display-4">
+                                    Origin Of The Superhero
+                                </h3>
+
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_superhero_section?.origin_of_the_superhero"></div>
+
+                            </div>
+
+                            <div class="cnt-description-section">
+
+                                <h3 class="display-4">
+                                    Abilities and Powers Of The Superhero
+                                </h3>
+
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_superhero_section?.abilities_powers_of_the_superhero"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+                <!--end of character-facts-->
+
+                <!--saint-facts-->
+                <section class="main-cnt mt-5 character-facts">
+
+                    <div class="container">
+        
+                        <div class="row">
+        
+                            <div class="intro-section text-center ">
+        
+                                <h2 class="display-2 p-2 heading-txt">
+                                    {{postDetails?.acf?.facts_about_the_saint_section?.saint_title}}
+                                </h2>
+        
+                            </div>
+        
+                        </div>
+        
+                        <div class="row">
+        
+                            <div class="cnt-description-section">
+        
+                                <div class="img-section text-center">
+                                    <img 
+                                        src="{{postDetails?.acf?.facts_about_the_saint_section?.saint_image?.url}}" 
+                                        alt="{{postDetails?.acf?.facts_about_the_saint_section?.saint_image?.title}}" 
+                                        class="img-fluid">
+                                </div>
+        
+
+                                <h3 class="display-4">
+                                    Origin Of The Saint
+                                </h3>
+
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_saint_section?.origin_of_the_saint"></div>
+        
+                            </div>
+        
+                            <div class="cnt-description-section mb-4">
+
+                                <h3 class="display-4">
+                                    Talents and Gifts Of The Saint
+                                </h3>
+
+                                <div [innerHTML]="postDetails?.acf?.facts_about_the_saint_section?.talents_and_gifts_of_the_saint"></div>
+        
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+        
+                </section>
+                <!--end of character-facts-->
+
+        </div>
+
+        <!--source section-->
+        <section class="mt-3 mb-5 main-cnt source-section">
+
+            <div class="container">
+    
+                <div class="row">
+    
+                    <div class="intro-section text-center mb-5">
+
+                        <h2 class="display-2 p-2 heading-txt">
+                            Sources
+                        </h2>
+
+                    </div>
+
+                    <div class="col-md-12 text-section sources-cnt">
+
+                        <div [innerHTML]="postDetails?.acf?.sources"></div>
+
+                    </div>                    
+    
+                </div>
+    
+            </div>
+    
+        </section>
+        <!--end of source-section -->
+
+    </div>
+
+</div>
+
+<app-footer-alt></app-footer-alt>

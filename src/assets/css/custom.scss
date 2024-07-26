@@ -89,7 +89,7 @@ a {
     font-family: 'passion_oneregular';
 
     &:focus {
-        color: transparent;
+        //color: transparent;
         text-decoration: none;
     }
 
@@ -215,6 +215,10 @@ body {
                 }
             }
 
+            .active{
+                text-decoration: underline;
+            }
+
         }
 
     }
@@ -245,12 +249,13 @@ body {
     bottom: -6px;
     z-index: 10;
     width: 100%;
-    height: 110px;
+    height: 80px;
 
 }
 
 .social-link {
 
+    margin-top: 20px;
 
     a {
         display: inline-block;
@@ -355,7 +360,7 @@ body {
 
 .banner-image-section {
     position: relative;
-    margin-top: 45px;
+    margin-top: 35px;
 
     // .banner-text {
     //     position: absolute;
@@ -366,9 +371,18 @@ body {
     .bannerImage{
         img{
             border-radius: 70px;
+            border: 5px solid #000;
         }
     }
 
+    h1{
+        margin-bottom: 20px;
+    }
+
+}
+
+.explore-characters-txt{
+    margin-top: 20px;
 }
 
 .text-intro-section {
@@ -390,19 +404,24 @@ body {
     margin-left: 5%;
     width: 90%;
     margin-right: 5%;
+    text-align: center;
 
     .grid-sizer,
     .character-item {
         width: 27%;
-        margin-left: 1.5%;
+        margin-left: 4%;
         padding: 10px;
-        margin-right: 1.5%;
+        //margin-right: 1.5%;
         //float: left;
 
         a {
             font-family: 'sf-speakeasy';
             font-size: 3.5em;
         }
+    }
+
+    .character-image{
+        border: 10px solid black;
     }
 
     .character-image>img {
@@ -413,12 +432,14 @@ body {
 }
 
 .filter-button-group {
+
     button {
         background-color: #fff;
         border: 6px solid #000;
         font-family: 'passion_oneregular';
         text-transform: uppercase;
         font-size: 2em;
+        margin: 15px;
 
         &:hover {
             background-color: #000;
@@ -443,6 +464,11 @@ body {
 
 .mini-background-section {
     position: relative;
+    margin-bottom: 15px;
+
+    .img-fluid{
+        border-radius: 30px;
+    }
 }
 
 .caption-text-section {
@@ -457,19 +483,21 @@ body {
     h3 {
         font-family: 'sf-speakeasy';
         text-transform: uppercase;
+        text-align: left;
     }
 
     p {
         font-size: 30px;
         line-height: 35px;
+        text-align: left;
     }
 
     a {
         text-transform: uppercase;
         font-size: 2em;
         background: #fff;
-        position: absolute;
-        right: 0%;
+        // position: absolute;
+        // right: 0%;
         color: #000;
     }
 
@@ -487,6 +515,11 @@ body {
     }
 }
 
+.more-characters-section {
+    margin-top: 35px;
+    padding: 15px;
+}
+
 /*footer section*/
 .footer-section {
     background-color: $color-15;
@@ -495,6 +528,7 @@ body {
 }
 
 .quick-links-section {
+    width: 100%;
     ul li {
         margin-bottom: 1em;
     }
@@ -563,7 +597,7 @@ body {
 
 .character-stats-section {
     background-color: #fff;
-    padding: 20px;
+    padding: 10px;
     border: 10px solid #000;
 }
 
@@ -574,7 +608,7 @@ body {
 
     .stat-top {
         font-family: 'bangersregular';
-        font-size: 3em;
+        font-size: 2.5em;
         color: $color-8;
     }
 
@@ -622,42 +656,23 @@ body {
 
     h2 {
         color: $color-8;
-        z-index: 2;
-        position: relative;
-        margin-left: -5%;
+        margin-bottom: 0px;
     }
 
-    img {
-        border: 10px solid #fff;
+    .img-section{
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
-}
 
-.intro-section {
+    // img {
+    //     border-radius: 30px;
+    // }
+} 
 
-    position: relative;
-
-    &:before {
-        content: "";
-        width: 100%;
-        height: 100%;
+    .intro-section {
         background-color: #fff;
         border: 10px solid #000;
-        position: absolute;
-        z-index: 2;
-        left: -5%;
     }
-
-    &:after {
-        content: "";
-        position: absolute;
-        right: 40px;
-        top: 10px;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        z-index: 1;
-    }
-}
 
 .cnt-description-section {
     h3 {
@@ -665,13 +680,14 @@ body {
     }
 
     p {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 0px;
     }
 
-    img {
-        border: 10px solid #fff;
-    }
+    // img {
+    //     border: 10px solid #fff;
+    // }
 }
 
 .cnt-heading {
@@ -717,6 +733,10 @@ body {
     display: block;
 }
 
+.about-comic-characters-section{
+    padding: 30px 25px;
+}
+
 .source-section{
     
     .text-section{
@@ -725,15 +745,17 @@ body {
         border-radius: 28px;
     }
 
-    .list-group{
-        .list-group-item{
-            border: none;
-            background-color: transparent;
-            a{
-                font-size: 24px;
+    .sources-cnt{
+            ol{
+                li{
+                    padding: .75rem 1.25rem;
+                    a{
+                        font-size: 24px;
+                    }
+                }
             }
-        }
     }
+
 
 }
 
@@ -741,6 +763,7 @@ body {
 
 .cnt-section-title {
     width: 100%;
+    text-align: center;
 }
 
 .cnt-section {
@@ -774,6 +797,7 @@ body {
         z-index: 2;
         width: 90%;
         margin-top: 3%;
+        margin-bottom: 0px;
     }
 
 }
@@ -793,8 +817,9 @@ body {
         border-bottom: 3px solid #000;
         background-color: transparent;
         font-size: 1.25em;
-        width: 50%;
-        margin: 15px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
         height: 100px;
         font-family: 'procionoregular';
         border-width: 1px;
@@ -814,35 +839,37 @@ body {
 
 .cnt-form-section {
 
-    position: relative;
+    background-color: #fff;
+    border: 10px solid #000;
+    // position: relative;
 
-    &:before {
-        content: "";
-        width: 80%;
-        height: 100%;
-        background-color: #fff;
-        border: 10px solid #000;
-        position: absolute;
-        z-index: 2;
-        left: 10%;
-    }
+    // &:before {
+    //     content: "";
+    //     width: 80%;
+    //     height: 100%;
+    //     background-color: #fff;
+    //     border: 10px solid #000;
+    //     position: absolute;
+    //     z-index: 2;
+    //     left: 10%;
+    // }
 
-    &:after {
-        content: "";
-        position: absolute;
-        right: 8%;
-        top: 30px;
-        width: 80%;
-        height: 100%;
-        background: #000;
-        z-index: 1;
-    }
+    // &:after {
+    //     content: "";
+    //     position: absolute;
+    //     right: 8%;
+    //     top: 30px;
+    //     width: 80%;
+    //     height: 100%;
+    //     background: #000;
+    //     z-index: 1;
+    // }
 
-    p,
-    button {
-        position: relative;
-        z-index: 2;
-    }
+    // p,
+    // button {
+    //     position: relative;
+    //     z-index: 2;
+    // }
 
 }
 
@@ -958,21 +985,17 @@ body {
 
     .banner-image-section {
 
-        .banner-text {
-            width: 100%;
-            margin: 0 auto;
-
             h1 {
-                font-size: 6em;
+                font-size: 5em;
+                margin-bottom: 15px;
             }
-
-        }
 
     }
 
     .text-intro-section {
         p {
             font-size: 2em;
+            margin-bottom: 0px;
         }
     }
 
@@ -983,8 +1006,10 @@ body {
     }
 
     .caption-text-section {
-        width: 80%;
-
+        width: 96%;
+        text-align: center;
+        right: 2%;
+        left: 2%;
     }
 
     .vertical-text-section {
@@ -992,10 +1017,10 @@ body {
     }
 
     .more-cnt-section {
-        max-width: 100%;
-        flex: 0 0 99.999%;
-        -webkit-flex: 0 0 99.999%;
-        -ms-flex: 0 0 99.999%;
+        max-width: 100% !important;
+        flex: 0 0 99.999% !important;
+        -webkit-flex: 0 0 99.999% !important;
+        -ms-flex: 0 0 99.999% !important;
     }
 
     .newsletter-section {
@@ -1038,7 +1063,6 @@ body {
 
 
 }
-
 //end of max-width 1200px
 
 //max-width 1000px
@@ -1055,8 +1079,8 @@ body {
         }
 
         .nav-links {
-            top: 18%;
-            margin: 2em auto;
+            top: 50%;
+            margin-top: -156px;
 
             li {
                 padding: 5px;
@@ -1070,17 +1094,19 @@ body {
     }
 
     .mini-logo-section {
-        width: 25%;
+        width: 35%;
     }
 
     .banner-image-section {
 
-        .banner-text {
-
-            h1 {
-                font-size: 4.5em;
+        .bannerImage{
+            img{
+                border-radius: 35px;
             }
+        }
 
+        h1 {
+            font-size: 4em;
         }
 
     }
@@ -1099,7 +1125,8 @@ body {
     .grid {
         .character-item {
             h3 {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
+                margin-top: 10px;
             }
         }
     }
@@ -1107,6 +1134,7 @@ body {
     .caption-text-section {
         h3 {
             font-size: 3.5rem;
+            text-align: center;
         }
 
         p {
@@ -1140,6 +1168,7 @@ body {
             img {
                 width: 60%;
             }
+            
         }
 
         .quick-links-section {
@@ -1254,7 +1283,6 @@ body {
     }
 
 }
-
 //end of max-width 1000px
 
 //max-width 768px
@@ -1266,10 +1294,27 @@ body {
         }
     }
 
-    .menuOpener,
-    .menuCloser {
-        right: 7%;
+    .preloader{
+
+        .loaderContent{
+            top: 50%;
+            transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
+            left: 50%;
+            margin-top: 0px;
+
+            img{
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
     }
+
+    // .menuOpener,
+    // .menuCloser {
+    //     right: 7%;
+    // }
 
     .mainMenu {
 
@@ -1298,24 +1343,45 @@ body {
 
     .banner-image-section {
 
-        .banner-text {
-            top: 55%;
-
-            h1 {
-                font-size: 3.5em;
+        .bannerImage{
+            img {
+                border-radius: 20px;
             }
+        }
 
+        h1 {
+            font-size: 3.5em;
         }
 
     }
 
+    .text-intro-section {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .mini-navigation{
+        h2{
+            margin-bottom: 0px;
+            padding: 2rem!important;
+        }
+    }
+
     .explore-characters-txt {
+
         h4 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
         }
     }
 
     .grid {
+
+        .grid-sizer{
+            width: 30%;
+           margin-left: 0%;
+        }
+
         .character-item {
 
             a {
@@ -1323,17 +1389,16 @@ body {
             }
 
             h3 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
         }
     }
 
     .filter-button-group {
-        @include display-flex(flex, column);
 
         button {
             border: 4px solid #000;
-            font-size: 1.5em;
+            font-size: 1.35em;
         }
     }
 
@@ -1349,10 +1414,18 @@ body {
 
     }
 
-    .more-characters-section {
-        margin-top: 0.5rem !important;
-        padding: 0px !important;
-    }
+    // .more-characters-section {
+    //     margin-top: 0.5rem !important;
+    //     padding: 0px !important;
+    // }
+
+    .mini-background-section {
+
+        .img-fluid {
+            border-radius: 20px;
+        }
+
+    } 
 
     .character {
         img {
@@ -1369,27 +1442,32 @@ body {
 
     }
 
-
-    .caption-text-section {
-        
-        top: 70%;
-        width: 75%;
-
-
-        h3 {
-            font-size: 2.25rem;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 24px;
-            margin-bottom: 0rem;
-        }
-
-        a {
-            font-size: 1.25em;
+    .about-comic-characters-section{
+        .image-section{
+            margin-top: 15px;
         }
     }
+
+
+    // .caption-text-section {
+        
+    //     top: 70%;
+    //     width: 75%;
+
+
+    //     h3 {
+    //         font-size: 2.25rem;
+    //     }
+
+    //     p {
+    //         font-size: 16px;
+    //         line-height: 24px;
+    //     }
+
+    //     a {
+    //         font-size: 1.25em;
+    //     }
+    // }
 
     .newsletter-section {
         .center-text-section {
@@ -1415,6 +1493,11 @@ body {
         }
     }
 
+    .character-stats-section{
+        width: 60%;
+        margin: 0 auto;
+    }
+
     .character-stats-list {
         @include display-flex(flex, column);
 
@@ -1424,7 +1507,7 @@ body {
 
         .top-cnt,
         .bottom-cnt {
-            padding: 0.5rem 1rem !important;
+            padding: 0rem !important;
         }
     }
 
@@ -1477,7 +1560,6 @@ body {
     }
 
 }
-
 //end of max-width 768px
 
 //max-width 500px
@@ -1487,10 +1569,10 @@ body {
         top: 1%;
     }
 
-    .menuOpener,
-    .menuCloser {
-        top: 2%;
-    }
+    // .menuOpener,
+    // .menuCloser {
+    //     top: 2%;
+    // }
 
     .mainMenu {
 
@@ -1514,15 +1596,16 @@ body {
         }
     }
 
-
     .banner-image-section {
 
-        .banner-text {
+        margin-top: 15px;
 
-            h1 {
-                font-size: 2.5em;
-            }
+        h1 {
+            font-size: 2.5em;
+        }
 
+        .bannerImage img {
+            border-radius: 10px;
         }
 
     }
@@ -1531,6 +1614,10 @@ body {
         h4 {
             font-size: 2.5rem;
         }
+    }
+
+    .character-stats-section{
+        width: 100%;
     }
 
     .text-intro-section {
@@ -1542,23 +1629,33 @@ body {
     .mini-navigation {
         h2 {
             font-size: 2.5rem;
+            margin-bottom: 0px;
         }
     }
 
-
     .filter-button-group {
+        @include display-flex(flex, column);
 
         button {
             font-size: 1.25em;
             padding: 10px !important;
+            margin: 5px;
         }
 
     }
 
+    // .filter-button-group {
+
+    //     button {
+    //         font-size: 1.25em;
+    //         padding: 10px !important;
+    //     }
+
+    // }
+
     .grid {
         .character-item {
             width: 100%;
-            padding: 2em;
             margin-left: 0%;
 
             a {
@@ -1576,10 +1673,9 @@ body {
         }
     }
 
-
     .caption-text-section {
 
-        width: 90%;
+        margin-top: -70px;
 
         h3 {
             font-size: 1.75rem;
@@ -1587,6 +1683,9 @@ body {
 
         p {
             font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            padding-bottom: 0px;
         }
 
         a {
@@ -1594,8 +1693,18 @@ body {
         }
     }
 
+    .mini-background-section .img-fluid {
+        border-radius: 10px;
+    }
+
+    .about-comic-characters-section {
+        padding: 20px 0px;
+    }
+
     .newsletter-section {
+
         .center-text-section {
+
             h4 {
                 font-size: 1.65rem;
             }
@@ -1608,15 +1717,16 @@ body {
                 .btn-black {
                     padding: 2px !important;
                 }
+
             }
+
         }
     }
 
     .footer-section {
-        .footer-logo-section {
-            margin-top: 8%;
-            margin-bottom: 8%;
-        }
+        // .footer-logo-section {
+        //     margin-top: 11%;
+        // }
 
         .quick-links-section {
             h4 {
@@ -1686,6 +1796,14 @@ body {
 
     }
 
+    .cnt-section-title {
+
+        h3 {
+            font-size: 2rem;
+        }
+
+    }
+
     .icon-section {
         img {
             width: 55%;
@@ -1728,6 +1846,16 @@ body {
         left: 50%;
     }
 
+    .nav-section {
+
+        .singleItem {
+
+            .bottom-cnt {
+                font-size: 1.85em;
+            }
+        }
+    }
+
     .caption-text-section {
         width: 94%;
         right: 3%;
@@ -1749,15 +1877,40 @@ body {
 
     }
 
-    .more-cnt-section{
-        display: none;
+    .character-stats-list {
+
+        .stat-top,
+        .stat-bottom {
+            font-size: 1.5em;
+        }
+
     }
 
-    .about-comic-characters-section,
-    .heroes-journey-section,
-    .about-section {
-        padding: 2rem !important;
+    .mini-navigation{
+
+        h2{
+            font-size: 2.25rem;
+            padding-bottom: 0rem !important;
+        }
     }
+
+    .intro-section {
+        h2 {
+            font-size: 2.25em;
+        }
+    }
+
+    .cnt-description-section {
+        h3 {
+            font-size: 1.85rem;
+        }
+    }
+
+    // .about-comic-characters-section,
+    // .heroes-journey-section,
+    // .about-section {
+    //     padding: 2rem !important;
+    // }
 
     .cnt-form-section {
         p {

@@ -10,6 +10,7 @@ import gsap from 'gsap';
 export class BannerComponent implements OnInit {
 
   @Input() bannerImage: string;
+  @Input() bannerImageAlt: string;
   @Input() bannerTitle: string;
 
   constructor() { }
