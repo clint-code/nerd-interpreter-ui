@@ -4,6 +4,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import $ from 'jquery';
 
 import Preloader from '../../utils/preloader';
+import { ContentManagementService } from '../../services/content-management.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,10 +14,12 @@ import Preloader from '../../utils/preloader';
 export class ContactComponent implements OnInit {
 
   siteImages: any = [];
+  contactBannerIntroContent: any;
 
   constructor(
     private titleService: Title,
     private metaService: Meta,
+    private contentService: ContentManagementService,
   ) { }
 
   ngOnInit(): void {
@@ -36,12 +39,29 @@ export class ContactComponent implements OnInit {
       })
     }, 500);
 
+    this.getContactBannerIntroData();
+
   }
 
   ngAfterViewInit(): void {
 
     this.siteImages = Preloader.getImages();
 
+  }
+
+  getContactBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("contact").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.contactBannerIntroContent = response[0];
+
+        console.log("Intro content:", this.contactBannerIntroContent);
+
+      }
+
+    });
   }
 
 }

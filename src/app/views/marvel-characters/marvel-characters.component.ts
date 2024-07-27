@@ -4,7 +4,8 @@ import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
 
-import { CharacterdataService } from '../../services/characterdata.service';
+import { ContentManagementService } from '../../services/content-management.service';
+
 import $ from 'jquery';
 
 import { gsap } from 'gsap';
@@ -28,7 +29,7 @@ interface characterStore {
   templateUrl: './marvel-characters.component.html',
   styleUrls: ['./marvel-characters.component.css'],
   providers: [
-    CharacterdataService
+    //CharacterdataService
   ]
 })
 export class MarvelCharactersComponent implements OnInit {
@@ -41,6 +42,8 @@ export class MarvelCharactersComponent implements OnInit {
   reset: string;
   charactersData: any;
   characterStore: characterStore = {};
+
+  marvelBannerIntroContent: any;
 
   options: NgxMasonryOptions = {
 
@@ -59,12 +62,14 @@ export class MarvelCharactersComponent implements OnInit {
   masonry: NgxMasonryComponent;
 
   constructor(
-    private characterDataService: CharacterdataService,
+    private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
   ) { }
 
   ngOnInit(): void {
+
+    this.loadingView = true;
 
     this.titleService.setTitle("The Nerd Interpreter - Marvel Characters");
 
@@ -90,13 +95,13 @@ export class MarvelCharactersComponent implements OnInit {
 
     this.getMarvelCharactersData();
 
+    this.getMarvelBannerIntroData();
+
     $(".filterButton").click(this.toggleFilter);
 
   }
 
   ngAfterViewInit(): void {
-
-    this.siteImages = Preloader.getImages();
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -114,13 +119,31 @@ export class MarvelCharactersComponent implements OnInit {
 
   getMarvelCharactersData() {
 
-    this.characterDataService.getAllMarvelCharactersListingJSON().subscribe((response: any[]) => {
+    this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
       this.charactersData = response;
+
+      console.log("Data:", this.charactersData);
 
       this.characterStore.cached = response;
 
       this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+    });
+
+  }
+
+  getMarvelBannerIntroData() {
+
+    this.contentService.getContentByPageSlug("marvel-characters").subscribe(response => {
+
+      if (response !== "" || response !== null) {
+
+        this.marvelBannerIntroContent = response[0];
+
+        console.log("Intro content:", this.marvelBannerIntroContent);
+
+      }
 
     });
 
@@ -160,15 +183,13 @@ export class MarvelCharactersComponent implements OnInit {
 
   }
 
-  filterCharacters(category: any) {
+  filterCharacters(category) {
 
-    this.characterStore.refined = this.characterStore.cached.filter(
-      (p) => p.category == category || category == 'all'
+    this.characterStore.refined = this.charactersData.filter(
+      (character) => character.acf.character_alignment == category || category == 'all'
     );
 
     this.masonry.reloadItems();
-
-    console.log("Filtered result of: " + category, this.characterStore.refined);
 
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import $ from 'jquery';
 
 @Component({
@@ -9,6 +10,7 @@ import $ from 'jquery';
 export class ComicSliderComponent implements OnInit {
 
   @Input() sliderImages: string;
+  @Input() sliderAlt: string;
 
   constructor() { }
 

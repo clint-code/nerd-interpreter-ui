@@ -1,29 +1,43 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
-import { CharacterdataService } from '../../services/characterdata.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+import { ContentManagementService } from '../../services/content-management.service';
+
+
 @Component({
   selector: 'app-single-superhero-saint-view',
   templateUrl: './single-superhero-saint-view.component.html',
-  styleUrls: ['./single-superhero-saint-view.component.css']
+  styleUrls: ['./single-superhero-saint-view.component.css'],
+  providers: [ContentManagementService]
 })
 
 export class SingleSuperheroSaintViewComponent implements OnInit {
 
   loadingView: boolean = false;
+  postSlug: string = "";
+  postDetails: any = [];
   imagesLoaded: boolean = false;
   siteImages: any = [];
+  iframeHtml: SafeHtml;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private contentService: ContentManagementService,
+    private sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit(): void {
 
     this.loadingView = true;
+
+    this.postSlug = this.route.snapshot.paramMap.get('slug');
 
     $(window).scroll(this.progressScrollBar);
 
@@ -35,15 +49,34 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
       })
     }, 500);
 
+    this.contentService.getSuperheroSaintContent(this.postSlug).subscribe((response: any[]) => {
+
+      if (response !== null) {
+
+        this.postDetails = response[0];
+
+        this.loadingView = false;
+
+        if (this.postDetails.acf.video_podcast) {
+          const iframeHtmlString = this.postDetails.acf.video_podcast;
+          this.iframeHtml = this.sanitizer.bypassSecurityTrustHtml(iframeHtmlString);
+        }
+
+      }
+
+    });
+
   }
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
+    gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
 
       this.siteImages = Preloader.getImages();
+
+      this.animateContentCategory();
 
     }, 1000);
 
@@ -73,6 +106,28 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
     let scrollUp = $(".scrollup");
 
     scrollUp.toggleClass('scrollup-visible', $(this).scrollTop() > scrollUp.height());
+
+  }
+
+  animateContentCategory() {
+
+    document.querySelectorAll('.main-cnt').forEach((box) => {
+
+      const scrollBox = gsap.timeline({
+        scrollTrigger: {
+          trigger: box,
+          toggleActions: 'restart none none restart',
+        },
+      });
+
+      scrollBox.from(box, {
+        y: 150,
+        opacity: 0,
+        duration: 2.5,
+        stagger: 1,
+      });
+
+    });
 
   }
 

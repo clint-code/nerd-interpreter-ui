@@ -1,5 +1,9 @@
 <!-- Site Preloaders-->
 <app-preloader
+    *ngIf="siteImages.length < 1"
+></app-preloader>
+
+<app-preloader
     *ngIf="siteImages.length > 0"
     [images]="siteImages"
 ></app-preloader>
@@ -22,8 +26,9 @@
         <!--End of logo section-->
 
         <app-banner 
-            bannerTitle="DC Characters" 
-            bannerImage="../../../assets/img/dc-characters/dc-characters-banner.jpg">
+            bannerTitle="{{dcBannerIntroContent?.title?.rendered}}" 
+            bannerImage="{{dcBannerIntroContent?.acf?.page_banner_image?.url}}"
+            bannerImageAlt="{{dcBannerIntroContent?.acf?.page_banner_image?.alt}}">
         </app-banner>
 
         <div class="row">
@@ -31,9 +36,7 @@
             <div class="p-3 text-intro-section">
                 
                 <p class="text-center">
-                    Here's an in-depth analysis of what makes these DC comic book
-                    characters unique, with a look at their nuances and reasons
-                    behind their intentions as heroes or villains
+                    {{dcBannerIntroContent?.acf?.page_intro}}
                 </p>
 
             </div>
@@ -56,24 +59,24 @@
 
                 <div class="filter-button-group text-center">
 
-                    <button 
-                        class="button filterButton is-checked p-3" 
-                        (click)="filterCharacters('all')">
-                        all characters
-                    </button>
+                        <button 
+                            class="button filterButton is-checked p-3" 
+                            (click)="filterCharacters('all')">
+                            all characters
+                        </button>
 
-                    <button 
-                        class="button filterButton p-3" 
-                        (click)="filterCharacters('hero')">
-                        Heroes
-                    </button>
+                        <button 
+                            class="button filterButton p-3" 
+                            (click)="filterCharacters('hero')">
+                            Heroes
+                        </button>
 
-                    <button 
-                        class="button filterButton p-3" 
-                        (click)="filterCharacters('villain')">
-                        Villains
-                    </button>
-
+                        <button 
+                            class="button filterButton p-3" 
+                            (click)="filterCharacters('villain')">
+                            Villains
+                        </button>
+                
                 </div>
 
             </div>
@@ -89,18 +92,22 @@
 
                 <div ngxMasonryItem *ngFor="let character of characterStore.refined">
 
-                    <!-- Character Item -->
-                    <div class="character-item">
+                    <ng-container *ngIf="character?.acf?.character_stats_section?.comic_universe === 'DC'">
 
-                        <div class="character-image">
-                            <img src="{{ character.characterImage }}" alt="{{ character.alt }}" class="img-fluid">
+                        <!-- Character Item -->
+                        <div class="character-item">
+
+                                <div class="character-image">
+                                    <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid">
+                                </div>
+        
+                                <a routerLink="single-character/{{character?.slug}}">
+                                    <h3 class="name display-4">{{character?.title?.rendered}}</h3>
+                                </a>
+                            
                         </div>
 
-                        <a class="name" routerLink="/single-character">
-                            <h3 class="name display-4">{{character.title}}</h3>
-                        </a>
-                        
-                    </div>
+                    </ng-container>
 
                 </div>
 

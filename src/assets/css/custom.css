@@ -37,7 +37,6 @@ a {
   font-family: "passion_oneregular";
 }
 a:focus {
-  color: transparent;
   text-decoration: none;
 }
 a:hover {
@@ -222,7 +221,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: hsla(0deg, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.6);
 }
 
 .background {
@@ -312,6 +311,9 @@ body {
 .grid .character-item a {
   font-family: "sf-speakeasy";
   font-size: 3.5em;
+}
+.grid .character-image {
+  border: 10px solid black;
 }
 .grid .character-image > img {
   max-width: 100%;
@@ -520,10 +522,6 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.intro-section img,
-.cnt-description-section img {
-  border-radius: 30px;
-}
 
 .intro-section {
   background-color: #fff;
@@ -537,9 +535,6 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 0px;
-}
-.cnt-description-section img {
-  border: 10px solid #fff;
 }
 
 .cnt-heading {
@@ -588,11 +583,10 @@ body {
   background: #fff;
   border-radius: 28px;
 }
-.source-section .list-group .list-group-item {
-  border: none;
-  background-color: transparent;
+.source-section .sources-cnt ol li {
+  padding: 0.75rem 1.25rem;
 }
-.source-section .list-group .list-group-item a {
+.source-section .sources-cnt ol li a {
   font-size: 24px;
 }
 
