@@ -55,13 +55,13 @@ export class HomeComponent implements OnInit {
     this.intervalId = setInterval(() => {
       this.counter -= 1;
       $('.hero-section').css('background-position', this.counter + 'px 0');
-      console.log('background-position:', this.counter);
+
     }, this.intervalTime);
 
     this.intervalId2 = setInterval(() => {
       this.counter2 += 1;
       $('.villain-section').css('background-position', this.counter2 + 'px 0');
-      console.log('background-position:', this.counter2);
+
     }, this.intervalTime);
 
   }
