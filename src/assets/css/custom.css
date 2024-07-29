@@ -543,6 +543,7 @@ body {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
+  text-align: center;
 }
 .cnt-description-section p {
   padding-top: 10px;
