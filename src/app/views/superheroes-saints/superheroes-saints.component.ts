@@ -59,7 +59,7 @@ export class SuperheroesSaintsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.titleService.setTitle("The Nerd Interpreter - Marvel Characters");
+    this.titleService.setTitle("The Nerd Interpreter - Superheroes and Saints");
 
     this.metaService.updateTag(
       {

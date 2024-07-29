@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
@@ -52,8 +53,9 @@ export class SingleCharacterComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    //private comicCharacterDataService: CharacterdataService,
-    private contentService: ContentManagementService
+    private contentService: ContentManagementService,
+    private titleService: Title,
+    private metaService: Meta,
   ) {
 
 
@@ -81,6 +83,8 @@ export class SingleCharacterComponent implements OnInit {
       if (response !== null) {
 
         this.pageDetails = response[0];
+
+        this.titleService.setTitle("The Nerd Interpreter - " + this.pageDetails?.title?.rendered);
 
         this.loadingView = false;
 
