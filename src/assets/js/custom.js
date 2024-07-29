@@ -75,15 +75,13 @@ $(document).ready(function () {
 
         currentBackground = $(this).data('background');
 
-        console.log(currentBackground);
-
         $(".mainMenu .backgroundImage." + currentBackground).stop().fadeIn();
 
     }
 
     function defaultBackground() {
 
-        console.log($(".mainMenu .backgroundImage").stop().fadeOut());
+        //console.log($(".mainMenu .backgroundImage").stop().fadeOut());
 
     }
 

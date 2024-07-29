@@ -667,6 +667,15 @@ body {
     // img {
     //     border-radius: 30px;
     // }
+
+    ul {
+        list-style: disc;
+        padding: 0 0 0 20px;
+        li{
+            font-family: "procionoregular";
+            padding: 0 0 5px 0;
+        }
+    }
 } 
 
     .intro-section {
@@ -982,6 +991,13 @@ body {
         }
     }
 }
+
+.iframeSection{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 
 
 //MEDIA QUERIES
@@ -1368,6 +1384,7 @@ body {
 
         h1 {
             font-size: 3.5em;
+            line-height: 1;
         }
 
     }
@@ -1575,6 +1592,12 @@ body {
             margin-top: 1rem;
         }
 
+    }
+
+    .iframeSection{
+        iframe{
+            width: 100%;
+        }
     }
 
 }

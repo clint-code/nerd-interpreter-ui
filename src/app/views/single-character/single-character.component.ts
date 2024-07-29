@@ -84,8 +84,6 @@ export class SingleCharacterComponent implements OnInit {
 
         this.loadingView = false;
 
-        console.log("Response:", this.pageDetails);
-
       }
 
     });
@@ -144,8 +142,6 @@ export class SingleCharacterComponent implements OnInit {
 
     let targetDiv = event.target.dataset.target;
     let contentDiv = $('.' + targetDiv);
-
-    //console.log(targetDiv + " " + contentDiv);
 
     $('html, body').stop().animate({
       scrollTop: contentDiv.offset().top
