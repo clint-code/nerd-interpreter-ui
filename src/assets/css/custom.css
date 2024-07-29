@@ -530,11 +530,28 @@ body {
 
 .cnt-description-section h3 {
   text-transform: capitalize;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
 }
 .cnt-description-section p {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 0px;
+}
+.cnt-description-section img {
+  max-width: 100%;
+  height: auto;
+}
+.cnt-description-section figure {
+  text-align: center;
+}
+.cnt-description-section figure img {
+  max-width: 100%;
+  height: auto;
+}
+.cnt-description-section figure figcaption {
+  font-family: "procionoregular";
 }
 
 .cnt-heading {
@@ -1055,6 +1072,7 @@ body {
   }
   .cnt-description-section h3 {
     font-size: 2.5rem;
+    line-height: 1;
   }
   .src-cnt-section h2 {
     font-size: 3rem;

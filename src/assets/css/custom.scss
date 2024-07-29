@@ -677,6 +677,9 @@ body {
 .cnt-description-section {
     h3 {
         text-transform: capitalize;
+        font-size: 3.5rem;
+        font-weight: 300;
+        line-height: 1.2;
     }
 
     p {
@@ -685,9 +688,23 @@ body {
         margin-bottom: 0px;
     }
 
-    // img {
-    //     border: 10px solid #fff;
-    // }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    figure{
+        text-align: center;
+
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+
+        figcaption{
+            font-family: "procionoregular";
+        }
+    }
 }
 
 .cnt-heading {
@@ -1527,6 +1544,7 @@ body {
     .cnt-description-section {
         h3 {
             font-size: 2.5rem;
+            line-height: 1;
         }
     }
 
