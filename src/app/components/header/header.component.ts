@@ -65,8 +65,6 @@ export class HeaderComponent implements OnInit {
 
     $(".mainMenu .backgroundImage." + currentBackground).stop().fadeIn();
 
-
-    console.log(currentBackground);
   }
 
   resetStyles(event) {

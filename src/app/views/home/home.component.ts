@@ -11,9 +11,14 @@ import Preloader from '../../utils/preloader';
 })
 export class HomeComponent implements OnInit {
 
-  loadingView:boolean = false;
-  imagesLoaded:boolean = false;
-  siteImages:any = [];
+  loadingView: boolean = false;
+  imagesLoaded: boolean = false;
+  siteImages: any = [];
+  counter: number = 0;
+  counter2: number = 0;
+  intervalTime: number = 30;
+  intervalId: any;
+  intervalId2: any;
 
   constructor(
     private titleService: Title
@@ -22,15 +27,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.titleService.setTitle("The Nerd Interpreter - All about comic characters");
-    
-    this.loadingView = true;
+
+    setTimeout(() => {
+
+      this.loadingView = true;
+
+    }, 2000);
 
     this.backgroundAnimate();
 
   }
 
-  ngAfterViewInit():void{
-    
+  ngAfterViewInit(): void {
+
     setTimeout(() => {
 
       this.siteImages = Preloader.getImages();
@@ -39,28 +48,49 @@ export class HomeComponent implements OnInit {
 
   }
 
-  backgroundAnimate(){
+  backgroundAnimate() {
 
-    let counter = 0;
-    let counter2 = 0;
+    this.loadingView = false;
 
-    setInterval(() => {
-      counter -= 1;
-      $('.hero-section').css('background-position', counter + 'px 0');
-    }, 30);
+    this.intervalId = setInterval(() => {
+      this.counter -= 1;
+      $('.hero-section').css('background-position', this.counter + 'px 0');
 
-    setInterval(() => {
-      counter2 += 1;
-      $('.villain-section').css('background-position', counter2 + 'px 0');
-    }, 30)
+    }, this.intervalTime);
+
+    this.intervalId2 = setInterval(() => {
+      this.counter2 += 1;
+      $('.villain-section').css('background-position', this.counter2 + 'px 0');
+
+    }, this.intervalTime);
 
   }
 
-  handleSiteLoaded(){
+  // resetBackgroundAnimate() {
+
+  //   clearInterval(this.intervalId);
+
+  //   clearInterval(this.intervalId2);
+
+  //   this.counter = 0;
+
+  //   this.counter2 = 0;
+
+  //   $('.hero-section').css('background-position', this.counter + 'px 0');
+  //   // console.log('background-position:', this.counter);
+
+  //   $('.villain-section').css('background-position', this.counter2 + 'px 0');
+  //   // console.log('background-position:', this.counter2);
+
+  //   $(window).onload = this.backgroundAnimate();
+
+  // }
+
+  handleSiteLoaded() {
 
     this.imagesLoaded = true;
   }
 
-  
+
 
 }

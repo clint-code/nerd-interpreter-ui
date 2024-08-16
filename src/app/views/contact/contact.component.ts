@@ -57,8 +57,6 @@ export class ContactComponent implements OnInit {
 
         this.contactBannerIntroContent = response[0];
 
-        console.log("Intro content:", this.contactBannerIntroContent);
-
       }
 
     });

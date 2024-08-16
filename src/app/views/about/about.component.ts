@@ -114,8 +114,6 @@ export class AboutComponent implements OnInit {
 
         this.aboutContent = response[0];
 
-        console.log(this.aboutContent);
-
         this.loadingView = false;
 
       }
@@ -140,8 +138,6 @@ export class AboutComponent implements OnInit {
     this.characterPortraitsData.getAllSuperheroesSaintsListing().subscribe(response => {
 
       this.superheroSaintsPortraits = response;
-
-      console.log(this.superheroSaintsPortraits);
 
     });
   }

@@ -59,7 +59,7 @@ export class SuperheroesSaintsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.titleService.setTitle("The Nerd Interpreter - Marvel Characters");
+    this.titleService.setTitle("The Nerd Interpreter - Superheroes and Saints");
 
     this.metaService.updateTag(
       {
@@ -114,8 +114,6 @@ export class SuperheroesSaintsComponent implements OnInit {
 
         this.superheroSaintData = response;
 
-        console.log("Data:", this.superheroSaintData);
-
       }
 
     });
@@ -129,8 +127,6 @@ export class SuperheroesSaintsComponent implements OnInit {
       if (response !== "" || response !== null) {
 
         this.pageBannerIntroContent = response[0];
-
-        console.log("Banner intro data:", this.pageBannerIntroContent);
 
       }
 

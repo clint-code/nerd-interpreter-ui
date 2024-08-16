@@ -522,6 +522,16 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.intro-section ul,
+.cnt-description-section ul {
+  list-style: disc;
+  padding: 0 0 0 20px;
+}
+.intro-section ul li,
+.cnt-description-section ul li {
+  font-family: "procionoregular";
+  padding: 0 0 5px 0;
+}
 
 .intro-section {
   background-color: #fff;
@@ -530,11 +540,29 @@ body {
 
 .cnt-description-section h3 {
   text-transform: capitalize;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
 }
 .cnt-description-section p {
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 0px;
+}
+.cnt-description-section img {
+  max-width: 100%;
+  height: auto;
+}
+.cnt-description-section figure {
+  text-align: center;
+}
+.cnt-description-section figure img {
+  max-width: 100%;
+  height: auto;
+}
+.cnt-description-section figure figcaption {
+  font-family: "passion_oneregular";
 }
 
 .cnt-heading {
@@ -729,6 +757,12 @@ body {
 
 .more-heroes-journey .card img {
   width: 100%;
+}
+
+.iframeSection {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -952,6 +986,7 @@ body {
   }
   .banner-image-section h1 {
     font-size: 3.5em;
+    line-height: 1;
   }
   .text-intro-section {
     width: 90%;
@@ -1055,6 +1090,7 @@ body {
   }
   .cnt-description-section h3 {
     font-size: 2.5rem;
+    line-height: 1;
   }
   .src-cnt-section h2 {
     font-size: 3rem;
@@ -1068,6 +1104,9 @@ body {
   .heroes-journey-section .slider-section {
     order: 2;
     margin-top: 1rem;
+  }
+  .iframeSection iframe {
+    width: 100%;
   }
 }
 @media (max-width: 500px) {

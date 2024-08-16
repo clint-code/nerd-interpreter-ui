@@ -128,8 +128,6 @@ export class DcCharactersComponent implements OnInit {
 
         this.charactersData = response;
 
-        console.log("Data:", this.charactersData);
-
         this.characterStore.cached = response;
 
         this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
+
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
@@ -30,7 +32,9 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private contentService: ContentManagementService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private titleService: Title,
+    private metaService: Meta,
   ) { }
 
   ngOnInit(): void {
@@ -54,6 +58,8 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
       if (response !== null) {
 
         this.postDetails = response[0];
+
+        this.titleService.setTitle("The Nerd Interpreter - " + this.postDetails?.title?.rendered);
 
         this.loadingView = false;
 

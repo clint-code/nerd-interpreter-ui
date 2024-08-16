@@ -123,8 +123,6 @@ export class MarvelCharactersComponent implements OnInit {
 
       this.charactersData = response;
 
-      console.log("Data:", this.charactersData);
-
       this.characterStore.cached = response;
 
       this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
@@ -140,8 +138,6 @@ export class MarvelCharactersComponent implements OnInit {
       if (response !== "" || response !== null) {
 
         this.marvelBannerIntroContent = response[0];
-
-        console.log("Intro content:", this.marvelBannerIntroContent);
 
       }
 

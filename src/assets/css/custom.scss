@@ -667,6 +667,15 @@ body {
     // img {
     //     border-radius: 30px;
     // }
+
+    ul {
+        list-style: disc;
+        padding: 0 0 0 20px;
+        li{
+            font-family: "procionoregular";
+            padding: 0 0 5px 0;
+        }
+    }
 } 
 
     .intro-section {
@@ -686,9 +695,23 @@ body {
         margin-bottom: 0px;
     }
 
-    // img {
-    //     border: 10px solid #fff;
-    // }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    figure{
+        text-align: center;
+
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+
+        figcaption{
+            font-family: "passion_oneregular";
+        }
+    }
 }
 
 .cnt-heading {
@@ -966,6 +989,13 @@ body {
         }
     }
 }
+
+.iframeSection{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 
 
 //MEDIA QUERIES
@@ -1352,6 +1382,7 @@ body {
 
         h1 {
             font-size: 3.5em;
+            line-height: 1;
         }
 
     }
@@ -1528,6 +1559,7 @@ body {
     .cnt-description-section {
         h3 {
             font-size: 2.5rem;
+            line-height: 1;
         }
     }
 
@@ -1558,6 +1590,12 @@ body {
             margin-top: 1rem;
         }
 
+    }
+
+    .iframeSection{
+        iframe{
+            width: 100%;
+        }
     }
 
 }

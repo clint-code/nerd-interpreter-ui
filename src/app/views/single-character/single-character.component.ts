@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 
@@ -52,8 +53,9 @@ export class SingleCharacterComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    //private comicCharacterDataService: CharacterdataService,
-    private contentService: ContentManagementService
+    private contentService: ContentManagementService,
+    private titleService: Title,
+    private metaService: Meta,
   ) {
 
 
@@ -82,9 +84,9 @@ export class SingleCharacterComponent implements OnInit {
 
         this.pageDetails = response[0];
 
-        this.loadingView = false;
+        this.titleService.setTitle("The Nerd Interpreter - " + this.pageDetails?.title?.rendered);
 
-        console.log("Response:", this.pageDetails);
+        this.loadingView = false;
 
       }
 
@@ -144,8 +146,6 @@ export class SingleCharacterComponent implements OnInit {
 
     let targetDiv = event.target.dataset.target;
     let contentDiv = $('.' + targetDiv);
-
-    //console.log(targetDiv + " " + contentDiv);
 
     $('html, body').stop().animate({
       scrollTop: contentDiv.offset().top
