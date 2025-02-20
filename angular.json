@@ -123,8 +123,8 @@
           }
         }
       }
-    }},
-  "defaultProject": "nerd-interpreter-ui",
+    }
+  },
   "cli": {
     "analytics": "836a279a-f7c9-4886-a93d-eb9761a43b04"
   }
