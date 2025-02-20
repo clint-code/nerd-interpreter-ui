@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.prod';
 
 @Injectable({
+  /**the service is registered as a singleton in the root injector and is available throughout the application */
   providedIn: 'root'
 })
 
