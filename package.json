@@ -13,9 +13,9 @@
   "dependencies": {
     "@angular/animations": "^14.3.0",
     "@angular/cdk": "^11.2.13",
-    "@angular/common": "^14.3.0",
+    "@angular/common": "^15.2.10",
     "@angular/compiler": "^14.3.0",
-    "@angular/core": "^14.3.0",
+    "@angular/core": "^15.2.10",
     "@angular/forms": "^14.3.0",
     "@angular/platform-browser": "^14.3.0",
     "@angular/platform-browser-dynamic": "^14.3.0",
