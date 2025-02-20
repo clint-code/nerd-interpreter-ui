@@ -89,7 +89,6 @@ a {
     font-family: 'passion_oneregular';
 
     &:focus {
-        //color: transparent;
         text-decoration: none;
     }
 
@@ -341,11 +340,11 @@ body {
 }
 
 
-.mini-logo-section {
-    // position: absolute;
-    // top: 5%;
-    // left: 5%;
-}
+/**.mini-logo-section {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}**/
 
 .parallaxEffect {
     background-size: cover;
@@ -362,11 +361,6 @@ body {
     position: relative;
     margin-top: 35px;
 
-    // .banner-text {
-    //     position: absolute;
-    //     top: 50%;
-    //     width: 100%;
-    // }
 
     .bannerImage{
         img{
@@ -411,8 +405,6 @@ body {
         width: 27%;
         margin-left: 4%;
         padding: 10px;
-        //margin-right: 1.5%;
-        //float: left;
 
         a {
             font-family: 'sf-speakeasy';
@@ -475,8 +467,6 @@ body {
     position: absolute;
     top: 50%;
     width: 50%;
-    // margin-left: 5%;
-    // margin-right: 5%;
     right: 5%;
     margin-top: -120px;
 
@@ -496,8 +486,6 @@ body {
         text-transform: uppercase;
         font-size: 2em;
         background: #fff;
-        // position: absolute;
-        // right: 0%;
         color: #000;
     }
 
@@ -641,7 +629,6 @@ body {
             right: 0px;
             top: 0px;
             bottom: 0px;
-            //z-index: 50;
             cursor: pointer;
         }
 
@@ -663,10 +650,6 @@ body {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-
-    // img {
-    //     border-radius: 30px;
-    // }
 
     ul {
         list-style: disc;
@@ -865,35 +848,35 @@ body {
 
     background-color: #fff;
     border: 10px solid #000;
-    // position: relative;
+    /**position: relative;
 
-    // &:before {
-    //     content: "";
-    //     width: 80%;
-    //     height: 100%;
-    //     background-color: #fff;
-    //     border: 10px solid #000;
-    //     position: absolute;
-    //     z-index: 2;
-    //     left: 10%;
-    // }
+    &:before {
+        content: "";
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        border: 10px solid #000;
+        position: absolute;
+        z-index: 2;
+        left: 10%;
+    }
 
-    // &:after {
-    //     content: "";
-    //     position: absolute;
-    //     right: 8%;
-    //     top: 30px;
-    //     width: 80%;
-    //     height: 100%;
-    //     background: #000;
-    //     z-index: 1;
-    // }
+    &:after {
+        content: "";
+        position: absolute;
+        right: 8%;
+        top: 30px;
+        width: 80%;
+        height: 100%;
+        background: #000;
+        z-index: 1;
+    }
 
-    // p,
-    // button {
-    //     position: relative;
-    //     z-index: 2;
-    // }
+    p,
+    button {
+        position: relative;
+        z-index: 2;
+    }**/
 
 }
 
@@ -1060,11 +1043,11 @@ body {
         }
     }
 
-    // .banner-image-section {
-    //     h1 {
-    //         font-size: 5em;
-    //     }
-    // }
+    /**.banner-image-section {
+        h1 {
+            font-size: 5em;
+        }
+    }**/
 
     .single-slide {
         .slide-cont-description {
@@ -1342,10 +1325,10 @@ body {
 
     }
 
-    // .menuOpener,
-    // .menuCloser {
-    //     right: 7%;
-    // }
+    /**.menuOpener,
+    .menuCloser {
+        right: 7%;
+    }**/
 
     .mainMenu {
 
@@ -1446,10 +1429,10 @@ body {
 
     }
 
-    // .more-characters-section {
-    //     margin-top: 0.5rem !important;
-    //     padding: 0px !important;
-    // }
+    /**.more-characters-section {
+        margin-top: 0.5rem !important;
+        padding: 0px !important;
+    }**/
 
     .mini-background-section {
 
@@ -1481,25 +1464,25 @@ body {
     }
 
 
-    // .caption-text-section {
+    /**.caption-text-section {
         
-    //     top: 70%;
-    //     width: 75%;
+        top: 70%;
+        width: 75%;
 
 
-    //     h3 {
-    //         font-size: 2.25rem;
-    //     }
+        h3 {
+            font-size: 2.25rem;
+        }
 
-    //     p {
-    //         font-size: 16px;
-    //         line-height: 24px;
-    //     }
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
 
-    //     a {
-    //         font-size: 1.25em;
-    //     }
-    // }
+        a {
+            font-size: 1.25em;
+        }
+    }**/
 
     .newsletter-section {
         .center-text-section {
@@ -1608,10 +1591,10 @@ body {
         top: 1%;
     }
 
-    // .menuOpener,
-    // .menuCloser {
-    //     top: 2%;
-    // }
+    /**.menuOpener,
+    .menuCloser {
+        top: 2%;
+    }**/
 
     .mainMenu {
 
@@ -1683,14 +1666,14 @@ body {
 
     }
 
-    // .filter-button-group {
+    /**.filter-button-group {
 
-    //     button {
-    //         font-size: 1.25em;
-    //         padding: 10px !important;
-    //     }
+        button {
+            font-size: 1.25em;
+            padding: 10px !important;
+        }
 
-    // }
+    }**/
 
     .grid {
         .character-item {
@@ -1763,9 +1746,9 @@ body {
     }
 
     .footer-section {
-        // .footer-logo-section {
-        //     margin-top: 11%;
-        // }
+        /**.footer-logo-section {
+            margin-top: 11%;
+        }**/
 
         .quick-links-section {
             h4 {
@@ -1945,11 +1928,11 @@ body {
         }
     }
 
-    // .about-comic-characters-section,
-    // .heroes-journey-section,
-    // .about-section {
-    //     padding: 2rem !important;
-    // }
+    /**.about-comic-characters-section,
+    .heroes-journey-section,
+    .about-section {
+        padding: 2rem !important;
+    }**/
 
     .cnt-form-section {
         p {
