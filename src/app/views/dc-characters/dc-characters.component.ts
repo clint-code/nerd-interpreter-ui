@@ -50,7 +50,7 @@ export class DcCharactersComponent implements OnInit {
 
     itemSelector: '.character-item',
     //gutter: 5,
-    transitionDuration: '1.2s',
+    //transitionDuration: '1.2s',
     horizontalOrder: true,
     //fitWidth: true,
     percentPosition: true,

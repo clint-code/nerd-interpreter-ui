@@ -23,9 +23,10 @@
     "bootstrap": "^4.5.0",
     "gsap": "^3.12.5",
     "jquery": "^3.5.0",
+    "masonry-layout": "^4.2.2",
     "ngwp-theme-kit": "0.0.17",
-    "ngx-masonry": "^1.1.4",
-    "ngx-owl-carousel-o": "^2.0.3",
+    "ngx-masonry": "^14.0.1",
+    "ngx-owl-carousel-o": "^16.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "^0.13.0"

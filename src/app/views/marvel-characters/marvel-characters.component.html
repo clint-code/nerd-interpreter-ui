@@ -85,12 +85,9 @@
 
                 <div class="grid-sizer"></div>
 
-                <ngx-masonry 
-                    [options]="options" 
-                    [updateLayout]="characterStore.refined"
-                    [useImagesLoaded]="true">
+                <ngx-masonry [options]="options">
 
-                    <div ngxMasonryItem *ngFor="let character of characterStore.refined">
+                    <div ngxMasonryItem [prepend]="character.prepend" *ngFor="let character of characterStore.refined">
 
                         <ng-container *ngIf="character?.acf?.character_stats_section?.comic_universe === 'Marvel'">
 
@@ -98,7 +95,7 @@
                             <div class="character-item">
 
                                 <div class="character-image">
-                                    <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid">
+                                    <img src="{{ character?.acf?.featured_image }}" alt="{{ character?.slug }}" class="img-fluid" />
                                 </div>
         
                                 <a class="name" routerLink="single-character/{{character?.slug}}">

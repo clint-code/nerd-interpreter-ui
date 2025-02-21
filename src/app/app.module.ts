@@ -10,7 +10,6 @@ import { SharedModule } from './shared/shared.module';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
-
 //View Imports
 import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
@@ -46,7 +45,7 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    CarouselModule,
+    CarouselModule
   ],
   providers: [
     Title

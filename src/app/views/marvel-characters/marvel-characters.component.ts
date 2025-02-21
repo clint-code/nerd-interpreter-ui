@@ -40,26 +40,22 @@ export class MarvelCharactersComponent implements OnInit {
 
   selection: string;
   reset: string;
-  charactersData: any;
+  charactersData: any = [];
   characterStore: characterStore = {};
 
   marvelBannerIntroContent: any;
 
   options: NgxMasonryOptions = {
-
-    itemSelector: '.character-item',
+    //itemSelector: '.character-item',
     gutter: 10,
-    transitionDuration: '1.2s',
     horizontalOrder: true,
-    //fitWidth: true,
+    fitWidth: true,
     //percentPosition: true,
     columnWidth: 20,
     resize: true
   };
 
-  @ViewChild(NgxMasonryComponent, { static: false })
-
-  masonry: NgxMasonryComponent;
+  @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
 
   constructor(
     private contentService: ContentManagementService,
@@ -206,6 +202,10 @@ export class MarvelCharactersComponent implements OnInit {
       duration: 2
     });
 
+  }
+
+  itemsLoaded() {
+    console.log('itemsloaded');
   }
 
 }

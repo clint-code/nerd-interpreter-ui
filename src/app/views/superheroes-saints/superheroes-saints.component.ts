@@ -43,7 +43,7 @@ export class SuperheroesSaintsComponent implements OnInit {
 
     itemSelector: '.character-item',
     gutter: 10,
-    transitionDuration: '1.2s',
+    //transitionDuration: '1.2s',
     horizontalOrder: true,
     //fitWidth: true,
     //percentPosition: true,
