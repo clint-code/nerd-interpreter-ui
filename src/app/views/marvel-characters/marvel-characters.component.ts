@@ -46,12 +46,12 @@ export class MarvelCharactersComponent implements OnInit {
   marvelBannerIntroContent: any;
 
   options: NgxMasonryOptions = {
-    //itemSelector: '.character-item',
-    gutter: 10,
+    itemSelector: '.character-item',
+    //gutter: 10,
     horizontalOrder: true,
-    fitWidth: true,
-    //percentPosition: true,
-    columnWidth: 20,
+    //fitWidth: true,
+    percentPosition: true,
+    columnWidth: 30,
     resize: true
   };
 
@@ -117,11 +117,15 @@ export class MarvelCharactersComponent implements OnInit {
 
     this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
-      this.charactersData = response;
+      if (response !== null) {
 
-      this.characterStore.cached = response;
+        this.charactersData = response;
 
-      this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+        this.characterStore.cached = response;
+
+        this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+      }
 
     });
 
