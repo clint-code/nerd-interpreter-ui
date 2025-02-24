@@ -30,7 +30,6 @@
               "src/styles.css"
             ],
             "scripts": [
-                "node_modules/imagesloaded/imagesloaded.pkgd.min.js"
             ]
           },
           "configurations": {
