@@ -254,6 +254,11 @@ body {
   left: 50%;
 }
 
+/**.mini-logo-section {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}**/
 .parallaxEffect {
   background-size: cover;
   background-repeat: no-repeat;
@@ -303,8 +308,7 @@ body {
 }
 .grid .grid-sizer,
 .grid .character-item {
-  width: 27%;
-  margin-left: 4%;
+  width: 33.33%;
   padding: 10px;
 }
 .grid .grid-sizer a,
@@ -540,10 +544,7 @@ body {
 
 .cnt-description-section h3 {
   text-transform: capitalize;
-  font-size: 3.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-  text-align: center;
+  text-decoration: underline;
 }
 .cnt-description-section p {
   padding-top: 10px;
@@ -688,6 +689,35 @@ body {
 .cnt-form-section {
   background-color: #fff;
   border: 10px solid #000;
+  /**position: relative;
+
+  &:before {
+      content: "";
+      width: 80%;
+      height: 100%;
+      background-color: #fff;
+      border: 10px solid #000;
+      position: absolute;
+      z-index: 2;
+      left: 10%;
+  }
+
+  &:after {
+      content: "";
+      position: absolute;
+      right: 8%;
+      top: 30px;
+      width: 80%;
+      height: 100%;
+      background: #000;
+      z-index: 1;
+  }
+
+  p,
+  button {
+      position: relative;
+      z-index: 2;
+  }**/
 }
 
 .intro-text-section .cnt-section p {
@@ -801,6 +831,11 @@ body {
   .newsletter-section .center-text-section {
     width: 80%;
   }
+  /**.banner-image-section {
+      h1 {
+          font-size: 5em;
+      }
+  }**/
   .single-slide .slide-cont-description {
     width: 50%;
   }
@@ -966,6 +1001,10 @@ body {
     width: 100%;
     text-align: center;
   }
+  /**.menuOpener,
+  .menuCloser {
+      right: 7%;
+  }**/
   .mainMenu .nav-links {
     right: 0%;
     width: 90%;
@@ -1021,6 +1060,10 @@ body {
   .intro-section:before, .intro-section:after {
     display: none;
   }
+  /**.more-characters-section {
+      margin-top: 0.5rem !important;
+      padding: 0px !important;
+  }**/
   .mini-background-section .img-fluid {
     border-radius: 20px;
   }
@@ -1034,6 +1077,25 @@ body {
   .about-comic-characters-section .image-section {
     margin-top: 15px;
   }
+  /**.caption-text-section {
+
+      top: 70%;
+      width: 75%;
+
+
+      h3 {
+          font-size: 2.25rem;
+      }
+
+      p {
+          font-size: 16px;
+          line-height: 24px;
+      }
+
+      a {
+          font-size: 1.25em;
+      }
+  }**/
   .newsletter-section .center-text-section {
     width: 80%;
   }
@@ -1113,6 +1175,10 @@ body {
   .mini-logo-section {
     top: 1%;
   }
+  /**.menuOpener,
+  .menuCloser {
+      top: 2%;
+  }**/
   .mainMenu .nav-links li {
     text-align: left;
   }
@@ -1160,6 +1226,14 @@ body {
     padding: 10px !important;
     margin: 5px;
   }
+  /**.filter-button-group {
+
+      button {
+          font-size: 1.25em;
+          padding: 10px !important;
+      }
+
+  }**/
   .grid .character-item {
     width: 100%;
     margin-left: 0%;
@@ -1203,6 +1277,11 @@ body {
   }
   .newsletter-section .center-text-section .input-group .btn-black {
     padding: 2px !important;
+  }
+  .footer-section {
+    /**.footer-logo-section {
+        margin-top: 11%;
+    }**/
   }
   .footer-section .quick-links-section h4 {
     font-size: 2.5rem !important;
@@ -1311,6 +1390,11 @@ body {
   .cnt-description-section h3 {
     font-size: 1.85rem;
   }
+  /**.about-comic-characters-section,
+  .heroes-journey-section,
+  .about-section {
+      padding: 2rem !important;
+  }**/
   .cnt-form-section p {
     padding: 20px;
   }

@@ -46,18 +46,18 @@ export class DcCharactersComponent implements OnInit {
 
   dcBannerIntroContent: any;
 
-  options: NgxMasonryOptions = {
+  //Masonry configurations
+  updateMasonryLayout: boolean = false;
 
-    itemSelector: '.character-item',
-    //gutter: 5,
-    //transitionDuration: '1.2s',
-    horizontalOrder: true,
-    //fitWidth: true,
+  options: NgxMasonryOptions = {
+    gutter: 10,
+    //horizontalOrder: true,
+    fitWidth: false,
     percentPosition: true,
-    columnWidth: 30,
+    columnWidth: '.grid-sizer',
+    itemSelector: '.character-item',
     //originLeft: false,
     resize: true
-
   };
 
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
@@ -120,9 +120,24 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
+  filterCharacters(category) {
+
+    this.characterStore.refined = this.charactersData.filter(
+      (character) => character.acf.character_alignment == category || category == 'all'
+    );
+
+    setTimeout(() => {
+      this.masonry.layout();
+      this.masonry.reloadItems();
+    }, 100);
+
+  }
+
   getDcCharactersData() {
 
     this.contentService.getAllCharacters().subscribe((response: any[]) => {
+
+      console.log(response);
 
       if (response !== null) {
 
@@ -183,16 +198,6 @@ export class DcCharactersComponent implements OnInit {
       $(this).addClass("is-checked");
 
     }
-
-  }
-
-  filterCharacters(category) {
-
-    this.characterStore.refined = this.charactersData.filter(
-      (character) => character.acf.character_alignment == category || category == 'all'
-    );
-
-    this.masonry.reloadItems();
 
   }
 

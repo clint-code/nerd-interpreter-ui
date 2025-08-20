@@ -45,13 +45,17 @@ export class MarvelCharactersComponent implements OnInit {
 
   marvelBannerIntroContent: any;
 
+  //Masonry configurations
+  updateMasonryLayout: boolean = false;
+
   options: NgxMasonryOptions = {
-    //itemSelector: '.character-item',
     gutter: 10,
-    horizontalOrder: true,
-    fitWidth: true,
-    //percentPosition: true,
-    columnWidth: 20,
+    //horizontalOrder: true,
+    fitWidth: false,
+    percentPosition: true,
+    columnWidth: '.grid-sizer',
+    itemSelector: '.character-item',
+    //originLeft: false,
     resize: true
   };
 
@@ -110,6 +114,19 @@ export class MarvelCharactersComponent implements OnInit {
       this.fadeInLeft();
 
     }, 1000);
+
+  }
+
+  filterCharacters(category) {
+
+    this.characterStore.refined = this.charactersData.filter(
+      (character) => character.acf.character_alignment == category || category == 'all'
+    );
+
+    setTimeout(() => {
+      this.masonry.layout();
+      this.masonry.reloadItems();
+    }, 100);
 
   }
 
@@ -172,16 +189,6 @@ export class MarvelCharactersComponent implements OnInit {
       $(this).addClass("is-checked");
 
     }
-
-  }
-
-  filterCharacters(category) {
-
-    this.characterStore.refined = this.charactersData.filter(
-      (character) => character.acf.character_alignment == category || category == 'all'
-    );
-
-    this.masonry.reloadItems();
 
   }
 
