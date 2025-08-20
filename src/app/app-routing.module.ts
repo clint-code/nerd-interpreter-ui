@@ -9,7 +9,7 @@ import { SingleCharacterComponent } from './views/single-character/single-charac
 import { SuperheroesSaintsComponent } from './views/superheroes-saints/superheroes-saints.component';
 import { SingleSuperheroSaintViewComponent } from './views/single-superhero-saint-view/single-superhero-saint-view.component';
 
-const routes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         component: HomeComponent
@@ -59,8 +59,8 @@ const routes: Routes = [
 
 ];
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
-})
-export class AppRoutingModule { }
+// @NgModule({
+//     imports: [RouterModule.forRoot(routes)],
+//     exports: [RouterModule],
+// })
+// export class AppRoutingModule { }
