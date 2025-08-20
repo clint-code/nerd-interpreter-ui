@@ -1,164 +1,142 @@
 <!--Site Preloaders-->
-<app-preloader
-    *ngIf="siteImages.length < 1"
-></app-preloader>
+<app-preloader *ngIf="siteImages.length < 1"></app-preloader>
 
 <app-preloader
-    *ngIf="siteImages.length > 0"
-    [images]="siteImages"
+  *ngIf="siteImages.length > 0"
+  [images]="siteImages"
 ></app-preloader>
 <!--END Site Preloaders-->
 
 <div class="container-fluid">
+  <div class="content-section">
+    <!--Logo section-->
+    <div class="row ml-1 mr-">
+      <div class="mini-logo-section">
+        <a routerLink="/">
+          <img
+            src="../../../assets/img/nerd-interpreter-logo.png"
+            alt="the-nerd-interpreter"
+            class="img-fluid"
+          />
+        </a>
+      </div>
+    </div>
+    <!--End of logo section-->
 
-    <div class="content-section">
-        
-        <!--Logo section-->
-        <div class="row ml-1 mr-">
+    <app-banner
+      bannerTitle="{{ pageBannerIntroContent?.title?.rendered }}"
+      bannerImage="{{ pageBannerIntroContent?.acf?.page_banner_image?.url }}"
+      bannerImageAlt="{{ pageBannerIntroContent?.acf?.page_banner_image?.alt }}"
+    >
+    </app-banner>
 
-            <div class="mini-logo-section">
-                <a routerLink="/">
-                    <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
-                </a>
-            </div>
-
-        </div>
-        <!--End of logo section-->
-
-        <app-banner
-            bannerTitle="{{pageBannerIntroContent?.title?.rendered}}"
-            bannerImage="{{pageBannerIntroContent?.acf?.page_banner_image?.url}}"
-            bannerImageAlt="{{pageBannerIntroContent?.acf?.page_banner_image?.alt}}"
-        >
-        </app-banner>
-
-        <div class="row">
-
-            <div class="p-3 text-intro-section">
-
-                <p class="text-center">
-                   {{pageBannerIntroContent?.acf?.page_intro}}
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col explore-characters-txt">
-                <h4 class="text-center display-3">
-                    Podcast Episodes
-                </h4>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="grid">
-
-                <div class="grid-sizer"></div>
-
-                <ngx-masonry
-                    [options]="options" 
-                    [updateLayout]="characterStore.refined"
-                    useImagesLoaded="true">
-
-                    <div ngxMasonryItem *ngFor="let superheroSaint of superheroSaintData">
-
-                        <!-- Character Item -->
-                        <div class="character-item">
-            
-                            <div class="character-image">
-                                <img 
-                                    src="{{ superheroSaint?.acf?.featured_image?.url }}" 
-                                    alt="{{ superheroSaint?.acf?.featured_image?.title  }}" 
-                                    class="img-fluid">
-                            </div>
-            
-                            <a class="name" routerLink="single-superhero-saint/{{superheroSaint?.slug}}">
-                                <h3 class="name display-4">Listen Now</h3>
-                            </a>
-                            
-                        </div>
-            
-                    </div>
-
-                </ngx-masonry>
-
-            </div>
-
-        </div>
-
+    <div class="row">
+      <div class="p-3 text-intro-section">
+        <p class="text-center">
+          {{ pageBannerIntroContent?.acf?.page_intro }}
+        </p>
+      </div>
     </div>
 
+    <div class="row">
+      <div class="col explore-characters-txt">
+        <h4 class="text-center display-3">Podcast Episodes</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="grid">
+
+        <ngx-masonry
+          [options]="options"
+          [ordered]="true"
+          [updateLayout]="updateMasonryLayout"
+          useImagesLoaded="true"
+        >
+        
+         <div class="grid-sizer"></div>
+            
+          <!-- Character Item -->
+          <div class="character-item"
+            ngxMasonryItem 
+            *ngFor="let superheroSaint of superheroSaintData">
+
+              <div class="character-image">
+                <img
+                  src="{{ superheroSaint?.acf?.featured_image?.url }}"
+                  alt="{{ superheroSaint?.acf?.featured_image?.title }}"
+                  class="img-fluid"
+                />
+              </div>
+
+              <a
+                class="name"
+                routerLink="single-superhero-saint/{{ superheroSaint?.slug }}"
+              >
+                <h3 class="name display-4">Listen Now</h3>
+              </a>
+          </div>
+        </ngx-masonry>
+      </div>
+    </div>
+  </div>
 </div>
 
 <section class="more-characters-section p-4 mt-5">
-
-    <div class="row">
-        <div class="col-md-1 vertical-text-section">
-            <h2 class="display-3 text-center vertical-text">
-                More on the Nerd interpreter......
-            </h2>
-        </div>
-
-        <div class="col-md-11 more-cnt-section">
-
-            <div class="mini-background-section mb-5">
-
-                <div class="caption-text-section">
-
-                    <h3 class="text-white display-3">DC Characters</h3>
-
-                    <p class="text-white">
-                        Check out character studies from the characters in the DC Universe, both heroes and villains
-                    </p>
-                    
-                    <a routerLink="/dc-characters" 
-                        class="btn btn-light text-black m-3">
-                        Discover More
-                    </a>
-
-                </div>
-
-                <img 
-                    src="./assets/img/dc-mini-background.jpg"
-                    alt="marvel-mini-background" 
-                    class="img-fluid">
-
-            </div>
-
-            <div class="mini-background-section">
-
-                <div class="caption-text-section">
-
-                    <h3 class="text-white display-3">Marvel Characters</h3>
-                    
-                    <p class="text-white">
-                        Check out character studies from the characters in the Marvel Universe, both heroes and villains
-                    </p>
-
-                    <a routerLink="/marvel-characters" 
-                        class="btn btn-light text-black m-3">
-                        Discover More
-                    </a>
-
-                </div>
-
-                <img 
-                    src="./assets/img/marvel-mini-background.jpg"
-                    alt="marvel-mini-background" 
-                    class="img-fluid">
-
-            </div>
-
-        </div>
-
+  <div class="row">
+    <div class="col-md-1 vertical-text-section">
+      <h2 class="display-3 text-center vertical-text">
+        More on the Nerd interpreter......
+      </h2>
     </div>
 
-</section>
+    <div class="col-md-11 more-cnt-section">
+      <div class="mini-background-section mb-5">
+        <div class="caption-text-section">
+          <h3 class="text-white display-3">DC Characters</h3>
 
+          <p class="text-white">
+            Check out character studies from the characters in the DC Universe,
+            both heroes and villains
+          </p>
+
+          <a routerLink="/dc-characters" class="btn btn-light text-black m-3">
+            Discover More
+          </a>
+        </div>
+
+        <img
+          src="./assets/img/dc-mini-background.jpg"
+          alt="marvel-mini-background"
+          class="img-fluid"
+        />
+      </div>
+
+      <div class="mini-background-section">
+        <div class="caption-text-section">
+          <h3 class="text-white display-3">Marvel Characters</h3>
+
+          <p class="text-white">
+            Check out character studies from the characters in the Marvel
+            Universe, both heroes and villains
+          </p>
+
+          <a
+            routerLink="/marvel-characters"
+            class="btn btn-light text-black m-3"
+          >
+            Discover More
+          </a>
+        </div>
+
+        <img
+          src="./assets/img/marvel-mini-background.jpg"
+          alt="marvel-mini-background"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
 <app-footer-alt></app-footer-alt>

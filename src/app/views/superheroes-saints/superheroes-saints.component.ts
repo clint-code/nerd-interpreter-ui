@@ -39,15 +39,17 @@ export class SuperheroesSaintsComponent implements OnInit {
 
   characterStore: characterStore = {};
 
-  options: NgxMasonryOptions = {
+  //Masonry configurations
+  updateMasonryLayout: boolean = false;
 
-    itemSelector: '.character-item',
+  options: NgxMasonryOptions = {
     gutter: 10,
-    //transitionDuration: '1.2s',
-    horizontalOrder: true,
-    //fitWidth: true,
-    //percentPosition: true,
-    columnWidth: 20,
+    //horizontalOrder: true,
+    fitWidth: false,
+    percentPosition: true,
+    columnWidth: '.grid-sizer',
+    itemSelector: '.character-item',
+    //originLeft: false,
     resize: true
   };
 
