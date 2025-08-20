@@ -3,9 +3,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import $ from 'jquery';
 
 @Component({
-  selector: 'app-preloader',
-  templateUrl: './preloader.component.html',
-  styleUrls: ['./preloader.component.css']
+    selector: 'app-preloader',
+    templateUrl: './preloader.component.html',
+    styleUrls: ['./preloader.component.css'],
+    standalone: false
 })
 export class PreloaderComponent implements OnInit {
 

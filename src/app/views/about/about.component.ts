@@ -11,12 +11,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
-  providers: [
-    ContentManagementService
-  ]
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.css'],
+    providers: [
+        ContentManagementService
+    ],
+    standalone: false
 })
 
 export class AboutComponent implements OnInit {

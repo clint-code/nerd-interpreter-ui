@@ -13,10 +13,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-single-character',
-  templateUrl: './single-character.component.html',
-  styleUrls: ['./single-character.component.css'],
-  providers: [ContentManagementService]
+    selector: 'app-single-character',
+    templateUrl: './single-character.component.html',
+    styleUrls: ['./single-character.component.css'],
+    providers: [ContentManagementService],
+    standalone: false
 })
 
 export class SingleCharacterComponent implements OnInit {

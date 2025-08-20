@@ -14,10 +14,11 @@ import { ContentManagementService } from '../../services/content-management.serv
 
 
 @Component({
-  selector: 'app-single-superhero-saint-view',
-  templateUrl: './single-superhero-saint-view.component.html',
-  styleUrls: ['./single-superhero-saint-view.component.css'],
-  providers: [ContentManagementService]
+    selector: 'app-single-superhero-saint-view',
+    templateUrl: './single-superhero-saint-view.component.html',
+    styleUrls: ['./single-superhero-saint-view.component.css'],
+    providers: [ContentManagementService],
+    standalone: false
 })
 
 export class SingleSuperheroSaintViewComponent implements OnInit {

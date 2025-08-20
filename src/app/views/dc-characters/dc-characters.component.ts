@@ -24,12 +24,13 @@ interface characterStore {
 }
 
 @Component({
-  selector: 'app-dc-characters',
-  templateUrl: './dc-characters.component.html',
-  styleUrls: ['./dc-characters.component.css'],
-  providers: [
+    selector: 'app-dc-characters',
+    templateUrl: './dc-characters.component.html',
+    styleUrls: ['./dc-characters.component.css'],
+    providers: [
     //CharacterdataService
-  ]
+    ],
+    standalone: false
 })
 
 export class DcCharactersComponent implements OnInit {

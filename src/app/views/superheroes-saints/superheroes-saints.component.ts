@@ -23,10 +23,11 @@ interface characterStore {
 }
 
 @Component({
-  selector: 'app-superheroes-saints',
-  templateUrl: './superheroes-saints.component.html',
-  styleUrls: ['./superheroes-saints.component.css'],
-  providers: [ContentManagementService]
+    selector: 'app-superheroes-saints',
+    templateUrl: './superheroes-saints.component.html',
+    styleUrls: ['./superheroes-saints.component.css'],
+    providers: [ContentManagementService],
+    standalone: false
 })
 
 export class SuperheroesSaintsComponent implements OnInit {

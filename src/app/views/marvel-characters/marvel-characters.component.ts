@@ -25,12 +25,13 @@ interface characterStore {
 }
 
 @Component({
-  selector: 'app-marvel-characters',
-  templateUrl: './marvel-characters.component.html',
-  styleUrls: ['./marvel-characters.component.css'],
-  providers: [
+    selector: 'app-marvel-characters',
+    templateUrl: './marvel-characters.component.html',
+    styleUrls: ['./marvel-characters.component.css'],
+    providers: [
     //CharacterdataService
-  ]
+    ],
+    standalone: false
 })
 export class MarvelCharactersComponent implements OnInit {
 

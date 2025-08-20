@@ -3,9 +3,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import $ from 'jquery';
 
 @Component({
-  selector: 'app-comic-slider',
-  templateUrl: './comic-slider.component.html',
-  styleUrls: ['./comic-slider.component.css']
+    selector: 'app-comic-slider',
+    templateUrl: './comic-slider.component.html',
+    styleUrls: ['./comic-slider.component.css'],
+    standalone: false
 })
 export class ComicSliderComponent implements OnInit {
 
