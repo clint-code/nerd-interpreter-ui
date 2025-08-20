@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -23,33 +23,27 @@ import { ProgressOnscrollbarComponent } from './components/progress-onscrollbar/
 import { SuperheroesSaintsComponent } from './views/superheroes-saints/superheroes-saints.component';
 import { SingleSuperheroSaintViewComponent } from './views/single-superhero-saint-view/single-superhero-saint-view.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    MarvelCharactersComponent,
-    DcCharactersComponent,
-    SingleCharacterComponent,
-    PreloaderComponent,
-    EmailsubscriptionComponent,
-    ProgressOnscrollbarComponent,
-    SuperheroesSaintsComponent,
-    SingleSuperheroSaintViewComponent,
-  ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SharedModule,
-    CarouselModule
-  ],
-  providers: [
-    Title
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        AboutComponent,
+        ContactComponent,
+        MarvelCharactersComponent,
+        DcCharactersComponent,
+        SingleCharacterComponent,
+        PreloaderComponent,
+        EmailsubscriptionComponent,
+        ProgressOnscrollbarComponent,
+        SuperheroesSaintsComponent,
+        SingleSuperheroSaintViewComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        CommonModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        SharedModule,
+        CarouselModule], providers: [
+        Title,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
