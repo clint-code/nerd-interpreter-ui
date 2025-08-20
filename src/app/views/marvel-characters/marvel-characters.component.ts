@@ -134,11 +134,15 @@ export class MarvelCharactersComponent implements OnInit {
 
     this.contentService.getAllCharacters().subscribe((response: any[]) => {
 
-      this.charactersData = response;
+      if (response !== null) {
 
-      this.characterStore.cached = response;
+        this.charactersData = response;
 
-      this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+        this.characterStore.cached = response;
+
+        this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+
+      }
 
     });
 

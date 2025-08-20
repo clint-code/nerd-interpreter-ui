@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nerd-interpreter-ui:build"
+            "buildTarget": "nerd-interpreter-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "nerd-interpreter-ui:build:production"
+              "buildTarget": "nerd-interpreter-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nerd-interpreter-ui:build"
+            "buildTarget": "nerd-interpreter-ui:build"
           }
         },
         "test": {
