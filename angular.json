@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "masonry-layout"
+            ],
             "outputPath": {
               "base": "dist/nerd-interpreter-ui"
             },
@@ -27,8 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss", 
-              "src/assets/css/custom.scss", 
+              "src/styles.scss",
+              "src/assets/css/custom.scss",
               "src/assets/fonts/Bangers/stylesheet.css",
               "src/assets/fonts/Passion-One/stylesheet.css",
               "src/assets/fonts/Prociono/stylesheet.css",
@@ -37,8 +40,7 @@
               "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [
-            ],
+            "scripts": [],
             "browser": "src/main.ts"
           },
           "configurations": {
@@ -90,7 +92,10 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": ["zone.js", "src/polyfills.ts"],
+            "polyfills": [
+              "zone.js",
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
