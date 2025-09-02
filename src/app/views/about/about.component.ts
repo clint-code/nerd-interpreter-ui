@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import Preloader from '../../utils/preloader';
-import $ from 'jquery';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { CharacterdataService } from '../../services/characterdata.service';
@@ -11,13 +11,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-    selector: 'app-about',
-    templateUrl: './about.component.html',
-    styleUrls: ['./about.component.css'],
-    providers: [
-        ContentManagementService
-    ],
-    standalone: false
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css'],
+  providers: [
+    ContentManagementService
+  ],
+  standalone: false
 })
 
 export class AboutComponent implements OnInit {
@@ -52,6 +52,8 @@ export class AboutComponent implements OnInit {
   };
 
   constructor(
+    @Inject(DOCUMENT)
+    private document: Document,
     private characterPortraitsData: CharacterdataService,
     private contentService: ContentManagementService,
     private titleService: Title,
@@ -78,12 +80,7 @@ export class AboutComponent implements OnInit {
       }
     );
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset({
-        top: 50
-      })
-
-    }, 500);
+    this.document.documentElement.scrollTop = 0;
 
     this.getAboutContent();
 

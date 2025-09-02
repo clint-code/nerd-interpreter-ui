@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-
-import $ from 'jquery';
+import { Component, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser';
 import Preloader from '../../utils/preloader';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    standalone: false
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  standalone: false
 })
 export class HomeComponent implements OnInit {
 
@@ -22,6 +21,8 @@ export class HomeComponent implements OnInit {
   intervalId2: any;
 
   constructor(
+    @Inject(DOCUMENT)
+    private document: Document,
     private titleService: Title
   ) { }
 
@@ -55,13 +56,21 @@ export class HomeComponent implements OnInit {
 
     this.intervalId = setInterval(() => {
       this.counter -= 1;
-      $('.hero-section').css('background-position', this.counter + 'px 0');
+      this.document.querySelectorAll('.hero-section').forEach((el) => {
+        (el as HTMLElement).style.backgroundPosition = `${this.counter}px 0`;
+      });
+      //$('.hero-section').css('background-position', this.counter + 'px 0');
 
     }, this.intervalTime);
 
     this.intervalId2 = setInterval(() => {
       this.counter2 += 1;
-      $('.villain-section').css('background-position', this.counter2 + 'px 0');
+      this.document.querySelectorAll('.villain-section').forEach((el) => {
+        (el as HTMLElement).style.backgroundPosition = `${this.counter2}px 0`;
+      });
+      // (this.document.querySelector('.villain-section') as HTMLElement).style.backgroundPosition = `${this.counter2}px 0`;
+
+      //$('.villain-section').css('background-position', this.counter2 + 'px 0');
 
     }, this.intervalTime);
 

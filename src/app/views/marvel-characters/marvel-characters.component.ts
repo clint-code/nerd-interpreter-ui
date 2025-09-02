@@ -1,4 +1,6 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
@@ -25,13 +27,13 @@ interface characterStore {
 }
 
 @Component({
-    selector: 'app-marvel-characters',
-    templateUrl: './marvel-characters.component.html',
-    styleUrls: ['./marvel-characters.component.css'],
-    providers: [
+  selector: 'app-marvel-characters',
+  templateUrl: './marvel-characters.component.html',
+  styleUrls: ['./marvel-characters.component.css'],
+  providers: [
     //CharacterdataService
-    ],
-    standalone: false
+  ],
+  standalone: false
 })
 export class MarvelCharactersComponent implements OnInit {
 
@@ -63,6 +65,8 @@ export class MarvelCharactersComponent implements OnInit {
   @ViewChild(NgxMasonryComponent) masonry: NgxMasonryComponent;
 
   constructor(
+    @Inject(DOCUMENT)
+    private document: Document,
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
@@ -88,11 +92,7 @@ export class MarvelCharactersComponent implements OnInit {
       }
     );
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset({
-        top: 50
-      })
-    }, 500);
+    this.document.documentElement.scrollTop = 0;
 
     this.getMarvelCharactersData();
 

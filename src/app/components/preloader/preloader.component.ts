@@ -3,14 +3,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import $ from 'jquery';
 
 @Component({
-    selector: 'app-preloader',
-    templateUrl: './preloader.component.html',
-    styleUrls: ['./preloader.component.css'],
-    standalone: false
+  selector: 'app-preloader',
+  templateUrl: './preloader.component.html',
+  styleUrls: ['./preloader.component.css'],
+  standalone: false
 })
 export class PreloaderComponent implements OnInit {
 
-  @Input() percentage: number;
+  // @Input() percentage: number;
   @Input() images: any = [];
   @Output() siteLoaded = new EventEmitter<boolean>();
 
@@ -42,6 +42,8 @@ export class PreloaderComponent implements OnInit {
 
       const image = new Image();
 
+      console.log("Image:", image);
+
       image.addEventListener("load", (event) => {
 
         this.imageLoaded(event);
@@ -49,6 +51,8 @@ export class PreloaderComponent implements OnInit {
       }, false);
 
       image.src = this.siteImages[i];
+
+      console.log("Image.src:", image.src);
     }
 
   }
@@ -56,6 +60,8 @@ export class PreloaderComponent implements OnInit {
   imageLoaded(event) {
 
     this.imagesLoaded++;
+
+    console.log("Images loaded:", this.imagesLoaded++);
 
     this.percentageLoaded = Math.round((this.imagesLoaded / this.totalImages) * 100);
 

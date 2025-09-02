@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-
-import $ from 'jquery';
+import { DOCUMENT } from '@angular/common';
 
 import Preloader from '../../utils/preloader';
 import { ContentManagementService } from '../../services/content-management.service';
 
 @Component({
-    selector: 'app-contact',
-    templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.css'],
-    standalone: false
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css'],
+  standalone: false
 })
 export class ContactComponent implements OnInit {
 
@@ -18,6 +17,8 @@ export class ContactComponent implements OnInit {
   contactBannerIntroContent: any;
 
   constructor(
+    @Inject(DOCUMENT)
+    private document: Document,
     private titleService: Title,
     private metaService: Meta,
     private contentService: ContentManagementService,
@@ -34,11 +35,7 @@ export class ContactComponent implements OnInit {
       }
     );
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset({
-        top: 40
-      })
-    }, 500);
+    this.document.documentElement.scrollTop = 0;
 
     this.getContactBannerIntroData();
 
