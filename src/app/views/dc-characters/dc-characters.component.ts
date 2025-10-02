@@ -90,13 +90,6 @@ export class DcCharactersComponent implements OnInit {
       }
     );
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset({
-        top: 50
-      })
-    }, 500);
-
-
     this.getDcBannerIntroData();
 
     this.getDcCharactersData();

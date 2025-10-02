@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
-// import imagesLoaded from 'imagesloaded';
 
 import { Title, Meta } from '@angular/platform-browser';
 
@@ -11,6 +10,8 @@ import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 export interface characterInfo {
   id: number;
@@ -77,14 +78,9 @@ export class SuperheroesSaintsComponent implements OnInit {
       }
     );
 
+    //this.siteImages = Preloader.getImages();
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset({
-        top: 50
-      })
-    }, 500);
-
-    this.siteImages = Preloader.getImages();
+    // console.log("Site images:", this.siteImages.length);
 
     this.getSuperheroSaintBannerIntroData();
 
@@ -94,22 +90,12 @@ export class SuperheroesSaintsComponent implements OnInit {
 
   ngAfterViewInit() {
 
-    gsap.registerPlugin(ScrollTrigger);
-
     setTimeout(() => {
-
-      //this.siteImages = Preloader.getImages();
-
-      this.fadeInUp();
-
-      this.fadeInLeft();
-
+      this.siteImages = Preloader.getImages();
     }, 1000);
 
-    // imagesLoaded(document.querySelector('.character-item'), () => {
-    //   this.updateMasonryLayout = true;
-    // });
-
+    this.fadeInUp();
+    this.fadeInLeft();
 
   }
 
@@ -144,19 +130,30 @@ export class SuperheroesSaintsComponent implements OnInit {
 
   fadeInUp() {
 
-    const scrollBox = gsap.timeline({
-
+    gsap.from(".text-intro-section", {
       scrollTrigger: {
-        trigger: '.text-intro-section',
-        toggleActions: 'restart none none none'
-      }
-    });
-
-    scrollBox.from('.text-intro-section', {
+        trigger: ".text-intro-section",
+      },
+      toggleActions: 'restart none none none',
       opacity: 0,
       y: 100,
-      duration: 2
+      duration: 0.6,
+
     });
+
+    // const scrollBox = gsap.timeline({
+
+    //   scrollTrigger: {
+    //     trigger: '.text-intro-section',
+    //     toggleActions: 'play pause resume reset'
+    //   }
+    // });
+
+    // scrollBox.from('.text-intro-section', {
+    //   opacity: 0,
+    //   y: 100,
+    //   duration: 2
+    // });
 
   }
 
