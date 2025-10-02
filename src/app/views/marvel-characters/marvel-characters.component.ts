@@ -181,7 +181,11 @@ export class MarvelCharactersComponent implements OnInit {
       (character) => character.acf.character_alignment == category || category == 'all'
     );
 
-    this.masonry.reloadItems();
+    //this.masonry.reloadItems();
+    setTimeout(() => {
+      this.masonry.reloadItems();
+      this.masonry.layout();
+    }, 100);
 
   }
 

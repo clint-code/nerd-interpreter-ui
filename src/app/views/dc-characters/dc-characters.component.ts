@@ -70,6 +70,7 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
 
     this.loadingView = true;
@@ -185,7 +186,14 @@ export class DcCharactersComponent implements OnInit {
       (character) => character.acf.character_alignment == category || category == 'all'
     );
 
-    this.masonry.reloadItems();
+    // this.masonry.reloadItems();
+
+    // Wait for DOM to update, then reload layout
+    setTimeout(() => {
+      this.masonry.reloadItems();
+      this.masonry.layout();
+    }, 100);
+
 
   }
 
