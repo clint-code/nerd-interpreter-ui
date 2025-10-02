@@ -57,7 +57,7 @@ export class SuperheroesSaintsComponent implements OnInit {
     private metaService: Meta,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     this.titleService.setTitle("The Nerd Interpreter - Superheroes and Saints");
 
@@ -82,15 +82,15 @@ export class SuperheroesSaintsComponent implements OnInit {
       })
     }, 500);
 
+    this.siteImages = Preloader.getImages();
+
     this.getSuperheroSaintBannerIntroData();
 
     this.getSuperheroSaintsData();
 
   }
 
-  ngAfterViewInit(): void {
-
-    this.siteImages = Preloader.getImages();
+  ngAfterViewInit() {
 
     gsap.registerPlugin(ScrollTrigger);
 
