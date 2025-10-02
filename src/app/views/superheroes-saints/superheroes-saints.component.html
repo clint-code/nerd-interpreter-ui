@@ -3,10 +3,10 @@
     *ngIf="siteImages.length < 1"
 ></app-preloader>
 
-<!-- <app-preloader
+<app-preloader
     *ngIf="siteImages.length > 0"
     [images]="siteImages"
-></app-preloader> -->
+></app-preloader> 
 <!--END Site Preloaders-->
 
 <div class="container-fluid">
@@ -65,24 +65,20 @@
                     [updateLayout]="characterStore.refined"
                     useImagesLoaded="true">
 
-                    <div ngxMasonryItem *ngFor="let superheroSaint of superheroSaintData">
-
-                        <!-- Character Item -->
-                        <div class="character-item">
+                    <!-- Character Item -->
+                    <div ngxMasonryItem *ngFor="let superheroSaint of superheroSaintData" class="character-item">
             
-                            <div class="character-image">
-                                <img 
-                                    src="{{ superheroSaint?.acf?.featured_image?.url }}" 
-                                    alt="{{ superheroSaint?.acf?.featured_image?.title  }}" 
-                                    class="img-fluid">
-                            </div>
-            
-                            <a class="name" routerLink="single-superhero-saint/{{superheroSaint?.slug}}">
-                                <h3 class="name display-4">Listen Now</h3>
-                            </a>
-                            
+                        <div class="character-image">
+                            <img 
+                                src="{{ superheroSaint?.acf?.featured_image?.url }}" 
+                                alt="{{ superheroSaint?.acf?.featured_image?.title  }}" 
+                                class="img-fluid">
                         </div>
             
+                        <a class="name" routerLink="single-superhero-saint/{{superheroSaint?.slug}}">
+                            <h3 class="name display-4">Listen Now</h3>
+                        </a>
+                            
                     </div>
 
                 </ngx-masonry>

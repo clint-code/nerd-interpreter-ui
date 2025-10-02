@@ -40,7 +40,8 @@ export class DcCharactersComponent implements OnInit {
 
   selection: string;
   reset: string;
-  charactersData: any;
+
+  filteredCharacters: any;
   characterStore: characterStore = {};
   characterAlignment: string = "";
 
@@ -49,8 +50,7 @@ export class DcCharactersComponent implements OnInit {
   options: NgxMasonryOptions = {
 
     itemSelector: '.character-item',
-    //gutter: 5,
-    //transitionDuration: '1.2s',
+    gutter: 10,
     horizontalOrder: true,
     //fitWidth: true,
     percentPosition: true,
@@ -96,6 +96,7 @@ export class DcCharactersComponent implements OnInit {
       })
     }, 500);
 
+
     this.getDcBannerIntroData();
 
     this.getDcCharactersData();
@@ -104,12 +105,11 @@ export class DcCharactersComponent implements OnInit {
 
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
 
     gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
-
       this.siteImages = Preloader.getImages();
 
       this.fadeInUp();
@@ -126,11 +126,11 @@ export class DcCharactersComponent implements OnInit {
 
       if (response !== null) {
 
-        this.charactersData = response;
+        this.filteredCharacters = response.filter(item => item.acf?.character_stats_section?.comic_universe === "DC");
 
-        this.characterStore.cached = response;
+        this.characterStore.cached = this.filteredCharacters;
 
-        this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+        this.characterStore.refined = this.filteredCharacters.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
 
       }
 
@@ -188,7 +188,7 @@ export class DcCharactersComponent implements OnInit {
 
   filterCharacters(category) {
 
-    this.characterStore.refined = this.charactersData.filter(
+    this.characterStore.refined = this.filteredCharacters.filter(
       (character) => character.acf.character_alignment == category || category == 'all'
     );
 

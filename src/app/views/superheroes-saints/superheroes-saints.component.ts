@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
+// import imagesLoaded from 'imagesloaded';
 
 import { Title, Meta } from '@angular/platform-browser';
 
@@ -38,15 +39,16 @@ export class SuperheroesSaintsComponent implements OnInit {
   pageBannerIntroContent: any;
 
   characterStore: characterStore = {};
+  updateMasonryLayout: boolean = false;
 
   options: NgxMasonryOptions = {
 
     itemSelector: '.character-item',
     gutter: 10,
-    //transitionDuration: '1.2s',
     horizontalOrder: true,
     //fitWidth: true,
-    //percentPosition: true,
+    percentPosition: true,
+    initLayout: true,
     columnWidth: 20,
     resize: true
   };
@@ -96,13 +98,18 @@ export class SuperheroesSaintsComponent implements OnInit {
 
     setTimeout(() => {
 
-      this.siteImages = Preloader.getImages();
+      //this.siteImages = Preloader.getImages();
 
       this.fadeInUp();
 
       this.fadeInLeft();
 
     }, 1000);
+
+    // imagesLoaded(document.querySelector('.character-item'), () => {
+    //   this.updateMasonryLayout = true;
+    // });
+
 
   }
 

@@ -40,6 +40,8 @@ export class MarvelCharactersComponent implements OnInit {
 
   selection: string;
   reset: string;
+
+  filteredCharacters: any;
   charactersData: any = [];
   characterStore: characterStore = {};
 
@@ -119,11 +121,11 @@ export class MarvelCharactersComponent implements OnInit {
 
       if (response !== null) {
 
-        this.charactersData = response;
+        this.filteredCharacters = response.filter(item => item.acf?.character_stats_section?.comic_universe === "Marvel");
 
-        this.characterStore.cached = response;
+        this.characterStore.cached = this.filteredCharacters;
 
-        this.characterStore.refined = this.charactersData.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
+        this.characterStore.refined = this.filteredCharacters.sort((firstCharacter, secondCharacter) => firstCharacter.id = secondCharacter.id);
 
       }
 
@@ -181,7 +183,7 @@ export class MarvelCharactersComponent implements OnInit {
 
   filterCharacters(category) {
 
-    this.characterStore.refined = this.charactersData.filter(
+    this.characterStore.refined = this.filteredCharacters.filter(
       (character) => character.acf.character_alignment == category || category == 'all'
     );
 
