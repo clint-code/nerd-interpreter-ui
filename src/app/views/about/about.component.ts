@@ -16,20 +16,19 @@ import { BannerComponent } from '../../components/banner/banner.component';
 import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
-  standalone: true,
-  providers: [
-    ContentManagementService
-  ],
-  imports: [
-    CommonModule,
-    PreloaderComponent,
-    FooterAltComponent,
-    BannerComponent,
-    CarouselModule
-  ]
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.css'],
+    providers: [
+        ContentManagementService
+    ],
+    imports: [
+        CommonModule,
+        PreloaderComponent,
+        FooterAltComponent,
+        BannerComponent,
+        CarouselModule
+    ]
 })
 
 export class AboutComponent implements OnInit {

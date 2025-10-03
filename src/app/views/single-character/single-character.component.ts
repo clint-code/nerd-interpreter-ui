@@ -19,19 +19,18 @@ import { CharacterStatsComponent } from '../../components/character-stats/charac
 import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
-  selector: 'app-single-character',
-  templateUrl: './single-character.component.html',
-  styleUrls: ['./single-character.component.css'],
-  providers: [ContentManagementService],
-  standalone: true,
-  imports: [
-    FooterAltComponent,
-    CommonModule,
-    SharedModule,
-    BannerComponent,
-    CharacterStatsComponent,
-    PreloaderComponent
-  ]
+    selector: 'app-single-character',
+    templateUrl: './single-character.component.html',
+    styleUrls: ['./single-character.component.css'],
+    providers: [ContentManagementService],
+    imports: [
+        FooterAltComponent,
+        CommonModule,
+        SharedModule,
+        BannerComponent,
+        CharacterStatsComponent,
+        PreloaderComponent
+    ]
 })
 
 export class SingleCharacterComponent implements OnInit {
