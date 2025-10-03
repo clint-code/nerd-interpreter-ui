@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 //import $ from 'jquery';
 
@@ -15,7 +16,7 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
   styleUrls: ['./contact.component.css'],
   standalone: true,
   imports: [
-    SharedModule,
+    CommonModule,
     FooterAltComponent,
     BannerComponent
   ]

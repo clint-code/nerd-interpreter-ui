@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
@@ -31,7 +31,7 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
+    //AppRoutingModule,
     HttpClientModule,
     CarouselModule,
     HomeComponent,

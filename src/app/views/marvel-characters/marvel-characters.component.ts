@@ -2,6 +2,8 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import Preloader from '../../utils/preloader';
 import { NgxMasonryOptions, NgxMasonryComponent } from 'ngx-masonry';
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 import { Title, Meta } from '@angular/platform-browser';
 
 import { ContentManagementService } from '../../services/content-management.service';
@@ -37,6 +39,7 @@ interface characterStore {
   standalone: true,
   imports: [
     FooterAltComponent,
+    CommonModule,
     SharedModule,
     BannerComponent
   ]

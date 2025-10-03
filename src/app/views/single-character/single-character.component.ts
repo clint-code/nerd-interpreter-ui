@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
+import { CommonModule } from '@angular/common';
 
 //import { CharacterdataService } from '../../services/characterdata.service';
 
@@ -24,6 +25,7 @@ import { CharacterStatsComponent } from 'src/app/components/character-stats/char
   standalone: true,
   imports: [
     FooterAltComponent,
+    CommonModule,
     SharedModule,
     BannerComponent,
     CharacterStatsComponent

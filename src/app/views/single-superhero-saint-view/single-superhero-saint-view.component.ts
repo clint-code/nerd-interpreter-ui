@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
@@ -24,6 +25,7 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
   standalone: true,
   imports: [
     FooterAltComponent,
+    CommonModule,
     SharedModule,
     BannerComponent
   ]

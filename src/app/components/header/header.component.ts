@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterModule } from '@angular/router';
 
 import $ from 'jquery';
 
@@ -8,6 +8,9 @@ import $ from 'jquery';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   standalone: true,
+  imports: [
+    RouterModule
+  ]
 })
 export class HeaderComponent implements OnInit {
 
