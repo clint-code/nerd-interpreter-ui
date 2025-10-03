@@ -16,6 +16,17 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
 @NgModule({
 
   declarations: [
+    // HeaderComponent,
+    // FooterAltComponent,
+    // FooterComponent,
+    //BannerComponent,
+    // CharacterStatsComponent,
+    // MiniNavigationComponent,
+    // ComicSliderComponent,
+    // SingleCharacterCardComponent
+  ],
+
+  imports: [
     HeaderComponent,
     FooterAltComponent,
     FooterComponent,
@@ -23,10 +34,7 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
     CharacterStatsComponent,
     MiniNavigationComponent,
     ComicSliderComponent,
-    SingleCharacterCardComponent
-  ],
-
-  imports: [
+    SingleCharacterCardComponent,
     RouterModule,
     CommonModule,
     FormsModule,
@@ -36,14 +44,14 @@ import { SingleCharacterCardComponent } from '../components/single-character-car
   exports: [
     RouterModule,
     CommonModule,
-    HeaderComponent,
-    FooterAltComponent,
-    FooterComponent,
-    BannerComponent,
-    CharacterStatsComponent,
-    MiniNavigationComponent,
-    ComicSliderComponent,
-    SingleCharacterCardComponent,
+    // HeaderComponent,
+    // FooterAltComponent,
+    // FooterComponent,
+    //BannerComponent,
+    // CharacterStatsComponent,
+    // MiniNavigationComponent,
+    // ComicSliderComponent,
+    // SingleCharacterCardComponent,
     NgxMasonryModule
   ]
 

@@ -9,6 +9,9 @@ import { ContentManagementService } from '../../services/content-management.serv
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
+import { BannerComponent } from 'src/app/components/banner/banner.component';
 
 export interface characterInfo {
   id: number;
@@ -29,6 +32,12 @@ interface characterStore {
   styleUrls: ['./dc-characters.component.css'],
   providers: [
     //CharacterdataService
+  ],
+  standalone: true,
+  imports: [
+    SharedModule,
+    FooterAltComponent,
+    BannerComponent
   ]
 })
 

@@ -10,6 +10,9 @@ import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BannerComponent } from 'src/app/components/banner/banner.component';
 
 export interface characterInfo {
   id: number;
@@ -30,6 +33,12 @@ interface characterStore {
   styleUrls: ['./marvel-characters.component.css'],
   providers: [
     //CharacterdataService
+  ],
+  standalone: true,
+  imports: [
+    FooterAltComponent,
+    SharedModule,
+    BannerComponent
   ]
 })
 export class MarvelCharactersComponent implements OnInit {

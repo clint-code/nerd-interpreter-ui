@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-footer-alt',
   templateUrl: './footer-alt.component.html',
-  styleUrls: ['./footer-alt.component.css']
+  styleUrls: ['./footer-alt.component.css'],
+  standalone: true,
 })
 export class FooterAltComponent implements OnInit {
 

@@ -5,11 +5,20 @@ import { Title, Meta } from '@angular/platform-browser';
 
 import Preloader from '../../utils/preloader';
 import { ContentManagementService } from '../../services/content-management.service';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
+import { BannerComponent } from 'src/app/components/banner/banner.component';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  standalone: true,
+  imports: [
+    SharedModule,
+    FooterAltComponent,
+    BannerComponent
+  ]
 })
 export class ContactComponent implements OnInit {
 

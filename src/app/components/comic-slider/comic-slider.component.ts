@@ -5,7 +5,8 @@ import $ from 'jquery';
 @Component({
   selector: 'app-comic-slider',
   templateUrl: './comic-slider.component.html',
-  styleUrls: ['./comic-slider.component.css']
+  styleUrls: ['./comic-slider.component.css'],
+  standalone: true
 })
 export class ComicSliderComponent implements OnInit {
 

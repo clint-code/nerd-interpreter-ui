@@ -8,14 +8,23 @@ import { ContentManagementService } from '../../services/content-management.serv
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
+import { BannerComponent } from 'src/app/components/banner/banner.component';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
+  standalone: true,
   providers: [
     ContentManagementService
+  ],
+  imports: [
+    FooterAltComponent,
+    BannerComponent,
+    CarouselModule
   ]
 })
 

@@ -11,13 +11,22 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import { ContentManagementService } from '../../services/content-management.service';
+import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BannerComponent } from 'src/app/components/banner/banner.component';
 
 
 @Component({
   selector: 'app-single-superhero-saint-view',
   templateUrl: './single-superhero-saint-view.component.html',
   styleUrls: ['./single-superhero-saint-view.component.css'],
-  providers: [ContentManagementService]
+  providers: [ContentManagementService],
+  standalone: true,
+  imports: [
+    FooterAltComponent,
+    SharedModule,
+    BannerComponent
+  ]
 })
 
 export class SingleSuperheroSaintViewComponent implements OnInit {

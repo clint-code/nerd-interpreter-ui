@@ -25,7 +25,15 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
 
 @NgModule({
   declarations: [
-    AppComponent,
+
+  ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CarouselModule,
     HomeComponent,
     AboutComponent,
     ContactComponent,
@@ -38,18 +46,9 @@ import { SingleSuperheroSaintViewComponent } from './views/single-superhero-sain
     SuperheroesSaintsComponent,
     SingleSuperheroSaintViewComponent,
   ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SharedModule,
-    CarouselModule
-  ],
   providers: [
     Title
   ],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }

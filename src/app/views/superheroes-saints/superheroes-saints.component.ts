@@ -10,6 +10,10 @@ import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
+import { BannerComponent } from 'src/app/components/banner/banner.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -28,7 +32,13 @@ interface characterStore {
   selector: 'app-superheroes-saints',
   templateUrl: './superheroes-saints.component.html',
   styleUrls: ['./superheroes-saints.component.css'],
-  providers: [ContentManagementService]
+  providers: [ContentManagementService],
+  standalone: true,
+  imports: [
+    FooterAltComponent,
+    BannerComponent,
+    SharedModule
+  ]
 })
 
 export class SuperheroesSaintsComponent implements OnInit {
