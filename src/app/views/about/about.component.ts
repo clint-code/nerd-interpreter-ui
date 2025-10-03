@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import Preloader from '../../utils/preloader';
-import $ from 'jquery';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { CharacterdataService } from '../../services/characterdata.service';
@@ -90,13 +89,6 @@ export class AboutComponent implements OnInit {
         content: 'About the blog'
       }
     );
-
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset({
-        top: 50
-      })
-
-    }, 500);
 
     this.getAboutContent();
 

@@ -87,12 +87,6 @@ export class SingleCharacterComponent implements OnInit {
 
     $(window).scroll(this.showUpScroll);
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset().top - 50
-    }, 500);
-
-    //this.getComicCovers();
-
     this.contentService.getSingleCharacter(this.characterSlug).subscribe(response => {
 
       if (response !== null) {

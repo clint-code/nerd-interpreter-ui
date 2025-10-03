@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-//import $ from 'jquery';
-
 import Preloader from '../../utils/preloader';
 import { ContentManagementService } from '../../services/content-management.service';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -42,12 +40,6 @@ export class ContactComponent implements OnInit {
         content: 'Contact Me'
       }
     );
-
-    // $('html, body').animate({
-    //   scrollTop: $(".content-section").offset({
-    //     top: 40
-    //   })
-    // }, 500);
 
     this.getContactBannerIntroData();
 

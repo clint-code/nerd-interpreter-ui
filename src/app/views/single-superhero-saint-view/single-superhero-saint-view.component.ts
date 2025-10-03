@@ -60,12 +60,6 @@ export class SingleSuperheroSaintViewComponent implements OnInit {
 
     $(window).scroll(this.showUpScroll);
 
-    $('html, body').animate({
-      scrollTop: $(".content-section").offset({
-        top: 30
-      })
-    }, 500);
-
     this.contentService.getSuperheroSaintContent(this.postSlug).subscribe((response: any[]) => {
 
       if (response !== null) {
