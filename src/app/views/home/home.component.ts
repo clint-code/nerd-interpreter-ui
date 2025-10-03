@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import $ from 'jquery';
 import { Title, Meta } from '@angular/platform-browser';
 import Preloader from '../../utils/preloader';
+import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import Preloader from '../../utils/preloader';
   styleUrls: ['./home.component.css'],
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    PreloaderComponent
   ]
 })
 export class HomeComponent implements OnInit {

@@ -12,9 +12,10 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import { ContentManagementService } from '../../services/content-management.service';
-import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { BannerComponent } from 'src/app/components/banner/banner.component';
+import { FooterAltComponent } from '../../components/footer-alt/footer-alt.component';
+import { SharedModule } from '../../shared/shared.module';
+import { BannerComponent } from '../../components/banner/banner.component';
+import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 
 @Component({
@@ -25,6 +26,7 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
   standalone: true,
   imports: [
     FooterAltComponent,
+    PreloaderComponent,
     CommonModule,
     SharedModule,
     BannerComponent

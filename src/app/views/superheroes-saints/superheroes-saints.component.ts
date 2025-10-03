@@ -11,10 +11,12 @@ import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { HeaderComponent } from 'src/app/components/header/header.component';
-import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
-import { BannerComponent } from 'src/app/components/banner/banner.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterAltComponent } from '../../components/footer-alt/footer-alt.component';
+import { BannerComponent } from '../../components/banner/banner.component';
+import { SharedModule } from '../../shared/shared.module';
+import { PreloaderComponent } from '../../components/preloader/preloader.component';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -36,6 +38,7 @@ interface characterStore {
   providers: [ContentManagementService],
   standalone: true,
   imports: [
+    PreloaderComponent,
     FooterAltComponent,
     CommonModule,
     BannerComponent,

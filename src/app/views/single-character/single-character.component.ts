@@ -12,10 +12,11 @@ import { ContentManagementService } from '../../services/content-management.serv
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { BannerComponent } from 'src/app/components/banner/banner.component';
-import { CharacterStatsComponent } from 'src/app/components/character-stats/character-stats.component';
+import { FooterAltComponent } from '../../components/footer-alt/footer-alt.component';
+import { SharedModule } from '../../shared/shared.module';
+import { BannerComponent } from '../../components/banner/banner.component';
+import { CharacterStatsComponent } from '../../components/character-stats/character-stats.component';
+import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
   selector: 'app-single-character',
@@ -28,7 +29,8 @@ import { CharacterStatsComponent } from 'src/app/components/character-stats/char
     CommonModule,
     SharedModule,
     BannerComponent,
-    CharacterStatsComponent
+    CharacterStatsComponent,
+    PreloaderComponent
   ]
 })
 

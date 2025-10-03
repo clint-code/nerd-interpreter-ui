@@ -55,7 +55,12 @@ export class ContactComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    this.siteImages = Preloader.getImages();
+    setTimeout(() => {
+
+      this.siteImages = Preloader.getImages();
+
+    }, 1000);
+
 
   }
 

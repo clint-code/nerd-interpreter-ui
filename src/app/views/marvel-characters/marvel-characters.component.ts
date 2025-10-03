@@ -12,9 +12,10 @@ import $ from 'jquery';
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { BannerComponent } from 'src/app/components/banner/banner.component';
+import { FooterAltComponent } from '../../components/footer-alt/footer-alt.component';
+import { SharedModule } from '../../shared/shared.module';
+import { BannerComponent } from '../../components/banner/banner.component';
+import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 export interface characterInfo {
   id: number;
@@ -38,6 +39,7 @@ interface characterStore {
   ],
   standalone: true,
   imports: [
+    PreloaderComponent,
     FooterAltComponent,
     CommonModule,
     SharedModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 import { Title, Meta } from '@angular/platform-browser';
@@ -9,9 +11,10 @@ import { ContentManagementService } from '../../services/content-management.serv
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.component';
-import { BannerComponent } from 'src/app/components/banner/banner.component';
+import { SharedModule } from '../../shared/shared.module';
+import { FooterAltComponent } from '../../components/footer-alt/footer-alt.component';
+import { BannerComponent } from '../../components/banner/banner.component';
+import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
   selector: 'app-about',
@@ -22,6 +25,8 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
     ContentManagementService
   ],
   imports: [
+    CommonModule,
+    PreloaderComponent,
     FooterAltComponent,
     BannerComponent,
     CarouselModule
