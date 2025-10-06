@@ -4,13 +4,12 @@ import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import $ from 'jquery';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
-  standalone: true,
-  imports: [
-    RouterModule
-  ]
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css'],
+    imports: [
+        RouterModule
+    ]
 })
 export class HeaderComponent implements OnInit {
 

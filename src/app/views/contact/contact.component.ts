@@ -9,15 +9,14 @@ import { FooterAltComponent } from 'src/app/components/footer-alt/footer-alt.com
 import { BannerComponent } from 'src/app/components/banner/banner.component';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css'],
-  standalone: true,
-  imports: [
-    CommonModule,
-    FooterAltComponent,
-    BannerComponent
-  ]
+    selector: 'app-contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.css'],
+    imports: [
+        CommonModule,
+        FooterAltComponent,
+        BannerComponent
+    ]
 })
 export class ContactComponent implements OnInit {
 

@@ -32,18 +32,17 @@ interface characterStore {
 }
 
 @Component({
-  selector: 'app-superheroes-saints',
-  templateUrl: './superheroes-saints.component.html',
-  styleUrls: ['./superheroes-saints.component.css'],
-  providers: [ContentManagementService],
-  standalone: true,
-  imports: [
-    PreloaderComponent,
-    FooterAltComponent,
-    CommonModule,
-    BannerComponent,
-    SharedModule
-  ]
+    selector: 'app-superheroes-saints',
+    templateUrl: './superheroes-saints.component.html',
+    styleUrls: ['./superheroes-saints.component.css'],
+    providers: [ContentManagementService],
+    imports: [
+        PreloaderComponent,
+        FooterAltComponent,
+        CommonModule,
+        BannerComponent,
+        SharedModule
+    ]
 })
 
 export class SuperheroesSaintsComponent implements OnInit {
