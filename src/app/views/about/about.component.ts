@@ -16,19 +16,20 @@ import { BannerComponent } from '../../components/banner/banner.component';
 import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
-    selector: 'app-about',
-    templateUrl: './about.component.html',
-    styleUrls: ['./about.component.css'],
-    providers: [
-        ContentManagementService
-    ],
-    imports: [
-        CommonModule,
-        PreloaderComponent,
-        FooterAltComponent,
-        BannerComponent,
-        CarouselModule
-    ]
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css'],
+  providers: [
+    ContentManagementService
+  ],
+  standalone: true,
+  imports: [
+    CommonModule,
+    PreloaderComponent,
+    FooterAltComponent,
+    BannerComponent,
+    CarouselModule
+  ]
 })
 
 export class AboutComponent implements OnInit {
@@ -41,26 +42,27 @@ export class AboutComponent implements OnInit {
 
   characterPortraits: any;
   superheroSaintsPortraits: any;
+  currentSlide = 0;
 
-  customOptions: OwlOptions = {
-    loop: true,
-    autoplay: true,
-    center: true,
-    dots: false,
-    autoHeight: true,
-    autoWidth: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 1,
-      }
-    }
-  };
+  // customOptions: OwlOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   center: true,
+  //   dots: false,
+  //   autoHeight: true,
+  //   autoWidth: true,
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //     },
+  //     600: {
+  //       items: 1,
+  //     },
+  //     1000: {
+  //       items: 1,
+  //     }
+  //   }
+  // };
 
   constructor(
     private characterPortraitsData: CharacterdataService,
@@ -108,6 +110,32 @@ export class AboutComponent implements OnInit {
       this.animateContentCategory();
 
     }, 1000);
+
+    this.showSlide(this.currentSlide);
+
+
+  }
+
+  showSlide(index: number) {
+
+    // const slides = document.querySelectorAll('.slide');
+    // const direction = index > this.currentSlide ? 1 : -1;
+
+    // gsap.to(slides[this.currentSlide], {
+    //   x: -100 * direction + '%',
+    //   opacity: 0,
+    //   duration: 0.5,
+    //   onComplete: () => slides[this.currentSlide].classList.remove('active')
+    // });
+
+    // slides[index].classList.add('active');
+    // gsap.fromTo(slides[index],
+    //   { x: 100 * direction + '%', opacity: 0 },
+    //   { x: '0%', opacity: 1, duration: 0.5 }
+    // );
+
+    // this.currentSlide = index;
+
 
   }
 
