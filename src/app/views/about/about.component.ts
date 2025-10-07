@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ContentChildren, QueryList, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import Preloader from '../../utils/preloader';
@@ -8,12 +8,17 @@ import { CharacterdataService } from '../../services/characterdata.service';
 import { ContentManagementService } from '../../services/content-management.service';
 
 import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Draggable } from 'gsap/Draggable';
+
+
+// import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
+
 import { SharedModule } from '../../shared/shared.module';
 import { FooterAltComponent } from '../../components/footer-alt/footer-alt.component';
 import { BannerComponent } from '../../components/banner/banner.component';
 import { PreloaderComponent } from '../../components/preloader/preloader.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -28,11 +33,16 @@ import { PreloaderComponent } from '../../components/preloader/preloader.compone
     PreloaderComponent,
     FooterAltComponent,
     BannerComponent,
-    CarouselModule
+    SharedModule,
+    RouterModule
   ]
 })
 
 export class AboutComponent implements OnInit {
+
+  @ViewChild('carouselContainer') carouselContainer!: ElementRef;
+  @ViewChild('carouselInner') carouselInner!: QueryList<ElementRef>;
+  @ContentChildren('slide') slides!: QueryList<ElementRef>;
 
   aboutContent: any;
 
@@ -63,12 +73,22 @@ export class AboutComponent implements OnInit {
   //     }
   //   }
   // };
+  newDivElement: any;
+
+  cellWidth: number = 450;
+  numCells: number = 0;
+  cellStep: number = 0;
+  wrapWidth: number = 0;
+
+  timelineBase = gsap.timeline({ paused: true });
+  timeLineAnimation = gsap.timeline({ repeat: -1, paused: true });
 
   constructor(
     private characterPortraitsData: CharacterdataService,
     private contentService: ContentManagementService,
     private titleService: Title,
     private metaService: Meta,
+    //private autoPlayTimeline: gsap.core.Timeline
   ) { }
 
   ngOnInit(): void {
@@ -91,6 +111,8 @@ export class AboutComponent implements OnInit {
       }
     );
 
+    this.newDivElement = document.createElement('div');
+
     this.getAboutContent();
 
     this.getCharacterPortaits();
@@ -101,7 +123,7 @@ export class AboutComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, Draggable);
 
     setTimeout(() => {
 
@@ -111,31 +133,31 @@ export class AboutComponent implements OnInit {
 
     }, 1000);
 
-    this.showSlide(this.currentSlide);
-
-
+    this.initCarousel();
   }
 
-  showSlide(index: number) {
+  initCarousel() {
 
-    // const slides = document.querySelectorAll('.slide');
-    // const direction = index > this.currentSlide ? 1 : -1;
-
-    // gsap.to(slides[this.currentSlide], {
-    //   x: -100 * direction + '%',
-    //   opacity: 0,
-    //   duration: 0.5,
-    //   onComplete: () => slides[this.currentSlide].classList.remove('active')
+    // const innerElement = this.carouselInner.first.nativeElement;
+    // Draggable.create(innerElement, {
+    //   type: 'x',
+    //   bounds: this.carouselContainer.nativeElement,
+    //   inertia: true,
+    //   edgeResistance: 0.65,
     // });
 
-    // slides[index].classList.add('active');
-    // gsap.fromTo(slides[index],
-    //   { x: 100 * direction + '%', opacity: 0 },
-    //   { x: '0%', opacity: 1, duration: 0.5 }
-    // );
+    // const slideWidth = this.slides.first.nativeElement.offsetWidth;
+    // const totalWidth = slideWidth * this.slides.length;
 
-    // this.currentSlide = index;
-
+    // gsap.to(innerElement, {
+    //   x: -totalWidth,
+    //   duration: this.slides.length * 2,
+    //   ease: 'none',
+    //   repeat: -1,
+    //   onRepeat: () => {
+    //     gsap.set(innerElement, { x: 0 });
+    //   }
+    // });
 
   }
 

@@ -31,20 +31,21 @@ interface characterStore {
 }
 
 @Component({
-    selector: 'app-dc-characters',
-    templateUrl: './dc-characters.component.html',
-    styleUrls: ['./dc-characters.component.css'],
-    providers: [
+  selector: 'app-dc-characters',
+  templateUrl: './dc-characters.component.html',
+  styleUrls: ['./dc-characters.component.css'],
+  providers: [
     //CharacterdataService
-    ],
-    imports: [
-        SharedModule,
-        CommonModule,
-        PreloaderComponent,
-        FooterAltComponent,
-        BannerComponent,
-        RouterModule,
-    ]
+  ],
+  standalone: true,
+  imports: [
+    SharedModule,
+    CommonModule,
+    PreloaderComponent,
+    FooterAltComponent,
+    BannerComponent,
+    RouterModule,
+  ]
 })
 
 export class DcCharactersComponent implements OnInit {

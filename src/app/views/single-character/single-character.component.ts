@@ -11,7 +11,6 @@ import { ContentManagementService } from '../../services/content-management.serv
 
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FooterAltComponent } from '../../components/footer-alt/footer-alt.component';
 import { SharedModule } from '../../shared/shared.module';
 import { BannerComponent } from '../../components/banner/banner.component';
@@ -19,18 +18,19 @@ import { CharacterStatsComponent } from '../../components/character-stats/charac
 import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
-    selector: 'app-single-character',
-    templateUrl: './single-character.component.html',
-    styleUrls: ['./single-character.component.css'],
-    providers: [ContentManagementService],
-    imports: [
-        FooterAltComponent,
-        CommonModule,
-        SharedModule,
-        BannerComponent,
-        CharacterStatsComponent,
-        PreloaderComponent
-    ]
+  selector: 'app-single-character',
+  templateUrl: './single-character.component.html',
+  styleUrls: ['./single-character.component.css'],
+  providers: [ContentManagementService],
+  standalone: true,
+  imports: [
+    FooterAltComponent,
+    CommonModule,
+    SharedModule,
+    BannerComponent,
+    CharacterStatsComponent,
+    PreloaderComponent
+  ]
 })
 
 export class SingleCharacterComponent implements OnInit {
@@ -43,26 +43,6 @@ export class SingleCharacterComponent implements OnInit {
   siteImages: any = [];
 
   comicCovers: any;
-
-  customOptions: OwlOptions = {
-    loop: true,
-    autoplay: true,
-    center: true,
-    dots: true,
-    autoHeight: true,
-    autoWidth: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 1,
-      }
-    }
-  };
 
   constructor(
     private route: ActivatedRoute,

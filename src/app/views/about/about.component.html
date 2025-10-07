@@ -1,74 +1,59 @@
 <!-- Site Preloaders-->
-<app-preloader
-    *ngIf="siteImages.length < 1"
-></app-preloader>
+<app-preloader *ngIf="siteImages.length < 1"></app-preloader>
 
 <!--END Site Preloaders -->
 
 <div class="container-fluid">
+  <div class="content-section">
+    <!--Logo section-->
+    <div class="row ml-1 mr-1">
+      <div class="mini-logo-section">
+        <a routerLink="/">
+          <img
+            src="../../../assets/img/nerd-interpreter-logo.png"
+            alt="the-nerd-interpreter"
+            class="img-fluid"
+          />
+        </a>
+      </div>
+    </div>
+    <!--End of logo section-->
 
-    <div class="content-section">
+    <app-banner
+      bannerTitle="{{ aboutContent?.title?.rendered }}"
+      bannerImage="{{ aboutContent?.acf?.about_banner_image?.url }}"
+      bannerImageAlt="{{ aboutContent?.acf?.about_banner_image?.alt }}"
+    >
+    </app-banner>
 
-        <!--Logo section-->
-        <div class="row ml-1 mr-1">
+    <div class="row">
+      <div class="p-3 text-intro-section about-section">
+        <p class="text-center">
+          {{ aboutContent?.acf?.about_intro }}
+        </p>
+      </div>
+    </div>
 
-            <div class="mini-logo-section">
-                <a routerLink="/">
-                    <img src="../../../assets/img/nerd-interpreter-logo.png" alt="the-nerd-interpreter" class="img-fluid">
-                </a>
-            </div>
-
-        </div>
-        <!--End of logo section-->
-
-        <app-banner
-            bannerTitle="{{aboutContent?.title?.rendered}}"
-            bannerImage="{{aboutContent?.acf?.about_banner_image?.url}}"
-            bannerImageAlt="{{aboutContent?.acf?.about_banner_image?.alt}}">
-        </app-banner>
-
+    <!--About Comic Characters Section-->
+    <section class="about-comic-characters-section about-section">
+      <div class="container">
         <div class="row">
+          <div class="cnt-section-title">
+            <h3 class="display-4 p-2">All About Comic Book Characters</h3>
+          </div>
 
-            <div class="p-3 text-intro-section about-section">
-
-                <p class="text-center">
-                    {{aboutContent?.acf?.about_intro}}
-                </p>
-
+          <div class="col-md-8 text-section">
+            <div class="text-section">
+              <div class="cnt-section text-left p-2">
+                <div
+                  [innerHTML]="aboutContent?.acf?.about_comic_characters"
+                ></div>
+              </div>
             </div>
+          </div>
 
-        </div>
-
-        <!--About Comic Characters Section-->
-        <section class="about-comic-characters-section about-section">
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="cnt-section-title">
-                        <h3 class="display-4 p-2">
-                            All About Comic Book Characters
-                        </h3>
-                    </div>
-
-                    <div class="col-md-8 text-section">
-
-                        <div class="text-section">
-
-                            <div class="cnt-section text-left p-2">
-
-                                <div [innerHTML]="aboutContent?.acf?.about_comic_characters"></div>
-                                
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4 slider-section">
-
-                        <!-- <owl-carousel-o [options]="customOptions">
+          <div class="col-md-4 slider-section">
+            <!-- <owl-carousel-o [options]="customOptions">
 
                             <ng-container *ngFor="let slide of characterPortraits">
                             <ng-template class="slide" carouselSlide [id]="slide.id">
@@ -78,55 +63,46 @@
                         
                         </owl-carousel-o>  -->
 
-                        <div class="gsap-carousel-container">
-                            <div 
-                                *ngFor="let slide of characterPortraits let i = index"
-                                [class.active]="i === currentSlide"
-                                class="slide">
-                                <img [src]="slide.url" [alt]="slide.alt" [title]="slide.id" class="img-fluid">
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="gsap-carousel-container">
+              <div
+                *ngFor="let slide of characterPortraits; let i = index"
+                [class.active]="i === currentSlide"
+                class="slide"
+              >
+                <img
+                  [src]="slide.url"
+                  [alt]="slide.alt"
+                  [title]="slide.id"
+                  class="img-fluid"
+                />
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End of About Comic Characters Section-->
 
-        </section>
-        <!--End of About Comic Characters Section-->
+    <!--About Comic Characters Section-->
+    <section class="about-comic-characters-section about-section">
+      <div class="container">
+        <div class="row">
+          <div class="cnt-section-title">
+            <h3 class="display-4 p-2">Superheroes and Saints</h3>
+          </div>
 
-        <!--About Comic Characters Section-->
-        <section class="about-comic-characters-section about-section">
+          <div class="col-md-8 text-section">
+            <div class="text-section">
+              <div class="cnt-section text-left p-2">
+                <div
+                  [innerHTML]="aboutContent?.acf?.superheroes_and_saints"
+                ></div>
+              </div>
+            </div>
+          </div>
 
-            <div class="container">
-
-                <div class="row">
-    
-                    <div class="cnt-section-title">
-                        <h3 class="display-4 p-2">
-                            Superheroes and Saints
-                        </h3>
-                    </div>
-
-                    <div class="col-md-8 text-section">
-    
-                        <div class="text-section">
-    
-                            <div class="cnt-section text-left p-2">
-    
-                                <div [innerHTML]="aboutContent?.acf?.superheroes_and_saints"></div>
-
-                            </div>
-    
-                        </div>
-    
-                    </div>
-    
-
-                    <div class="col-md-4 slider-section">
-    
-                        <!-- <owl-carousel-o [options]="customOptions">
+          <div class="col-md-4 slider-section">
+            <!-- <owl-carousel-o [options]="customOptions">
     
                             <ng-container *ngFor="let slide of superheroSaintsPortraits">
                             <ng-template class="slide" carouselSlide [id]="slide.id">
@@ -136,60 +112,71 @@
                         
                         </owl-carousel-o>  -->
 
-                        <div class="gsap-carousel-container">
-                            <div 
-                                *ngFor="let slide of superheroSaintsPortraits let i = index"
-                                [class.active]="i === currentSlide"
-                                class="slide">
-                                <img [src]="slide.characterImage" [alt]="slide.alt" [title]="slide.id" class="img-fluid">
+            <!-- <div #carouselContainer class="carousel-container">
+                            <div #carouselInner class="carousel-inner">
+                                <div 
+                                    *ngFor="let slide of superheroSaintsPortraits let i = index"
+                                    [class.active]="i === currentSlide"
+                                    class="slide">
+                                    <img [src]="slide.characterImage" [alt]="slide.alt" [title]="slide.id" class="img-fluid">
+                                </div>
                             </div>
-                        </div>
-    
-                    </div>
-    
-                </div>
-    
+                        </div> -->
+
+            <div class="gsap-carousel-container">
+              <div
+                *ngFor="let slide of superheroSaintsPortraits; let i = index"
+                [class.active]="i === currentSlide"
+                class="slide"
+              >
+                <img
+                  [src]="slide.characterImage"
+                  [alt]="slide.alt"
+                  [title]="slide.id"
+                  class="img-fluid"
+                />
+              </div>
             </div>
-    
-        </section>
-        <!--End of About Comic Characters Section-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End of About Comic Characters Section-->
 
-        <section class="about-comic-characters-section about-section mb-5" data-aos="fade-up" data-aos-duration="1300">
+    <section
+      class="about-comic-characters-section about-section mb-5"
+      data-aos="fade-up"
+      data-aos-duration="1300"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="cnt-section-title">
+            <h3 class="display-4">About Me</h3>
+          </div>
 
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="cnt-section-title">
-                        <h3 class="display-4">
-                             About Me
-                        </h3>
-                    </div>
-
-                <div class="col-md-8 text-section">
-
-                    <div class="cnt-section text-left p-2">
-
-                        <div [innerHTML]="aboutContent?.acf?.about_me_section?.about_me"></div>
-                    
-                    </div>
-
-                </div>
-
-                <div class="col-md-4 image-section">
-
-                    <img src="{{aboutContent?.acf?.about_me_section?.profile_image?.url}}" alt="{{aboutContent?.acf?.about_me_section?.profile_image?.alt}}" class="img-fluid">
-
-                </div>
-
-                </div>
-
+          <div class="col-md-8 text-section">
+            <div class="cnt-section text-left p-2">
+              <div
+                [innerHTML]="aboutContent?.acf?.about_me_section?.about_me"
+              ></div>
             </div>
+          </div>
 
-        </section>
-
-    </div>
-
+          <div class="col-md-4 image-section">
+            <img
+              src="{{
+                aboutContent?.acf?.about_me_section?.profile_image?.url
+              }}"
+              alt="{{
+                aboutContent?.acf?.about_me_section?.profile_image?.alt
+              }}"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 
 <!-- <app-emailsubscription></app-emailsubscription> -->
