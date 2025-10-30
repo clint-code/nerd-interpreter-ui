@@ -19,17 +19,18 @@ import { PreloaderComponent } from '../../components/preloader/preloader.compone
 
 
 @Component({
-    selector: 'app-single-superhero-saint-view',
-    templateUrl: './single-superhero-saint-view.component.html',
-    styleUrls: ['./single-superhero-saint-view.component.css'],
-    providers: [ContentManagementService],
-    imports: [
-        FooterAltComponent,
-        PreloaderComponent,
-        CommonModule,
-        SharedModule,
-        BannerComponent
-    ]
+  selector: 'app-single-superhero-saint-view',
+  templateUrl: './single-superhero-saint-view.component.html',
+  styleUrls: ['./single-superhero-saint-view.component.css'],
+  providers: [ContentManagementService],
+  standalone: true,
+  imports: [
+    FooterAltComponent,
+    PreloaderComponent,
+    CommonModule,
+    SharedModule,
+    BannerComponent
+  ]
 })
 
 export class SingleSuperheroSaintViewComponent implements OnInit {

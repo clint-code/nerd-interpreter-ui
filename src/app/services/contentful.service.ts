@@ -1,19 +1,35 @@
 import { Injectable } from '@angular/core';
 import { createClient, Entry } from 'contentful';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContentfulService {
   private client = createClient({
-    space: 'your_space_id',
-    accessToken: 'your_access_token'
+    space: environment.contentful.spaceId,
+    accessToken: environment.contentful.accessToken
   });
 
-  getEntries(contentType: string): Promise<Entry<any>[]> {
-    return this.client.getEntries({ content_type: contentType })
-      .then(response => response.items);
+  constructor() { }
+
+  //get all entires of a specific content type
+  getEntries(contentType: string, query?: any) {
+    return this.client.getEntries({
+      content_type: contentType,
+      ...query
+    });
   }
 
-  constructor() { }
+  //Get a single entry by ID
+  getEntry(entryId: string) {
+    return this.client.getEntry(entryId);
+  }
+
+  //Get entries with specific filters
+  getEntriesWithQuery(query: any) {
+    return this.client.getEntries(query);
+  }
+
 }

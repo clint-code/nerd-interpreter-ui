@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^19.2.15",
     "@angular/router": "^19.2.15",
     "bootstrap": "^4.5.0",
-    "contentful": "^11.8.5",
+    "contentful": "^11.8.9",
     "gsap": "^3.12.5",
     "imagesloaded": "^5.0.0",
     "jquery": "^3.5.0",

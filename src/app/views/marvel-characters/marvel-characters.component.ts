@@ -31,19 +31,20 @@ interface characterStore {
 }
 
 @Component({
-    selector: 'app-marvel-characters',
-    templateUrl: './marvel-characters.component.html',
-    styleUrls: ['./marvel-characters.component.css'],
-    providers: [
+  selector: 'app-marvel-characters',
+  templateUrl: './marvel-characters.component.html',
+  styleUrls: ['./marvel-characters.component.css'],
+  providers: [
     //CharacterdataService
-    ],
-    imports: [
-        PreloaderComponent,
-        FooterAltComponent,
-        CommonModule,
-        SharedModule,
-        BannerComponent
-    ]
+  ],
+  standalone: true,
+  imports: [
+    PreloaderComponent,
+    FooterAltComponent,
+    CommonModule,
+    SharedModule,
+    BannerComponent
+  ]
 })
 export class MarvelCharactersComponent implements OnInit {
 

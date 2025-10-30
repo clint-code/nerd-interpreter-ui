@@ -7,13 +7,14 @@ import Preloader from '../../utils/preloader';
 import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    imports: [
-        CommonModule,
-        PreloaderComponent
-    ]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    PreloaderComponent
+  ]
 })
 export class HomeComponent implements OnInit {
 

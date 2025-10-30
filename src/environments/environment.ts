@@ -4,7 +4,12 @@
 
 export const environment = {
   production: false,
-  contentRoot: "https://nerdinterpreter.co.ke/wp-json/wp/v2"
+  //contentRoot: "https://nerdinterpreter.co.ke/wp-json/wp/v2"
+  contentful: {
+    spaceId: 'y5dr7stvmq2y',
+    accessToken: 'rWTP50e_Omu-9hhwATMQIYRd0V2gKly6jj67woORcjU',
+    previewToken: 'FRRuU_5dI8qOWY72ruzVyx-iEC2AGz5PMIni7t6n8Q0' // optional, for preview
+  }
 };
 
 /*
