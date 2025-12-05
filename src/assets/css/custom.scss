@@ -686,6 +686,7 @@ body {
         li{
             font-family: "procionoregular";
             padding: 0 0 5px 0;
+            font-size: 18px;
         }
     }
 } 
@@ -734,6 +735,12 @@ body {
         border-bottom: 2px solid gray;
         display: block;
         padding-top: 5px;
+    }
+}
+
+.cnt-description-section {
+    h3 {
+        font-size: 3rem;
     }
 }
 
@@ -1263,13 +1270,6 @@ body {
                 height: 24px;
                 width: 14px;
             }
-        }
-    }
-
-
-    .cnt-description-section {
-        h3 {
-            font-size: 3rem;
         }
     }
 
