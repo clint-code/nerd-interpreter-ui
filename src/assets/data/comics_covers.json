@@ -2,22 +2,30 @@
     {
       "id": 1,
       "url": "./assets/img/character-page/death-in-the-family.jpg",
-      "alt": "death-in-the-family"
+      "alt": "death-in-the-family",
+      "name": "Death in the Family",
+      "comic-description": "The second storyline to feature the Joker's origin, 'Death in the Family' is a 1988 Batman story arc that sees the Joker"
     },
     {
         "id": 2,
         "url": "./assets/img/character-page/jokers-five-way-revenge.jpg",
-        "alt": "jokers-five-way-revenge"
+        "alt": "jokers-five-way-revenge",
+        "name": "Joker's Five Way Revenge",
+        "comic-description": "The second storyline to feature the Joker's origin, 'Death in the Family' is a 1988 Batman story arc that sees the Joker"
     },
     {
         "id": 3,
         "url": "./assets/img/character-page/killing-joke.jpg",
-        "alt": "killing-joke"
+        "alt": "killing-joke",
+        "name": "Batman: The Killing Joke",
+        "comic-description": "The second storyline to feature the Joker's origin, 'Death in the Family' is a 1988 Batman story arc that sees the Joker"
     },
     {
         "id": 4,
         "url": "./assets/img/character-page/death-of-the-family.jpg",
-        "alt": "death-of-the-family"
+        "alt": "death-of-the-family",
+        "name": "Death of the Family",
+        "comic-description": "The second storyline to feature the Joker's origin, 'Death in the Family' is a 1988 Batman story arc that sees the Joker"
     }
 
 ]

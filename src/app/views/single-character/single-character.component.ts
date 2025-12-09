@@ -5,7 +5,7 @@ import Preloader from '../../utils/preloader';
 import $ from 'jquery';
 import { CommonModule } from '@angular/common';
 
-//import { CharacterdataService } from '../../services/characterdata.service';
+import { CharacterdataService } from '../../services/characterdata.service';
 
 import { ContentManagementService } from '../../services/content-management.service';
 
@@ -21,7 +21,7 @@ import { PreloaderComponent } from '../../components/preloader/preloader.compone
   selector: 'app-single-character',
   templateUrl: './single-character.component.html',
   styleUrls: ['./single-character.component.css'],
-  providers: [ContentManagementService],
+  providers: [ContentManagementService, CharacterdataService],
   standalone: true,
   imports: [
     FooterAltComponent,
@@ -48,6 +48,7 @@ export class SingleCharacterComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private contentService: ContentManagementService,
+    private comicCharacterDataService: CharacterdataService,
     private titleService: Title,
     private metaService: Meta,
   ) {
@@ -72,6 +73,12 @@ export class SingleCharacterComponent implements OnInit {
 
         this.pageDetails = response[0];
 
+        this.comicCovers = Object.values(this.pageDetails?.acf.comic_recommendations).map((item: any) => ({
+          comic_title: item.comic_title,
+          comic_cover: item.comic_cover.url,
+          comic_cover_alt: item.comic_cover.title,
+        }));
+
         this.titleService.setTitle("The Nerd Interpreter - " + this.pageDetails?.title?.rendered);
 
         this.loadingView = false;
@@ -79,6 +86,8 @@ export class SingleCharacterComponent implements OnInit {
       }
 
     });
+
+    this.animateComicCovers();
 
   }
 
@@ -118,15 +127,20 @@ export class SingleCharacterComponent implements OnInit {
 
   }
 
-  getComicCovers() {
+  animateComicCovers() {
 
-    // this.comicCharacterDataService.getComicCoversListing().subscribe(response => {
+    gsap.from(".single-comic-item", {
+      scrollTrigger: {
+        trigger: ".comics-gallery",
+      },
+      toggleActions: 'play pause resume reset',
+      opacity: 0,
+      y: 100,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: "power2.out",
 
-    //   this.comicCovers = response;
-
-    //   console.log(this.comicCovers);
-
-    // });
+    });
 
   }
 

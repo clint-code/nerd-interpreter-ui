@@ -212,7 +212,7 @@
                         
                         <div class="row">
     
-                            <div class="intro-section text-center mb-5">
+                            <div class="intro-section text-center mb-3">
     
                                 <h2 class="display-2 p-2 heading-txt">
                                     Comics
@@ -220,37 +220,22 @@
     
                             </div>
     
-                            <div class="col-md-12 text-section mb-5">
-    
-                                <div class="text-section">
-    
-                                    <div class="cnt-section text-center p-2">
-                                        <p>
-                                            Coming soon!!!
-                                        </p>
+                            <div class="col-md-12 text-section mb-3">
+
+                                <div class="comics-gallery d-flex flex-wrap">
+
+                                    <div class="single-comic-item" *ngFor="let comic of comicCovers">
+                                        <img 
+                                            src="{{comic.comic_cover}}" 
+                                            alt="{{comic.comic_cover_alt}}" 
+                                            class="img-fluid">
+
+                                            <h3>{{comic.comic_title}}</h3>
                                     </div>
-    
+
                                 </div>
     
                             </div>
-    
-                                <!-- <div class="col-md-4 slider-section">
-
-                                    <app-comic-slider>
-
-                                    </app-comic-slider>
-    
-                                    <owl-carousel-o [options]="customOptions">
-    
-                                        <ng-container *ngFor="let slide of comicCovers">
-                                        <ng-template class="slide" carouselSlide [id]="slide.id">
-                                            <img [src]="slide.url" [alt]="slide.alt" [title]="slide.id">
-                                        </ng-template>
-                                        </ng-container>
-                                    
-                                    </owl-carousel-o> 
-    
-                                </div> -->
                         
                         </div>
                     
